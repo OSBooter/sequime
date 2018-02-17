@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Seguime</string>
+	
+    <string name="servidor">Server</string>
+    <string name="usuario">User</string>
+    <string name="clave">Password</string>
+    <string name="intervalo_inactividad">Sleeping time</string>
+    <string name="intervalo_actividad">Working time</string>
+    <string name="latitud">Latitude</string>
+    <string name="longitud">Longitude</string>
+    <string name="radio">Radio</string>
+	<string name="rastreo">Track (Send Messages)</string>
+	
+	
+	<string name="fechahora">Date Time</string>
+	<string name="infoextra">Extra Info</string>
+	
+	<string name="sms">SMS</string>
+	<string name="id_telegram">Chat_ID Telegram</string>
+
+	
+
+    <string name="configuracion">Settings</string>
+    <string name="opciones">Options</string>
+    <string name="guardar">Save</string>
+    <string name="cancelar">Cancel</string>
+    <string name="editar">Edit</string>
+    <string name="registros">Registers</string>
+	<string name="cerrar_sesion">Close Sesion</string>
+	<string name="salir">Exit</string>
+	
+    <string name="txt_servicio_activo">Service is ON</string>
+    <string name="txt_servicio_inactivo">Service is OFF</string>
+    <string name="txt_bloqueado">This app is blocked by user</string>
+
+    <string name="ayuda">Help</string>
+    <string name="cerrar">Close</string>
+		<string name="activar_aplicacion">Seguime ON</string>
+	<string name="desactivar_aplicacion">Seguime OFF</string>
+    
+	
+	<string name="txt_licencia">
+		This program is free software: you can redistribute it and/or modify
+		it under the terms of the GNU General Public License as published by
+		the Free Software Foundation, either version 3 of the License, or
+		(at your option) any later version. \n
+
+		This program is distributed in the hope that it will be useful,
+		but WITHOUT ANY WARRANTY; without even the implied warranty of
+		MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+		GNU General Public License for more details. \n
+
+		You should have received a copy of the GNU General Public License
+		along with this program.  If not, see http://www.gnu.org/licenses/ \n
+
+    </string>
+	
+	<string name="txt_zonasegura">This need to be translated</string>
+    <string name="nombre_zona">Name</string>
+
+	
+	
+    
+    
+</resources>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    android:background="@drawable/caminoblancoynegro"
+    android:id="@+id/princ_pantalla"
+    tools:context="pc.javier.seguime.MainActivity">
+
+
+    <TextView
+        android:id="@+id/princ_mensaje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/holo_orange_dark"
+        android:onClick="cerrarMensaje"
+        android:textSize="20sp"
+        android:text="" />
+
+
+
+
+
+    <Button
+        android:id="@+id/princ_boton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+
+        android:padding="50sp"
+
+        android:text="@string/activar_aplicacion"
+        android:textSize="30sp"
+
+        android:textStyle="bold"
+        android:onClick="iniciar"
+
+        ></Button>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        android:id="@+id/princ_estado"
+
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        />
+
+
+
+
+</RelativeLayout>

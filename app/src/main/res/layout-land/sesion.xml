@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical"
+    android:background="@drawable/caminoblancoynegro"
+    android:id="@+id/sesion_pantalla"
+
+    >
+
+
+
+
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:stretchColumns="0"
+
+            >
+
+
+            <TableRow>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/servidor"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/sesion_servidor"
+            android:inputType="textUri"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/usuario"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/sesion_usuario"
+            android:inputType="textUri"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/clave"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/sesion_clave"
+            android:inputType="textPassword"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/repetirclave"
+            android:visibility="invisible"
+            android:id="@+id/sesion_claverepetida_texto"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/sesion_claverepetida"
+            android:inputType="textPassword"
+            android:visibility="invisible"
+            />
+
+
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="20dp" />
+
+
+
+</LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
+
+            <RadioGroup
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="cambiarRadio"
+                >
+
+                <RadioButton
+                    android:id="@+id/sesion_radio_iniciar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:onClick="cambiarRadio"
+                    android:text="@string/iniciarsesion" />
+
+                <RadioButton
+                    android:id="@+id/sesion_radio_registro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="cambiarRadio"
+                    android:text="@string/registrarse" />
+
+            </RadioGroup>
+
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/sesion_estado"/>
+
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="20dp" />
+
+
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:stretchColumns="0,1"
+                >
+                <TableRow>
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/iniciarsesion"
+                        android:onClick="iniciar"
+                        android:id="@+id/session_iniciar"
+                        />
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="salir"
+                        android:text="@string/salir"/>
+
+                </TableRow>
+            </TableLayout>
+
+                </LinearLayout>
+            </TableRow>
+
+        </TableLayout>
+
+
+
+
+
+</ScrollView>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="pc.javier.seguime">
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ActividadAyuda"
+            android:label="Ayuda"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ActividadAyudaOpciones"
+            android:label="Ayuda"
+            android:parentActivityName=".ActividadOpciones" />
+
+        <activity
+            android:name=".ActividadOpciones"
+            android:label="Opciones"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".ActividadRegistros"
+            android:label="Registros"
+            android:parentActivityName=".MainActivity" />
+
+        <activity android:name=".ActividadSesion"
+            android:label="Iniciar Sesion"
+            android:parentActivityName=".MainActivity"
+            />
+
+        <service
+            android:name=".control.Servicio"
+            android:enabled="true"
+            android:exported="true"
+            android:label="servicio"
+            />
+        <service
+            android:name=".control.ServicioTemporizador"
+            android:enabled="true"
+            android:exported="true"
+            android:label="servicioTemporizador"
+            ></service>
+    </application>
+
+</manifest>
