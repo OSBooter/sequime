@@ -36,7 +36,7 @@ public class ActividadRegistros extends AppCompatActivity {
     private BD bd;
     private ListView lv;
     private GeoPoint punto;
-    private static ArrayAdapter<ItemRegistro> adaptador;
+    public static ArrayAdapter<ItemRegistro> adaptador;
 
 
     @Override
@@ -52,7 +52,7 @@ public class ActividadRegistros extends AppCompatActivity {
         listener();
 
         // habilita eventos del handler
-        Aplicacion.actividadRegistro = this;
+        Aplicacion.actividadRegistros = this;
 
 
     }
@@ -150,7 +150,6 @@ public class ActividadRegistros extends AppCompatActivity {
 
 
         lv.setAdapter(adaptador);
-
     }
 
 
@@ -180,7 +179,7 @@ public class ActividadRegistros extends AppCompatActivity {
 
             reg.latitud = coordenada.getLatitud();
             reg.longitud = coordenada.getLongitud();
-            reg.fecha = "Fecha: " + FechaHora.fechainvertida(coordenada.getFecha()) + " Hora: " + FechaHora.hora(coordenada.getFecha()) ;
+            reg.fecha = R.string.fecha +": " + FechaHora.fechainvertida(coordenada.getFecha()) + R.string.hora + ": " + FechaHora.hora(coordenada.getFecha()) ;
             reg.extra = coordenada.getExtra();
             reg.recibido = coordenada.getRecibido();
             reg.id = coordenada.getId();

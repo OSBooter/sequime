@@ -15,7 +15,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         >
 
@@ -45,6 +45,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/sesion_usuario"
         android:inputType="textUri"
+        android:maxLength="12"
         />
 
 
@@ -58,6 +59,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/sesion_clave"
         android:inputType="textPassword"
+        android:maxLength="12"
         />
 
 
@@ -74,6 +76,7 @@
         android:id="@+id/sesion_claverepetida"
         android:inputType="textPassword"
         android:visibility="invisible"
+        android:maxLength="12"
         />
 
 

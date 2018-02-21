@@ -32,7 +32,7 @@ public class Aplicacion {
     // las propiedades estaticas son para poder hacer funcionar Handlers en los Servicios
     public static AppCompatActivity actividadPrincipal;
     public static AppCompatActivity actividadSesion;
-    public static AppCompatActivity actividadRegistro;
+    public static AppCompatActivity actividadRegistros;
     public static AppCompatActivity actividadAyuda;
 
     public static Context contexto;

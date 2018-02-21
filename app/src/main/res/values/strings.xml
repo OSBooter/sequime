@@ -1,21 +1,31 @@
 <resources>
     <string name="app_name">Seguime</string>
+	
+	<string name="traducidopor"></string>
+	
+	
+	
     <string name="servidor">Servidor</string>
     <string name="usuario">Usuario</string>
     <string name="clave">Clave</string>
     <string name="intervalo_inactividad">Intervalo de Inactividad (en minutos)</string>
     <string name="intervalo_actividad">Intervalo de Actividad (en minutos)</string>
-    <string name="latitud">Latitud</string>
-    <string name="longitud">Longitud</string>
-    <string name="radio">Radio</string>
+    <string name="sms">SMS</string>
+    <string name="id_telegram">Chat_ID Telegram</string>
+    
     <string name="rastreo">Rastreo (Envia Mensajes)</string>
 
 
-    <string name="fechahora">Fecha Hora</string>
+	
+	
+	
+    <string name="latitud">Latitud</string>
+    <string name="longitud">Longitud</string>
+    <string name="fechahora">Fecha y Hora</string>
+	<string name="fecha">Fecha</string>
+	<string name="hora">Hora</string>
     <string name="infoextra">Info Extra</string>
 
-    <string name="sms">SMS</string>
-    <string name="id_telegram">Chat_ID Telegram</string>
 
 
 
@@ -28,18 +38,32 @@
     <string name="cerrar_sesion">Cerrar Sesion</string>
     <string name="salir">Salir</string>
 
+	
+	
+	
     <string name="txt_servicio_activo">¡Bien! La aplicacion esta Activada :-)</string>
     <string name="txt_servicio_inactivo">La aplicacion esta desactivada, pulsa el boton para activarla</string>
     <string name="txt_bloqueado">En este momento la aplicacion esta bloqueada</string>
 
-    <string name="ayuda">Ayuda</string>
-    <string name="cerrar">Cerrar</string>
-    <string name="activar_aplicacion">¡Seguime!</string>
+	<string name="activar_aplicacion">¡Seguime!</string>
     <string name="desactivar_aplicacion">No me Sigas</string>
 
+	
+	
+	
+    <string name="ayuda">Ayuda</string>
+    <string name="cerrar">Cerrar</string>
+    
+	
+	
+	
+	
+	
     <string name="iniciarsesion">Iniciar Sesion</string>
 	<string name="registrarse">Registrarse</string>
 	<string name="repetirclave">Repita la clave</string>
+	
+	
 	
 	<string name="conectando">Conectando...</string>
 	<string name="errorconexion">Error en la conexion</string>
@@ -47,6 +71,11 @@
 	<string name="recibiendo">Recibiendo datos...</string>
 	<string name="conexionfinalizada">Conexion correcta.</string>
 
+	
+	
+	
+	
+	
     <string name="txt_ayuda_descripcion">
         Esta aplicacion envia informacion de posicionamiento global (y puede que otro tipo de informacion, como velocidad) a un servidor. \n
         La caracteristica de uso de bots de Telegram depende del servidor \n
@@ -67,6 +96,9 @@
 		along with this program.  If not, see http://www.gnu.org/licenses/ \n
     </string>
 
+	
+	<string name="dona">Hace una Donacion :)</string>
+	<string name="sitioweb">Ir al Sitio Web</string>
     <string name="txt_donacion">
         Si te gusta la Aplicacion podes colaborar con una donacion.\n
         Recorda que esta Aplicacion no posee publicidad, ni patrocinador, ni rastreadores, por lo tanto depende unicamente de la colaboracion de los usuarios.
@@ -106,8 +138,8 @@
 
 
 
-    <string name="txt_zonasegura">Las zonas seguras se utilizan para ahorrar bateria, mientras el dispositivo este dentro de una zona no habra actualizaciones de GPS ni a servidores</string>
-    <string name="nombre_zona">Nombre de la zona</string>
+    
+    
 
 </resources>
 

@@ -11,7 +11,8 @@
     android:orientation="vertical"
     android:background="@drawable/caminoblancoynegro"
     android:id="@+id/princ_pantalla"
-    tools:context="pc.javier.seguime.MainActivity">
+    tools:context="pc.javier.seguime.MainActivity"
+    >
 
 
     <TextView

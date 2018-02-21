@@ -39,7 +39,8 @@
         <activity
             android:name=".ActividadRegistros"
             android:label="Registros"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity"
+            />
 
         <activity android:name=".ActividadSesion"
             android:label="Iniciar Sesion"

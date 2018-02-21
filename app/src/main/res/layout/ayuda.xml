@@ -16,7 +16,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
             >
 
@@ -26,12 +26,22 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text = "Seguime \n Version 0.1"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true"
+                android:text = "Seguime \n Version 0.2"
                 android:id="@+id/version"
                 android:textAlignment="center"
                 />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="20dp" />
+
+            <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text = "@string/traducidopor"
+
+            android:textAlignment="center"
+            />
 
             <Space
                 android:layout_width="match_parent"
@@ -40,8 +50,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/txt_donacion"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true"
                 android:id="@+id/ayuda_donacion"
                 />
 
@@ -50,7 +58,7 @@
                 android:layout_height="20dp" />
 
             <Button
-                android:text="Ir al Sitio Web"
+                android:text="@string/sitioweb"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
@@ -62,7 +70,7 @@
                 android:layout_height="20dp" />
 
             <Button
-                android:text="Invitame un cafe :) \n ... con leche \n ... y medialunas"
+                android:text="@string/dona"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
@@ -76,8 +84,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/txt_ayuda_descripcion"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true"
                 android:id="@+id/ayuda_descripcion"
                 />
 
@@ -85,8 +91,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/txt_licencia"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true"
                 android:id="@+id/ayuda_licencia"
                 />
 

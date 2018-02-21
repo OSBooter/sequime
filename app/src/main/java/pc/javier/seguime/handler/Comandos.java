@@ -13,6 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -146,14 +147,25 @@ public class Comandos implements Handler.Callback {
         mensajeLog("comando: (" + comando + ") parametro: (" + parametro + ")");
 
         if (comando.equals("marcar")) {
+
+            // marca la coordenada como "recibida" en la base de datos
             basededatos.coordenadaMarcar(Integer.parseInt(parametro));
 
-            if (ActividadRegistros.arregloRegistro != null)
+            // cambia el color de la lista de coordenadas
+            if (ActividadRegistros.arregloRegistro != null) {
                 for (ItemRegistro x : ActividadRegistros.arregloRegistro)
                     if (x.id == Integer.parseInt(parametro)) {
-                        x.recibido=1;
+                        x.recibido = 1;
                         break;
                     }
+                ActividadRegistros.adaptador.notifyDataSetChanged();
+
+            }
+
+
+
+
+
 
 
             return;
