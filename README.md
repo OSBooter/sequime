@@ -30,4 +30,4 @@ Al no tener publicidad este proyecto se mantiene unicamente con donaciones
 
 # Mas informacion
 
-Si queres mas informacion sobre este proyecto [![Visita la Seccion de Ayuda](javierpc.esy.es/seguime/ayuda.php) en el sitio web.
+Si queres mas informacion sobre este proyecto [Visita la Seccion de Ayuda](http://javierpc.esy.es/seguime/ayuda.php) en el sitio web.
