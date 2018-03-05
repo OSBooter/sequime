@@ -70,4 +70,12 @@ public class FechaHora {
         return "";
     }
 
+
+    public static String fechaHora(String fechacompleta) {
+        String respuesta = fechainvertida(fechacompleta);
+        respuesta = respuesta + " ";
+        respuesta = respuesta + hora(fechacompleta);
+        return respuesta;
+    }
+
 }

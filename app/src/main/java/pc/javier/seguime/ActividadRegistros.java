@@ -10,6 +10,8 @@ import android.content.Context;
 import android.database.Cursor;
 
 import android.graphics.Color;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -37,6 +39,7 @@ public class ActividadRegistros extends AppCompatActivity {
     private ListView lv;
     private GeoPoint punto;
     public static ArrayAdapter<ItemRegistro> adaptador;
+    public static Handler handler;
 
 
     @Override
@@ -54,6 +57,7 @@ public class ActividadRegistros extends AppCompatActivity {
         // habilita eventos del handler
         Aplicacion.actividadRegistros = this;
 
+        handler=Aplicacion.handler;
 
     }
 
@@ -153,38 +157,26 @@ public class ActividadRegistros extends AppCompatActivity {
     }
 
 
+
+
+    // carga un arreglo de datos (registros) que servira para el list view
     private ItemRegistro[] cargarRegistros () {
         // base de datos
         bd = new BD(this);
 
+        // obtiene las coordenadas de la base de datos
         ArrayList<Coordenada> listaCoordenada = bd.coordenadaObtenerTodas();
 
+        // crea un arreglo del tamaño del numero de coordenadas obtenidas
         ItemRegistro[] listaRegistro= new ItemRegistro[listaCoordenada.size()];
 
-        String latitud;
-        String longitud;
-        String extra;
-        String fecha;
-        int recibido;
-        int id;
-        ItemRegistro reg;
 
-
-
+        // recorre la lista de coordenadas, creando un item con cada una y los vuelca en el arreglo
         int x = 0;
 
         for (Coordenada coordenada : listaCoordenada) {
 
-            reg = new ItemRegistro();
-
-            reg.latitud = coordenada.getLatitud();
-            reg.longitud = coordenada.getLongitud();
-            reg.fecha = R.string.fecha +": " + FechaHora.fechainvertida(coordenada.getFecha()) + R.string.hora + ": " + FechaHora.hora(coordenada.getFecha()) ;
-            reg.extra = coordenada.getExtra();
-            reg.recibido = coordenada.getRecibido();
-            reg.id = coordenada.getId();
-
-            listaRegistro[x] = reg;
+            listaRegistro[x] = item(coordenada);
             x= x+1;
         }
 
@@ -198,18 +190,52 @@ public class ActividadRegistros extends AppCompatActivity {
             moverMarca(listaRegistro[x-1].latitud, listaRegistro[x-1].longitud);
 
 
-
-
-
         return listaRegistro;
 
 
     }
 
 
+    // vuelca la informacion de una coordenada en un Item de registros
+    public static ItemRegistro item (Coordenada coordenada) {
 
+            ItemRegistro reg = new ItemRegistro();
+
+            reg = new ItemRegistro();
+
+            reg.latitud = coordenada.getLatitud();
+            reg.longitud = coordenada.getLongitud();
+            //reg.fecha = R.string.fecha +": " + FechaHora.fechainvertida(coordenada.getFecha()) + R.string.hora + ": " + FechaHora.hora(coordenada.getFecha()) ;
+            reg.fecha = coordenada.getFecha() ;
+            reg.extra = coordenada.getExtra();
+            reg.recibido = coordenada.getRecibido();
+            reg.id = coordenada.getId();
+
+        return reg;
+    }
+
+
+
+    /*
     public static void agregar (ItemRegistro item) {
         adaptador.add(item);
+    }
+    */
+
+    // agrega una nueva coordenada a la lista (para uso externo)
+    public static void actualizar () {
+        // adaptador.add(item(coordenada));
+
+
+
+        Message mensaje = new Message();
+        Bundle dato = new Bundle();
+        // comando conexion es para visualizacion (antes era solo para conexion)
+
+        dato.putString("conexion", "actualizarRegistros");
+        mensaje.setData(dato);
+        // no funciona
+        //handler.sendMessage(mensaje);
     }
 
 
@@ -244,8 +270,12 @@ public class ActividadRegistros extends AppCompatActivity {
             TextView extra = (TextView) item.findViewById(R.id.registros_extra);
             extra.append(String.valueOf(arregloRegistro[position].extra));
 
-            TextView fecha = (TextView) item.findViewById(R.id.registros_fecha);
-            fecha.setText(String.valueOf(arregloRegistro[position].fecha));
+            TextView fecha = (TextView) item.findViewById(R.id.registros_fechahora);
+
+
+            fecha.setText(
+                    FechaHora.fechaHora(String.valueOf(arregloRegistro[position].fecha))
+            );
 
 
 

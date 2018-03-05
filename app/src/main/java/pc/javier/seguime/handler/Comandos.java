@@ -105,17 +105,52 @@ public class Comandos implements Handler.Callback {
                 textView = (TextView) activityHandler.findViewById(R.id.sesion_estado);
                 if (textView != null)
                     textView.setText(R.string.enviando);
+                break;
 
 
             case "recibiendo":
                 textView = (TextView) activityHandler.findViewById(R.id.sesion_estado);
                 if (textView != null)
                     textView.setText(R.string.recibiendo);
+                break;
 
 
+
+
+
+
+
+
+
+                // NO FUNCIONA
+
+            case "actualizarRegistros":
+                basededatos = Aplicacion.basededatos;
+
+                mensajeLog("estamos en handler------------------------------------------------------------------");
+                if (ActividadRegistros.arregloRegistro == null)
+                    return;
+
+                if (ActividadRegistros.adaptador == null)
+                    return;;
+
+                mensajeLog("entramos al handler");
+
+                ItemRegistro item = ActividadRegistros.item(basededatos.coordenadaObtenerUltima());
+
+                ActividadRegistros.adaptador.add(item);
+                //ActividadRegistros.agregar(coordenada);
+
+                ActividadRegistros.adaptador.notifyDataSetChanged();
+
+                mensajeLog("todo listo en handler");
+                break;
 
 
         }
+
+
+
 
 
 
@@ -163,13 +198,17 @@ public class Comandos implements Handler.Callback {
             }
 
 
-
-
-
-
-
             return;
         }
+
+
+
+
+
+
+
+
+
 
 
         if (comando.equals("eliminartodo")) {

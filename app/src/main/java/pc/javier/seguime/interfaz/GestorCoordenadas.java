@@ -64,6 +64,8 @@ public class GestorCoordenadas {
         coordenada = basededatos.coordenadaObtenerUltima();
         id = coordenada.getId();
 
+        mostrarEnRegistros();
+
     }
 
 
@@ -135,17 +137,27 @@ public class GestorCoordenadas {
 
 
     private void mostrarEnRegistros () {
-        ItemRegistro item = new ItemRegistro();
 
-        item.latitud = coordenada.getLatitud();
-        item.longitud = coordenada.getLongitud();
-        item.fecha = coordenada.getFecha();
-        item.extra = coordenada.getExtra();
-        item.recibido = coordenada.getRecibido();
-        item.id = coordenada.getId();
 
-        //ActividadRegistros.agregar(item);
+        if (ActividadRegistros.arregloRegistro == null)
+            return;
 
+        if (ActividadRegistros.adaptador == null)
+            return;;
+
+
+        /*
+        ItemRegistro item = ActividadRegistros.item(coordenada);
+
+        ActividadRegistros.adaptador.add(item);
+        //ActividadRegistros.agregar(coordenada);
+
+        ActividadRegistros.adaptador.notifyDataSetChanged();
+
+        */
+
+        // no funciona
+        //ActividadRegistros.actualizar();
 
     }
 

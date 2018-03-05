@@ -12,8 +12,9 @@
     <string name="intervalo_actividad">Intervalo de Actividad (en minutos)</string>
     <string name="sms">SMS</string>
     <string name="id_telegram">Chat_ID Telegram</string>
-    
-    <string name="rastreo">Rastreo (Envia Mensajes)</string>
+    <string name="rastreo">Rastreo (Envía Mensajes)</string>
+
+	<string name="errorValidacion">Hay un error con los datos ingresados</string>
 
 
 	
@@ -29,21 +30,21 @@
 
 
 
-    <string name="configuracion">Configuracion</string>
+    <string name="configuracion">Configuración</string>
     <string name="opciones">Opciones</string>
     <string name="guardar">Guardar</string>
     <string name="cancelar">Cancelar</string>
     <string name="editar">Editar</string>
     <string name="registros">Registros</string>
-    <string name="cerrar_sesion">Cerrar Sesion</string>
+    <string name="cerrar_sesion">Cerrar Sesión</string>
     <string name="salir">Salir</string>
 
 	
 	
 	
-    <string name="txt_servicio_activo">¡Bien! La aplicacion esta Activada :-)</string>
-    <string name="txt_servicio_inactivo">La aplicacion esta desactivada, pulsa el boton para activarla</string>
-    <string name="txt_bloqueado">En este momento la aplicacion esta bloqueada</string>
+    <string name="txt_servicio_activo">¡Bien! La aplicación esta Activada :-)</string>
+    <string name="txt_servicio_inactivo">La aplicación esta desactivada, pulsa el botón para activarla</string>
+    <string name="txt_bloqueado">En este momento la aplicación esta bloqueada</string>
 
 	<string name="activar_aplicacion">¡Seguime!</string>
     <string name="desactivar_aplicacion">No me Sigas</string>
@@ -59,17 +60,17 @@
 	
 	
 	
-    <string name="iniciarsesion">Iniciar Sesion</string>
+    <string name="iniciarsesion">Iniciar Sesión</string>
 	<string name="registrarse">Registrarse</string>
 	<string name="repetirclave">Repita la clave</string>
 	
 	
 	
 	<string name="conectando">Conectando...</string>
-	<string name="errorconexion">Error en la conexion</string>
+	<string name="errorconexion">Error en la conexión</string>
 	<string name="enviando">Enviando datos....</string>
 	<string name="recibiendo">Recibiendo datos...</string>
-	<string name="conexionfinalizada">Conexion correcta.</string>
+	<string name="conexionfinalizada">Conexión correcta… pero no paso nada.</string>
 
 	
 	
@@ -77,8 +78,8 @@
 	
 	
     <string name="txt_ayuda_descripcion">
-        Esta aplicacion envia informacion de posicionamiento global (y puede que otro tipo de informacion, como velocidad) a un servidor. \n
-        La caracteristica de uso de bots de Telegram depende del servidor \n
+        Esta aplicación envía información de posicionamiento global (y puede que otro tipo de información, como velocidad) a un servidor. \n
+        La característica de uso de bots de Telegram depende del servidor \n
     </string>
 
     <string name="txt_licencia">
@@ -100,8 +101,8 @@
 	<string name="dona">Hace una Donacion :)</string>
 	<string name="sitioweb">Ir al Sitio Web</string>
     <string name="txt_donacion">
-        Si te gusta la Aplicacion podes colaborar con una donacion.\n
-        Recorda que esta Aplicacion no posee publicidad, ni patrocinador, ni rastreadores, por lo tanto depende unicamente de la colaboracion de los usuarios.
+        Si te gusta la Aplicación podes colaborar con una donación.\n
+        Recordá que esta Aplicación no posee publicidad, ni patrocinador, ni rastreadores, por lo tanto depende unicamente de la colaboración de los usuarios.
 
     </string>
 	
@@ -110,26 +111,26 @@
 		\n
 		
         SMS: \n
-		Es un numero de telefono que podes elegir para que la aplicacion envie coordenadas por SMS. \n
-		Solo se enviara SMS si la opcion de Rastreo esta habilitado. \n
-		Para evitar gastos te recomiendo NO USAR ESTA OPCION si estas usando el servidor de Seguime, usa UNICAMENTE esta opcion si estas usando tu propio servidor, o un servidor seguro \n
+		Es un numero de teléfono que podes elegir para que la aplicación envíe coordenadas por SMS. \n
+		Solo se enviara SMS si la opción de Rastreo esta habilitado. \n
+		Para evitar gastos te recomiendo NO USAR ESTA OPCIÓN si estas usando el servidor de Seguime, usa UNICAMENTE esta opción si estas usando tu propio servidor, o un servidor seguro \n
 		\n
 		Telegram ID: \n
-		Es un numero identificador de Telegram, NO ES LA @ID_USUARIO, para utilizar esta opcion visita el bot @seguimebot y saludalo, te dara tu numero de ID, luego con ese numero el bot podra enviar coordenadas a esa cuenta de Telegram. \n
+		Es un numero identificador de Telegram, NO ES LA @ID_USUARIO, para utilizar esta opción visita el bot @seguimebot y saludalo, te dará tu numero de ID, luego con ese numero el bot podrá enviar coordenadas a esa cuenta de Telegram. \n
 		\n
 		Intervalo de Actividad: \n
-		Durante este periodo la Aplicacion estara funcionando completamente, localizando coordenadas y realizando conexiones a internet, un valor muy pequeño puede que no logre obtener coordenadas si tenes poca cobertura GPS, un valor muy alto puede consumir mucha bateria   \n
-		Para que la aplicacion este constantemente encendida (y no por intervalos de tiempo) configura cualquier intervalo de tiempo a 0 (cero) \n
+		Durante este periodo la Aplicación estará funcionando completamente, localizando coordenadas y realizando conexiones a internet, un valor muy pequeño puede que no logre obtener coordenadas si tenes poca cobertura GPS, un valor muy alto puede consumir mucha batería   \n
+		Para que la aplicación este constantemente encendida (y no por intervalos de tiempo) configura cualquier intervalo de tiempo a 0 (cero) \n
 		 \n
 		 Intervalo de Inactividad: \n
-		 Durante este periodo la Aplicacion estara descansando, no realizara conexiones a internet ni localizara coordenadas, un descanso sirve para ahorrar bateria, un valor muy pequeño puede que consuma mucha bateria, un valor muy alto entorpecera la finalidad de la aplicacion \n
-		 Para que la aplicacion este constantemente encendida (y no por intervalos de tiempo) configura cualquier intervalo de tiempo a 0 (cero) \n
+		 Durante este periodo la Aplicación estará descansando, no realizara conexiones a Internet ni localizara coordenadas, un descanso sirve para ahorrar batería, un valor muy pequeño puede que consuma mucha batería, un valor muy alto entorpecerá la finalidad de la aplicación \n
+		 Para que la aplicación este constantemente encendida (y no por intervalos de tiempo) configura cualquier intervalo de tiempo a 0 (cero) \n
 		  \n
 		 Rastreo:\n
-		 Cuando esta opcion esta habilitada la aplicacion enviara mensajes por Telegram y SMS cada vez que encuentre una nueva coordenada. Esta opcion se puede habilitar desde el sitio web por lo tanto por tu seguridad y para evitar gastos no configures SMS a menos que estes usando un servidor propio \n
+		 Cuando esta opción esta habilitada la aplicación enviara mensajes por Telegram y SMS cada vez que encuentre una nueva coordenada. Esta opción se puede habilitar desde el sitio web por lo tanto por tu seguridad y para evitar gastos no configures SMS a menos que estés usando un servidor propio \n
 		 \n
 		\n
-		Espero te sea util esta ayuda :)
+		Espero te sea útil esta ayuda :)
 		\n
 		\n
 		\n
@@ -142,4 +143,3 @@
     
 
 </resources>
-

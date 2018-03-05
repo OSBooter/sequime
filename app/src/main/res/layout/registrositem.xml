@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10sp"
 
     >
 
@@ -9,31 +11,54 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:text="@string/fechahora"
-            android:id="@+id/registros_fecha"
 
-            android:layout_span="3"
+            android:text="@string/fechahora"
+            android:layout_marginRight="5sp"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="00:00 01-01-2018"
+            android:id="@+id/registros_fechahora"
             />
         </TableRow>
+
+
     <TableRow>
     <TextView
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/registros_latitud"
         android:text="@string/latitud"
-        android:layout_marginRight="2sp"
         />
 
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/registros_latitud"
+            android:text="0.0000000"
+            />
+
+    </TableRow>
+    <TableRow>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/registros_longitud"
+
         android:text="@string/longitud"
-        android:layout_toRightOf="@+id/registros_divisor"
+
         android:layout_marginRight="2sp"
         />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/registros_longitud"
+            android:text="0.0000000"
+
+            android:layout_marginRight="2sp"
+            />
 
         </TableRow>
     <TableRow>
@@ -44,7 +69,8 @@
         android:id="@+id/registros_extra"
         android:layout_below="@+id/registros_latitud"
 
-        android:layout_span="3"
+        android:layout_span="2"
+        android:layout_marginRight="2sp"
         />
 
 

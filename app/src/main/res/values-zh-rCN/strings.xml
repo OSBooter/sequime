@@ -1,0 +1,62 @@
+
+<resources>
+    <string name="app_name">Seguime</string>
+
+	<string name=  "Traducidopor"> Javier (y programitas) </string>
+	
+	<string name=  "servidor">服务器</string>
+	<string name=  "usuario">用户</string>
+	<string name=  "clave">密码</string>
+	<string name=  "intervalo_inactividad">空闲间隔 (分钟)</string>
+	<string name=  "intervalo_actividad">活动间隔 (分钟)</string>
+	<string name=  "sms">SMS</string>
+	<string name=  "id_telegram">Chat_ID Telegram</string>
+
+	<string name=  "rastreo">跟踪 (发送消息)</string>
+
+	<string name=  "latitud">纬度</string>
+	<string name=  "longitud">经度</string>
+	<string name=  "fechahora">日期和时间</string>
+	<string name=  "fecha">日期</string>
+	<string name=  "hora">时间</string>
+	<string name=  "Infoextra">Extra Info</string>
+
+	
+	
+	
+	<string name=  "configuracion">设置</string>
+	<string name=  "opciones">选项</string>
+	<string name=  "guardar">保存</string>
+	<string name=  "cancelar">取消</string>
+	<string name=  "editar">edit</string>
+	<string name=  "registros">记录</string>
+	<string name=  "cerrar_sesion">注销</string>
+	<string name=  "salir">退出</string>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	<string name=  "txt_servicio_activo">应用程序在 :-)</string>
+	<string name=  "txt_servicio_inactivo">应用程序已关闭</string>
+	<string name=  "txt_bloqueado">At this time the application is locked</string>
+
+
+	<string name=  "ayuda">帮助</string>
+	<string name=  "cerrar">关闭</string>
+
+	
+	<string name=  "iniciarsesion">登录</string>
+	<string name=  "registrarse">加盟</string>
+	<string name=  "repetirclave">重复密码</string>
+
+	<string name=  "conectando">Connecting...</string>
+	<string name=  "errorconexion">Connection Error</string>
+	<string name=  "enviano">Sending data....</string>
+	<string name=  "recibiendo">receiving data...</string>
+	<string name=  "conexionfinalizada">correct connection... but nothing happened.</string>
+</resources>

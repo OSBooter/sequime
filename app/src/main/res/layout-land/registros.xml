@@ -6,6 +6,7 @@
 
     android:stretchColumns="0"
 
+
     tools:context="pc.javier.seguime.ActividadRegistros">
 
     <TableRow>

@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class ActividadOpciones extends AppCompatActivity {
 
@@ -44,8 +45,11 @@ public class ActividadOpciones extends AppCompatActivity {
 
 
     public void guardar (View v) {
-        guardarOpciones();
-        this.finish();
+        if (guardarOpciones())
+            this.finish();
+        else
+            Toast.makeText(this, R.string.errorValidacion, Toast.LENGTH_LONG).show();
+
     }
 
 
@@ -68,7 +72,7 @@ public class ActividadOpciones extends AppCompatActivity {
 
     }
 
-    private void guardarOpciones () {
+    private boolean guardarOpciones () {
 
         String activ = Tactividad.getText().toString();
         String inactiv = Tinactividad.getText().toString();
@@ -79,13 +83,15 @@ public class ActividadOpciones extends AppCompatActivity {
                 actividad = Integer.valueOf(activ);
             if (inactiv != "")
                 inactividad = Integer.valueOf(inactiv);
-        } catch (Exception e) {}
+        } catch (Exception e) {
+            return false;
+        }
 
 
         String sms =  Tsms.getText().toString();
         String telegram = Ttelegram.getText().toString();
-        boolean rastreo = false;
-        rastreo = Crastreo.isChecked();
+        boolean rastreo = Crastreo.isChecked();
+
 
 
 
@@ -99,6 +105,7 @@ public class ActividadOpciones extends AppCompatActivity {
 
         editor.putBoolean("rastreo", rastreo);
         editor.commit();
+        return true;
     }
 
 

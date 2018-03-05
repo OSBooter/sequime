@@ -1,66 +1,136 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Seguime</string>
-	
-    <string name="servidor">Server</string>
-    <string name="usuario">User</string>
-    <string name="clave">Password</string>
-    <string name="intervalo_inactividad">Sleeping time</string>
-    <string name="intervalo_actividad">Working time</string>
-    <string name="latitud">Latitude</string>
-    <string name="longitud">Longitude</string>
-    <string name="radio">Radio</string>
-	<string name="rastreo">Track (Send Messages)</string>
-	
-	
-	<string name="fechahora">Date Time</string>
-	<string name="infoextra">Extra Info</string>
-	
-	<string name="sms">SMS</string>
-	<string name="id_telegram">Chat_ID Telegram</string>
+	<string name=  "app_name">Seguime</string>
 
-	
+	<string name=  "Traducidopor"> Javier (y programitas)</string>
 
-    <string name="configuracion">Settings</string>
-    <string name="opciones">Options</string>
-    <string name="guardar">Save</string>
-    <string name="cancelar">Cancel</string>
-    <string name="editar">Edit</string>
-    <string name="registros">Registers</string>
-	<string name="cerrar_sesion">Close Sesion</string>
-	<string name="salir">Exit</string>
-	
-    <string name="txt_servicio_activo">Service is ON</string>
-    <string name="txt_servicio_inactivo">Service is OFF</string>
-    <string name="txt_bloqueado">This app is blocked by user</string>
 
-    <string name="ayuda">Help</string>
-    <string name="cerrar">Close</string>
-		<string name="activar_aplicacion">Seguime ON</string>
-	<string name="desactivar_aplicacion">Seguime OFF</string>
-    
-	
-	<string name="txt_licencia">
-		This program is free software: you can redistribute it and/or modify
-		it under the terms of the GNU General Public License as published by
-		the Free Software Foundation, either version 3 of the License, or
-		(at your option) any later version. \n
+	<string name=  "servidor">server</string>
+	<string name=  "usuario">user</string>
+	<string name=  "clave">password</string>
+	<string name=  "intervalo_inactividad">Idle interval (in minutes)</string>
+	<string name=  "intervalo_actividad">Activity interval (in minutes)</string>
+	<string name=  "sms">SMS</string>
+	<string name=  "id_telegram">Chat_ID Telegram</string>
 
-		This program is distributed in the hope that it will be useful,
-		but WITHOUT ANY WARRANTY; without even the implied warranty of
-		MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-		GNU General Public License for more details. \n
+	<string name=  "rastreo">Tracking (send messages)</string>
 
-		You should have received a copy of the GNU General Public License
-		along with this program.  If not, see http://www.gnu.org/licenses/ \n
-
-    </string>
-	
-	<string name="txt_zonasegura">This need to be translated</string>
-    <string name="nombre_zona">Name</string>
+	<string name=  "latitud">latitude</string>
+	<string name=  "longitud">longitude</string>
+	<string name=  "fechahora">Date and Time</string>
+	<string name=  "fecha">date</string>
+	<string name=  "hora">time</string>
+	<string name=  "Infoextra">Extra Info</string>
 
 	
 	
-    
-    
+	
+	<string name=  "configuracion">settings</string>
+	<string name=  "opciones">options</string>
+	<string name=  "guardar">Save</string>
+	<string name=  "cancelar">Cancel</string>
+	<string name=  "editar">edit</string>
+	<string name=  "registros">Records</string>
+	<string name=  "cerrar_sesion">logoff</string>
+	<string name=  "salir">exit</string>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	<string name=  "txt_servicio_activo">ok! The application is enabled:-)</string>
+	<string name=  "txt_servicio_inactivo">The application is disabled, press the button to activate it</string>
+	<string name=  "txt_bloqueado">At this time the application is locked</string>
+
+	<string name=  "activar_aplicacion">¡Seguime!</string>
+	<string name=  "desactivar_aplicacion">No me sigas</string>
+
+	<string name=  "ayuda">Help</string>
+	<string name=  "cerrar">close</string>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	<string name=  "iniciarsesion">login</string>
+	<string name=  "registrarse">join in</string>
+	<string name=  "repetirclave">Repeat password</string>
+
+	<string name=  "conectando">Connecting...</string>
+	<string name=  "errorconexion">Connection Error</string>
+	<string name=  "enviano">Sending data....</string>
+	<string name=  "recibiendo">receiving data...</string>
+	<string name=  "conexionfinalizada">correct connection... but nothing happened.</string>
+
+	<string name=  "txt_ayuda_descripcion">This application sends Global positioning information (and maybe other information, such as speed) to a server. \\n
+	The Telegram bot usage feature depends on the server 
+	</string>
+
+	<string name=  "txt_licencia">This program is free software: You can redistribute it and/or modify
+	It under the terms of the GNU General Public License as published by
+	The Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version. \n
+
+	This program is distributed in the hope that it will be useful,
+	But WITHOUT ANY warranty; Without even the implied warranty of
+	MERCHANTABILITY or FITNESS for A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details. \n
+
+	You should have received a copy of the GNU General Public License
+	Along with this program. If not, see http://www.gnu.org/licenses/
+	</string>
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<string name=  "dona">Make a donation:)</string>
+	<string name=  "website">go to Web site</string>
+	<string name=  "txt_donacion">If you like the application you can collaborate with a donation. \n
+	Remember that this application has no publicity, no sponsor, no trackers, so it depends solely on the collaboration of users.
+
+	</string>
+
+	<string name=  "txt_ayuda_opciones">You will see that it is not so so complicated, you have the following options: \n
+	\n
+
+	SMS: \n
+	It is a phone number that you can choose for the application to send coordinates by SMS. \n
+	SMS will only be sent if the tracking option is enabled. \n
+	To avoid expenses I recommend not using this option if you are using the Seguime server, use this option only if you are using your own server, or a secure server \n
+	\n
+	Telegram ID: \n
+	is a number identifier of Telegram, is not the @ID_USUARIO, to use this option visit the bot @seguimebot and greet it, will give you your ID number, then with that number the bot can send coordinates to that account Telegram. \n
+	\n
+	Activity range: \n
+	During this period the application will be working completely, locating coordinates and making connections to Internet, a very small value may not achieve coordinates if you have little GPS coverage, a very high value can consume a lot of battery \n
+	For the application to be constantly on (and not for time intervals) set any time interval to 0 (zero) \n
+	\n
+	Idle interval: \n
+	During this period the application will be resting, do not make Internet connections or locate coordinates, a rest is used to save battery, a very small value may consume a lot of battery, a very high value will hinder the purpose of the Application \n
+	For the application to be constantly on (and not for time intervals) set any time interval to 0 (zero) \n
+	\n
+	Tracking: \n
+	When this option is enabled the application will send messages by Telegram and SMS each time you find a new coordinate. This option can be enabled from the Web site therefore for your security and to avoid expenses do not configure SMS unless you are using your own server \n
+	\n
+	\n
+	I hope you can use this help
+	\n
+	\n
+	\n
+
+	</string>
+
 </resources>

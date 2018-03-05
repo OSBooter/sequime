@@ -26,7 +26,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text = "Seguime \n Version 0.2"
+                android:text = "Seguime \n Versión 0.3"
                 android:id="@+id/version"
                 android:textAlignment="center"
                 />
