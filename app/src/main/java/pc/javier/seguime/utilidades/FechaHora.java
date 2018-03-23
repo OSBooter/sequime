@@ -8,7 +8,7 @@ import java.util.Date;
  * Created by javier on 26/11/2016.
  * Permite obtener fechas y horas actuales
  */
-public class FechaHora {
+public abstract class FechaHora {
 
 
 

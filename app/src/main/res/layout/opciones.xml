@@ -25,9 +25,14 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/opciones_sms"
                     android:inputType="phone"
+                    android:background="@drawable/borderedondeado"
+                    android:padding="10sp"
+                    android:layout_margin="2sp"
                     />
 
-
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
 
                 <TextView
                     android:layout_width="match_parent"
@@ -41,6 +46,9 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/opciones_telegram"
                     android:inputType="textUri"
+                    android:background="@drawable/borderedondeado"
+                    android:padding="10sp"
+                    android:layout_margin="2sp"
                     />
 
 
@@ -63,15 +71,21 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/opciones_actividad"
                     android:inputType="number"
+                    android:background="@drawable/borderedondeado"
+                    android:padding="10sp"
+                    android:layout_margin="2sp"
 
                     />
 
-
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="5dp" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/intervalo_inactividad"
+
                     />
 
 
@@ -81,6 +95,9 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/opciones_inactividad"
                     android:inputType="number"
+                    android:background="@drawable/borderedondeado"
+                    android:padding="10sp"
+                    android:layout_margin="2sp"
                     />
 
 
@@ -90,9 +107,14 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/opciones_rastreo"
                     android:text = "@string/rastreo"
+                    android:padding="10sp"
+                    android:layout_margin="2sp"
+
                     />
 
-
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="10dp" />
 
         </LinearLayout>
 
@@ -108,12 +130,19 @@
                 android:layout_height="wrap_content"
                 android:text="@string/guardar"
                 android:onClick="guardar"
+                android:background="@drawable/botonredondeado"
+                android:textColor="@android:color/white"
+                android:layout_margin="2sp"
                 />
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="cancelar"
-                android:text="@string/cancelar"/>
+                android:text="@string/cancelar"
+                android:background="@drawable/botonredondeadorojo"
+                android:textColor="@android:color/white"
+                android:layout_margin="2sp"
+                />
 
         </TableRow>
     </TableLayout>

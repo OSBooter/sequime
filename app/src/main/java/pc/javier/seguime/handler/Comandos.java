@@ -1,27 +1,22 @@
 package pc.javier.seguime.handler;
 
 
-import android.app.Activity;
-import android.app.ActivityManager;
-import android.content.ComponentName;
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import pc.javier.seguime.ActividadRegistros;
-import pc.javier.seguime.ActividadSesion;
 import pc.javier.seguime.R;
 import pc.javier.seguime.interfaz.Aplicacion;
 import pc.javier.seguime.interfaz.BD;
+import pc.javier.seguime.utilidades.Boton;
 import pc.javier.seguime.utilidades.ItemRegistro;
 
 /**
@@ -83,7 +78,7 @@ public class Comandos implements Handler.Callback {
                     textView.setText(R.string.conexionfinalizada);
                 button = (Button) activityHandler.findViewById(R.id.session_iniciar);
                 if (button != null)
-                    button.setEnabled(true);
+                    Boton.Estado(button, true);
                 break;
 
             case "error":
@@ -93,7 +88,8 @@ public class Comandos implements Handler.Callback {
 
                 button = (Button) activityHandler.findViewById(R.id.session_iniciar);
                 if (button != null)
-                    button.setEnabled(true);
+                    Boton.Estado(button, true);
+
 
                 textView = (TextView) activityHandler.findViewById(R.id.sesion_estado);
                 if (textView != null)
@@ -134,11 +130,25 @@ public class Comandos implements Handler.Callback {
                 if (ActividadRegistros.adaptador == null)
                     return;;
 
+
+                ListView listView = (ListView) activityHandler.findViewById(R.id.registros_lista);
+                if (listView == null)
+                    return;
+
+
+
+
+
+
                 mensajeLog("entramos al handler");
 
                 ItemRegistro item = ActividadRegistros.item(basededatos.coordenadaObtenerUltima());
 
+
+
+
                 ActividadRegistros.adaptador.add(item);
+
                 //ActividadRegistros.agregar(coordenada);
 
                 ActividadRegistros.adaptador.notifyDataSetChanged();

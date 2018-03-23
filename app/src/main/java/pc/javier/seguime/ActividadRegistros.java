@@ -154,6 +154,7 @@ public class ActividadRegistros extends AppCompatActivity {
 
 
         lv.setAdapter(adaptador);
+
     }
 
 
@@ -235,7 +236,7 @@ public class ActividadRegistros extends AppCompatActivity {
         dato.putString("conexion", "actualizarRegistros");
         mensaje.setData(dato);
         // no funciona
-        //handler.sendMessage(mensaje);
+        handler.sendMessage(mensaje);
     }
 
 

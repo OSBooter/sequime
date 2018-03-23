@@ -32,10 +32,18 @@
         android:layout_height="wrap_content"
         android:id="@+id/sesion_servidor"
         android:inputType="textUri"
+        android:background="@drawable/borderedondeado"
+        android:padding="10sp"
+        android:layout_margin="2sp"
+
         />
 
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="10dp" />
 
-    <TextView
+
+        <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/usuario"
@@ -46,6 +54,9 @@
         android:id="@+id/sesion_usuario"
         android:inputType="textUri"
         android:maxLength="12"
+        android:background="@drawable/borderedondeado"
+        android:padding="10sp"
+        android:layout_margin="2sp"
         />
 
 
@@ -60,6 +71,9 @@
         android:id="@+id/sesion_clave"
         android:inputType="textPassword"
         android:maxLength="12"
+        android:background="@drawable/borderedondeado"
+        android:padding="10sp"
+        android:layout_margin="2sp"
         />
 
 
@@ -77,6 +91,9 @@
         android:inputType="textPassword"
         android:visibility="invisible"
         android:maxLength="12"
+        android:background="@drawable/borderedondeado"
+        android:padding="10sp"
+        android:layout_margin="2sp"
         />
 
 
@@ -135,12 +152,21 @@
                 android:text="@string/iniciarsesion"
                 android:onClick="iniciar"
                 android:id="@+id/session_iniciar"
+                android:background="@drawable/botonredondeado"
+                android:textColor="@android:color/white"
+                android:layout_margin="2sp"
+
                 />
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="salir"
-                android:text="@string/salir"/>
+                android:text="@string/salir"
+                android:background="@drawable/botonredondeadorojo"
+                android:textColor="@android:color/white"
+                android:layout_margin="2sp"
+
+                />
 
         </TableRow>
     </TableLayout>

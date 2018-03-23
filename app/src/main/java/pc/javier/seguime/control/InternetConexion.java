@@ -12,6 +12,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
+import javax.net.ssl.HttpsURLConnection;
+
 /**
  * Created by Javier on 14 feb 2018.
  * Conexion a Internet, envia y recibe datos
@@ -27,11 +29,13 @@ public class InternetConexion implements Runnable {
     private String url = "http://javierpc.esy.es/seguime/servicio.php";
     private String parametros = "latitud=0&longitud=0&fecha=2016/1/1 13:15";
     private Handler handler;
+    private boolean ssl = false;
 
     public InternetConexion (String url, String parametros, Handler handler) {
         this.parametros = parametros;
         this.url = url;
         this.handler = handler;
+        //this.ssl = ssl;
     }
 
 
@@ -45,9 +49,13 @@ public class InternetConexion implements Runnable {
 
             URL direccion = new URL(url);
             HttpURLConnection conexion = (HttpURLConnection) direccion.openConnection();
+            //HttpsURLConnection conexion = (HttpsURLConnection) direccion.openConnection();
 
             conexion.setRequestMethod("POST");
+            conexion.setRequestProperty("USER-AGENT", "seguime");
             conexion.setConnectTimeout(1000*20);
+            //conexion.setDoInput(true);
+
 
 
 

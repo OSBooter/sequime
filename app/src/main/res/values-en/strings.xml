@@ -62,6 +62,7 @@
 	<string name=  "iniciarsesion">login</string>
 	<string name=  "registrarse">join in</string>
 	<string name=  "repetirclave">Repeat password</string>
+	<string name="ssl">SSL</string>
 
 	<string name=  "conectando">Connecting...</string>
 	<string name=  "errorconexion">Connection Error</string>

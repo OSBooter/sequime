@@ -2,12 +2,14 @@ package pc.javier.seguime;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.EditText;
@@ -17,6 +19,7 @@ import android.widget.Toast;
 import pc.javier.seguime.handler.Comandos;
 import pc.javier.seguime.interfaz.Aplicacion;
 import pc.javier.seguime.interfaz.Internet;
+import pc.javier.seguime.utilidades.Boton;
 
 /**
  * Created by Javier on 26 dic 2017.
@@ -32,12 +35,14 @@ public class ActividadSesion extends AppCompatActivity {
     EditText TclaveRepetida;
     TextView Testado;
     Button botonIniciarSesion;
-    RadioButton radio;
+    //CheckBox Cssl;
+
 
     String servidor ;
     String usuario ;
     String clave ;
     String claveRepetida;
+    //Boolean ssl;
 
     Handler handler;
 
@@ -51,6 +56,7 @@ public class ActividadSesion extends AppCompatActivity {
         TclaveRepetida = (EditText) findViewById(R.id.sesion_claverepetida);
         TclaveRepetidaTexto = (TextView) findViewById(R.id.sesion_claverepetida_texto);
         Testado= (TextView) findViewById(R.id.sesion_estado);
+        //Cssl = (CheckBox) findViewById(R.id.sesion_ssl);
 
         botonIniciarSesion = (Button) findViewById(R.id.session_iniciar);
 
@@ -70,10 +76,12 @@ public class ActividadSesion extends AppCompatActivity {
         String servidor = preferencias.getString("servidor", "");
         String usuario = preferencias.getString("usuario", "");
         String clave = preferencias.getString("clave", "");
+        Boolean ssl = preferencias.getBoolean("ssl", false);
 
         Tservidor.setText(servidor);
         Tusuario.setText(usuario);
-        //Tclave.setText(clave);
+        //Cssl.setChecked(ssl);
+
     }
 
 
@@ -81,11 +89,13 @@ public class ActividadSesion extends AppCompatActivity {
         servidor = Tservidor.getText().toString();
         usuario = Tusuario.getText().toString();
         clave = Tclave.getText().toString();
+        //ssl = Cssl.isChecked();
 
         SharedPreferences.Editor editor = preferencias.edit();
         editor.putString("servidor", servidor);
         editor.putString("usuario", usuario);
         editor.putString("clave", clave);
+        //editor.putBoolean("ssl", ssl);
         //editor.putBoolean("sesion", true);
         editor.commit();
     }
@@ -141,7 +151,7 @@ public class ActividadSesion extends AppCompatActivity {
         }
 
         // deshabilita el boton asi no se pulsa 90 veces
-        botonIniciarSesion.setEnabled(false);
+        Boton.Estado(botonIniciarSesion, false);
         guardarOpciones();
 
 
@@ -174,6 +184,7 @@ public class ActividadSesion extends AppCompatActivity {
             botonIniciarSesion.setText(R.string.registrarse);
         }
     }
+
 
 
     private void mensajeLog (String texto) {
