@@ -26,3 +26,11 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:0.5'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
 }
+
+
+// librerias OSM
+
+dependencies {
+    compile 'org.osmdroid:osmdroid-android:6.0.1'
+
+}
