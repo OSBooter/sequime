@@ -27,9 +27,8 @@ import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapController;
 import org.osmdroid.views.MapView;
+import org.osmdroid.views.overlay.Marker;
 
-
-import org.osmdroid.bonuspack.overlays.Marker;
 
 import java.util.ArrayList;
 
@@ -106,6 +105,7 @@ public class ActividadRegistros extends AppCompatActivity {
         // ubicamos el marcador en la coordenada
         marca.setPosition(punto);
         // movemos el mapa a la coordenada
+        marca.setTitle("¡hola! todavia no hay puntos para mostrar");
         mapaControlador.animateTo(punto);
         // opcionalmente podemos limpiar el mapa
         mapa.getOverlays().clear();
@@ -116,14 +116,15 @@ public class ActividadRegistros extends AppCompatActivity {
     }
 
     // mueve el marcador a la posicion indicada
-    private void moverMarca (double latitud, double longitud) {
+    private void moverMarca (double latitud, double longitud,String titulo) {
         punto = new GeoPoint(latitud, longitud);
         mapaControlador.animateTo(punto);
         marca.setPosition(punto);
+        marca.setTitle(titulo);
     }
 
-    private void moverMarca (String latitud, String longitud) {
-        moverMarca(Double.parseDouble(latitud), Double.parseDouble(longitud));
+    private void moverMarca (String latitud, String longitud,String titulo) {
+        moverMarca(Double.parseDouble(latitud), Double.parseDouble(longitud), titulo);
     }
 
 
@@ -134,7 +135,7 @@ public class ActividadRegistros extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 ItemRegistro r = (ItemRegistro) adapterView.getItemAtPosition(i);
 
-                moverMarca(r.latitud,r.longitud);
+                moverMarca(r.latitud,r.longitud, FechaHora.fechaHora(String.valueOf(r.fecha)));
 
             }
         });
@@ -188,7 +189,7 @@ public class ActividadRegistros extends AppCompatActivity {
         // mueve la marca a la posicion conocida
 
         if(listaCoordenada.size() >0)
-            moverMarca(listaRegistro[x-1].latitud, listaRegistro[x-1].longitud);
+            moverMarca(listaRegistro[x-1].latitud, listaRegistro[x-1].longitud, listaRegistro[x-1].fecha);
 
 
         return listaRegistro;
@@ -206,7 +207,6 @@ public class ActividadRegistros extends AppCompatActivity {
 
             reg.latitud = coordenada.getLatitud();
             reg.longitud = coordenada.getLongitud();
-            //reg.fecha = R.string.fecha +": " + FechaHora.fechainvertida(coordenada.getFecha()) + R.string.hora + ": " + FechaHora.hora(coordenada.getFecha()) ;
             reg.fecha = coordenada.getFecha() ;
             reg.extra = coordenada.getExtra();
             reg.recibido = coordenada.getRecibido();

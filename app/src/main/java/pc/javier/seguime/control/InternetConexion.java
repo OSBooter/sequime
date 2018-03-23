@@ -54,7 +54,7 @@ public class InternetConexion implements Runnable {
             conexion.setRequestMethod("POST");
             conexion.setRequestProperty("USER-AGENT", "seguime");
             conexion.setConnectTimeout(1000*20);
-            //conexion.setDoInput(true);
+
 
 
 
