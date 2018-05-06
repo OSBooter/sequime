@@ -7,17 +7,28 @@ import android.widget.Button;
 import pc.javier.seguime.R;
 
 /**
- * Created by Usuario NoTeBooK on 21 mar 2018.
+ * Created by Javier on 21 mar 2018.
+ *
+ * cambia colores y estado de botones
  */
 
 public abstract class Boton {
-    //cambia el estado del boton
+    //habilita o deshabilita un boton
     public static void Estado(Button boton, boolean estado) {
         boton.setEnabled(estado);
         if (estado)
             boton.setBackgroundResource(R.drawable.botonredondeado);
         else
             boton.setBackgroundResource(R.drawable.botonredondeadogris);
+    }
 
+
+    public static void color(Button boton, String color) {
+        if (color == "rojo")
+            boton.setBackgroundResource(R.drawable.botonredondeadorojo);
+        if (color == "verde")
+            boton.setBackgroundResource(R.drawable.botonredondeado);
+        if (color == "gris")
+            boton.setBackgroundResource(R.drawable.botonredondeadogris);
     }
 }

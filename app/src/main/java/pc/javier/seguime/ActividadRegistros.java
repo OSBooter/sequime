@@ -5,6 +5,7 @@ import pc.javier.seguime.interfaz.BD;
 import pc.javier.seguime.interfaz.Coordenada;
 import pc.javier.seguime.utilidades.FechaHora;
 import pc.javier.seguime.utilidades.ItemRegistro;
+import pc.javier.seguime.utilidades.Unidades;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -105,7 +106,7 @@ public class ActividadRegistros extends AppCompatActivity {
         // ubicamos el marcador en la coordenada
         marca.setPosition(punto);
         // movemos el mapa a la coordenada
-        marca.setTitle("¡hola! todavia no hay puntos para mostrar");
+        marca.setTitle("¡hola! \r\n todavia no hay puntos para mostrar");
         mapaControlador.animateTo(punto);
         // opcionalmente podemos limpiar el mapa
         mapa.getOverlays().clear();
@@ -134,8 +135,7 @@ public class ActividadRegistros extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 ItemRegistro r = (ItemRegistro) adapterView.getItemAtPosition(i);
-
-                moverMarca(r.latitud,r.longitud, FechaHora.fechaHora(String.valueOf(r.fecha)));
+                moverMarca(r.latitud,r.longitud,FechaHora.hora(r.fecha) + " \r\n" + Unidades.velocidad(r.velocidad));
 
             }
         });
@@ -189,7 +189,8 @@ public class ActividadRegistros extends AppCompatActivity {
         // mueve la marca a la posicion conocida
 
         if(listaCoordenada.size() >0)
-            moverMarca(listaRegistro[x-1].latitud, listaRegistro[x-1].longitud, listaRegistro[x-1].fecha);
+            moverMarca(listaRegistro[x-1].latitud, listaRegistro[x-1].longitud, FechaHora.hora(listaRegistro[x-1].fecha) + " \r\n" + Unidades.velocidad(listaRegistro[x-1].velocidad));
+
 
 
         return listaRegistro;
@@ -209,6 +210,7 @@ public class ActividadRegistros extends AppCompatActivity {
             reg.longitud = coordenada.getLongitud();
             reg.fecha = coordenada.getFecha() ;
             reg.extra = coordenada.getExtra();
+            reg.velocidad= coordenada.getVelocidad();
             reg.recibido = coordenada.getRecibido();
             reg.id = coordenada.getId();
 
@@ -269,7 +271,13 @@ public class ActividadRegistros extends AppCompatActivity {
             longitud.setText(String.valueOf(arregloRegistro[position].longitud));
 
             TextView extra = (TextView) item.findViewById(R.id.registros_extra);
-            extra.append(String.valueOf(arregloRegistro[position].extra));
+            extra.setText(String.valueOf(arregloRegistro[position].extra));
+
+            TextView velocidad = (TextView) item.findViewById(R.id.registros_velocidad);
+            velocidad.setText(String.valueOf(
+                    Unidades.velocidad(arregloRegistro[position].velocidad))
+            );
+            mensajeLog("la velocidad es " + arregloRegistro[position].velocidad);
 
             TextView fecha = (TextView) item.findViewById(R.id.registros_fechahora);
 

@@ -9,6 +9,8 @@ import android.util.Log;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import pc.javier.seguime.interfaz.Aplicacion;
+
 
 // este sevicio controla el tiempo de actividad e inactividad
 // activa y desactiva el serivio "principal"
@@ -18,11 +20,16 @@ public class ServicioTemporizador extends Service {
     private Intent servicio;
 
     private Timer temporizador;
+
+    // lleva la cuenta del temporizador (minutos)
     private int temporizadorContador;
+
+    // fija el valor MAXIMO que debera alcanzar temporizadorContador antes de invertir el estado del servicio
+    // tomara valores de actividad/inactividad segun corresponda en el momento que corresponda
     private int temporizadorLimite;
 
+    // configuraciones
     private SharedPreferences preferencias;
-
     private int actividad;
     private int inactividad;
 
@@ -50,14 +57,13 @@ public class ServicioTemporizador extends Service {
         temporizador = new Timer();
         temporizadorLimite = 0;
 
-
     }
 
 
     @Override
     public void onDestroy() {
-        detener();
-        temporizadorDetener();
+        detenerServicio();
+        detenerTemporizador();
         super.onDestroy();
     }
 
@@ -66,8 +72,8 @@ public class ServicioTemporizador extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         super.onStartCommand(intent, flags, startId);
-        iniciar();
-        temporizadorIniciar();
+        iniciarServicio();
+        iniciarTemporizador();
         return START_STICKY;
     }
 
@@ -76,11 +82,13 @@ public class ServicioTemporizador extends Service {
 
     // reloj interno de este servicio --------------------------------------
 
-    private void temporizadorIniciar () {
+    private void iniciarTemporizador () {
+        // ESTO DEBERA QUITARSE PARA QUE FUNCIONE ALERTAS
         if (temporizadorLimite <= 0 || actividad <= 0 || inactividad <= 0) {
-            mensajeLog ( " no se activara " );
+            mensajeLog ( " no se activara el temporizador (unicamente el servicio principal) " );
             return;
         }
+
         temporizador.scheduleAtFixedRate(
                 new TimerTask() {
                     @Override
@@ -90,13 +98,13 @@ public class ServicioTemporizador extends Service {
                         temporizadorContador = temporizadorContador + 1;
                         if (temporizadorContador > temporizadorLimite) {
                             temporizadorContador = 0;
-                            invertirEstado();
+                            invertirServicio();
                         }
                     }
                 }, 000,1000 * 60 );
     }
 
-    private void temporizadorDetener() {
+    private void detenerTemporizador() {
         temporizador.cancel();
     }
 
@@ -104,25 +112,24 @@ public class ServicioTemporizador extends Service {
 
 
     // cambia de estado entre actividad e inactividad
-    public void invertirEstado() {
+    public void invertirServicio() {
 
         if (activo == true) {
-            if (temporizadorLimite <= 0 || actividad <= 0 || inactividad <= 0) {
-                mensajeLog ( " temporizador sin efecto - el servicio continuara");
-                //temporizadorDetener();
+            if (temporizadorLimite <= 0 || actividad <= 0 || inactividad <= 0 || Aplicacion.alarmaLimite()) {
+                mensajeLog ( " temporizador sin efecto - el servicio continuara activo");
                 return;
             }
-            detener();
+            detenerServicio();
 
         } else {
-            iniciar();
+            iniciarServicio();
         }
     }
 
 
 
     // inicia y detiene el servicio Principal (Aplicacion) ------------------------
-    public void iniciar() {
+    public void iniciarServicio() {
 
         temporizadorContador = 0;
         actividad = preferencias.getInt("actividad", 0);
@@ -133,7 +140,7 @@ public class ServicioTemporizador extends Service {
         mensajeLog ( "INICIADO");
     }
 
-    public void detener () {
+    public void detenerServicio () {
         temporizadorContador = 0;
         temporizadorLimite = inactividad;
         stopService(servicio);

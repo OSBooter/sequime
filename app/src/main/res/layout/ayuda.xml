@@ -22,11 +22,10 @@
 
 
 
-
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text = "Seguime \n Versión 0.4"
+                android:text = "Seguime \n Versión 0.6"
                 android:id="@+id/version"
                 android:textAlignment="center"
                 />
@@ -90,6 +89,13 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:text="@string/txt_advertencia_proyecto"
+                android:textColor="#ff0000"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:text="@string/txt_ayuda_descripcion"
                 android:id="@+id/ayuda_descripcion"
                 />
@@ -101,6 +107,13 @@
                 android:id="@+id/ayuda_licencia"
                 />
 
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_firma"
+                android:id="@+id/ayuda_firma"
+                />
 
 
 

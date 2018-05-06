@@ -24,6 +24,7 @@
         android:background="@android:color/holo_orange_dark"
         android:onClick="cerrarMensaje"
         android:textSize="20sp"
+        android:layout_margin="10sp"
         android:text="" />
 
 
@@ -48,15 +49,76 @@
 
         ></Button>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=" "
-        android:id="@+id/princ_estado"
 
-        android:layout_centerHorizontal="true"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:layout_alignParentBottom="true"
-        />
+        >
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+
+            android:layout_margin="30sp"
+            android:stretchColumns="0,1,2,3,4,5,6"
+            >
+            <TableRow>
+                <ImageView
+                    android:layout_width="30sp"
+                    android:layout_height="30sp"
+                    android:src="@drawable/iconopata"
+                    android:id="@+id/princ_iconorastreo"
+                    android:onClick="clickrastreo"
+
+                />
+                <ImageView
+                    android:layout_width="30sp"
+                    android:layout_height="30sp"
+                    android:src="@drawable/iconogps"
+                    android:id="@+id/princ_iconoseguime"
+                    android:onClick="clickseguime"
+                    />
+                <ImageView
+                    android:layout_width="30sp"
+                    android:layout_height="30sp"
+                    android:src="@drawable/iconotierra"
+                    android:id="@+id/princ_iconointernet"
+                    android:onClick="clickinternet"
+                    android:visibility="invisible"
+                    />
+                <ImageView
+                    android:layout_width="30sp"
+                    android:layout_height="30sp"
+                    android:src="@drawable/iconocronometro"
+                    android:id="@+id/princ_iconotemporizador"
+                    android:onClick="clickalarma"
+                    />
+                <ImageView
+                    android:layout_width="30sp"
+                    android:layout_height="30sp"
+                    android:src="@drawable/icononube"
+                    android:id="@+id/princ_iconotemporizadorservidor"
+                    android:onClick="clickalarmaservidor"
+                    android:visibility="invisible"
+                    />
+
+            </TableRow>
+        </TableLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" "
+            android:id="@+id/princ_estado"
+            android:layout_margin="10sp"
+            android:layout_centerHorizontal="true"
+
+
+            />
+    </LinearLayout>
 
 
 

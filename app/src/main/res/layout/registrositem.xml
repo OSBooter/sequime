@@ -21,6 +21,7 @@
             android:layout_height="wrap_content"
             android:text="00:00 01-01-2018"
             android:id="@+id/registros_fechahora"
+            android:textStyle="bold"
             />
         </TableRow>
 
@@ -61,10 +62,31 @@
             />
 
         </TableRow>
+
+    <TableRow>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="@string/velocidad"
+
+            android:layout_marginRight="2sp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/registros_velocidad"
+            android:text="0.0 km/h"
+
+            android:layout_marginRight="2sp"
+            />
+
+    </TableRow>
+
     <TableRow>
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0px"
         android:text="@string/infoextra"
         android:id="@+id/registros_extra"
         android:layout_below="@+id/registros_latitud"

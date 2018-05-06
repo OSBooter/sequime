@@ -12,6 +12,7 @@ import android.widget.Toast;
 import pc.javier.seguime.R;
 import pc.javier.seguime.control.ServicioTemporizador;
 import pc.javier.seguime.handler.Comandos;
+import pc.javier.seguime.utilidades.FechaHora;
 
 import java.util.List;
 
@@ -34,6 +35,7 @@ public class Aplicacion {
     public static AppCompatActivity actividadSesion;
     public static AppCompatActivity actividadRegistros;
     public static AppCompatActivity actividadAyuda;
+    public static AppCompatActivity actividadRegresiva;
 
     public static Context contexto;
     public static Handler handler;
@@ -92,6 +94,8 @@ public class Aplicacion {
     // Pone en marcha la aplicacion (Servicios)
     public void iniciarServicio() {
         mensajeLog ( "Iniciando Servicio");
+        if (servicioActivo())
+            return;
         contexto.startService(servicio);
     }
 
@@ -102,9 +106,15 @@ public class Aplicacion {
             return;
         }
 
+        if (alarmaExiste()) {
+            Toast.makeText(contexto, R.string.txt_bloqueado_alarma, Toast.LENGTH_LONG).show();
+            return;
+        }
+
         contexto.stopService(servicio);
         mensajeLog ("Deteniendo Servicio");
     }
+
 
 
 
@@ -166,6 +176,73 @@ public class Aplicacion {
 
 
 
+    public static void preferenciaCadena (String opcion, String valor) {
+        SharedPreferences.Editor editor = preferencias.edit();
+        editor.putString(opcion, valor);
+        editor.commit();
+    }
+    public static String preferenciaCadena (String opcion) {
+        return preferencias.getString(opcion,"");
+    }
+
+
+    public static void preferenciaBooleano (String opcion, boolean valor) {
+        SharedPreferences.Editor editor = preferencias.edit();
+        editor.putBoolean(opcion, valor);
+        editor.commit();
+    }
+    public static boolean preferenciaBooleano (String opcion) {
+        return preferencias.getBoolean(opcion,false);
+    }
+
+
+
+    // verifica si el temporizador existe y llego al final
+    public static boolean alarmaLimite() {
+        String temporizador = preferencias.getString("alarma", "");
+        if (temporizador == "")
+            return false;
+        long intervalo = FechaHora.intervalo(temporizador);
+        if (intervalo <= 0)
+            return true;
+        return false;
+    }
+
+    public static String alarma() {
+        return  preferencias.getString("alarma", "");
+    }
+    public static void alarma(String valor) {
+        SharedPreferences.Editor editor = preferencias.edit();
+        editor.putString("alarma", valor);
+        editor.commit();
+    }
+    public static boolean alarmaExiste() {
+        return (preferencias.getString("alarma", "")!="");
+    }
+
+
+    // copia de la alarma en el servidor
+
+    public static String alarmaServidor() {
+        return  preferencias.getString("alarmaservidor", "");
+    }
+    public static void alarmaServidor(String valor) {
+        SharedPreferences.Editor editor = preferencias.edit();
+        editor.putString("alarmaservidor", valor);
+        editor.commit();
+    }
+
+
+    // preferencias
+
+    public static boolean rastreo (){
+        return preferencias.getBoolean("rastreo", false);
+    }
+    public static void rastreo (boolean valor){
+        SharedPreferences.Editor editor = preferencias.edit();
+        editor.putBoolean("rastreo", valor);
+        editor.commit();
+    }
 
 
     private void mensajeLog (String texto) {

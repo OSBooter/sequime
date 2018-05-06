@@ -26,11 +26,13 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import pc.javier.seguime.interfaz.Aplicacion;
+import pc.javier.seguime.utilidades.Parametro;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -42,14 +44,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         iniciarAplicacion();
-        mostrarBoton();
+
     }
 
 
 
+    @Override
     protected void onResume () {
         super.onResume();
         regresarAplicacion();
+        mostrarBoton();
+        mostrarIconos();
     }
 
 
@@ -67,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected (MenuItem item) {
         if (aplicacion.estaBloqueado()) {
-            Toast.makeText(MainActivity.this, R.string.txt_bloqueado, Toast.LENGTH_SHORT).show();
+            Toast.makeText(MainActivity.this, R.string.txt_bloqueado, Toast.LENGTH_LONG).show();
             return true;
         }
         int id = item.getItemId();
@@ -86,6 +91,12 @@ public class MainActivity extends AppCompatActivity {
                 i = new Intent(this, ActividadRegistros.class);
                 startActivity(i);
                 break;
+
+            case R.id.menu_cuentaregresiva:
+                i = new Intent(this, ActividadRegresiva.class);
+                startActivity(i);
+                break;
+
 
 
             case R.id.menu_salir:
@@ -114,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
         mostrarBoton();
+        mostrarIconos();
     }
 
 
@@ -159,6 +171,7 @@ public class MainActivity extends AppCompatActivity {
     private void iniciarAplicacion () {
         aplicacion = new Aplicacion(getApplicationContext(), this);
 
+        Parametro.aplicacion = aplicacion;
 
          //PRUEBA        pruebaInternet ();
 
@@ -168,6 +181,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     // cuando vuelve la aplicacion (onResume)
+    // refresca la pantalla
     private void regresarAplicacion () {
         //aplicacion.cargarConfiguracion();
 
@@ -207,6 +221,50 @@ public class MainActivity extends AppCompatActivity {
         t.setText("");
     }
 
+
+
+
+
+    // muestra iconos
+    private void mostrarIconos () {
+        // muestra icono de rastreo activo
+        ImageView rastreo = (ImageView)findViewById(R.id.princ_iconorastreo);
+        if (Aplicacion.rastreo())
+            rastreo.setVisibility(View.VISIBLE);
+        else
+            rastreo.setVisibility(View.INVISIBLE);
+
+        ImageView alarma = (ImageView)findViewById(R.id.princ_iconotemporizador);
+        if (Aplicacion.alarmaExiste())
+            alarma.setVisibility(View.VISIBLE);
+        else
+            alarma.setVisibility(View.INVISIBLE);
+
+        ImageView seguime = (ImageView)findViewById(R.id.princ_iconoseguime);
+        if (aplicacion.servicioActivo())
+            seguime.setVisibility(View.VISIBLE);
+        else
+            seguime.setVisibility(View.INVISIBLE);
+
+    }
+
+    // clicks en iconos
+
+    public void clickrastreo (View v) {
+        Toast.makeText(MainActivity.this, R.string.principal_rastreo, Toast.LENGTH_LONG).show();
+    }
+    public void clickseguime (View v) {
+        Toast.makeText(MainActivity.this, R.string.principal_aplicacion, Toast.LENGTH_LONG).show();
+    }
+    public void clickalarma (View v) {
+        Toast.makeText(MainActivity.this, R.string.principal_alarma, Toast.LENGTH_LONG).show();
+    }
+    public void clickinternet (View v) {
+        Toast.makeText(MainActivity.this, R.string.principal_internet, Toast.LENGTH_LONG).show();
+    }
+    public void clickalarmaservidor (View v) {
+        Toast.makeText(MainActivity.this, R.string.principal_alarmaservidor, Toast.LENGTH_LONG).show();
+    }
 
 
 

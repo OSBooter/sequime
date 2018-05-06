@@ -8,15 +8,17 @@ public class ItemRegistro {
     public String longitud;
     public String fecha;
     public String extra;
+    public String velocidad;
     public int enviado;
     public int recibido;
     public int id;
 
-    public ItemRegistro (String registros_latitud, String registros_longitud, String fecha, String extra) {
+    public ItemRegistro (String registros_latitud, String registros_longitud, String fecha,String velocidad, String extra) {
         this.latitud = registros_latitud;
         this.longitud = registros_longitud;
         this.fecha= fecha;
         this.extra = extra;
+        this.velocidad = velocidad;
         enviado = 0;
         recibido =0;
     }
@@ -43,6 +45,7 @@ public class ItemRegistro {
         this.extra = "sin informacion extra";
         enviado = 0;
         recibido=0;
+        velocidad= "0";
     }
 
 }

@@ -12,6 +12,7 @@ public class Coordenada  {
     private String longitud;
     private String fecha;
     private String extra;
+    private String velocidad;
     private int id;
     private int recibido;
 
@@ -20,20 +21,22 @@ public class Coordenada  {
         recibido=0;
     }
 
-    public Coordenada (String fecha, String latitud, String longitud, String extra) {
+    public Coordenada (String fecha, String latitud, String longitud, String velocidad, String extra) {
         this.fecha = fecha;
         this.latitud = latitud;
         this.longitud = longitud;
         this.extra = extra;
+        this.velocidad = velocidad;
         id = -1;
         recibido=0;
     }
 
-    public Coordenada (String fecha, double latitud, double longitud, String extra) {
+    public Coordenada (String fecha, double latitud, double longitud, String velocidad, String extra) {
         this.fecha = fecha;
         this.latitud = String.valueOf(latitud);
         this.longitud = String.valueOf(longitud);
         this.extra = extra;
+        this.velocidad=velocidad;
         id = -1;
         recibido=0;
     }
@@ -57,11 +60,17 @@ public class Coordenada  {
         return extra;
     }
 
+    public String getVelocidad() {
+        return velocidad;
+    }
+
     public int getId() { return id; }
 
     public int getRecibido () { return recibido; }
 
     public void setId (int id) { this.id = id; }
+
+    public void setVelocidad (String velocidad) { this.velocidad = velocidad; }
 
     public void setRecibido (int valor) {recibido = valor; }
 

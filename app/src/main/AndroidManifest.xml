@@ -9,6 +9,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
 
     <application
         android:allowBackup="true"
@@ -25,25 +26,41 @@
         </activity>
         <activity
             android:name=".ActividadAyuda"
-            android:label="Ayuda"
+            android:label="@string/ayuda"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".ActividadAyudaOpciones"
-            android:label="Ayuda"
+            android:label="@string/ayuda"
             android:parentActivityName=".ActividadOpciones" />
+        <activity
+            android:name=".ActividadAyudaRegresiva"
+            android:label="@string/ayuda"
+            android:parentActivityName=".ActividadRegresiva" />
+
+        <activity
+            android:name=".ActividadContactos"
+            android:label="@string/contactos"
+             />
+
 
         <activity
             android:name=".ActividadOpciones"
-            android:label="Opciones"
+            android:label="@string/opciones"
             android:parentActivityName=".MainActivity" />
         <activity
             android:name=".ActividadRegistros"
-            android:label="Registros"
+            android:label="@string/registros"
+            android:parentActivityName=".MainActivity"
+            />
+
+        <activity
+            android:name=".ActividadRegresiva"
+            android:label="@string/alarma"
             android:parentActivityName=".MainActivity"
             />
 
         <activity android:name=".ActividadSesion"
-            android:label="Iniciar Sesion"
+            android:label="@string/iniciarsesion"
             android:parentActivityName=".MainActivity"
             />
 

@@ -3,7 +3,10 @@ package pc.javier.seguime.control;
 import android.app.Service;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Bundle;
+import android.os.Handler;
 import android.os.IBinder;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.util.Log;
 
@@ -15,6 +18,7 @@ import pc.javier.seguime.interfaz.Aplicacion;
 import pc.javier.seguime.interfaz.BD;
 import pc.javier.seguime.interfaz.Coordenada;
 import pc.javier.seguime.interfaz.GestorCoordenadas;
+import pc.javier.seguime.interfaz.GestorDatos;
 
 
 /**
@@ -34,6 +38,8 @@ public class Servicio extends   Service  {
     private GestorCoordenadas gestor;
     private GestorCoordenadas gestorTemporizador;
 
+    private Timer temporizadorAlarma;
+    private GestorDatos alarma;
 
     @Nullable
     @Override
@@ -79,6 +85,9 @@ public class Servicio extends   Service  {
         // reloj que envia datos por internet
         temporizadorInternet = new Timer();
 
+        // reloj que comprueba alarmas
+        temporizadorAlarma = new Timer();
+
         mensajeLog ( "Servicio Creado");
 
         Aplicacion.basededatos = basededatos;
@@ -117,6 +126,9 @@ public class Servicio extends   Service  {
         // inicia el temporizador que envia datos por internet
         temporizadorInternetIniciar();
 
+        // inicia temporizador de alarmas
+        temporizadorAlarmaIniciar();
+
         mensajeLog ( "INICIADO");
     }
 
@@ -126,6 +138,7 @@ public class Servicio extends   Service  {
         posicion.deleteObservers();
         basededatos.cerrar();
         temporizadorInternetDetener();
+        temporizadorAlarmaDetener();
         gestor = null;
         mensajeLog ( "DETENIDO");
     }
@@ -136,6 +149,7 @@ public class Servicio extends   Service  {
 
 
 
+    // ALARMA ---------------------------------
 
     private void temporizadorInternetIniciar () {
 
@@ -146,6 +160,8 @@ public class Servicio extends   Service  {
 
                         mensajeLog ( " Enviando coordenadas almacenadas" );
                         ArrayList<Coordenada> lista = basededatos.coordenadaObtenerNuevas("5");
+                        alarma = new GestorDatos();
+                        alarma.enviarAlarma();
                         if (lista.size()>0)
                             for (Coordenada coordenada : lista) {
                                 gestorTemporizador.setCoordenada(coordenada);
@@ -153,6 +169,7 @@ public class Servicio extends   Service  {
                             }
                         else
                             gestorTemporizador.enviarNada();
+
                     }
                 }, 3000, 1000 * 60 * actualizacion);
     }
@@ -160,6 +177,79 @@ public class Servicio extends   Service  {
     private void temporizadorInternetDetener () {
         temporizadorInternet.cancel();
     }
+
+
+
+
+
+
+    private void temporizadorAlarmaIniciar () {
+
+        temporizadorAlarma.scheduleAtFixedRate(
+                new TimerTask() {
+                    @Override
+                    public void run() {
+                        comprobarAlarma();
+
+
+                    }
+                }, 3000, 1000 * 1); // cada diez segundos
+    }
+
+    private void temporizadorAlarmaDetener () {
+        temporizadorAlarma.cancel();
+    }
+
+
+    private void comprobarAlarma() {
+        mensajeLog("comprobando alarma");
+        if (Aplicacion.alarmaExiste())
+            mensaje("vista", "alarma");
+
+        // comprueba si la alarma llego al limite
+        if (Aplicacion.alarmaLimite()) {
+
+            mensajeLog("ALARMA ACTIVADA");
+            // envia mensaje de arlerta
+            String numero = Aplicacion.preferenciaCadena("sms");
+            String texto = Aplicacion.preferenciaCadena("alarmatexto");
+            Sms sms = new Sms(numero, texto);
+            sms.enviar();
+
+            // pone el sistema en modo "rastreo"
+            // esto hace que envie mensajes y quede permanentemente activo
+            Aplicacion.preferenciaBooleano("rastreo", true);
+
+            // bloquea el sistema¿?
+
+            // QUITA LA ALARMA (asi no se vuelve a repetir esto)
+            Aplicacion.preferenciaCadena("alarma", "");
+            //
+            mensaje("vista", "actualizar");
+            mensaje("vista", "alarma");
+
+        }
+
+    }
+
+
+
+
+
+    // comunica a la aplicacion eventos ocurridos
+    private void mensaje (String clave, String texto) {
+        Handler handler = Aplicacion.handler;
+        mensajeLog("(handler) " + clave +"-"+ texto);
+
+        Message mensaje = new Message();
+        Bundle dato = new Bundle();
+        dato.putString(clave, texto);
+        mensaje.setData(dato);
+
+        handler.sendMessage(mensaje);
+
+    }
+
 
     private void mensajeLog (String texto) {
         Log.d("Servicio Principal", texto);

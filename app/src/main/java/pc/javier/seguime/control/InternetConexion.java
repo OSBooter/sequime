@@ -99,6 +99,8 @@ public class InternetConexion implements Runnable {
 
 
 
+
+    // comunica a la aplicacion eventos ocurridos
     private void mensaje (String clave, String texto) {
 
         mensajeLog("(handler) " + clave +"-"+ texto);

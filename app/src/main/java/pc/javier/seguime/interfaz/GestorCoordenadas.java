@@ -26,6 +26,7 @@ public class GestorCoordenadas {
     private String longitud;
     private String fecha;
     private String extra;
+    private String velocidad;
     private int id;
     private int recibido;
 
@@ -54,11 +55,12 @@ public class GestorCoordenadas {
         extra = coordenada.getExtra();
         id = coordenada.getId();
         recibido = coordenada.getRecibido();
+        velocidad = coordenada.getVelocidad();
     }
 
 
     public void insertarBdD () {
-        basededatos.coordenadaInsertar(latitud, longitud, extra);
+        basededatos.coordenadaInsertar(latitud, longitud, velocidad, extra);
 
         // obtiene la ID de la base de datos
         coordenada = basededatos.coordenadaObtenerUltima();
@@ -78,7 +80,7 @@ public class GestorCoordenadas {
 
 
 
-        parametros = "comando=posicion" + "&latitud=" + latitud + "&longitud=" + longitud + "&fecha=" + fecha + "&id=" + String.valueOf(id) + "&extra=" + extra;
+        parametros = "comando=posicion" + "&latitud=" + latitud + "&longitud=" + longitud + "&fecha=" + fecha + "&id=" + String.valueOf(id) + "&velocidad=" + velocidad + "&extra=" + extra;
 
         parametros = "clave=" + clave + "&" + parametros;
         parametros = "usuario=" + usuario + "&" + parametros;
@@ -88,7 +90,9 @@ public class GestorCoordenadas {
                 parametros = "telegram=" + telegram + "&" + parametros;
 
 
-        mensajeLog ( "Enviando ultima posicion - ID: " + id);
+
+
+                    mensajeLog ( "Enviando ultima posicion - ID: " + id);
         mensajeLog ( "Enviando ultima posicion - Parametros: " + parametros);
 
 

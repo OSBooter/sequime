@@ -29,6 +29,7 @@ public class BDCoordenada {
             "longitud text," +
             "envios int," +
             "recibido int," +
+            "velocidad text," +
             "extra text" +
             ");"
             ;
@@ -38,16 +39,17 @@ public class BDCoordenada {
         this.sql = db;
     }
 
-    public void insertar (String latitud, String longitud) {
-        insertar(latitud, longitud, "");
+    public void insertar (String latitud, String longitud, String velocidad) {
+        insertar(latitud, longitud, velocidad,"");
     }
 
-    public boolean insertar(String latitud, String longitud, String extra) {
+    public boolean insertar(String latitud, String longitud, String velocidad, String extra) {
         ContentValues valor = new ContentValues();
         valor.put("latitud",latitud);
         valor.put("longitud", longitud);
         valor.put ("envios", 0);
         valor.put("recibido", 0);
+        valor.put("velocidad", velocidad);
         valor.put("extra", extra);
         valor.put("fecha", FechaHora.complacto());
 

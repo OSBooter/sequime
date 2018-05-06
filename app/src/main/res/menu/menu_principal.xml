@@ -6,7 +6,12 @@
     tools:context=".MainActivity">
 
 
-
+    <item
+        android:title="@string/cuentaregresiva"
+        android:icon="@drawable/iconotemporizadorblanco"
+        android:id="@+id/menu_cuentaregresiva"
+        app:showAsAction="ifRoom"
+        ></item>
 
     <item
         android:title="@string/registros"

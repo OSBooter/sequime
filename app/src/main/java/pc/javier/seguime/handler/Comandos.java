@@ -7,17 +7,24 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.NumberPicker;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import pc.javier.seguime.ActividadRegistros;
+import pc.javier.seguime.ActividadRegresiva;
 import pc.javier.seguime.R;
 import pc.javier.seguime.interfaz.Aplicacion;
 import pc.javier.seguime.interfaz.BD;
 import pc.javier.seguime.utilidades.Boton;
+import pc.javier.seguime.utilidades.FechaHora;
 import pc.javier.seguime.utilidades.ItemRegistro;
+
+import static java.lang.Math.round;
 
 /**
  * Created by Javier on 14 feb 2018.
@@ -39,16 +46,24 @@ public class Comandos implements Handler.Callback {
 
     private TextView textView;
     private Button button;
+    private ImageView imageView;
 
     @Override
     public boolean handleMessage(Message mensaje) {
 
         Bundle bundle = mensaje.getData();
+
+        // dato utiliza base de datos y preferencias
         String dato = bundle.getString("dato");
+
+        // conexion actualiza vistas - depende de eventos de internet
         String conexion = bundle.getString("conexion");
 
+        // vistas actualiza interface
+        String vista = bundle.getString("vista");
 
-        mensajeLog("recibido: " + dato + "-" + conexion );
+
+        mensajeLog("handler recibido: " + dato + conexion + vista );
 
         if (dato != null)
             comando(dato);
@@ -56,12 +71,16 @@ public class Comandos implements Handler.Callback {
         if (conexion != null)
             vista(conexion);
 
+        if (vista != null)
+            vista(vista);
+
         return false;
     }
 
 
 
 
+    // actualiza la interface
     private void vista (String conexion) {
 
         switch (conexion) {
@@ -69,6 +88,11 @@ public class Comandos implements Handler.Callback {
                 textView = (TextView) activityHandler.findViewById(R.id.sesion_estado);
                 if (textView != null)
                     textView.setText(R.string.conectando);
+
+                imageView = (ImageView) activityHandler.findViewById(R.id.princ_iconointernet);
+                if (imageView != null)
+                    imageView.setVisibility(View.VISIBLE);
+
 
                 break;
 
@@ -79,6 +103,10 @@ public class Comandos implements Handler.Callback {
                 button = (Button) activityHandler.findViewById(R.id.session_iniciar);
                 if (button != null)
                     Boton.Estado(button, true);
+
+                imageView = (ImageView) activityHandler.findViewById(R.id.princ_iconointernet);
+                if (imageView != null)
+                    imageView.setVisibility(View.INVISIBLE);
                 break;
 
             case "error":
@@ -94,6 +122,10 @@ public class Comandos implements Handler.Callback {
                 textView = (TextView) activityHandler.findViewById(R.id.sesion_estado);
                 if (textView != null)
                     textView.setText(R.string.errorconexion);
+
+                imageView = (ImageView) activityHandler.findViewById(R.id.princ_iconointernet);
+                if (imageView != null)
+                    imageView.setVisibility(View.INVISIBLE);
                 break;
 
 
@@ -113,8 +145,59 @@ public class Comandos implements Handler.Callback {
 
 
 
+            case "alarma":
+
+                long intervalo = FechaHora.intervalo(Aplicacion.preferenciaCadena("alarma"));
+                NumberPicker tempHora= (NumberPicker) Aplicacion.actividadRegresiva.findViewById(R.id.temporizador_hora);
+                NumberPicker tempMinuto= (NumberPicker) Aplicacion.actividadRegresiva.findViewById(R.id.temporizador_minuto);
+                NumberPicker tempSegundo= (NumberPicker) Aplicacion.actividadRegresiva.findViewById(R.id.temporizador_segundo);
+
+                /*
+                int hora = (int) intervalo/60/60;
+                int minuto = (int) (intervalo/60) - hora;
+                int segundo = (int) intervalo - minuto;
+                */
+                int hora = (int) round(intervalo/60/60);
+                int minuto = (int) round(intervalo/60)%60;
+                int segundo = (int) intervalo%60;
+
+                if (tempHora != null)
+                    tempHora.setValue(hora);
+
+                if (tempMinuto != null)
+                    tempMinuto.setValue(minuto);
+
+                if (tempSegundo != null)
+                    tempSegundo.setValue(segundo);
+
+                Button boton = (Button) Aplicacion.actividadRegresiva.findViewById(R.id.temporizador_boton);
+                if (boton != null)
+                    if (!Aplicacion.alarmaExiste()) {
+                        Boton.color(boton, "verde");
+                        boton.setText("Iniciar");
+                    }
 
 
+                break;
+
+
+
+            // pantalla principal (actualiza iconos)
+            case "actualizar":
+
+                ImageView rastreo = (ImageView)activityHandler.findViewById(R.id.princ_iconorastreo);
+                if (rastreo != null)
+                    if (Aplicacion.rastreo())
+                        rastreo.setVisibility(View.VISIBLE);
+                    else
+                        rastreo.setVisibility(View.INVISIBLE);
+
+                ImageView alarma = (ImageView) activityHandler.findViewById(R.id.princ_iconotemporizador);
+                if (alarma != null)
+                    if (Aplicacion.alarmaExiste())
+                        alarma.setVisibility(View.VISIBLE);
+                    else
+                        alarma.setVisibility(View.INVISIBLE);
 
 
 
@@ -160,11 +243,6 @@ public class Comandos implements Handler.Callback {
         }
 
 
-
-
-
-
-
     }
 
 
@@ -172,6 +250,11 @@ public class Comandos implements Handler.Callback {
 
 
 
+
+
+
+
+    // actualiza datos (e interfaces)
     private void comando (String dato) {
         basededatos = Aplicacion.basededatos;
         preferencias = Aplicacion.preferencias;
@@ -370,3 +453,4 @@ public class Comandos implements Handler.Callback {
         Log.d("Comandos (Handler): ", texto);
     }
 }
+

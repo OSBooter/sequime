@@ -42,8 +42,8 @@ public class BD  {
 
     // Coordenadas -----------------------------------------
 
-    public boolean coordenadaInsertar (String latitud, String longitud,String extra) {
-        boolean respuesta = bdCoordenada.insertar(latitud, longitud,extra);
+    public boolean coordenadaInsertar (String latitud, String longitud,String velocidad, String extra) {
+        boolean respuesta = bdCoordenada.insertar(latitud, longitud,velocidad, extra);
 
         return respuesta;
     }
@@ -89,12 +89,13 @@ public class BD  {
             latitud = cursor.getFloat(2);
             longitud = cursor.getFloat(3);
             fecha = cursor.getString(1);
-            extra = cursor.getString(6);
+            velocidad = cursor.getString(6);
+            extra = cursor.getString(7);
             recibido = cursor.getInt(5);
             id = cursor.getInt(0);
 
 
-            coordenada = new Coordenada(fecha, latitud, longitud, extra);
+            coordenada = new Coordenada(fecha, latitud, longitud, velocidad, extra);
             coordenada.setRecibido(recibido);
             coordenada.setId(id);
             return coordenada;
@@ -111,6 +112,7 @@ public class BD  {
     private String fecha;
     private int recibido;
     private int id;
+    private String velocidad;
     private Coordenada coordenada;
 
     private ArrayList<Coordenada> Listar (Cursor cursor) {
@@ -124,13 +126,14 @@ public class BD  {
             latitud = cursor.getFloat(2);
             longitud = cursor.getFloat(3);
             fecha = cursor.getString(1);
-            extra = cursor.getString(6);
+            velocidad = cursor.getString(6);
+            extra = cursor.getString(7);
             recibido = cursor.getInt(5);
             id = cursor.getInt(0);
 
             cursor.moveToNext();
 
-            coordenada = new Coordenada(fecha, latitud, longitud, extra);
+            coordenada = new Coordenada(fecha, latitud, longitud, velocidad, extra);
             coordenada.setRecibido(recibido);
             coordenada.setId(id);
             lista.add(coordenada);

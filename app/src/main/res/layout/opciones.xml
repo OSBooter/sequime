@@ -28,6 +28,7 @@
                     android:background="@drawable/borderedondeado"
                     android:padding="10sp"
                     android:layout_margin="2sp"
+                    android:onClick="mostrarContactos"
                     />
 
             <Space

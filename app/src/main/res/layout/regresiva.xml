@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="pc.javier.seguime.ActividadRegresiva"
+    android:orientation="vertical"
+
+    >
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:orientation="vertical"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/temporizador_sms"
+                android:onClick="mostrarContactos"
+                android:background="@drawable/borderedondeado"
+                android:padding="10sp"
+                android:layout_margin="2sp"
+
+                />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/alarmamensaje"
+                android:id="@+id/temporizador_texto"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/borderedondeado"
+                android:padding="10sp"
+                android:layout_margin="2sp"
+                android:lines="2"
+                />
+        </LinearLayout>
+
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            >
+
+            <TableRow
+
+                >
+
+                <NumberPicker
+                    android:id="@+id/temporizador_hora"
+                    android:layout_width="100sp"
+                    android:layout_height="wrap_content"
+                    />
+
+                <Space android:minWidth="20px" />
+
+                <NumberPicker
+                    android:id="@+id/temporizador_minuto"
+                    android:layout_width="100sp"
+                    android:layout_height="wrap_content" />
+
+                <Space android:minWidth="20px" />
+
+                <NumberPicker
+                    android:id="@+id/temporizador_segundo"
+
+                    android:layout_height="wrap_content" />
+
+            </TableRow>
+
+            <TableRow>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/hora"
+                    android:textAlignment="center"
+                    />
+                <Space />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/minuto"
+                    android:textAlignment="center"
+                    />
+                <Space />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/segundo"
+                    android:textAlignment="center"
+                    />
+            </TableRow>
+
+        </TableLayout>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="50px"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/iniciar"
+            android:onClick="clickBoton"
+            android:background="@drawable/botonredondeado"
+            android:textColor="#ffffff"
+            android:id="@+id/temporizador_boton"
+
+            />
+
+
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>
+</ScrollView>

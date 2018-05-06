@@ -28,6 +28,7 @@ public class Localizacion extends Observable implements LocationListener {
     double latitud;
     double longitud;
     String informacionExtra;
+    String velocidad;
 
     private Coordenada coordenada;
 
@@ -61,15 +62,18 @@ public class Localizacion extends Observable implements LocationListener {
         this.posicion = posicion;
         latitud = posicion.getLatitude();
         longitud = posicion.getLongitude();
-        if (posicion.hasSpeed())
-            informacionExtra = "Velocidad: " + posicion.getSpeed()* 3.600 + " km/h ";
-        else
-            informacionExtra = "";
 
-        informacionExtra = informacionExtra +"\n (Prov: " + posicion.getProvider() +")";
+        if (posicion.hasSpeed())
+            velocidad =  String.valueOf(posicion.getSpeed());
+        else
+            velocidad ="0";
+
+        informacionExtra = "";
+
+        // informacionExtra = informacionExtra +"\n (Prov: " + posicion.getProvider() +")";
 
         // lanza una nueva coordenada
-        coordenada = new Coordenada(FechaHora.complacto(),latitud, longitud, informacionExtra);
+        coordenada = new Coordenada(FechaHora.complacto(),latitud, longitud, velocidad, informacionExtra);
 
 
 
@@ -77,7 +81,7 @@ public class Localizacion extends Observable implements LocationListener {
         setChanged();
         notifyObservers(coordenada);
 
-        mensajeLog ( "nuevas coordenadas - latitud:" + latitud + ", longitud:" + longitud);
+        mensajeLog ( "nuevas coordenadas - latitud:" + latitud + ", longitud:" + longitud + "velocidad: "+ velocidad);
 
 
     }

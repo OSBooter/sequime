@@ -12,6 +12,8 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import pc.javier.seguime.utilidades.Parametro;
+
 public class ActividadOpciones extends AppCompatActivity {
 
     SharedPreferences preferencias;
@@ -21,6 +23,7 @@ public class ActividadOpciones extends AppCompatActivity {
     EditText Tactividad ;
     EditText Tinactividad;
     CheckBox Crastreo;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +39,18 @@ public class ActividadOpciones extends AppCompatActivity {
         preferencias = getSharedPreferences("preferencias", MODE_PRIVATE);
         cargarOpciones();
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        if (Parametro.telefono == null)
+            return;
+        if (Parametro.telefono.equals(""))
+            return;
+        Tsms.setText(Parametro.telefono);
+        Parametro.telefono = "";
+    }
+
 
 
 
@@ -113,6 +128,15 @@ public class ActividadOpciones extends AppCompatActivity {
 
 
 
+    // contactos
+    public  void mostrarContactos (View v) {
+
+        Parametro.telefono = "";
+        Intent contactos = new Intent(this, ActividadContactos.class);
+        if (Tsms.getText().toString().equals(""))
+            startActivity(contactos);
+    }
+
 
     // menu
 
@@ -126,6 +150,7 @@ public class ActividadOpciones extends AppCompatActivity {
         Intent i = new Intent(this, ActividadAyudaOpciones.class);
         startActivity(i);
     }
+
 
 /*
     @Override

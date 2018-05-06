@@ -1,19 +1,29 @@
 # Seguime 
 
-### [0.4] - 23 Mar 2018
-* Diseño: botones y cajas de texto con mejoras en el aspecto
-* Librerías: se quito los archivos .JAR y se actualizo la librería osmdroid
+### [0.6] - 6 Mayo 2018
+* Agregado: Ayuda del temporizador.
+* Modificado: Idiomas.
+* Agregado: Muestra hora y velocidad en el mapa (globo).
 
-### [0.3] - 5 Mar 2018
-* Correcciones en interfaz (mensajes mostrados)
-* Idiomas
-* Correcciones mínimas en la interfaz (Registros de Coordenadas)
+### [0.5] - 27 Marzo 2018 (Esta versión estuvo disponible solo en el sitio web)
+* Cambio: Velocidad como parámetro independiente (ya no es mas información extra, implica nueva versión de la base de datos).
+* Agregado: Iconos en la pantalla principal para mostrar estados o información de la aplicación.
+* Agregado: Función de temporizador (SMS de auxilio y rastreo automático) (BETA).
+* Agregado: Nueva función para seleccionar contactos (BETA).
 
-### [0.2] - 21 Feb 2018
-* Correcciones mínimas de interfaz
-* Cambios menores en formularios
-* Mejora en el visor de registros de coordenadas
+### [0.4] - 23 Marzo 2018
+* Diseño: botones y cajas de texto con mejoras en el aspecto.
+* Librerías: se quito los archivos .JAR y se actualizo la librería osmdroid.
 
+### [0.3] - 5 Marzo 2018
+* Correcciones en interfaz (mensajes mostrados).
+* Idiomas.
+* Correcciones mínimas en la interfaz (Registros de Coordenadas).
 
-### [0.1] - 17 Feb 2018
-* Versión Inicial
+### [0.2] - 21 Febrero 2018
+* Correcciones mínimas de interfaz.
+* Cambios menores en formularios.
+* Mejora en el visor de registros de coordenadas.
+
+### [0.1] - 17 Febrero 2018
+* Versión Inicial.

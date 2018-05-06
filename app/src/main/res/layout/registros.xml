@@ -12,7 +12,7 @@
     <TableRow>
         <org.osmdroid.views.MapView
             android:layout_width="match_parent"
-            android:layout_height="250sp"
+            android:layout_height="290sp"
             android:id="@+id/registros_mapa"
 
             />

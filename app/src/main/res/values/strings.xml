@@ -3,8 +3,7 @@
 	
 	<string name="traducidopor"></string>
 	
-	
-	
+
     <string name="servidor">Servidor</string>
     <string name="usuario">Usuario</string>
     <string name="clave">Clave</string>
@@ -18,16 +17,14 @@
 
 
 	
-	
-	
     <string name="latitud">Latitud</string>
     <string name="longitud">Longitud</string>
     <string name="fechahora">Fecha y Hora</string>
 	<string name="fecha">Fecha</string>
 	<string name="hora">Hora</string>
-    <string name="infoextra">Info Extra</string>
+    <string name="infoextra">Información Extra</string>
 
-
+	<string name="contactos">Contactos</string>
 
 
     <string name="configuracion">Configuración</string>
@@ -39,7 +36,24 @@
     <string name="cerrar_sesion">Cerrar Sesión</string>
     <string name="salir">Salir</string>
 
+	<string name="velocidad">Velocidad</string>
 	
+
+	<string name="txt_bloqueado_alarma">No se puede detener el servicio cuando hay una alarma activada</string>
+	<string name="alarma">Alarma (Mensaje de Alerta)</string>
+	<string name="alarmamensaje">En este momento puede que necesite ayuda, contáctate conmigo urgente</string>
+	<string name="iniciar">Iniciar</string>
+	<string name="detener">Detener</string>
+
+	<string name="minuto">Minuto</string>
+	<string name="segundo">Segundo</string>
+
+	<string name="principal_alarma">La alarma activada</string>
+	<string name="principal_rastreo">El Rastreador está Activado</string>
+	<string name="principal_aplicacion">La aplicación está activada</string>
+	<string name="principal_internet">Hay una conexión a internet</string>
+    <string name="principal_alarmaservidor">Hay una copia de la alarma en el servidor</string>
+
 	
 	
     <string name="txt_servicio_activo">¡Bien! La aplicación esta Activada :-)</string>
@@ -49,8 +63,8 @@
 	<string name="activar_aplicacion">¡Seguime!</string>
     <string name="desactivar_aplicacion">No me Sigas</string>
 
-	
-	
+
+	<string name="cuentaregresiva">Cuenta Regresiva</string>
 	
     <string name="ayuda">Ayuda</string>
     <string name="cerrar">Cerrar</string>
@@ -63,7 +77,7 @@
     <string name="iniciarsesion">Iniciar Sesión</string>
 	<string name="registrarse">Registrarse</string>
 	<string name="repetirclave">Repita la clave</string>
-	<string name="ssl">Conexion segura SSL</string>
+	<string name="ssl">Conexión segura SSL</string>
 	
 	
 	
@@ -79,9 +93,25 @@
 	
 	
     <string name="txt_ayuda_descripcion">
-        Esta aplicación envía información de posicionamiento global (y puede que otro tipo de información, como velocidad) a un servidor. \n
-        La característica de uso de bots de Telegram depende del servidor \n
+        Seguime te permite rastrear tu dispositivo, 
+		recolecta información del GPS y la almacena para luego poder enviarlas a tu servidor.
+		Desde el servidor se puede ver los registros en un mapa y ver donde esta (o estuvo) el dispositivo.
+		El servidor puede ser el de un amigo, familiar o el tuyo, 
+		podes montar tu propio servidor para mayor privacidad de tus datos.
+		Además incluye un temporizador que te permite programar en que momento la aplicación activará su modo de rastreo 
+		y adicionalmente enviar un mensaje de ayuda.
+		Cuando la aplicación esta en modo de rastreo enviara por SMS o Telegram mensajes con la ubicación.
     </string>
+	
+	<string name="txt_advertencia_proyecto">
+		Esto es un proyecto, no es (ni prende ser) una aplicación de seguridad, 
+		es solo para uso experimental.
+		El desarrollador (o desarrolladores y colaboradores) 
+		no son ni serán responsables por el uso o mal uso de estos programas 
+		(aplicaciones, sitio web, códigos fuentes, etc.).
+	</string>
+	
+	
 
     <string name="txt_licencia">
 		This program is free software: you can redistribute it and/or modify
@@ -99,16 +129,16 @@
     </string>
 
 	
-	<string name="dona">Hace una Donacion :)</string>
+	<string name="dona">Hace una Donación :)</string>
 	<string name="sitioweb">Ir al Sitio Web</string>
     <string name="txt_donacion">
         Si te gusta la Aplicación podes colaborar con una donación.\n
-        Recordá que esta Aplicación no posee publicidad, ni patrocinador, ni rastreadores, por lo tanto depende unicamente de la colaboración de los usuarios.
+        Recordá que esta Aplicación no posee publicidad, ni patrocinador, ni rastreadores, por lo tanto depende únicamente de la colaboración de los usuarios.
 
     </string>
 	
 	<string name="txt_ayuda_opciones">
-        Ya vas a ver que no es tan tan TAN complicado, tenes las siguientes opciones: \n
+        Ya vas a ver que no es tan tan TAN complicado, tenés las siguientes opciones: \n
 		\n
 		
         SMS: \n
@@ -120,7 +150,7 @@
 		Es un numero identificador de Telegram, NO ES LA @ID_USUARIO, para utilizar esta opción visita el bot @seguimebot y saludalo, te dará tu numero de ID, luego con ese numero el bot podrá enviar coordenadas a esa cuenta de Telegram. \n
 		\n
 		Intervalo de Actividad: \n
-		Durante este periodo la Aplicación estará funcionando completamente, localizando coordenadas y realizando conexiones a internet, un valor muy pequeño puede que no logre obtener coordenadas si tenes poca cobertura GPS, un valor muy alto puede consumir mucha batería   \n
+		Durante este periodo la Aplicación estará funcionando completamente, localizando coordenadas y realizando conexiones a internet, un valor muy pequeño puede que no logre obtener coordenadas si tenés poca cobertura GPS, un valor muy alto puede consumir mucha batería   \n
 		Para que la aplicación este constantemente encendida (y no por intervalos de tiempo) configura cualquier intervalo de tiempo a 0 (cero) \n
 		 \n
 		 Intervalo de Inactividad: \n
@@ -135,12 +165,29 @@
 		\n
 		\n
 		\n
-		
     </string>
 
+	
+	
+	<string name="txt_ayuda_regresiva">
+        Ayuda del temporizador: \n
+		\n
+		Te permite programar una cuenta regresiva, una vez activada hará lo siguiente: \n
+		1. Configurara el numero de teléfono para enviar mensajes de texto. \n
+		2. Dejara la aplicación en modo activado, solo se podrá desactivar la aplicación si no hay temporizadores programados. \n
+		3. Enviara una copia de la cuenta regresiva al servidor. \n
+		 \n
+		Al finalizar la cuenta regresiva activara una alarma que hará lo siguiente: \n
+		1. Pondrá la aplicación en modo de rastreo. \n
+		2. Enviara un SMS programado con el texto elegido. \n
+		3. El servidor enviara mensajes por Telegram.  \n
+		 \n
+	</string>
 
 
-    
+	<string name="txt_firma">
+        Hecho en Argentina por Javier Martínez
+    </string>    
     
 
 </resources>
