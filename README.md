@@ -13,7 +13,8 @@ esta el dispositivo.
 Es solo un proyecto, por lo tanto solo podrá usarse con fines experimentales y
 no con fines de seguridad.
 
-[![Disponible en F-Droid](https://gitlab.com/fdroid/artwork/raw/master/badge/get-it-on-es.png)](https://f-droid.org/app/pc.javier.seguime)
+[<img src="https://f-droid.org/badge/get-it-on-es.png" alt="Disponible en F-Droid" height="80">](https://f-droid.org/app/pc.javier.seguime)
+
 
 # Donaciones
 
