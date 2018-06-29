@@ -15,7 +15,6 @@ no con fines de seguridad.
 
 [<img src="https://f-droid.org/badge/get-it-on-es.png" alt="Disponible en F-Droid" height="80">](https://f-droid.org/app/pc.javier.seguime)
 
-
 # Donaciones
 
 Seguime es un proyecto para localizar un dispositivo con sistema operativo Android 

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
@@ -14,6 +15,8 @@ import android.widget.NumberPicker;
 import android.widget.TextView;
 
 import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import pc.javier.seguime.interfaz.Aplicacion;
 import pc.javier.seguime.interfaz.GestorCoordenadas;
@@ -21,6 +24,8 @@ import pc.javier.seguime.interfaz.GestorDatos;
 import pc.javier.seguime.utilidades.Boton;
 import pc.javier.seguime.utilidades.FechaHora;
 import pc.javier.seguime.utilidades.Parametro;
+
+import static java.lang.Math.round;
 
 
 /**
@@ -80,6 +85,7 @@ public class ActividadRegresiva extends AppCompatActivity {
     protected void onResume () {
         super.onResume();
 
+
         boton();
 
 
@@ -91,18 +97,8 @@ public class ActividadRegresiva extends AppCompatActivity {
         if (alarma == "")
             return;
 
-        /*
-        // si el alarma llego al final se activa
-        long intervalo = FechaHora.intervalo(alarma);
-        if (intervalo<=0)
-            activar();
 
-    */
 
-        // muestra en la pantalla el tiempo restante
-        long intervalo = FechaHora.intervalo(alarma);
-        tempHora.setValue((int)intervalo/60/60);
-        tempMinuto.setValue((int)intervalo/60);
 
 
 
@@ -110,14 +106,13 @@ public class ActividadRegresiva extends AppCompatActivity {
         mensajeLog(alarma + ">" + FechaHora.cantidadMinutos(alarma));
         mensajeLog("Intervalo: " + FechaHora.intervalo(alarma));
 
-        if (Parametro.telefono == null)
-            return;
-        if (Parametro.telefono.equals(""))
-            return;
-        tvSms.setText(Parametro.telefono);
+        if (Parametro.telefono != null)
+            if (!Parametro.telefono.equals(""))
+                tvSms.setText(Parametro.telefono);
         Parametro.telefono = "";
 
 
+        temporizadorAlarmaIniciar();
     }
 
     public void clickBoton (View view) {
@@ -156,14 +151,23 @@ public class ActividadRegresiva extends AppCompatActivity {
 
 
     private void detener(){
+
+
         // borra el alarma de preferencias
         Aplicacion.alarma("");
 
         GestorDatos borrarAlarma = new GestorDatos();
         borrarAlarma.enviarAlarma();
+
+        temporizadorAlarmaDetener();
+        boton();
     }
 
     private void iniciar(){
+
+        if (tvTexto.getText().equals(""))
+            tvTexto.setText(R.string.alarmamensaje);
+
         Aplicacion.alarmaServidor("");
         Aplicacion.preferenciaCadena("sms", tvSms.getText().toString());
         Aplicacion.preferenciaCadena("alarmatexto", tvTexto.getText().toString());
@@ -171,7 +175,10 @@ public class ActividadRegresiva extends AppCompatActivity {
         long segundos = (tempMinuto.getValue()*60) + (tempHora.getValue() *60*60) + tempSegundo.getValue();
         String alarma = FechaHora.suma(String.valueOf(segundos));
         Aplicacion.alarma(alarma);
-        Parametro.aplicacion.iniciarServicio();
+        Parametro.aplicacion.ReiniciarServicio();
+
+        temporizadorAlarmaIniciar();
+        boton();
     }
 
 
@@ -212,6 +219,60 @@ public class ActividadRegresiva extends AppCompatActivity {
 
 
 
+
+
+
+    Timer temporizadorAlarma;
+
+
+
+//  temporizador local, solo se usa para mostrar en pantalla el tiempo restante, NO ES LA ALARMA
+    private void temporizadorAlarmaIniciar () {
+
+temporizadorAlarma = new Timer();
+
+
+        temporizadorAlarma.scheduleAtFixedRate(
+                new TimerTask() {
+                    @Override
+                    public void run() {
+                        Contar();
+                    }
+                }, 1, 1000 );
+    }
+
+
+    private void Contar (){
+
+        if (!estaActivo())
+            temporizadorAlarmaDetener();
+
+
+
+        Message mensaje = new Message();
+        Bundle dato = new Bundle();
+
+        dato.putString("vista", "alarma");
+        mensaje.setData(dato);
+        // no funciona
+        handler.sendMessage(mensaje);
+
+
+    }
+
+
+
+    private void temporizadorAlarmaDetener () {
+        if (temporizadorAlarma != null)
+        temporizadorAlarma.cancel();
+    }
+
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        temporizadorAlarmaDetener();
+    }
 
     private void mensajeLog (String texto) {
         Log.d("Actividad Registro", texto);

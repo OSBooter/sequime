@@ -1,5 +1,10 @@
 # Seguime 
 
+### [0.7] - 23 Junio 2018
+* Modificado: Funcionamiento interno del Temporizador (Optimización, ahorro de batería).
+* Modificado: Detalles mínimos en la interfaz.
+* Agregado: Acceso al bot de Telegram.
+
 ### [0.6] - 6 Mayo 2018
 * Agregado: Ayuda del temporizador.
 * Modificado: Idiomas.

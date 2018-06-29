@@ -5,7 +5,8 @@ import android.os.Handler;
 import android.util.Log;
 
 /**
- * Created by Usuario Javier on 1 abr 2018.
+ *  Javier on 1 abr 2018.
+ *  maneja datos que deben ser enviados al servidor
  */
 
 public class GestorDatos {

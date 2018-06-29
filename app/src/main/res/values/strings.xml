@@ -10,8 +10,9 @@
     <string name="intervalo_inactividad">Intervalo de Inactividad (en minutos)</string>
     <string name="intervalo_actividad">Intervalo de Actividad (en minutos)</string>
     <string name="sms">SMS</string>
-    <string name="id_telegram">Chat_ID Telegram</string>
+    <string name="id_telegram">Chat_ID Telegram (NO @USUARIO)</string>
     <string name="rastreo">Rastreo (Envía Mensajes)</string>
+    <string name="telegram_bot">Bot de Telegram</string>
 
 	<string name="errorValidacion">Hay un error con los datos ingresados</string>
 
@@ -44,6 +45,7 @@
 	<string name="alarmamensaje">En este momento puede que necesite ayuda, contáctate conmigo urgente</string>
 	<string name="iniciar">Iniciar</string>
 	<string name="detener">Detener</string>
+	<string name="mensajealerta">Mensaje de Alerta</string>
 
 	<string name="minuto">Minuto</string>
 	<string name="segundo">Segundo</string>
@@ -76,7 +78,7 @@
 	
     <string name="iniciarsesion">Iniciar Sesión</string>
 	<string name="registrarse">Registrarse</string>
-	<string name="repetirclave">Repita la clave</string>
+	<string name="repetirclave">Repita la clave (NO USAR claves reales)</string>
 	<string name="ssl">Conexión segura SSL</string>
 	
 	

@@ -2,6 +2,7 @@ package pc.javier.seguime;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -147,10 +148,27 @@ public class ActividadOpciones extends AppCompatActivity {
 
 
     public void ayuda (MenuItem item) {
-        Intent i = new Intent(this, ActividadAyudaOpciones.class);
-        startActivity(i);
+
+        switch (item.getItemId()) {
+            case R.id.menu_ayuda:
+                Intent i = new Intent(this, ActividadAyudaOpciones.class);
+                startActivity(i);
+                break;
+
+            case R.id.menu_bot:
+
+                navegar("http://t.me/seguimebot");
+
+                break;
+        }
     }
 
+
+    private void navegar (String url){
+        Intent i = new Intent(Intent.ACTION_VIEW);
+        i.setData(Uri.parse(url));
+        startActivity(i);
+    }
 
 /*
     @Override

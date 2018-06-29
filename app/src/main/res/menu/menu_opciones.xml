@@ -3,6 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     >
 
+
+    <item
+        android:title="@string/telegram_bot"
+        android:icon="@android:drawable/ic_menu_search"
+        android:id="@+id/menu_bot"
+        app:showAsAction="always"
+        android:onClick="ayuda"
+        ></item>
+
+
     <item
         android:title="@string/ayuda"
         android:icon="@android:drawable/ic_menu_help"
@@ -10,6 +20,8 @@
         app:showAsAction="always"
         android:onClick="ayuda"
         ></item>
+
+
 
 
 </menu>

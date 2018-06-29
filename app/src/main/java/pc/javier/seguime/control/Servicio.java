@@ -19,6 +19,9 @@ import pc.javier.seguime.interfaz.BD;
 import pc.javier.seguime.interfaz.Coordenada;
 import pc.javier.seguime.interfaz.GestorCoordenadas;
 import pc.javier.seguime.interfaz.GestorDatos;
+import pc.javier.seguime.utilidades.FechaHora;
+
+import static java.lang.Math.round;
 
 
 /**
@@ -40,6 +43,8 @@ public class Servicio extends   Service  {
 
     private Timer temporizadorAlarma;
     private GestorDatos alarma;
+
+    private  String alarmaLimite;
 
     @Nullable
     @Override
@@ -129,6 +134,9 @@ public class Servicio extends   Service  {
         // inicia temporizador de alarmas
         temporizadorAlarmaIniciar();
 
+
+
+
         mensajeLog ( "INICIADO");
     }
 
@@ -184,7 +192,28 @@ public class Servicio extends   Service  {
 
 
     private void temporizadorAlarmaIniciar () {
+        // intervalo de tiempo en el que se activa la alarma
+        alarmaLimite = preferencias.getString("alarma", "");
+        temporizadorAlarma = new Timer();
 
+        long intervalo = FechaHora.intervalo(alarmaLimite);
+        int hora = (int) round(intervalo/60/60);
+        int minuto = (int) round(intervalo/60)%60;
+        int segundo = (int) intervalo%60;
+
+
+        int limite =(int) intervalo;
+        if (alarmaLimite.equals(""))
+            return;
+        try {
+            limite = Integer.parseInt(alarmaLimite);
+        } catch (Exception e) {}
+
+        if (limite <= 0)
+            limite = 1;
+
+        mensajeLog("SERVICIO - ALARMA limite -> " + alarmaLimite);
+        mensajeLog("SERVICIO - ALARMA limite -> " + limite);
         temporizadorAlarma.scheduleAtFixedRate(
                 new TimerTask() {
                     @Override
@@ -193,7 +222,7 @@ public class Servicio extends   Service  {
 
 
                     }
-                }, 3000, 1000 * 1); // cada diez segundos
+                }, 1, 1000 * limite);
     }
 
     private void temporizadorAlarmaDetener () {
@@ -201,6 +230,7 @@ public class Servicio extends   Service  {
     }
 
 
+    // oomprueba si la alarma esta *ACTIVADA*
     private void comprobarAlarma() {
         mensajeLog("comprobando alarma");
         if (Aplicacion.alarmaExiste())

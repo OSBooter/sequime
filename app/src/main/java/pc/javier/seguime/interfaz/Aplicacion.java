@@ -116,6 +116,11 @@ public class Aplicacion {
     }
 
 
+    public  void ReiniciarServicio () {
+        if (servicioActivo())
+            contexto.stopService(servicio);
+        iniciarServicio();
+    }
 
 
     // verifica si el servicio esta activo

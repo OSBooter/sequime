@@ -10,8 +10,9 @@
 	<string name="intervalo_inactividad">Idle interval (in minutes)</string>
 	<string name="intervalo_actividad">Activity interval (in minutes)</string>
 	<string name="sms">SMS</string>
-	<string name="id_telegram">Chat_ID Telegram</string>
+	<string name="id_telegram">Chat_ID Telegram (NO @USER_ID)</string>
 	<string name="rastreo">Tracking (send messages)</string>
+    <string name="telegram_bot">Telegram BOT</string>
 
 	<string name="errorValidacion">There is an error</string>	
 	
@@ -44,6 +45,7 @@
 	<string name="alarmamensaje">May be I need help, try contact to me now!</string>
 	<string name="iniciar">Start</string>
 	<string name="detener">Stop</string>
+	<string name="mensajealerta">Alert Message</string>
 
 	<string name="minuto">Minute</string>
 	<string name="segundo">Second</string>
@@ -51,7 +53,7 @@
 	<string name="principal_alarma">alarm activated</string>
 	<string name="principal_rastreo">Tracking activated</string>
 	<string name="principal_aplicacion">This application is activated</string>
-	<string name="principal_internet">There is an internet conection</string>
+	<string name="principal_internet">There is an internet connection</string>
     <string name="principal_alarmaservidor">There is a alarm copy on server</string>
 
 	
@@ -76,8 +78,8 @@
 	
 	<string name="iniciarsesion">login</string>
 	<string name="registrarse">join in</string>
-	<string name="repetirclave">Repeat password</string>
-	<string name="ssl">Secure Conection SSL</string>
+	<string name="repetirclave">Repeat password (do not use real passwords)</string>
+	<string name="ssl">Secure Connection SSL</string>
 
 	
 	
@@ -104,7 +106,7 @@
 	</string>
 	
 	<string name="txt_advertencia_proyecto">
-		This is a project, it is not (and not pretends to be) a security aplication,
+		This is a project, it is not (and not pretends to be) a security application,
 		it is only for experimental use.
 		The developer (or developers and collaborators) 
 		are not and will not be responsible for the use or misure of these programs
@@ -143,7 +145,7 @@
 
 	</string>
 
-	<string name="txt_ayuda_opciones">You will see that it is not so so complicated, you have the following options: \n
+	<string name="txt_ayuda_opciones">You will see that it is not so complicated, you have the following options: \n
 	\n
 
 	SMS: \n

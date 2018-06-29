@@ -146,6 +146,10 @@ public class Comandos implements Handler.Callback {
 
 
             case "alarma":
+                if (Aplicacion.actividadRegresiva == null)
+                    return;;
+                if (Aplicacion.actividadRegresiva.findViewById(R.id.temporizador_hora) == null)
+                    return;;
 
                 long intervalo = FechaHora.intervalo(Aplicacion.preferenciaCadena("alarma"));
                 NumberPicker tempHora= (NumberPicker) Aplicacion.actividadRegresiva.findViewById(R.id.temporizador_hora);

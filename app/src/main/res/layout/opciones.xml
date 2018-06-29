@@ -39,14 +39,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/id_telegram"
-                    android:inputType="phone"
                     />
 
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/opciones_telegram"
-                    android:inputType="textUri"
+                    android:inputType="phone"
                     android:background="@drawable/borderedondeado"
                     android:padding="10sp"
                     android:layout_margin="2sp"

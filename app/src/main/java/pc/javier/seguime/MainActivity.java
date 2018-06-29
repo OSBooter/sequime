@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
             ((Button) boton).setTextColor(Color.GRAY);
             estado.setText(R.string.txt_servicio_activo);
             estado.setTextColor(Color.GREEN);
-            //pantalla.setBackgroundResource(R.drawable.camino);
+            // pantalla.setBackgroundResource(R.drawable.camino);
         } else {
             ((Button) boton).setText(getText(R.string.activar_aplicacion));
             ((Button) boton).setBackgroundColor(Color.TRANSPARENT);
@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
 
             estado.setText(R.string.txt_servicio_inactivo);
             estado.setTextColor(Color.RED);
-            pantalla.setBackgroundResource(R.drawable.caminoblancoynegro);
+            // pantalla.setBackgroundResource(R.drawable.caminoazul);
 
         }
 
