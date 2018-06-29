@@ -250,6 +250,7 @@ public class Aplicacion {
     }
 
 
+    
     private void mensajeLog (String texto) {
         Log.d("Aplicacion", texto);
     }

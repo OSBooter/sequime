@@ -4,6 +4,8 @@ import android.content.SharedPreferences;
 import android.os.Handler;
 import android.util.Log;
 
+import static android.content.Context.MODE_PRIVATE;
+
 /**
  *  Javier on 1 abr 2018.
  *  maneja datos que deben ser enviados al servidor
@@ -18,6 +20,8 @@ public class GestorDatos {
 
     public GestorDatos () {
         this.preferencias = Aplicacion.preferencias;
+        if (preferencias == null)
+            preferencias = Aplicacion.contexto.getSharedPreferences("preferencias",MODE_PRIVATE);
 
         usuario = preferencias.getString("usuario", "");
         clave = preferencias.getString("clave", "");
