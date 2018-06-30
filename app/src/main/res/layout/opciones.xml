@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         >
 
         <LinearLayout
@@ -19,6 +20,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/sms"
+                    android:layout_margin="5sp"
                     />
                 <EditText
                     android:layout_width="match_parent"
@@ -39,6 +41,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/id_telegram"
+                    android:layout_margin="5sp"
                     />
 
                 <EditText
@@ -64,6 +67,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/intervalo_actividad"
+                    android:layout_margin="5sp"
                     />
 
                 <EditText
@@ -85,7 +89,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/intervalo_inactividad"
-
+                    android:layout_margin="5sp"
                     />
 
 
@@ -102,23 +106,35 @@
 
 
 
-                <CheckBox
+                <Switch
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/opciones_rastreo"
                     android:text = "@string/rastreo"
                     android:padding="10sp"
-                    android:layout_margin="2sp"
+                    android:layout_margin="5sp"
 
+                    />
+
+                <Switch
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/opciones_iniciarConElSistema"
+                    android:text = "@string/iniciarConElSistema"
+                    android:padding="10sp"
+                    android:layout_margin="5sp"
+                    android:enabled="false"
                     />
 
             <Space
                 android:layout_width="match_parent"
-                android:layout_height="10dp" />
+                android:layout_height="20dp" />
+
+
 
         </LinearLayout>
 
-    </ScrollView>
+
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -147,5 +163,5 @@
         </TableRow>
     </TableLayout>
 
-
-</LinearLayout>
+    </LinearLayout>
+</ScrollView>

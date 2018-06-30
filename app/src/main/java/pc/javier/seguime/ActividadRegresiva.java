@@ -93,9 +93,7 @@ public class ActividadRegresiva extends AppCompatActivity {
         // obtiene la hora en la que debe activarse la alarma
         String alarma = Aplicacion.preferenciaCadena("alarma");
 
-        // si no hay alarma sale
-        if (alarma == "")
-            return;
+
 
 
 
@@ -106,13 +104,18 @@ public class ActividadRegresiva extends AppCompatActivity {
         mensajeLog(alarma + ">" + FechaHora.cantidadMinutos(alarma));
         mensajeLog("Intervalo: " + FechaHora.intervalo(alarma));
 
-        if (Parametro.telefono != null)
-            if (!Parametro.telefono.equals(""))
-                tvSms.setText(Parametro.telefono);
+        if (!estaActivo())
+            if (Parametro.telefono != null)
+                if (!Parametro.telefono.equals(""))
+                    tvSms.setText(Parametro.telefono);
         Parametro.telefono = "";
 
 
-        temporizadorAlarmaIniciar();
+        tvSms.setEnabled(!estaActivo());
+        tvTexto.setEnabled(!estaActivo());
+
+        if (estaActivo())
+            temporizadorAlarmaIniciar();
     }
 
     public void clickBoton (View view) {
@@ -128,10 +131,7 @@ public class ActividadRegresiva extends AppCompatActivity {
 
     // verifica si esta activo o inactivo
     private boolean estaActivo() {
-        if (Aplicacion.alarma() == "")
-            return false;
-        else
-            return true;
+        return  (Aplicacion.alarma() != "");
     }
 
 
@@ -161,9 +161,13 @@ public class ActividadRegresiva extends AppCompatActivity {
 
         temporizadorAlarmaDetener();
         boton();
+        tvTexto.setEnabled(true);
+        tvSms.setEnabled(true);
     }
 
     private void iniciar(){
+        tvTexto.setEnabled(false);
+        tvSms.setEnabled(false);
 
         if (tvTexto.getText().equals(""))
             tvTexto.setText(R.string.alarmamensaje);

@@ -2,6 +2,8 @@
 
 ### [0.8] - 30 Junio 2018
 Correcciones: Mejora en la estabilidad.
+Correcciones: Selección de contacto en el temporizador.
+Modificado: Diseño de opciones.
 
 ### [0.7] - 23 Junio 2018
 * Modificado: Funcionamiento interno del Temporizador (Optimización, ahorro de batería).

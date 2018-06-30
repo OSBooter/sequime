@@ -13,7 +13,7 @@
 	<string name="id_telegram">Chat_ID Telegram</string>
 	<string name="rastreo">跟踪 (发送消息)</string>
     <string name="telegram_bot">Bot de Telegram</string>
-	
+	<string name="iniciarConElSistema">Start on boot (coming soon)</string>
 	<string name="errorValidacion">There is an error</string>	
 	
 	

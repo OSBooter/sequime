@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
 
-    <ScrollView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:orientation="vertical"
         >
+
 
         <TableLayout
             android:layout_width="match_parent"
@@ -106,47 +108,62 @@
 
             </TableRow>
 
-            <TableRow>
-                <CheckBox
+            <LinearLayout
+                android:orientation="vertical"
+                >
+                <Switch
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/opciones_rastreo"
                     android:text = "@string/rastreo"
-
                     android:padding="10sp"
-                    android:layout_margin="2sp"
+                    android:layout_margin="5sp"
+
+                    />
+
+                <Switch
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/opciones_iniciarConElSistema"
+                    android:text = "@string/iniciarConElSistema"
+                    android:padding="10sp"
+                    android:layout_margin="5sp"
+                    android:enabled="false"
                     />
 
 
-            </TableRow>
+            </LinearLayout>
         </TableLayout>
 
-    </ScrollView>
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:stretchColumns="0,1"
-        >
-        <TableRow>
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/guardar"
-                android:onClick="guardar"
-                android:background="@drawable/botonredondeado"
-                android:textColor="@android:color/white"
-                android:layout_margin="2sp"
-                />
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="cancelar"
-                android:text="@string/cancelar"
-                android:background="@drawable/botonredondeadorojo"
-                android:textColor="@android:color/white"
-                android:layout_margin="2sp"
-                />
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="0,1"
+            >
+            <TableRow>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/guardar"
+                    android:onClick="guardar"
+                    android:background="@drawable/botonredondeado"
+                    android:textColor="@android:color/white"
+                    android:layout_margin="2sp"
+                    />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:onClick="cancelar"
+                    android:text="@string/cancelar"
+                    android:background="@drawable/botonredondeadorojo"
+                    android:textColor="@android:color/white"
+                    android:layout_margin="2sp"
+                    />
 
-        </TableRow>
-    </TableLayout>
-</LinearLayout>
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+
+
+
+</ScrollView>

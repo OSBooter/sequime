@@ -9,8 +9,9 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.CheckBox;
+
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import pc.javier.seguime.utilidades.Parametro;
@@ -23,7 +24,7 @@ public class ActividadOpciones extends AppCompatActivity {
     EditText Ttelegram ;
     EditText Tactividad ;
     EditText Tinactividad;
-    CheckBox Crastreo;
+    Switch Crastreo;
 
 
     @Override
@@ -35,7 +36,7 @@ public class ActividadOpciones extends AppCompatActivity {
         Ttelegram = (EditText) findViewById(R.id.opciones_telegram);
         Tactividad = (EditText) findViewById(R.id.opciones_actividad);
         Tinactividad = (EditText) findViewById(R.id.opciones_inactividad);
-        Crastreo = (CheckBox) findViewById(R.id.opciones_rastreo);
+        Crastreo = (Switch) findViewById(R.id.opciones_rastreo);
 
         preferencias = getSharedPreferences("preferencias", MODE_PRIVATE);
         cargarOpciones();

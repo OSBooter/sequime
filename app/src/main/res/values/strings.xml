@@ -13,6 +13,7 @@
     <string name="id_telegram">Chat_ID Telegram (NO @USUARIO)</string>
     <string name="rastreo">Rastreo (Envía Mensajes)</string>
     <string name="telegram_bot">Bot de Telegram</string>
+	<string name="iniciarConElSistema">Iniciar con el sistema (Proximamente)</string>
 
 	<string name="errorValidacion">Hay un error con los datos ingresados</string>
 

@@ -13,7 +13,7 @@
 	<string name="id_telegram">Chat_ID Telegram (NO @USER_ID)</string>
 	<string name="rastreo">Tracking (send messages)</string>
     <string name="telegram_bot">Telegram BOT</string>
-
+	<string name="iniciarConElSistema">Start on boot (coming soon)</string>
 	<string name="errorValidacion">There is an error</string>	
 	
 	
