@@ -261,7 +261,7 @@ public class Comandos implements Handler.Callback {
     // actualiza datos (e interfaces)
     private void comando (String dato) {
         basededatos = Aplicacion.basededatos;
-        preferencias = Aplicacion.preferencias;
+        preferencias = Aplicacion.Preferencias();
 
         String comando;
         String parametro;

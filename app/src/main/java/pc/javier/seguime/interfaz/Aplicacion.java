@@ -40,7 +40,7 @@ public class Aplicacion {
     public static Context contexto;
     public static Handler handler;
     public static BD basededatos;
-    public static SharedPreferences preferencias;
+    private static SharedPreferences preferencias;
 
     private  Intent servicio;
 
@@ -66,12 +66,12 @@ public class Aplicacion {
      // genera una configuracion inicial (Predeterminada)
     private void cargarConfiguracionInicial() {
         mensajeLog ( "veriticando si se carga configuracion inicial....: "  );
-        if (preferencias.getBoolean("inicial", true) == false)
+        if (Preferencias().getBoolean("inicial", true) == false)
             return;
 
         mensajeLog ( "no hay configuracion previa, se cargaran valores predeterminados" );
 
-        SharedPreferences.Editor editor = preferencias.edit();
+        SharedPreferences.Editor editor = Preferencias().edit();
 
         editor.putString("servidor", "http://javierpc.esy.es/seguime/servicio.php");
         editor.putString("usuario", "demo");
@@ -143,28 +143,28 @@ public class Aplicacion {
 
     // verifica si la aplicacion esta configurada como bloqueada o no
     public boolean estaBloqueado() {
-        return preferencias.getBoolean("bloqueo", false);
+        return Preferencias().getBoolean("bloqueo", false);
     }
 
 
     // verifica si esta hay una sesion iniciada en la aplicacion
     public boolean sesionIniciada() {
-        return preferencias.getBoolean("sesion", false);
+        return Preferencias().getBoolean("sesion", false);
     }
 
     // mensajes de notificacion (toast)
-    public String notificacion () {return preferencias.getString("notificacion", ""); }
+    public String notificacion () {return Preferencias().getString("notificacion", ""); }
 
     // mensajes en pantalla
-    public String mensaje () {return preferencias.getString("mensaje", ""); }
+    public String mensaje () {return Preferencias().getString("mensaje", ""); }
 
     public void borrarNotificacion() {
-        SharedPreferences.Editor editor = preferencias.edit();
+        SharedPreferences.Editor editor = Preferencias().edit();
         editor.remove("notificacion");
         editor.commit();
     }
     public void borrarMensaje() {
-        SharedPreferences.Editor editor = preferencias.edit();
+        SharedPreferences.Editor editor = Preferencias().edit();
         editor.remove("mensaje");
         editor.commit();
     }
@@ -174,7 +174,7 @@ public class Aplicacion {
         detenerServicio();
         if (estaBloqueado())
             return;
-        SharedPreferences.Editor editor = preferencias.edit();
+        SharedPreferences.Editor editor = Preferencias().edit();
         editor.remove("sesion");
         editor.commit();
     }
@@ -182,29 +182,29 @@ public class Aplicacion {
 
 
     public static void preferenciaCadena (String opcion, String valor) {
-        SharedPreferences.Editor editor = preferencias.edit();
+        SharedPreferences.Editor editor = Preferencias().edit();
         editor.putString(opcion, valor);
         editor.commit();
     }
     public static String preferenciaCadena (String opcion) {
-        return preferencias.getString(opcion,"");
+        return Preferencias().getString(opcion,"");
     }
 
 
     public static void preferenciaBooleano (String opcion, boolean valor) {
-        SharedPreferences.Editor editor = preferencias.edit();
+        SharedPreferences.Editor editor = Preferencias().edit();
         editor.putBoolean(opcion, valor);
         editor.commit();
     }
     public static boolean preferenciaBooleano (String opcion) {
-        return preferencias.getBoolean(opcion,false);
+        return Preferencias().getBoolean(opcion,false);
     }
 
 
 
     // verifica si el temporizador existe y llego al final
     public static boolean alarmaLimite() {
-        String temporizador = preferencias.getString("alarma", "");
+        String temporizador = Preferencias().getString("alarma", "");
         if (temporizador == "")
             return false;
         long intervalo = FechaHora.intervalo(temporizador);
@@ -214,25 +214,25 @@ public class Aplicacion {
     }
 
     public static String alarma() {
-        return  preferencias.getString("alarma", "");
+        return  Preferencias().getString("alarma", "");
     }
     public static void alarma(String valor) {
-        SharedPreferences.Editor editor = preferencias.edit();
+        SharedPreferences.Editor editor = Preferencias().edit();
         editor.putString("alarma", valor);
         editor.commit();
     }
     public static boolean alarmaExiste() {
-        return (preferencias.getString("alarma", "")!="");
+        return (Preferencias().getString("alarma", "")!="");
     }
 
 
     // copia de la alarma en el servidor
 
     public static String alarmaServidor() {
-        return  preferencias.getString("alarmaservidor", "");
+        return  Preferencias().getString("alarmaservidor", "");
     }
     public static void alarmaServidor(String valor) {
-        SharedPreferences.Editor editor = preferencias.edit();
+        SharedPreferences.Editor editor = Preferencias().edit();
         editor.putString("alarmaservidor", valor);
         editor.commit();
     }
@@ -241,16 +241,25 @@ public class Aplicacion {
     // preferencias
 
     public static boolean rastreo (){
-        return preferencias.getBoolean("rastreo", false);
+        return Preferencias().getBoolean("rastreo", false);
     }
     public static void rastreo (boolean valor){
-        SharedPreferences.Editor editor = preferencias.edit();
+        SharedPreferences.Editor editor = Preferencias().edit();
         editor.putBoolean("rastreo", valor);
         editor.commit();
     }
 
 
-    
+
+    public static SharedPreferences Preferencias() {
+
+        if (preferencias == null)
+            preferencias = contexto.getSharedPreferences("preferencias",contexto.MODE_PRIVATE);
+        return  preferencias;
+
+    }
+
+
     private void mensajeLog (String texto) {
         Log.d("Aplicacion", texto);
     }

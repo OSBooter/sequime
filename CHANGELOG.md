@@ -1,5 +1,8 @@
 # Seguime 
 
+### [0.8] - 30 Junio 2018
+Correcciones: Mejora en la estabilidad.
+
 ### [0.7] - 23 Junio 2018
 * Modificado: Funcionamiento interno del Temporizador (Optimización, ahorro de batería).
 * Modificado: Detalles mínimos en la interfaz.

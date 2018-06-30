@@ -17,6 +17,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -38,6 +39,7 @@ import pc.javier.seguime.utilidades.Parametro;
 public class MainActivity extends AppCompatActivity {
 
     Aplicacion aplicacion;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,11 +59,16 @@ public class MainActivity extends AppCompatActivity {
         mostrarIconos();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Aplicacion.contexto = getApplicationContext();
+        mensajeLog("DESTRUYENDO MAIN ACTIVITY");
+    }
 
 
 
-
-    // menu
+// menu
 
     public boolean onCreateOptionsMenu (Menu menu) {
         getMenuInflater().inflate(R.menu.menu_principal,menu);
@@ -315,6 +322,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     */
+
 
 
     private void mensajeLog (String texto) {

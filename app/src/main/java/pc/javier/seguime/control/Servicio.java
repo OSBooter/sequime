@@ -1,6 +1,7 @@
 package pc.javier.seguime.control;
 
 import android.app.Service;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -8,12 +9,14 @@ import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import pc.javier.seguime.handler.Comandos;
 import pc.javier.seguime.interfaz.Aplicacion;
 import pc.javier.seguime.interfaz.BD;
 import pc.javier.seguime.interfaz.Coordenada;
@@ -45,6 +48,7 @@ public class Servicio extends   Service  {
     private GestorDatos alarma;
 
     private  String alarmaLimite;
+
 
     @Nullable
     @Override
@@ -165,6 +169,10 @@ public class Servicio extends   Service  {
                 new TimerTask() {
                     @Override
                     public void run() {
+                        if(Aplicacion.contexto == null) {
+                            Aplicacion.contexto = getApplicationContext();
+                            mensajeLog("aplicacion sin contexto");
+                        }
 
                         mensajeLog ( " Enviando coordenadas almacenadas" );
                         ArrayList<Coordenada> lista = basededatos.coordenadaObtenerNuevas("5");
@@ -232,7 +240,14 @@ public class Servicio extends   Service  {
 
     // oomprueba si la alarma esta *ACTIVADA*
     private void comprobarAlarma() {
-        mensajeLog("comprobando alarma");
+        if(Aplicacion.contexto == null) {
+            Aplicacion.contexto = getApplicationContext();
+            mensajeLog("aplicacion sin contexto");
+        }
+
+
+
+            mensajeLog("comprobando alarma");
         if (Aplicacion.alarmaExiste())
             mensaje("vista", "alarma");
 
@@ -269,6 +284,12 @@ public class Servicio extends   Service  {
     // comunica a la aplicacion eventos ocurridos
     private void mensaje (String clave, String texto) {
         Handler handler = Aplicacion.handler;
+
+        if (handler == null) {
+            mensajeLog("SIN HANDLER");
+            return;
+        }
+
         mensajeLog("(handler) " + clave +"-"+ texto);
 
         Message mensaje = new Message();

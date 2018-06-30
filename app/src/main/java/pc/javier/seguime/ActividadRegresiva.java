@@ -63,7 +63,7 @@ public class ActividadRegresiva extends AppCompatActivity {
         tempMinuto.setValue(5);
         tempHora.setValue(0);
 
-        preferencias = Aplicacion.preferencias;
+        preferencias = Aplicacion.Preferencias();
         handler = Aplicacion.handler;
 
         Aplicacion.actividadRegresiva = this;
@@ -206,7 +206,7 @@ public class ActividadRegresiva extends AppCompatActivity {
     // menu
 
     public boolean onCreateOptionsMenu (Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_opciones,menu);
+        getMenuInflater().inflate(R.menu.menu_regresiva,menu);
         return true;
     }
 

@@ -4,21 +4,13 @@
     >
 
 
-    <item
-        android:title="@string/telegram_bot"
-        android:icon="@android:drawable/ic_menu_search"
-        android:id="@+id/menu_bot"
-        app:showAsAction="always"
-        android:onClick="MenuClick"
-        ></item>
-
 
     <item
         android:title="@string/ayuda"
         android:icon="@android:drawable/ic_menu_help"
         android:id="@+id/menu_ayuda"
         app:showAsAction="always"
-        android:onClick="MenuClick"
+        android:onClick="ayuda"
         ></item>
 
 

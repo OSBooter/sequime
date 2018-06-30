@@ -19,7 +19,7 @@ public class GestorDatos {
     private Handler handler;
 
     public GestorDatos () {
-        this.preferencias = Aplicacion.preferencias;
+        this.preferencias = Aplicacion.Preferencias();
         if (preferencias == null)
             preferencias = Aplicacion.contexto.getSharedPreferences("preferencias",MODE_PRIVATE);
 

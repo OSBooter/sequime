@@ -147,7 +147,7 @@ public class ActividadOpciones extends AppCompatActivity {
     }
 
 
-    public void ayuda (MenuItem item) {
+    public void MenuClick (MenuItem item) {
 
         switch (item.getItemId()) {
             case R.id.menu_ayuda:
