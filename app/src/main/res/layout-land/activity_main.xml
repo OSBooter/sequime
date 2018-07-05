@@ -20,7 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/layout_iconos"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/layout_boton"
         >
@@ -50,7 +50,7 @@
         android:layout_height="wrap_content"
 
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/layout_iconos"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         >
@@ -82,7 +82,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/layout_iconos"
         android:layout_marginBottom="5dp"
         >
 
@@ -113,17 +113,18 @@
                 />
         </LinearLayout>
 
+
     </android.support.constraint.ConstraintLayout>
 
 
     <android.support.constraint.ConstraintLayout
         android:id="@+id/layout_iconos"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/layout_boton"
-        app:layout_constraintBottom_toTopOf="@id/layout_estado"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginEnd="20dp"
         >
         <ImageView
             android:layout_width="30sp"
@@ -131,8 +132,8 @@
             android:src="@drawable/iconopata"
             android:id="@+id/princ_iconorastreo"
             android:onClick="clickrastreo"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/princ_iconoseguime"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/princ_iconoseguime"
             />
         <ImageView
             android:layout_width="30sp"
@@ -140,8 +141,8 @@
             android:src="@drawable/iconogps"
             android:id="@+id/princ_iconoseguime"
             android:onClick="clickseguime"
-            app:layout_constraintStart_toEndOf="@id/princ_iconorastreo"
-            app:layout_constraintEnd_toStartOf="@id/princ_iconointernet"
+            app:layout_constraintTop_toBottomOf="@id/princ_iconorastreo"
+            app:layout_constraintBottom_toTopOf="@id/princ_iconointernet"
             />
         <ImageView
             android:layout_width="30sp"
@@ -150,8 +151,8 @@
             android:id="@+id/princ_iconointernet"
             android:onClick="clickinternet"
             android:visibility="invisible"
-            app:layout_constraintStart_toEndOf="@id/princ_iconoseguime"
-            app:layout_constraintEnd_toStartOf="@id/princ_iconotemporizador"
+            app:layout_constraintTop_toBottomOf="@id/princ_iconoseguime"
+            app:layout_constraintBottom_toTopOf="@id/princ_iconotemporizador"
             />
         <ImageView
             android:layout_width="30sp"
@@ -159,8 +160,8 @@
             android:src="@drawable/iconocronometro"
             android:id="@+id/princ_iconotemporizador"
             android:onClick="clickalarma"
-            app:layout_constraintStart_toEndOf="@id/princ_iconointernet"
-            app:layout_constraintEnd_toStartOf="@id/princ_iconotemporizadorservidor"
+            app:layout_constraintTop_toBottomOf="@id/princ_iconointernet"
+            app:layout_constraintBottom_toTopOf="@id/princ_iconotemporizadorservidor"
             />
         <ImageView
             android:layout_width="30sp"
@@ -169,8 +170,8 @@
             android:id="@+id/princ_iconotemporizadorservidor"
             android:onClick="clickalarmaservidor"
             android:visibility="invisible"
-            app:layout_constraintStart_toEndOf="@id/princ_iconotemporizador"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/princ_iconotemporizador"
+            app:layout_constraintBottom_toBottomOf="parent"
             />
     </android.support.constraint.ConstraintLayout>
 

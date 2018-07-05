@@ -63,16 +63,17 @@ public class Comandos implements Handler.Callback {
         String vista = bundle.getString("vista");
 
 
+
         mensajeLog("handler recibido: " + dato + conexion + vista );
 
         if (dato != null)
-            comando(dato);
+            comando(dato.trim());
 
         if (conexion != null)
-            vista(conexion);
+            vista(conexion.trim());
 
         if (vista != null)
-            vista(vista);
+            vista(vista.trim());
 
         return false;
     }
@@ -324,8 +325,7 @@ public class Comandos implements Handler.Callback {
         }
 
 
-
-                if (comando.equals("preferencia") || comando.equals("preferencias")) {
+        if (comando.equals("preferencia") || comando.equals("preferencias")) {
             // al parametro lo "subdivide" para encontrar
             // la clave y el valor de la preferencia
             comando = parametro;
@@ -364,6 +364,33 @@ public class Comandos implements Handler.Callback {
                 return;
 
             }
+
+
+            if (comando.equals("alarmaservidor")) {
+                if (parametro.equals( "activada")) {
+                    editor.putString(comando, parametro);
+                    mensajeLog("SERVIDOR DICE QUE HAY UNA ALARMA ACTIVADA");
+                } else {
+                    editor.remove(comando);
+                    mensajeLog("SERVIDOR DICE QUE NO HAY ALARMAS");
+                }
+
+                editor.commit();
+
+                imageView = (ImageView) activityHandler.findViewById(R.id.princ_iconotemporizadorservidor);
+                if (imageView!= null)
+                if (Aplicacion.alarmaServidor().equals(""))
+                    imageView.setVisibility(View.INVISIBLE);
+                else
+                    imageView.setVisibility(View.VISIBLE);
+
+
+
+                return;
+
+            }
+
+
 
             // por SEGURIDAD impide modificar SMS, solo lo elimina
             if (comando.equals("sms")) {

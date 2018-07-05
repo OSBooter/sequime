@@ -28,6 +28,15 @@
     ></item>
 
 
+    <item
+        android:title="@string/registrarAplicacion"
+        android:icon="@android:drawable/ic_lock_idle_lock"
+        android:id="@+id/menu_registraraplicacion"
+        app:showAsAction ="ifRoom"
+        ></item>
+
+
+
 
 
     <item

@@ -29,16 +29,19 @@ public class GestorDatos {
         handler = Aplicacion.handler;
     }
 
-    public  void enviarAlarma () {
+    public  void EnviarAlarma () {
         String parametros = "";
         parametros = "comando=alarma" ;
         parametros = "clave=" + clave + "&" + parametros;
         parametros = "usuario=" + usuario + "&" + parametros;
         String telegram = preferencias.getString("telegram", "");
+        Temporizador temporizador = new Temporizador();
+        temporizador.DefinirActivacion(Aplicacion.alarma());
+
 
         if (Aplicacion.alarmaExiste())
             if (telegram != "")
-                parametros = parametros +"&" + "contacto=" + telegram + "&alarma=" + Aplicacion.alarma() +  "&texto="+Aplicacion.preferenciaCadena("alarmatexto");
+                parametros = parametros +"&" + "contacto=" + telegram + "&alarma=" + temporizador.FechaHoraServidorString() +  "&texto="+Aplicacion.preferenciaCadena("alarmatexto");
 
         if (Aplicacion.alarmaServidor().equals("eliminar"))
             parametros = parametros + "&alarma=0";
@@ -50,6 +53,40 @@ public class GestorDatos {
         conexion.conectar();
     }
 
+
+    public  void ActivarAlarma () {
+        String parametros = "";
+        parametros = "comando=alarma" ;
+        parametros = "clave=" + clave + "&" + parametros;
+        parametros = "usuario=" + usuario + "&" + parametros;
+        String telegram = preferencias.getString("telegram", "");
+
+        if (Aplicacion.alarmaExiste())
+            if (telegram != "")
+                parametros = parametros +"&" + "contacto=" + telegram + "&alarma=activar&texto="+Aplicacion.preferenciaCadena("alarmatexto");
+
+
+        mensajeLog ( "Activando ALARMA: " + parametros);
+
+        Internet conexion = new Internet(servidor, parametros, handler);
+        conexion.conectar();
+    }
+
+
+    public void EnviarNada () {
+        String parametros = "";
+
+        parametros = "comando=ping" ;
+        parametros = "clave=" + clave + "&" + parametros;
+        parametros = "usuario=" + usuario + "&" + parametros;
+
+
+
+        mensajeLog ( "Enviando NADA: " + parametros);
+
+        Internet conexion = new Internet(servidor, parametros, handler);
+        conexion.conectar();
+    }
 
     private void mensajeLog (String texto) {
         Log.d("Gestor de Datos", texto);

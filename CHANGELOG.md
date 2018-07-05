@@ -1,5 +1,11 @@
 # Seguime 
 
+### [0.9] - 3 Julio 2018
+Agregado: Iniciar con el sistema.
+Agregado: Diseño pantalla principal en modo apaisado.
+Correcciones: Recepción de datos por parte del servidor.
+Correcciones: Zona horaria compatibles entre el dispositivo y el servidor. 
+
 ### [0.8] - 30 Junio 2018
 Correcciones: Mejora en la estabilidad.
 Correcciones: Selección de contacto en el temporizador.

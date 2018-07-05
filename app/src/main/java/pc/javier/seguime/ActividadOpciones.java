@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.Toast;
 
+import pc.javier.seguime.interfaz.Aplicacion;
 import pc.javier.seguime.utilidades.Parametro;
 
 public class ActividadOpciones extends AppCompatActivity {
@@ -24,7 +25,9 @@ public class ActividadOpciones extends AppCompatActivity {
     EditText Ttelegram ;
     EditText Tactividad ;
     EditText Tinactividad;
-    Switch Crastreo;
+    Switch Srastreo;
+    Switch Siniciar;
+
 
 
     @Override
@@ -36,10 +39,12 @@ public class ActividadOpciones extends AppCompatActivity {
         Ttelegram = (EditText) findViewById(R.id.opciones_telegram);
         Tactividad = (EditText) findViewById(R.id.opciones_actividad);
         Tinactividad = (EditText) findViewById(R.id.opciones_inactividad);
-        Crastreo = (Switch) findViewById(R.id.opciones_rastreo);
+        Srastreo = (Switch) findViewById(R.id.opciones_rastreo);
+        Siniciar = (Switch) findViewById(R.id.opciones_iniciarConElSistema);
 
         preferencias = getSharedPreferences("preferencias", MODE_PRIVATE);
         cargarOpciones();
+
     }
 
     @Override
@@ -51,6 +56,9 @@ public class ActividadOpciones extends AppCompatActivity {
             return;
         Tsms.setText(Parametro.telefono);
         Parametro.telefono = "";
+
+
+
     }
 
 
@@ -62,6 +70,15 @@ public class ActividadOpciones extends AppCompatActivity {
 
 
     public void guardar (View v) {
+
+        if (!Aplicacion.Registrada())
+            if (Siniciar.isChecked()) {
+                Toast.makeText(this, R.string.requiereregistro, Toast.LENGTH_LONG).show();
+                Siniciar.setChecked(false);
+                Siniciar.setEnabled(false);
+                return ;
+            }
+
         if (guardarOpciones())
             this.finish();
         else
@@ -79,13 +96,15 @@ public class ActividadOpciones extends AppCompatActivity {
         int actividad = preferencias.getInt("actividad", 0);
         int inactividad = preferencias.getInt("inactividad", 0);
         boolean rastreo = preferencias.getBoolean("rastreo", false);
+        boolean iniciar = preferencias.getBoolean("iniciar", false);
 
 
         Tsms.setText(sms);
         Ttelegram.setText(telegram);
         Tactividad.setText(String.valueOf(actividad));
         Tinactividad.setText(String.valueOf(inactividad));
-        Crastreo.setChecked(rastreo);
+        Srastreo.setChecked(rastreo);
+        Siniciar.setChecked(iniciar);
 
     }
 
@@ -107,7 +126,9 @@ public class ActividadOpciones extends AppCompatActivity {
 
         String sms =  Tsms.getText().toString();
         String telegram = Ttelegram.getText().toString();
-        boolean rastreo = Crastreo.isChecked();
+        boolean rastreo = Srastreo.isChecked();
+        boolean iniciar = Siniciar.isChecked();
+
 
 
 
@@ -121,6 +142,7 @@ public class ActividadOpciones extends AppCompatActivity {
         editor.putString("telegram", telegram);
 
         editor.putBoolean("rastreo", rastreo);
+        editor.putBoolean("iniciar", iniciar);
         editor.commit();
         return true;
     }
@@ -171,43 +193,17 @@ public class ActividadOpciones extends AppCompatActivity {
         startActivity(i);
     }
 
-/*
-    @Override
-    public boolean onOptionsItemSelected (MenuItem item) {
-        if (aplicacion.estaBloqueado()) {
-            Toast.makeText(MainActivity.this, R.string.txt_bloqueado, Toast.LENGTH_SHORT).show();
-            return true;
+
+
+    public void IniciarConElSistema (View v) {
+        if (!Aplicacion.Registrada()) {
+            Intent i = new Intent (this, ActividadClave.class);
+            startActivity(i);
         }
-        int id = item.getItemId();
-        Intent i;
-        switch (id) {
-            case R.id.menu_ayuda:
-                i = new Intent(this, ActividadAyuda.class);
-                startActivity(i);
-                break;
-            case R.id.menu_opciones:
-                i = new Intent(this, ActividadOpciones.class);
-                startActivity(i);
-                break;
 
-            case R.id.menu_registros:
-                i = new Intent(this, ActividadRegistros.class);
-                startActivity(i);
-                break;
+        if (!Aplicacion.Registrada())
+            Siniciar.setChecked(false);
 
-
-            case R.id.menu_salir:
-                aplicacion.cerrarSesion();
-                if (aplicacion.estaBloqueado())
-                    return true;
-                this.finish();
-                break;
-        }
-        return true;
     }
-
-*/
-
-
 
 }

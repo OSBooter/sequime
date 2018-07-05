@@ -177,7 +177,7 @@ public class Servicio extends   Service  {
                         mensajeLog ( " Enviando coordenadas almacenadas" );
                         ArrayList<Coordenada> lista = basededatos.coordenadaObtenerNuevas("5");
                         alarma = new GestorDatos();
-                        alarma.enviarAlarma();
+                        alarma.EnviarAlarma();
                         if (lista.size()>0)
                             for (Coordenada coordenada : lista) {
                                 gestorTemporizador.setCoordenada(coordenada);
@@ -266,6 +266,10 @@ public class Servicio extends   Service  {
             Aplicacion.preferenciaBooleano("rastreo", true);
 
             // bloquea el sistema¿?
+
+            // activa la alarma del servidor
+            alarma = new GestorDatos();
+            alarma.EnviarNada();
 
             // QUITA LA ALARMA (asi no se vuelve a repetir esto)
             Aplicacion.preferenciaCadena("alarma", "");

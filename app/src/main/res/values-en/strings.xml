@@ -13,7 +13,7 @@
 	<string name="id_telegram">Chat_ID Telegram (NO @USER_ID)</string>
 	<string name="rastreo">Tracking (send messages)</string>
     <string name="telegram_bot">Telegram BOT</string>
-	<string name="iniciarConElSistema">Start on boot (coming soon)</string>
+	<string name="iniciarConElSistema">Start on boot</string>
 	<string name="errorValidacion">There is an error</string>	
 	
 	
@@ -81,8 +81,15 @@
 	<string name="repetirclave">Repeat password (do not use real passwords)</string>
 	<string name="ssl">Secure Connection SSL</string>
 
-	
-	
+
+	<string name="registrarAplicacion">Register Version</string>
+	<string name="nombre">Name</string>
+	<string name="versionRegistrada">Registered Version</string>
+    <string name="claveIncorrecta">Wrong Password</string>
+	<string name="requiereregistro">Registered version is required</string>
+	<string name="txt_registrodeversion">Register is free, get you key on website, personal information is not required</string>
+
+
 	<string name="conectando">Connecting...</string>
 	<string name="errorconexion">Connection Error</string>
 	<string name="enviano">Sending data....</string>

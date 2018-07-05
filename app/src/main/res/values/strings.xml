@@ -13,7 +13,7 @@
     <string name="id_telegram">Chat_ID Telegram (NO @USUARIO)</string>
     <string name="rastreo">Rastreo (Envía Mensajes)</string>
     <string name="telegram_bot">Bot de Telegram</string>
-	<string name="iniciarConElSistema">Iniciar con el sistema (Proximamente)</string>
+	<string name="iniciarConElSistema">Iniciar con el sistema</string>
 
 	<string name="errorValidacion">Hay un error con los datos ingresados</string>
 
@@ -59,9 +59,9 @@
 
 	
 	
-    <string name="txt_servicio_activo">¡Bien! La aplicación esta Activada :-)</string>
-    <string name="txt_servicio_inactivo">La aplicación esta desactivada, pulsa el botón para activarla</string>
-    <string name="txt_bloqueado">En este momento la aplicación esta bloqueada</string>
+    <string name="txt_servicio_activo">¡Bien! La aplicación está Activada :-)</string>
+    <string name="txt_servicio_inactivo">La aplicación está desactivada, pulsá el botón para activarla</string>
+    <string name="txt_bloqueado">En este momento la aplicación está bloqueada</string>
 
 	<string name="activar_aplicacion">¡Seguime!</string>
     <string name="desactivar_aplicacion">No me Sigas</string>
@@ -81,7 +81,14 @@
 	<string name="registrarse">Registrarse</string>
 	<string name="repetirclave">Repita la clave (NO USAR claves reales)</string>
 	<string name="ssl">Conexión segura SSL</string>
-	
+
+
+    <string name="registrarAplicacion">Registrar Version</string>
+    <string name="nombre">Nombre</string>
+    <string name="versionRegistrada">Version Registrada</string>
+    <string name="claveIncorrecta">Clave Incorrecta</string>
+	<string name="requiereregistro">Requiere registro</string>
+    <string name="txt_registrodeversion">El registro es GRATUITO, visite el sitio web y consiga su clave, no requiere información personal</string>
 	
 	
 	<string name="conectando">Conectando...</string>

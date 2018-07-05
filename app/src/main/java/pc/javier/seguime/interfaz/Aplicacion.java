@@ -93,6 +93,8 @@ public class Aplicacion {
 
     // Pone en marcha la aplicacion (Servicios)
     public void iniciarServicio() {
+        Toast.makeText(contexto, "\uD83D\uDCE1", Toast.LENGTH_LONG).show();
+        preferenciaBooleano("activa", true);
         mensajeLog ( "Iniciando Servicio");
         if (servicioActivo())
             return;
@@ -113,6 +115,8 @@ public class Aplicacion {
 
         contexto.stopService(servicio);
         mensajeLog ("Deteniendo Servicio");
+
+        preferenciaBooleano("activa", false);
     }
 
 
@@ -249,7 +253,16 @@ public class Aplicacion {
         editor.commit();
     }
 
+    public static String Usuario () {
+        return preferenciaCadena("usuario");
+    }
 
+    public static boolean Registrada () {
+        return (preferenciaCadena("registrada")!="");
+    }
+    public static void Registrada (String nombre) {
+        preferenciaCadena("registrada", nombre);
+    }
 
     public static SharedPreferences Preferencias() {
 
@@ -258,6 +271,8 @@ public class Aplicacion {
         return  preferencias;
 
     }
+
+
 
 
     private void mensajeLog (String texto) {

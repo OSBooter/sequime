@@ -8,87 +8,93 @@
     android:orientation="vertical"
 
     >
-<android.support.constraint.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="5dp"
+        >
 
+
+<TableLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:stretchColumns="0"
     >
 
 
-    <LinearLayout
-        android:layout_width="wrap_content"
+    <TableRow
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:orientation="vertical"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         >
 
         <LinearLayout
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
+            android:layout_margin="5dp"
+
             >
+
+
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/sms"
 
                 />
+
             <EditText
+                android:id="@+id/temporizador_sms"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text=""
-                android:id="@+id/temporizador_sms"
-                android:onClick="mostrarContactos"
-                android:background="@drawable/borderedondeado"
-                android:padding="10sp"
                 android:layout_margin="2sp"
+                android:background="@drawable/borderedondeado"
                 android:inputType="phone"
-                />
+                android:onClick="mostrarContactos"
+                android:padding="10sp"
+                android:text="" />
 
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="10dp" />
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/mensajealerta"
-                />
+                android:text="@string/mensajealerta" />
+
             <EditText
+                android:id="@+id/temporizador_texto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/alarmamensaje"
-                android:id="@+id/temporizador_texto"
                 android:layout_alignParentBottom="true"
-                android:background="@drawable/borderedondeado"
-                android:padding="10sp"
                 android:layout_margin="2sp"
+                android:background="@drawable/borderedondeado"
                 android:lines="2"
-                />
+                android:padding="10sp"
+                android:text="@string/alarmamensaje" />
         </LinearLayout>
-        <Space
-            android:layout_width="wrap_content"
-            android:layout_height="10dp" />
+
 
         <TableLayout
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+
 
             >
 
-            <TableRow
-
-                >
+            <TableRow>
 
                 <NumberPicker
                     android:id="@+id/temporizador_hora"
                     android:layout_width="100sp"
-                    android:layout_height="wrap_content"
-                    />
+                    android:layout_height="wrap_content" />
 
                 <Space android:minWidth="20px" />
 
@@ -107,51 +113,49 @@
             </TableRow>
 
             <TableRow>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/hora"
-                    android:textAlignment="center"
-                    />
+                    android:textAlignment="center" />
+
                 <Space />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/minuto"
-                    android:textAlignment="center"
-                    />
+                    android:textAlignment="center" />
+
                 <Space />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/segundo"
-                    android:textAlignment="center"
-                    />
+                    android:textAlignment="center" />
             </TableRow>
 
         </TableLayout>
 
-        <Space
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="50px"
-            />
+    </TableRow>
+
+</TableLayout>
+
+
+
         <Button
+            android:id="@+id/temporizador_boton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/iniciar"
-            android:onClick="clickBoton"
             android:background="@drawable/botonredondeado"
+            android:onClick="clickBoton"
+            android:text="@string/iniciar"
             android:textColor="#ffffff"
-            android:id="@+id/temporizador_boton"
 
-            />
-
-
-
+            android:layout_margin="5dp" />
 
 
     </LinearLayout>
-
-</android.support.constraint.ConstraintLayout>
 </ScrollView>

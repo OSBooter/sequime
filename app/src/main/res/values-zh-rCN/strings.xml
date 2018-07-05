@@ -13,7 +13,7 @@
 	<string name="id_telegram">Chat_ID Telegram</string>
 	<string name="rastreo">跟踪 (发送消息)</string>
     <string name="telegram_bot">Bot de Telegram</string>
-	<string name="iniciarConElSistema">Start on boot (coming soon)</string>
+	<string name="iniciarConElSistema">Start on boot</string>
 	<string name="errorValidacion">There is an error</string>	
 	
 	
@@ -81,6 +81,12 @@
 	<string name="repetirclave">重复密码</string>
 	<string name="ssl">Secure Conection SSL</string>
 
+	<string name="registrarAplicacion">Register Version</string>
+	<string name="nombre">Name</string>
+	<string name="versionRegistrada">Registered Version</string>
+    <string name="claveIncorrecta">Wrong Password</string>
+	<string name="requiereregistro">Registered version is required</string>
+	<string name="txt_registrodeversion">Register is free, get you key on website, personal information is not required</string>
 
 
 	<string name="conectando">Connecting...</string>

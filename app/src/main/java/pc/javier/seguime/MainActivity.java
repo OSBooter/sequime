@@ -20,6 +20,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -33,6 +34,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import pc.javier.seguime.interfaz.Aplicacion;
+import pc.javier.seguime.utilidades.FechaHora;
 import pc.javier.seguime.utilidades.Parametro;
 
 
@@ -57,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
         regresarAplicacion();
         mostrarBoton();
         mostrarIconos();
+
     }
 
     @Override
@@ -72,6 +75,10 @@ public class MainActivity extends AppCompatActivity {
 
     public boolean onCreateOptionsMenu (Menu menu) {
         getMenuInflater().inflate(R.menu.menu_principal,menu);
+
+        if (Aplicacion.Registrada())
+            menu.findItem(R.id.menu_registraraplicacion).setEnabled(false).setVisible(false);
+
         return true;
     }
 
@@ -82,9 +89,9 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(MainActivity.this, R.string.txt_bloqueado, Toast.LENGTH_LONG).show();
             return true;
         }
-        int id = item.getItemId();
+
         Intent i;
-        switch (id) {
+        switch (item.getItemId()) {
             case R.id.menu_ayuda:
                 i = new Intent(this, ActividadAyuda.class);
                 startActivity(i);
@@ -104,12 +111,20 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
                 break;
 
+            case R.id.menu_registraraplicacion:
+                i = new Intent(this, ActividadClave.class);
+                startActivity(i);
+                break;
 
 
             case R.id.menu_salir:
-                aplicacion.cerrarSesion();
+
+                aplicacion.detenerServicio();
                 if (aplicacion.estaBloqueado())
                     return true;
+                if (aplicacion.alarmaExiste())
+                    return true;
+                aplicacion.cerrarSesion();
                 this.finish();
                 break;
         }
@@ -143,7 +158,7 @@ public class MainActivity extends AppCompatActivity {
     private void mostrarBoton () {
         Button boton = (Button) findViewById(R.id.princ_boton);
         TextView estado = (TextView) findViewById(R.id.princ_estado);
-        RelativeLayout pantalla = (RelativeLayout) findViewById(R.id.princ_pantalla);
+        ConstraintLayout pantalla = (ConstraintLayout) findViewById(R.id.princ_pantalla);
 
         if (aplicacion.servicioActivo()) {
             ((Button) boton).setText(getText(R.string.desactivar_aplicacion));
@@ -217,6 +232,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
+        if (Aplicacion.Registrada())
+            ((TextView)findViewById(R.id.princ_registrada)).setText(getString(R.string.versionRegistrada) + " ["+ Aplicacion.preferenciaCadena("registrada") +"] :-)");
 
     }
 
@@ -253,6 +270,12 @@ public class MainActivity extends AppCompatActivity {
         else
             seguime.setVisibility(View.INVISIBLE);
 
+        ImageView alarmaServidor = (ImageView) findViewById(R.id.princ_iconotemporizadorservidor);
+        if (Aplicacion.alarmaServidor().equals(""))
+            alarmaServidor.setVisibility(View.INVISIBLE);
+        else
+            alarmaServidor.setVisibility(View.VISIBLE);
+
     }
 
     // clicks en iconos
@@ -276,52 +299,6 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-
-    // ------ PRUEBAS ---------------------------------
-
-
-/*
-    private void pruebaInternet () {
-
-        Log.d("PRINCIPAL", "probando.....");
-        ObservadorInternet observadorInternet = new ObservadorInternet(new BD(this));
-
-        Conexion conexion = new Conexion("http://ddg.gg", "hola", observadorInternet);
-        //conexion.addObserver(observadorInternet);
-        Thread hilo = new Thread(conexion);
-        hilo.start();
-    }
-
-
-    private void pruebaStrings() {
-        String texto = "borrar: 3 7 9";
-        int indice = texto.indexOf(" ");
-        Log.d("Prueba Strings original", texto);
-        Log.d("Prueba Strings indice", String.valueOf(indice));
-        Log.d("Prueba Strings com", texto.substring(0,indice) +"x");
-        Log.d("Prueba Strings param", texto.substring(indice + 1));
-        finish();
-    }
-
-    private void pruebaBD () {
-        BD base = new BD(this);
-        base.abrir();
-        Cursor c = base.obtenerCoordenadas();
-        c.moveToFirst();
-        for (int x=0 ; x<= c.getCount(); x++) {
-            Log.d("PRUEBA BASE",
-                    "id: " + c.getInt(0) +
-                            "latitud: " + c.getString(2) +
-                            "recibido: " + c.getInt(5)
-                    );
-
-        }
-
-        base.cerrar();
-        finish();
-    }
-
-    */
 
 
 

@@ -3,6 +3,7 @@ package pc.javier.seguime.utilidades;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.TimeZone;
 
 /**
  * Created by javier on 26/11/2016.
@@ -102,6 +103,16 @@ public abstract class FechaHora {
         return ffecha.format(diff);
     }
 
+    public static String suma (int intervalo ){
+        Date fecha = new Date();
+        SimpleDateFormat ffecha = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+        long in = fecha.getTime();
+        long fin = intervalo *1000;
+        Long diff= (fin+in);
+        return ffecha.format(diff);
+    }
+
     public static int diferencia (Date fechaIn, Date fechaFinal ){
         long in = fechaIn.getTime();
         long fin = fechaFinal.getTime();
@@ -149,5 +160,28 @@ public abstract class FechaHora {
             respuesta=Integer.parseInt(formato.format(formato.parse(fechacompleta)));
         } catch (Exception e) {}
         return respuesta;
+    }
+
+
+    public  static String HoraUTC () {
+        TimeZone actual = TimeZone.getDefault();
+        return suma (-actual.getRawOffset()/1000);
+    }
+
+
+    public  static String HoraServidor () {
+        TimeZone actual = TimeZone.getDefault();
+        return suma ((actual.getRawOffset()/1000) + (3*60*60));
+    }
+
+    // segundos de diferencia
+    public  static int DiferenciaServidor () {
+        // -(3*60*60) = zona horaria argentina
+        return (DiferenciaUTC() + (3*60*60));
+    }
+
+    public  static int DiferenciaUTC () {
+        TimeZone actual = TimeZone.getDefault();
+        return (actual.getRawOffset()/1000);
     }
 }

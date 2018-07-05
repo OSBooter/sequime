@@ -21,6 +21,7 @@ import java.util.TimerTask;
 import pc.javier.seguime.interfaz.Aplicacion;
 import pc.javier.seguime.interfaz.GestorCoordenadas;
 import pc.javier.seguime.interfaz.GestorDatos;
+import pc.javier.seguime.interfaz.Temporizador;
 import pc.javier.seguime.utilidades.Boton;
 import pc.javier.seguime.utilidades.FechaHora;
 import pc.javier.seguime.utilidades.Parametro;
@@ -157,7 +158,7 @@ public class ActividadRegresiva extends AppCompatActivity {
         Aplicacion.alarma("");
 
         GestorDatos borrarAlarma = new GestorDatos();
-        borrarAlarma.enviarAlarma();
+        borrarAlarma.EnviarAlarma();
 
         temporizadorAlarmaDetener();
         boton();
@@ -176,8 +177,16 @@ public class ActividadRegresiva extends AppCompatActivity {
         Aplicacion.preferenciaCadena("sms", tvSms.getText().toString());
         Aplicacion.preferenciaCadena("alarmatexto", tvTexto.getText().toString());
 
-        long segundos = (tempMinuto.getValue()*60) + (tempHora.getValue() *60*60) + tempSegundo.getValue();
-        String alarma = FechaHora.suma(String.valueOf(segundos));
+        int segundos = (tempMinuto.getValue()*60) + (tempHora.getValue() *60*60) + tempSegundo.getValue();
+
+        Temporizador temporizador = new Temporizador();
+        temporizador.DefinirActivacion(segundos);
+
+        mensajeLog("FECHA HORA - SISTEMA: " + temporizador.FechaHoraString());
+        mensajeLog("FECHA HORA - UTC: " + temporizador.FechaHoraUTCString());
+        mensajeLog("FECHA HORA - ARGENTINA: " + temporizador.FechaHoraServidorString());
+
+        String alarma = temporizador.FechaHoraString();
         Aplicacion.alarma(alarma);
         Parametro.aplicacion.ReiniciarServicio();
 
@@ -258,7 +267,7 @@ temporizadorAlarma = new Timer();
 
         dato.putString("vista", "alarma");
         mensaje.setData(dato);
-        // no funciona
+
         handler.sendMessage(mensaje);
 
 
@@ -279,7 +288,7 @@ temporizadorAlarma = new Timer();
     }
 
     private void mensajeLog (String texto) {
-        Log.d("Actividad Registro", texto);
+        Log.d("Actividad Regresiva", texto);
     }
 
 
