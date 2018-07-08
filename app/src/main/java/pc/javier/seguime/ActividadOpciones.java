@@ -176,6 +176,7 @@ public class ActividadOpciones extends AppCompatActivity {
             case R.id.menu_ayuda:
                 Intent i = new Intent(this, ActividadAyudaOpciones.class);
                 startActivity(i);
+                overridePendingTransition(R.anim.izquierda_entrada, R.anim.izquierda_salida);
                 break;
 
             case R.id.menu_bot:

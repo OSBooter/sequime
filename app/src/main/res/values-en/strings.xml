@@ -3,6 +3,8 @@
 
 	<string name="Traducidopor">Javier</string>
 
+	<string name="menu_abrir">Menú</string>
+	<string name="menu_cerrar">Close Menú</string>
 
 	<string name="servidor">Server</string>
 	<string name="usuario">User</string>
@@ -14,10 +16,17 @@
 	<string name="rastreo">Tracking (send messages)</string>
     <string name="telegram_bot">Telegram BOT</string>
 	<string name="iniciarConElSistema">Start on boot</string>
-	<string name="errorValidacion">There is an error</string>	
-	
-	
-		
+	<string name="errorValidacion">There is an error</string>
+
+
+    <string name="espere">Please wait... ️</string>
+
+	<string name="sesion_clavedesigual">Repeat password</string>
+	<string name="sesion_clavecorta">Password is too short</string>
+	<string name="sesion_usuariocorto">User name is too short</string>
+	<string name="sesion_sinservidor">Need a url server</string>
+
+
 	<string name="latitud">Latitude</string>
 	<string name="longitud">Longitude</string>
 	<string name="fechahora">Date and Time</string>
@@ -96,12 +105,17 @@
 	<string name="recibiendo">Receiving data...</string>
 	<string name="conexionfinalizada">Correct connection... but nothing happened.</string>
 
-	
-	
-	
-	
-	
-	<string name="txt_ayuda_descripcion">
+
+
+    <string name="presentacion_dispositivo">Encontrá tu dispositivo</string>
+    <string name="presentacion_servidor">Usá tu propio Serviddor</string>
+    <string name="presentacion_alerta">Enviá mensajes de alerta</string>
+    <string name="presentacion_remoto">Configurá la aplicación de forma remota</string>
+
+
+
+
+    <string name="txt_ayuda_descripcion">
 		Seguime te permite rastrear tu dispositivo, 
 		recolecta información del GPS y la almacena para luego poder enviarlas a tu servidor.
 		Desde el servidor se puede ver los registros en un mapa y ver donde esta (o estuvo) el dispositivo.
@@ -146,7 +160,7 @@
 	
 	
 	<string name="dona">Make a donation:)</string>
-	<string name="website">Go to Web site</string>
+	<string name="sitioweb">Go to Web site</string>
 	<string name="txt_donacion">If you like the application you can collaborate with a donation. \n
 	Remember that this application has no publicity, no sponsor, no trackers, so it depends solely on the collaboration of users.
 

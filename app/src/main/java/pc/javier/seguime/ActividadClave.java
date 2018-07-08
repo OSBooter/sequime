@@ -1,12 +1,14 @@
 package pc.javier.seguime;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Switch;
-import android.widget.Toast;
+
 
 import pc.javier.seguime.interfaz.Aplicacion;
 
@@ -35,17 +37,36 @@ public class ActividadClave extends AppCompatActivity {
 
 
 
-    public void Registrar (View view) {
+    public void RegistrarVersion (View view) {
         String clave = Aplicacion.Usuario().toLowerCase();
         clave = clave + clave.length();
 
+
         if (tClave.getText().toString().equals(clave)) {
-            Aplicacion.Registrada(tNombre.getText().toString());
+            Aplicacion.Registrada(tNombre.getText().toString().trim());
             this.finish();
         } else {
-            Toast.makeText(this, R.string.claveIncorrecta, Toast.LENGTH_SHORT).show();
+            MostrarMensaje(getString(R.string.claveIncorrecta));
         }
     }
 
 
-}
+
+
+
+    private void MostrarMensaje (String texto) {
+        View view = getCurrentFocus();
+        Snackbar.make(view , texto, Snackbar.LENGTH_LONG).show();
+
+    }
+
+
+    public void ObtenerClave (View view) {
+        Intent i = new Intent(Intent.ACTION_VIEW);
+        i.setData(Uri.parse("http://javierpc.esy.es/seguime/registroversion.php"));
+        startActivity(i);
+    }
+
+
+
+    }

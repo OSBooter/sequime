@@ -10,7 +10,7 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     android:orientation="vertical"
     android:background="@drawable/caminoazul"
-    tools:context="pc.javier.seguime.clave"
+    tools:context="pc.javier.seguime.ActividadClave"
     >
 
 
@@ -54,12 +54,33 @@
 
 
 
-        <Button
+        <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/registrarAplicacion"
-            android:onClick="Registrar"
-            />
+            android:stretchColumns="0,1"
+            >
+            <TableRow>
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/registrarAplicacion"
+                    android:onClick="RegistrarVersion"
+                    android:background="@drawable/botonredondeado"
+                    android:textColor="#ffffff"
+                    android:layout_margin="5dp"
+                    />
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sitioweb"
+                    android:onClick="ObtenerClave"
+                    android:background="@drawable/botonredondeado"
+                    android:textColor="#ffffff"
+                    android:layout_margin="5dp"
+                    />
+
+            </TableRow>
+        </TableLayout>
 
 
 

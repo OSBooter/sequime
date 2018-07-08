@@ -133,7 +133,8 @@ public class GestorCoordenadas {
             return;
         String sms = preferencias.getString("sms", "");
         if (sms != "") {
-            Sms mensaje = new Sms(sms, "(Seguime) nueva posicion geo:"+latitud+","+longitud+"?z=19");
+            // Sms mensaje = new Sms(sms, "(Seguime) nueva posicion geo:"+latitud+","+longitud+"?z=19");
+            Sms mensaje = new Sms(sms, "(Seguime) Nueva posicion: " + coordenada.Enlace(19) );
             mensaje.enviar();
         }
     }

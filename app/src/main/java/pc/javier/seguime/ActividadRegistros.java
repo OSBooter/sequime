@@ -24,6 +24,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 
+
 import org.osmdroid.tileprovider.tilesource.TileSourceFactory;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.MapController;
@@ -136,7 +137,6 @@ public class ActividadRegistros extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 ItemRegistro r = (ItemRegistro) adapterView.getItemAtPosition(i);
                 moverMarca(r.latitud,r.longitud,FechaHora.hora(r.fecha) + " \r\n" + Unidades.velocidad(r.velocidad));
-
             }
         });
     }

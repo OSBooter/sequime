@@ -8,7 +8,7 @@
     android:background="@drawable/caminoazul"
     android:id="@+id/sesion_pantalla"
 
-
+    android:padding="5sp"
 
     >
 
@@ -26,6 +26,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/servidor"
+        android:layout_margin="5sp"
         />
     <EditText
         android:layout_width="match_parent"
@@ -47,6 +48,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/usuario"
+        android:layout_margin="5sp"
         />
     <EditText
         android:layout_width="match_parent"
@@ -64,6 +66,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/clave"
+        android:layout_margin="5sp"
         />
     <EditText
         android:layout_width="match_parent"
@@ -83,6 +86,7 @@
         android:text="@string/repetirclave"
         android:visibility="invisible"
         android:id="@+id/sesion_claverepetida_texto"
+        android:layout_margin="5sp"
         />
     <EditText
         android:layout_width="match_parent"
@@ -129,6 +133,7 @@
 
 
     <TextView
+        android:layout_margin="5sp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/sesion_estado"/>

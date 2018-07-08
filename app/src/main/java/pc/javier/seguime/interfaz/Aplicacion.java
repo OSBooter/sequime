@@ -93,7 +93,7 @@ public class Aplicacion {
 
     // Pone en marcha la aplicacion (Servicios)
     public void iniciarServicio() {
-        Toast.makeText(contexto, "\uD83D\uDCE1", Toast.LENGTH_LONG).show();
+        Toast.makeText(contexto, contexto.getString(R.string.principal_aplicacion) + " \uD83D\uDCE1", Toast.LENGTH_LONG).show();
         preferenciaBooleano("activa", true);
         mensajeLog ( "Iniciando Servicio");
         if (servicioActivo())
@@ -180,6 +180,14 @@ public class Aplicacion {
             return;
         SharedPreferences.Editor editor = Preferencias().edit();
         editor.remove("sesion");
+        editor.remove("clave");
+        editor.remove("telegram");
+        editor.remove("sms");
+        editor.remove("presentacion");
+        editor.remove("notificacion");
+        editor.remove("mensaje");
+        editor.remove("inicial");
+
         editor.commit();
     }
 

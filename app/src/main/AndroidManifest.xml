@@ -66,9 +66,15 @@
             android:parentActivityName=".MainActivity"
             />
 
+        <activity
+            android:name=".ActividadPresentacion"
+            android:label="@string/app_name"
+            android:parentActivityName=".MainActivity"
+            />
+
         <activity android:name=".ActividadSesion"
             android:label="@string/iniciarsesion"
-            android:parentActivityName=".MainActivity"
+
             />
 
         <service

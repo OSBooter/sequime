@@ -21,6 +21,7 @@ import pc.javier.seguime.R;
 import pc.javier.seguime.interfaz.Aplicacion;
 import pc.javier.seguime.interfaz.BD;
 import pc.javier.seguime.utilidades.Boton;
+import pc.javier.seguime.utilidades.Efecto;
 import pc.javier.seguime.utilidades.FechaHora;
 import pc.javier.seguime.utilidades.ItemRegistro;
 
@@ -92,7 +93,8 @@ public class Comandos implements Handler.Callback {
 
                 imageView = (ImageView) activityHandler.findViewById(R.id.princ_iconointernet);
                 if (imageView != null)
-                    imageView.setVisibility(View.VISIBLE);
+                    Efecto.AnimarIcono(imageView,View.VISIBLE);
+
 
 
                 break;
@@ -107,7 +109,7 @@ public class Comandos implements Handler.Callback {
 
                 imageView = (ImageView) activityHandler.findViewById(R.id.princ_iconointernet);
                 if (imageView != null)
-                    imageView.setVisibility(View.INVISIBLE);
+                    Efecto.AnimarIcono(imageView,View.INVISIBLE);
                 break;
 
             case "error":
@@ -126,7 +128,7 @@ public class Comandos implements Handler.Callback {
 
                 imageView = (ImageView) activityHandler.findViewById(R.id.princ_iconointernet);
                 if (imageView != null)
-                    imageView.setVisibility(View.INVISIBLE);
+                    Efecto.AnimarIcono(imageView,View.INVISIBLE);
                 break;
 
 
@@ -192,17 +194,11 @@ public class Comandos implements Handler.Callback {
 
                 ImageView rastreo = (ImageView)activityHandler.findViewById(R.id.princ_iconorastreo);
                 if (rastreo != null)
-                    if (Aplicacion.rastreo())
-                        rastreo.setVisibility(View.VISIBLE);
-                    else
-                        rastreo.setVisibility(View.INVISIBLE);
+                    Efecto.AnimarIcono(rastreo,Aplicacion.rastreo());
 
                 ImageView alarma = (ImageView) activityHandler.findViewById(R.id.princ_iconotemporizador);
                 if (alarma != null)
-                    if (Aplicacion.alarmaExiste())
-                        alarma.setVisibility(View.VISIBLE);
-                    else
-                        alarma.setVisibility(View.INVISIBLE);
+                    Efecto.AnimarIcono(alarma,Aplicacion.alarmaExiste());
 
 
 
@@ -379,10 +375,7 @@ public class Comandos implements Handler.Callback {
 
                 imageView = (ImageView) activityHandler.findViewById(R.id.princ_iconotemporizadorservidor);
                 if (imageView!= null)
-                if (Aplicacion.alarmaServidor().equals(""))
-                    imageView.setVisibility(View.INVISIBLE);
-                else
-                    imageView.setVisibility(View.VISIBLE);
+                    Efecto.AnimarIcono(imageView,(!Aplicacion.alarmaServidor().equals("")));
 
 
 

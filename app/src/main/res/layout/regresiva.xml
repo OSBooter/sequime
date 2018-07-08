@@ -68,7 +68,12 @@
                 android:padding="10sp"
                 android:layout_margin="2sp"
                 android:lines="2"
+                android:minLines="3"
+                android:scrollbars="vertical"
                 />
+
+
+
         </LinearLayout>
         <Space
             android:layout_width="wrap_content"
@@ -95,7 +100,8 @@
                 <NumberPicker
                     android:id="@+id/temporizador_minuto"
                     android:layout_width="100sp"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="wrap_content"
+                    />
 
                 <Space android:minWidth="20px" />
 

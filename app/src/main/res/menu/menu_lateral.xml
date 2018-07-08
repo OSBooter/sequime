@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="none">
+
+
+        <item
+            android:title="@string/registros"
+            android:icon="@android:drawable/ic_dialog_map"
+            android:id="@+id/menu_registros"
+            android:onClick="MenuClick"
+            ></item>
+
+        <item
+            android:title="@string/cuentaregresiva"
+            android:icon="@drawable/iconotemporizadorblanco"
+            android:id="@+id/menu_cuentaregresiva"
+            android:onClick="MenuClick"
+            ></item>
+
+
+        <item
+            android:title="@string/opciones"
+            android:icon="@android:drawable/ic_menu_manage"
+            android:id="@+id/menu_opciones"
+            android:onClick="MenuClick"
+            ></item>
+
+
+        <item
+            android:title="@string/registrarAplicacion"
+            android:icon="@android:drawable/ic_lock_idle_lock"
+            android:id="@+id/menu_registraraplicacion"
+            android:onClick="MenuClick"
+            ></item>
+
+
+
+    </group>
+
+    <group android:checkableBehavior="none">
+
+
+        <item
+            android:title="@string/ayuda"
+            android:icon="@android:drawable/ic_menu_help"
+            android:id="@+id/menu_ayuda"
+            android:onClick="MenuClick"
+            ></item>
+
+        <item
+            android:title="@string/dona"
+            android:icon="@drawable/iconocafe"
+            android:id="@+id/menu_donar"
+            android:onClick="MenuClick"
+            ></item>
+
+        <item
+            android:title="@string/cerrar_sesion"
+            android:icon="@android:drawable/ic_menu_close_clear_cancel"
+            android:id="@+id/menu_cerrarsesion"
+            android:onClick="MenuClick"
+            ></item>
+
+
+    </group>
+
+
+</menu>

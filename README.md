@@ -7,7 +7,7 @@ esta el dispositivo.
 * Envía coordenadas por Telegram (Bot) y SMS.
 * Configurable desde el sitio web.
 * Control sobre tiempos de actividad e inactividad para ahorrar batería.
-* Temporizador.
+* Temporizador para habilitar el modo de rastreo.
 * Cuentas fáciles de crear sin solicitar datos personales.
 
 Es solo un proyecto, por lo tanto solo podrá usarse con fines experimentales y

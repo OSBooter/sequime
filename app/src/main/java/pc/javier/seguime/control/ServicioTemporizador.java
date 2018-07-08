@@ -152,6 +152,8 @@ public class ServicioTemporizador extends Service {
 
 
 
+
+
     private void mensajeLog (String texto) {
         Log.d("Servicio Temporizador", texto);
     }

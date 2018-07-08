@@ -5,16 +5,15 @@ import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
+
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import pc.javier.seguime.handler.Comandos;
 import pc.javier.seguime.interfaz.Aplicacion;
@@ -86,8 +85,8 @@ public class ActividadSesion extends AppCompatActivity {
 
 
     private void guardarOpciones () {
-        servidor = Tservidor.getText().toString();
-        usuario = Tusuario.getText().toString();
+        servidor = Tservidor.getText().toString().trim();
+        usuario = Tusuario.getText().toString().trim();
         clave = Tclave.getText().toString();
         //ssl = Cssl.isChecked();
 
@@ -119,8 +118,9 @@ public class ActividadSesion extends AppCompatActivity {
 
         RadioButton radio = findViewById(R.id.sesion_radio_registro);
         clave = Tclave.getText().toString();
-        usuario = Tusuario.getText().toString();
-        servidor = Tservidor.getText().toString();
+        usuario = Tusuario.getText().toString().trim();
+        servidor = Tservidor.getText().toString().trim();
+
 
         String parametros = "comando=sesion";
 
@@ -129,26 +129,29 @@ public class ActividadSesion extends AppCompatActivity {
             claveRepetida = TclaveRepetida.getText().toString();
             if (!clave.equals(claveRepetida)) {
                 //Testado.setText("Las claves NO coinciden");
-                Toast.makeText(this,"Las claves NO Coinciden",Toast.LENGTH_LONG).show();
+                MostrarMensaje(getString(R.string.sesion_clavedesigual));
                 return;
             }
             parametros = "comando=registro";
         }
 
         if (clave.length() < 4) {
-            Toast.makeText(this,"La clave es muy corta",Toast.LENGTH_LONG).show();
+            MostrarMensaje(getString(R.string.sesion_clavecorta));
             return;
         }
 
         if (usuario.length() < 4) {
-            Toast.makeText(this,"El nombre de usuario es muy corto",Toast.LENGTH_LONG).show();
+            MostrarMensaje(getString(R.string.sesion_usuariocorto));
             return;
         }
 
         if (servidor.length() < 2) {
-            Toast.makeText(this,"Debe especificar un servidor",Toast.LENGTH_LONG).show();
+            MostrarMensaje(getString(R.string.sesion_sinservidor));
             return;
         }
+
+
+        MostrarMensaje(getString(R.string.espere));
 
         // deshabilita el boton asi no se pulsa 90 veces
         Boton.Estado(botonIniciarSesion, false);
@@ -185,7 +188,15 @@ public class ActividadSesion extends AppCompatActivity {
         }
     }
 
+    @Override
+    public void onBackPressed() {    }
 
+
+    private void MostrarMensaje (String texto) {
+        View view = getCurrentFocus();
+        Snackbar.make(view , texto, Snackbar.LENGTH_LONG).show();
+
+    }
 
     private void mensajeLog (String texto) {
         Log.d("Actividad Sesion", texto);

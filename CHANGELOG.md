@@ -1,5 +1,11 @@
 # Seguime 
 
+### [1.0] - ##########################
+Modificado: compatible con Android 4.0.
+Agregado: Enlaces cortos de OpenStreetMap.
+Agregado: Efectos de animación.
+Modificado: Diseño del Menú Principal y mensajes recibidos.
+
 ### [0.9] - 3 Julio 2018
 Agregado: Iniciar con el sistema.
 Agregado: Diseño pantalla principal en modo apaisado.

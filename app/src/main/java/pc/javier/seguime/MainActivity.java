@@ -17,28 +17,34 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 
-import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.constraint.ConstraintLayout;
-import android.support.v7.app.AppCompatActivity;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.constraint.ConstraintLayout;
+import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.AnimationSet;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import pc.javier.seguime.interfaz.Aplicacion;
-import pc.javier.seguime.utilidades.FechaHora;
+import pc.javier.seguime.utilidades.Efecto;
 import pc.javier.seguime.utilidades.Parametro;
 
-
 public class MainActivity extends AppCompatActivity {
+
 
     Aplicacion aplicacion;
 
@@ -49,8 +55,8 @@ public class MainActivity extends AppCompatActivity {
 
         iniciarAplicacion();
 
-    }
 
+    }
 
 
     @Override
@@ -73,61 +79,16 @@ public class MainActivity extends AppCompatActivity {
 
 // menu
 
-    public boolean onCreateOptionsMenu (Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_principal,menu);
 
-        if (Aplicacion.Registrada())
-            menu.findItem(R.id.menu_registraraplicacion).setEnabled(false).setVisible(false);
-
+    @Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        ((TextView) findViewById(R.id.menu_usuario)).setText(Aplicacion.Usuario());
         return true;
     }
 
 
     @Override
     public boolean onOptionsItemSelected (MenuItem item) {
-        if (aplicacion.estaBloqueado()) {
-            Toast.makeText(MainActivity.this, R.string.txt_bloqueado, Toast.LENGTH_LONG).show();
-            return true;
-        }
-
-        Intent i;
-        switch (item.getItemId()) {
-            case R.id.menu_ayuda:
-                i = new Intent(this, ActividadAyuda.class);
-                startActivity(i);
-                break;
-            case R.id.menu_opciones:
-                i = new Intent(this, ActividadOpciones.class);
-                startActivity(i);
-                break;
-
-            case R.id.menu_registros:
-                i = new Intent(this, ActividadRegistros.class);
-                startActivity(i);
-                break;
-
-            case R.id.menu_cuentaregresiva:
-                i = new Intent(this, ActividadRegresiva.class);
-                startActivity(i);
-                break;
-
-            case R.id.menu_registraraplicacion:
-                i = new Intent(this, ActividadClave.class);
-                startActivity(i);
-                break;
-
-
-            case R.id.menu_salir:
-
-                aplicacion.detenerServicio();
-                if (aplicacion.estaBloqueado())
-                    return true;
-                if (aplicacion.alarmaExiste())
-                    return true;
-                aplicacion.cerrarSesion();
-                this.finish();
-                break;
-        }
         return true;
     }
 
@@ -148,6 +109,11 @@ public class MainActivity extends AppCompatActivity {
 
         mostrarBoton();
         mostrarIconos();
+
+        Button boton = (Button) findViewById(R.id.princ_boton);
+        boton.clearAnimation();
+        boton.setAnimation(AnimationUtils.loadAnimation(this,R.anim.zoom_entrada));
+        boton.animate();
     }
 
 
@@ -160,12 +126,14 @@ public class MainActivity extends AppCompatActivity {
         TextView estado = (TextView) findViewById(R.id.princ_estado);
         ConstraintLayout pantalla = (ConstraintLayout) findViewById(R.id.princ_pantalla);
 
+
+
         if (aplicacion.servicioActivo()) {
             ((Button) boton).setText(getText(R.string.desactivar_aplicacion));
             ((Button) boton).setBackgroundColor(Color.TRANSPARENT);
             ((Button) boton).setTextColor(Color.GRAY);
             estado.setText(R.string.txt_servicio_activo);
-            estado.setTextColor(Color.GREEN);
+            estado.setTextColor(Color.BLACK);
             // pantalla.setBackgroundResource(R.drawable.camino);
         } else {
             ((Button) boton).setText(getText(R.string.activar_aplicacion));
@@ -177,6 +145,8 @@ public class MainActivity extends AppCompatActivity {
             // pantalla.setBackgroundResource(R.drawable.caminoazul);
 
         }
+
+
 
     }
 
@@ -195,9 +165,7 @@ public class MainActivity extends AppCompatActivity {
 
         Parametro.aplicacion = aplicacion;
 
-         //PRUEBA        pruebaInternet ();
 
-        //pruebaStrings();
 
     }
 
@@ -206,6 +174,14 @@ public class MainActivity extends AppCompatActivity {
     // refresca la pantalla
     private void regresarAplicacion () {
         //aplicacion.cargarConfiguracion();
+
+
+        if (Aplicacion.preferenciaBooleano("presentacion") == false){
+            startActivity(new Intent(this, ActividadPresentacion.class));
+            overridePendingTransition(R.anim.zoom_entrada, R.anim.zoom_salida);
+            return;
+        }
+
 
         mensajeLog ("verificando sesion");
 
@@ -216,12 +192,12 @@ public class MainActivity extends AppCompatActivity {
             Intent i;
             i = new Intent(this, ActividadSesion.class);
             startActivity(i);
-
+            return;
         }
 
 
         if(aplicacion.notificacion() != ""){
-            Toast.makeText(MainActivity.this, aplicacion.notificacion().toString(), Toast.LENGTH_LONG).show();
+            MostrarMensaje(aplicacion.notificacion().toString());
             aplicacion.borrarNotificacion();
         }
 
@@ -229,11 +205,21 @@ public class MainActivity extends AppCompatActivity {
             TextView t;
             t = findViewById(R.id.princ_mensaje);
             t.setText(aplicacion.mensaje().toString());
+            t.setVisibility(View.VISIBLE);
         }
 
 
         if (Aplicacion.Registrada())
             ((TextView)findViewById(R.id.princ_registrada)).setText(getString(R.string.versionRegistrada) + " ["+ Aplicacion.preferenciaCadena("registrada") +"] :-)");
+
+
+        ((NavigationView) findViewById(R.id.nav_view)).getMenu().findItem(R.id.menu_registraraplicacion).setEnabled(!Aplicacion.Registrada());
+
+
+        if(findViewById(R.id.menu_usuario) != null)
+            ((TextView) findViewById(R.id.menu_usuario)).setText(Aplicacion.Usuario());
+
+
 
     }
 
@@ -243,57 +229,45 @@ public class MainActivity extends AppCompatActivity {
         TextView t;
         t = v.findViewById(R.id.princ_mensaje);
         t.setText("");
+        t.setVisibility(View.INVISIBLE);
     }
 
 
 
 
 
-    // muestra iconos
+
     private void mostrarIconos () {
         // muestra icono de rastreo activo
-        ImageView rastreo = (ImageView)findViewById(R.id.princ_iconorastreo);
-        if (Aplicacion.rastreo())
-            rastreo.setVisibility(View.VISIBLE);
-        else
-            rastreo.setVisibility(View.INVISIBLE);
+        Efecto.AnimarIcono((ImageView)findViewById(R.id.princ_iconorastreo) ,  (Aplicacion.rastreo()));
 
-        ImageView alarma = (ImageView)findViewById(R.id.princ_iconotemporizador);
-        if (Aplicacion.alarmaExiste())
-            alarma.setVisibility(View.VISIBLE);
-        else
-            alarma.setVisibility(View.INVISIBLE);
+        Efecto.AnimarIcono((ImageView)findViewById(R.id.princ_iconotemporizador), (Aplicacion.alarmaExiste()));
 
-        ImageView seguime = (ImageView)findViewById(R.id.princ_iconoseguime);
-        if (aplicacion.servicioActivo())
-            seguime.setVisibility(View.VISIBLE);
-        else
-            seguime.setVisibility(View.INVISIBLE);
+        Efecto.AnimarIcono((ImageView)findViewById(R.id.princ_iconoseguime), (aplicacion.servicioActivo()));
 
-        ImageView alarmaServidor = (ImageView) findViewById(R.id.princ_iconotemporizadorservidor);
-        if (Aplicacion.alarmaServidor().equals(""))
-            alarmaServidor.setVisibility(View.INVISIBLE);
-        else
-            alarmaServidor.setVisibility(View.VISIBLE);
+        Efecto.AnimarIcono((ImageView) findViewById(R.id.princ_iconotemporizadorservidor), (!Aplicacion.alarmaServidor().equals("")));
 
     }
+
+
+
 
     // clicks en iconos
 
     public void clickrastreo (View v) {
-        Toast.makeText(MainActivity.this, R.string.principal_rastreo, Toast.LENGTH_LONG).show();
+        MostrarMensaje(getString(R.string.principal_rastreo));
     }
     public void clickseguime (View v) {
-        Toast.makeText(MainActivity.this, R.string.principal_aplicacion, Toast.LENGTH_LONG).show();
+        MostrarMensaje(getString(R.string.principal_aplicacion));
     }
     public void clickalarma (View v) {
-        Toast.makeText(MainActivity.this, R.string.principal_alarma, Toast.LENGTH_LONG).show();
+        MostrarMensaje(getString(R.string.principal_alarma));
     }
     public void clickinternet (View v) {
-        Toast.makeText(MainActivity.this, R.string.principal_internet, Toast.LENGTH_LONG).show();
+        MostrarMensaje(getString( R.string.principal_internet));
     }
     public void clickalarmaservidor (View v) {
-        Toast.makeText(MainActivity.this, R.string.principal_alarmaservidor, Toast.LENGTH_LONG).show();
+        MostrarMensaje(getString(R.string.principal_alarmaservidor));
     }
 
 
@@ -306,6 +280,148 @@ public class MainActivity extends AppCompatActivity {
         Log.d("Actividad Principal", texto);
     }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @Override
+    public void onBackPressed() {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START)) {
+            drawer.closeDrawer(GravityCompat.START);
+        } else {
+            super.onBackPressed();
+        }
+    }
+
+
+
+
+    /*
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }*/
+
+
+    public boolean MenuClick (MenuItem item) {
+
+        if (aplicacion.estaBloqueado()) {
+            Toast.makeText(MainActivity.this, R.string.txt_bloqueado, Toast.LENGTH_LONG).show();
+            return true;
+        }
+
+        Intent i;
+        switch (item.getItemId()) {
+            case R.id.menu_ayuda:
+                i = new Intent(this, ActividadAyuda.class);
+                startActivity(i);
+                overridePendingTransition(R.anim.zoom_entrada, R.anim.zoom_salida);
+                break;
+            case R.id.menu_opciones:
+                i = new Intent(this, ActividadOpciones.class);
+                startActivity(i);
+                overridePendingTransition(R.anim.desvanecer_entrada, R.anim.desvanecer_salida);
+                break;
+
+            case R.id.menu_registros:
+                i = new Intent(this, ActividadRegistros.class);
+                startActivity(i);
+                overridePendingTransition(R.anim.zoom_entrada,R.anim.zoom_salida);
+                break;
+
+            case R.id.menu_cuentaregresiva:
+                i = new Intent(this, ActividadRegresiva.class);
+                startActivity(i);
+                overridePendingTransition(R.anim.izquierda_entrada, R.anim.izquierda_salida);
+                break;
+
+            case R.id.menu_registraraplicacion:
+                i = new Intent(this, ActividadClave.class);
+                startActivity(i);
+                overridePendingTransition(R.anim.zoom_entrada, R.anim.zoom_salida);
+                break;
+
+            case R.id.menu_donar:
+                donar();
+                break;
+
+
+            case R.id.menu_cerrarsesion:
+
+                aplicacion.detenerServicio();
+                if (aplicacion.estaBloqueado())
+                    return true;
+                if (aplicacion.alarmaExiste())
+                    return true;
+                aplicacion.cerrarSesion();
+                this.finish();
+                break;
+        }
+
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+        return true;
+    }
+
+
+
+    private void MostrarMensaje (String texto) {
+        View view = getCurrentFocus();
+        Snackbar.make(view , texto, Snackbar.LENGTH_LONG).show();
+
+    }
+
+
+    @Override
+    public boolean onKeyUp(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_MENU) {
+            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+            if (drawer.isDrawerOpen(GravityCompat.START))
+                drawer.closeDrawer(GravityCompat.START);
+             else
+                drawer.openDrawer(GravityCompat.START);
+        }
+
+        return super.onKeyUp(keyCode, event);
+    }
+
+
+    private void navegar (String url){
+        Intent i = new Intent(Intent.ACTION_VIEW);
+        i.setData(Uri.parse(url));
+        startActivity(i);
+    }
+
+    public void donar() {
+        navegar("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BDUHGWZKV2R8W");
+    }
 }
-
-

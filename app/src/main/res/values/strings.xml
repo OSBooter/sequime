@@ -2,7 +2,10 @@
     <string name="app_name">Seguime</string>
 	
 	<string name="traducidopor"></string>
-	
+
+
+	<string name="menu_abrir">Menú</string>
+	<string name="menu_cerrar">Cerrar Menú</string>
 
     <string name="servidor">Servidor</string>
     <string name="usuario">Usuario</string>
@@ -17,6 +20,14 @@
 
 	<string name="errorValidacion">Hay un error con los datos ingresados</string>
 
+    <string name="espere">Por favor espere...</string>
+
+
+
+	<string name="sesion_clavedesigual">Las claves NO Coinciden</string>
+	<string name="sesion_clavecorta">Las claves es muy corta</string>
+	<string name="sesion_usuariocorto">El nombre de usuario es muy corto</string>
+	<string name="sesion_sinservidor">Debe especificar un servidor</string>
 
 	
     <string name="latitud">Latitud</string>
@@ -83,7 +94,7 @@
 	<string name="ssl">Conexión segura SSL</string>
 
 
-    <string name="registrarAplicacion">Registrar Version</string>
+    <string name="registrarAplicacion">Registrar Versión</string>
     <string name="nombre">Nombre</string>
     <string name="versionRegistrada">Version Registrada</string>
     <string name="claveIncorrecta">Clave Incorrecta</string>
@@ -99,6 +110,11 @@
 
 	
 	
+    
+    <string name="presentacion_dispositivo">Encontrá tu dispositivo</string>
+    <string name="presentacion_servidor">Usá tu propio Serviddor</string>
+    <string name="presentacion_alerta">Enviá mensajes de alerta</string>
+    <string name="presentacion_remoto">Configurá la aplicación de forma remota</string>
 	
 	
 	

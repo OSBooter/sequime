@@ -6,11 +6,14 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.NumberPicker;
 import android.widget.TextView;
 
@@ -35,9 +38,10 @@ import static java.lang.Math.round;
 
 public class ActividadRegresiva extends AppCompatActivity {
     NumberPicker tempHora, tempMinuto, tempSegundo;
-    TextView tvTexto, tvSms;
+    EditText tvTexto, tvSms;
     SharedPreferences preferencias;
     public static Handler handler;
+    Temporizador temporizador = new Temporizador();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -69,8 +73,8 @@ public class ActividadRegresiva extends AppCompatActivity {
 
         Aplicacion.actividadRegresiva = this;
 
-        tvTexto = (TextView) findViewById(R.id.temporizador_texto);
-        tvSms = (TextView) findViewById(R.id.temporizador_sms);
+        tvTexto = (EditText) findViewById(R.id.temporizador_texto);
+        tvSms = (EditText) findViewById(R.id.temporizador_sms);
 
         String texto = Aplicacion.preferenciaCadena("alarmatexto");
         String sms = Aplicacion.preferenciaCadena("sms");
@@ -80,6 +84,11 @@ public class ActividadRegresiva extends AppCompatActivity {
             tvTexto.setText(texto);
 
         tvSms.setText(Aplicacion.preferenciaCadena(sms));
+
+
+
+        // tvTexto.addTextChangedListener(new EscucharTexto());
+        // tempSegundo.setOnValueChangedListener(new EscucharNumeros());
     }
 
     @Override
@@ -177,10 +186,10 @@ public class ActividadRegresiva extends AppCompatActivity {
         Aplicacion.preferenciaCadena("sms", tvSms.getText().toString());
         Aplicacion.preferenciaCadena("alarmatexto", tvTexto.getText().toString());
 
-        int segundos = (tempMinuto.getValue()*60) + (tempHora.getValue() *60*60) + tempSegundo.getValue();
 
-        Temporizador temporizador = new Temporizador();
-        temporizador.DefinirActivacion(segundos);
+
+
+        temporizador.DefinirActivacion(ObtenerSegundos());
 
         mensajeLog("FECHA HORA - SISTEMA: " + temporizador.FechaHoraString());
         mensajeLog("FECHA HORA - UTC: " + temporizador.FechaHoraUTCString());
@@ -195,6 +204,9 @@ public class ActividadRegresiva extends AppCompatActivity {
     }
 
 
+    private int ObtenerSegundos () {
+        return (tempMinuto.getValue()*60) + (tempHora.getValue() *60*60) + tempSegundo.getValue();
+    }
 
 
     // contactos
@@ -227,6 +239,7 @@ public class ActividadRegresiva extends AppCompatActivity {
     public void ayuda (MenuItem item) {
         Intent i = new Intent(this, ActividadAyudaRegresiva.class);
         startActivity(i);
+        overridePendingTransition(R.anim.zoom_entrada, R.anim.zoom_salida);
     }
 
 
@@ -286,6 +299,38 @@ temporizadorAlarma = new Timer();
         super.onDestroy();
         temporizadorAlarmaDetener();
     }
+
+
+
+
+    private class EscucharTexto implements TextWatcher {
+
+        public void afterTextChanged(Editable s) {
+        }
+
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+        }
+
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            //TextView myOutputBox = (TextView) findViewById(R.id.temporizador_textoinformativo);
+            //myOutputBox.setText("caracteres: "+tvTexto.length() + " - " + tempSegundo.getValue());
+        }
+    }
+
+
+    private class EscucharNumeros implements NumberPicker.OnValueChangeListener {
+
+
+
+        @Override
+        public void onValueChange(NumberPicker numberPicker, int i, int i1) {
+            // temporizador.DefinirActivacion(ObtenerSegundos());
+
+            // TextView myOutputBox = (TextView) findViewById(R.id.temporizador_textoinformativo);
+            // myOutputBox.setText("Hora de Activacion: " + temporizador.FechaHoraString());
+        }
+    }
+
 
     private void mensajeLog (String texto) {
         Log.d("Actividad Regresiva", texto);
