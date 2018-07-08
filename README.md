@@ -17,11 +17,11 @@ esta el dispositivo.
 <img src="metadata/es-AR/images/phoneScreenshots/pantallatemporizador.jpg" alt="Captura de Pantalla" height="400">
 <img src="metadata/es-AR/images/phoneScreenshots/pantallaprincipal.jpg" alt="Captura de Pantalla" height="400">
 <img src="metadata/es-AR/images/phoneScreenshots/pantallaregistros.jpg" alt="Captura de Pantalla" height="400">
-<img src="metadata/es-AR/images/phoneScreenshots/pantallaprincipal2.jpg" alt="Captura de Pantalla" height="800">
-<img src="metadata/es-AR/images/phoneScreenshots/pantallaconfiguracion2.jpg" alt="Captura de Pantalla" height="800">
-<img src="metadata/es-AR/images/phoneScreenshots/pantallaregistros2.jpg" alt="Captura de Pantalla" height="800">
-<img src="metadata/es-AR/images/phoneScreenshots/menu2.jpg" alt="Captura de Pantalla" height="800">
-<img src="metadata/es-AR/images/phoneScreenshots/pantallatemporizador2.jpg" alt="Captura de Pantalla" height="800">
+<img src="metadata/es-AR/images/phoneScreenshots/pantallaprincipal2.jpg" alt="Captura de Pantalla" height="400">
+<img src="metadata/es-AR/images/phoneScreenshots/pantallaconfiguracion2.jpg" alt="Captura de Pantalla" height="400">
+<img src="metadata/es-AR/images/phoneScreenshots/pantallaregistros2.jpg" alt="Captura de Pantalla" height="400">
+<img src="metadata/es-AR/images/phoneScreenshots/menu2.jpg" alt="Captura de Pantalla" height="400">
+<img src="metadata/es-AR/images/phoneScreenshots/pantallatemporizador2.jpg" alt="Captura de Pantalla" height="400">
 
 Es solo un proyecto, por lo tanto solo podrá usarse con fines experimentales y
 no con fines de seguridad.
