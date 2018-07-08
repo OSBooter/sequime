@@ -8,7 +8,20 @@ esta el dispositivo.
 * Configurable desde el sitio web.
 * Control sobre tiempos de actividad e inactividad para ahorrar batería.
 * Temporizador para habilitar el modo de rastreo.
+* Opción para iniciar con el sistema
 * Cuentas fáciles de crear sin solicitar datos personales.
+
+<img src="metadata/es-AR/images/phoneScreenshots/formularioingreso.jpg" alt="Captura de Pantalla" height="400">
+<img src="metadata/es-AR/images/phoneScreenshots/menu.jpg" alt="Captura de Pantalla" height="400">
+<img src="metadata/es-AR/images/phoneScreenshots/pantallaconfiguracion.jpg" alt="Captura de Pantalla" height="400">
+<img src="metadata/es-AR/images/phoneScreenshots/pantallatemporizador.jpg" alt="Captura de Pantalla" height="400">
+<img src="metadata/es-AR/images/phoneScreenshots/pantallaprincipal.jpg" alt="Captura de Pantalla" height="400">
+<img src="metadata/es-AR/images/phoneScreenshots/pantallaregistros.jpg" alt="Captura de Pantalla" height="400">
+<img src="metadata/es-AR/images/phoneScreenshots/pantallaprincipal2.jpg" alt="Captura de Pantalla" height="800">
+<img src="metadata/es-AR/images/phoneScreenshots/pantallaconfiguracion2.jpg" alt="Captura de Pantalla" height="800">
+<img src="metadata/es-AR/images/phoneScreenshots/pantallaregistros2.jpg" alt="Captura de Pantalla" height="800">
+<img src="metadata/es-AR/images/phoneScreenshots/menu2.jpg" alt="Captura de Pantalla" height="800">
+<img src="metadata/es-AR/images/phoneScreenshots/pantallatemporizador2.jpg" alt="Captura de Pantalla" height="800">
 
 Es solo un proyecto, por lo tanto solo podrá usarse con fines experimentales y
 no con fines de seguridad.
