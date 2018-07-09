@@ -1,6 +1,6 @@
 # Seguime 
 
-### [1.0] - ##########################
+### [1.0] - 8 de Julio de 2018
 Modificado: compatible con Android 4.0.
 Agregado: Enlaces cortos de OpenStreetMap.
 Agregado: Efectos de animación.

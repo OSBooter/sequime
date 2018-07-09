@@ -1,4 +1,4 @@
-# Seguime
+# <img src="metadata/es-AR/images/icon.png" alt="Icono" height="60"> Seguime
 
 Almacena coordenadas GPS y las envía a un servidor web y así poder ver donde
 esta el dispositivo.
@@ -11,17 +11,17 @@ esta el dispositivo.
 * Opción para iniciar con el sistema
 * Cuentas fáciles de crear sin solicitar datos personales.
 
-<img src="metadata/es-AR/images/phoneScreenshots/formularioingreso.jpg" alt="Captura de Pantalla" height="400">
+
+<img src="metadata/es-AR/images/phoneScreenshots/principal.jpg" alt="Captura de Pantalla" height="400">
 <img src="metadata/es-AR/images/phoneScreenshots/menu.jpg" alt="Captura de Pantalla" height="400">
-<img src="metadata/es-AR/images/phoneScreenshots/pantallaconfiguracion.jpg" alt="Captura de Pantalla" height="400">
-<img src="metadata/es-AR/images/phoneScreenshots/pantallatemporizador.jpg" alt="Captura de Pantalla" height="400">
-<img src="metadata/es-AR/images/phoneScreenshots/pantallaprincipal.jpg" alt="Captura de Pantalla" height="400">
-<img src="metadata/es-AR/images/phoneScreenshots/pantallaregistros.jpg" alt="Captura de Pantalla" height="400">
-<img src="metadata/es-AR/images/phoneScreenshots/pantallaprincipal2.jpg" alt="Captura de Pantalla" height="200">
-<img src="metadata/es-AR/images/phoneScreenshots/pantallaconfiguracion2.jpg" alt="Captura de Pantalla" height="200">
-<img src="metadata/es-AR/images/phoneScreenshots/pantallaregistros2.jpg" alt="Captura de Pantalla" height="200">
-<img src="metadata/es-AR/images/phoneScreenshots/menu2.jpg" alt="Captura de Pantalla" height="200">
-<img src="metadata/es-AR/images/phoneScreenshots/pantallatemporizador2.jpg" alt="Captura de Pantalla" height="200">
+<img src="metadata/es-AR/images/phoneScreenshots/registros.jpg" alt="Captura de Pantalla" height="400">
+<img src="metadata/es-AR/images/phoneScreenshots/temporizador.jpg" alt="Captura de Pantalla" height="400">
+
+<img src="metadata/en-US/images/phoneScreenshots/principal2.jpg" alt="Captura de Pantalla" height="200">
+<img src="metadata/en-US/images/phoneScreenshots/menu2.jpg" alt="Captura de Pantalla" height="200">
+<img src="metadata/en-US/images/phoneScreenshots/registros2.jpg" alt="Captura de Pantalla" height="200">
+<img src="metadata/en-US/images/phoneScreenshots/temporizador2.jpg" alt="Captura de Pantalla" height="200">
+
 
 Es solo un proyecto, por lo tanto solo podrá usarse con fines experimentales y
 no con fines de seguridad.
