@@ -72,7 +72,7 @@ public class BDCoordenada {
 
     //elimina todo
     public boolean eliminar () {
-        return (sql.delete(nombre,"*", null) > 0);
+        return (sql.delete(nombre,null, null) > 0);
     }
 
 

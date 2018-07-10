@@ -4,6 +4,7 @@ import android.graphics.drawable.GradientDrawable;
 import android.support.v7.widget.LinearLayoutCompat;
 import android.view.View;
 import android.view.animation.AnimationUtils;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import pc.javier.seguime.R;
@@ -51,8 +52,10 @@ public abstract class Efecto {
 
 
 
-    public static void AnimarBoton (View view, int visibilidad) {
-
+    public static void AnimarBoton (Button boton) {
+        boton.clearAnimation();
+        boton.setAnimation(AnimationUtils.loadAnimation(boton.getContext(),R.anim.desvanecer_entrada));
+        boton.animate();
     }
 
 

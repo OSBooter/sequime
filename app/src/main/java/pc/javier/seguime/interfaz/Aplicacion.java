@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
+
 import pc.javier.seguime.R;
 import pc.javier.seguime.control.ServicioTemporizador;
 import pc.javier.seguime.handler.Comandos;
@@ -189,6 +190,8 @@ public class Aplicacion {
         editor.remove("inicial");
 
         editor.commit();
+
+        new BD(contexto).coordenadaEliminar();
     }
 
 

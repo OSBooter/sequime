@@ -17,9 +17,9 @@ public abstract class Boton {
     public static void Estado(Button boton, boolean estado) {
         boton.setEnabled(estado);
         if (estado)
-            boton.setBackgroundResource(R.drawable.botonredondeado);
+            color(boton,"verde");
         else
-            boton.setBackgroundResource(R.drawable.botonredondeadogris);
+            color(boton,"gris");;
     }
 
 
@@ -30,5 +30,7 @@ public abstract class Boton {
             boton.setBackgroundResource(R.drawable.botonredondeado);
         if (color == "gris")
             boton.setBackgroundResource(R.drawable.botonredondeadogris);
+
+        Efecto.AnimarBoton(boton);
     }
 }

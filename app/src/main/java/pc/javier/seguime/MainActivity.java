@@ -17,6 +17,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.net.Uri;
@@ -376,13 +379,7 @@ public class MainActivity extends AppCompatActivity {
 
             case R.id.menu_cerrarsesion:
 
-                aplicacion.detenerServicio();
-                if (aplicacion.estaBloqueado())
-                    return true;
-                if (aplicacion.alarmaExiste())
-                    return true;
-                aplicacion.cerrarSesion();
-                this.finish();
+               CerrarSesion();
                 break;
         }
 
@@ -392,6 +389,40 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+
+
+    private void CerrarSesion() {
+        aplicacion.detenerServicio();
+        if (aplicacion.estaBloqueado())
+            return ;
+        if (aplicacion.alarmaExiste())
+            return ;
+
+
+
+        new AlertDialog.Builder(this)
+            .setTitle(R.string.cerrar_sesion)
+            .setMessage(R.string.cerrarsesion_mensajeadvertencia)
+            .setPositiveButton(android.R.string.yes,
+                    new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            aplicacion.cerrarSesion();
+                            finish();
+                        }
+                    }
+                )
+            .setNegativeButton(android.R.string.no,
+                    new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            return;
+                        }
+                    }
+                )
+            .show();
+
+    }
 
 
     private void MostrarMensaje (String texto) {

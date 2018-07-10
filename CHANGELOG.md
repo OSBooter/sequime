@@ -1,5 +1,10 @@
 # Seguime 
 
+### [1.0] - 19 de Julio de 2018
+Agregado: Elimina datos al cerrar sesión.
+Agregado: Pregunta antes de cerrar sesión.
+Modificado: Envía SMS con enlaces OpenStreetMap y coordenadas 
+
 ### [1.0] - 8 de Julio de 2018
 Modificado: compatible con Android 4.0.
 Agregado: Enlaces cortos de OpenStreetMap.

@@ -29,6 +29,8 @@
 	<string name="sesion_usuariocorto">El nombre de usuario es muy corto</string>
 	<string name="sesion_sinservidor">Debe especificar un servidor</string>
 
+	<string name="cerrarsesion_mensajeadvertencia">Esto eliminara todos los datos. ¿Esta seguro?</string>
+
 	
     <string name="latitud">Latitud</string>
     <string name="longitud">Longitud</string>

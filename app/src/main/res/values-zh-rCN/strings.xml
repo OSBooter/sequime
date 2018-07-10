@@ -27,6 +27,7 @@
 	<string name="sesion_usuariocorto">User name is too short</string>
 	<string name="sesion_sinservidor">Need a url server</string>
 
+	<string name="cerrarsesion_mensajeadvertencia">All data will be erased. Are you sure?</string>
 	
 	
 	<string name="latitud">纬度</string>
