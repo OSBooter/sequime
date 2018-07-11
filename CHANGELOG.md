@@ -1,6 +1,6 @@
 # Seguime 
 
-### [1.0] - 19 de Julio de 2018
+### [1.1] - 10 de Julio de 2018
 Agregado: Elimina datos al cerrar sesión.
 Agregado: Pregunta antes de cerrar sesión.
 Modificado: Envía SMS con enlaces OpenStreetMap y coordenadas 
