@@ -18,7 +18,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
@@ -35,7 +34,6 @@ import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.view.animation.AnimationSet;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -58,6 +56,19 @@ public class MainActivity extends AppCompatActivity {
 
         iniciarAplicacion();
 
+        // muesta el menu por primera vez
+        if (Aplicacion.preferenciaBooleano("ayudamostrarmenu") == false) {
+            Aplicacion.preferenciaBooleano("ayudamostrarmenu", true);
+            AbrirMenu();
+        }
+    }
+
+
+    private void AbrirMenu () {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer != null)
+        if (!drawer.isDrawerOpen(GravityCompat.START))
+            drawer.openDrawer(GravityCompat.START);
 
     }
 
@@ -89,10 +100,18 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    public boolean onCreateOptionsMenu (Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_principal,menu);
+        return true;
+    }
 
     @Override
     public boolean onOptionsItemSelected (MenuItem item) {
         return true;
+    }
+
+    public void PrincipalMenuClick (MenuItem item) {
+        AbrirCerrarMenuLateral();
     }
 
 
@@ -115,8 +134,8 @@ public class MainActivity extends AppCompatActivity {
 
         Button boton = (Button) findViewById(R.id.princ_boton);
         boton.clearAnimation();
-        boton.setAnimation(AnimationUtils.loadAnimation(this,R.anim.zoom_entrada));
-        boton.animate();
+        boton.startAnimation(AnimationUtils.loadAnimation(this,R.anim.zoom_atras_entrada));
+
     }
 
 
@@ -130,21 +149,31 @@ public class MainActivity extends AppCompatActivity {
         ConstraintLayout pantalla = (ConstraintLayout) findViewById(R.id.princ_pantalla);
 
 
+        // ((Button) boton).setBackgroundColor(Color.TRANSPARENT);
+
+        int botonActivado = 0;
+        int botonDesactivado = 0;
+        if (boton.getResources().getConfiguration().orientation == boton.getResources().getConfiguration().ORIENTATION_LANDSCAPE){
+            botonActivado = R.drawable.botonprincipalcuadradoverde;
+            botonDesactivado =R.drawable.botonprincipalcuadradogris;
+        } else {
+            botonActivado = R.drawable.botonprincipalredondoverde;
+            botonDesactivado =R.drawable.botonprincipalredondogris;
+        }
 
         if (aplicacion.servicioActivo()) {
             ((Button) boton).setText(getText(R.string.desactivar_aplicacion));
-            ((Button) boton).setBackgroundColor(Color.TRANSPARENT);
-            ((Button) boton).setTextColor(Color.GRAY);
+            ((Button) boton).setTextColor(Color.BLACK);
             estado.setText(R.string.txt_servicio_activo);
             estado.setTextColor(Color.BLACK);
+            boton.setBackgroundResource(botonActivado);
             // pantalla.setBackgroundResource(R.drawable.camino);
         } else {
             ((Button) boton).setText(getText(R.string.activar_aplicacion));
-            ((Button) boton).setBackgroundColor(Color.TRANSPARENT);
-            ((Button) boton).setTextColor(Color.BLACK);
-
+            ((Button) boton).setTextColor(Color.DKGRAY);
             estado.setText(R.string.txt_servicio_inactivo);
             estado.setTextColor(Color.RED);
+            boton.setBackgroundResource(botonDesactivado);
             // pantalla.setBackgroundResource(R.drawable.caminoazul);
 
         }
@@ -206,7 +235,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (aplicacion.mensaje() != "") {
             TextView t;
-            t = findViewById(R.id.princ_mensaje);
+            t = (TextView) findViewById(R.id.princ_mensaje);
             t.setText(aplicacion.mensaje().toString());
             t.setVisibility(View.VISIBLE);
         }
@@ -230,7 +259,7 @@ public class MainActivity extends AppCompatActivity {
     public void cerrarMensaje (View v) {
         aplicacion.borrarMensaje();
         TextView t;
-        t = v.findViewById(R.id.princ_mensaje);
+        t = (TextView) v.findViewById(R.id.princ_mensaje);
         t.setText("");
         t.setVisibility(View.INVISIBLE);
     }
@@ -434,15 +463,21 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onKeyUp(int keyCode, KeyEvent event) {
-        if (keyCode == KeyEvent.KEYCODE_MENU) {
-            DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-            if (drawer.isDrawerOpen(GravityCompat.START))
-                drawer.closeDrawer(GravityCompat.START);
-             else
-                drawer.openDrawer(GravityCompat.START);
-        }
+        if (keyCode == KeyEvent.KEYCODE_MENU)
+            AbrirCerrarMenuLateral();
+
+
 
         return super.onKeyUp(keyCode, event);
+    }
+
+
+    private void AbrirCerrarMenuLateral () {
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        if (drawer.isDrawerOpen(GravityCompat.START))
+            drawer.closeDrawer(GravityCompat.START);
+        else
+            drawer.openDrawer(GravityCompat.START);
     }
 
 

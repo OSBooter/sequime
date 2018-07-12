@@ -77,7 +77,7 @@
     <string name="txt_bloqueado">En este momento la aplicación está bloqueada</string>
 
 	<string name="activar_aplicacion">¡Seguime!</string>
-    <string name="desactivar_aplicacion">No me Sigas</string>
+    <string name="desactivar_aplicacion">Seguime</string>
 
 
 	<string name="cuentaregresiva">Cuenta Regresiva</string>
@@ -114,7 +114,7 @@
 	
     
     <string name="presentacion_dispositivo">Encontrá tu dispositivo</string>
-    <string name="presentacion_servidor">Usá tu propio Serviddor</string>
+    <string name="presentacion_servidor">Usá tu propio Servidor</string>
     <string name="presentacion_alerta">Enviá mensajes de alerta</string>
     <string name="presentacion_remoto">Configurá la aplicación de forma remota</string>
 	
@@ -132,7 +132,7 @@
     </string>
 	
 	<string name="txt_advertencia_proyecto">
-		Esto es un proyecto, no es (ni prende ser) una aplicación de seguridad, 
+		Esto es un proyecto, no es (ni pretende ser) una aplicación de seguridad, 
 		es solo para uso experimental.
 		El desarrollador (o desarrolladores y colaboradores) 
 		no son ni serán responsables por el uso o mal uso de estos programas 
@@ -211,6 +211,7 @@
 		3. El servidor enviara mensajes por Telegram.  \n
 		 \n
 	</string>
+
 
 
 	<string name="txt_firma">

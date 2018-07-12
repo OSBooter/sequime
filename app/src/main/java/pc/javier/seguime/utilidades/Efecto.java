@@ -34,17 +34,17 @@ public abstract class Efecto {
 
         if (imagen.getResources().getConfiguration().orientation == imagen.getResources().getConfiguration().ORIENTATION_LANDSCAPE)
             if (visibilidad == View.VISIBLE)
-                imagen.setAnimation(AnimationUtils.loadAnimation(imagen.getContext(), R.anim.abajo_entrada));
+                imagen.startAnimation(AnimationUtils.loadAnimation(imagen.getContext(), R.anim.abajo_entrada));
             else
-                imagen.setAnimation(AnimationUtils.loadAnimation(imagen.getContext(),R.anim.abajo_salida));
+                imagen.startAnimation(AnimationUtils.loadAnimation(imagen.getContext(),R.anim.abajo_salida));
 
         else
             if (visibilidad == View.VISIBLE)
-                imagen.setAnimation(AnimationUtils.loadAnimation(imagen.getContext(), R.anim.izquierda_entrada));
+                imagen.startAnimation(AnimationUtils.loadAnimation(imagen.getContext(), R.anim.zoom_atras_entrada));
             else
-                imagen.setAnimation(AnimationUtils.loadAnimation(imagen.getContext(),R.anim.izquierda_salida));
+                imagen.startAnimation(AnimationUtils.loadAnimation(imagen.getContext(),R.anim.zoom_atras_salida));
 
-        imagen.animate();
+
         imagen.setVisibility(visibilidad);
 
     }
@@ -54,8 +54,8 @@ public abstract class Efecto {
 
     public static void AnimarBoton (Button boton) {
         boton.clearAnimation();
-        boton.setAnimation(AnimationUtils.loadAnimation(boton.getContext(),R.anim.desvanecer_entrada));
-        boton.animate();
+        boton.startAnimation(AnimationUtils.loadAnimation(boton.getContext(),R.anim.desvanecer_entrada));
+
     }
 
 

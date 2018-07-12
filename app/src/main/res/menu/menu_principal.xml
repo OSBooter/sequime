@@ -1,58 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-
-    tools:context=".MainActivity">
-
-
-    <item
-        android:title="@string/cuentaregresiva"
-        android:icon="@drawable/iconotemporizadorblanco"
-        android:id="@+id/menu_cuentaregresiva"
-        app:showAsAction="ifRoom"
-        ></item>
-
-    <item
-        android:title="@string/registros"
-        android:icon="@android:drawable/ic_dialog_map"
-        android:id="@+id/menu_registros"
-        app:showAsAction="ifRoom"
-    ></item>
-
-    <item
-        android:title="@string/opciones"
-        android:icon="@android:drawable/ic_menu_manage"
-        android:id="@+id/menu_opciones"
-        app:showAsAction ="ifRoom"
-    ></item>
+    >
 
 
     <item
-        android:title="@string/registrarAplicacion"
-        android:icon="@android:drawable/ic_lock_idle_lock"
-        android:id="@+id/menu_registraraplicacion"
-        app:showAsAction ="ifRoom"
+        android:title="@string/telegram_bot"
+        android:icon="@drawable/menu"
+        android:id="@+id/menu_bot"
+        app:showAsAction="always"
+        android:onClick="PrincipalMenuClick"
         ></item>
 
 
 
 
-
-    <item
-        android:title="@string/ayuda"
-        android:icon="@android:drawable/ic_menu_help"
-        android:id="@+id/menu_ayuda"
-        app:showAsAction="ifRoom"
-        ></item>
-
-
-    <item
-        android:title="@string/cerrar_sesion"
-        android:icon="@android:drawable/ic_menu_close_clear_cancel"
-        android:id="@+id/menu_salir"
-        app:showAsAction="ifRoom"
-        ></item>
 
 
 </menu>

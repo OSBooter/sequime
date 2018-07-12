@@ -73,7 +73,7 @@
 	<string name="txt_bloqueado">At this time the application is locked</string>
 
 	<string name="activar_aplicacion">¡Seguime!</string>
-	<string name="desactivar_aplicacion">No me sigas</string>
+	<string name="desactivar_aplicacion">Seguime</string>
 
 	
 	<string name="cuentaregresiva">Countdown</string>

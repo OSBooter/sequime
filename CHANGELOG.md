@@ -1,5 +1,10 @@
 # Seguime 
 
+### [1.2] - 12 de Julio de 2018
+# Modificado: compatible con Android 3.0 (Api 11).
+# Correcciones: mejoras en diseño compatible con diferentes pantallas.
+# Agregado: Botón para acceder al menú lateral.
+
 ### [1.1] - 10 de Julio de 2018
 Agregado: Elimina datos al cerrar sesión.
 Agregado: Pregunta antes de cerrar sesión.

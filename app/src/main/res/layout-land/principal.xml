@@ -53,28 +53,36 @@
         android:layout_height="wrap_content"
 
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/layout_iconos"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="center"
         >
 
         <Button
             android:id="@+id/princ_boton"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
             android:layout_centerHorizontal="true"
+
             android:layout_centerVertical="true"
 
-            android:padding="50dp"
 
-            android:text="@string/activar_aplicacion"
-            android:textSize="30dp"
-
-            android:textStyle="bold"
+            android:background="@drawable/botonprincipalcuadradoverde"
+            android:gravity="center"
             android:onClick="iniciar"
 
-            ></Button>
+
+            android:padding="50dp"
+            android:text="@string/activar_aplicacion"
+            android:textSize="35dp"
+            android:textStyle="bold"
+
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </android.support.constraint.ConstraintLayout>

@@ -4,141 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="0dp"
     android:background="#c5cae9"
-    >
-
-
-    <ViewAnimator
-        android:id="@+id/presentacion_contenido"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:inAnimation="@anim/izquierda_entrada"
-        android:outAnimation="@anim/izquierda_salida"
-
-        android:padding="30dp"
-
-        >
-
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center"
-
-            >
-
-            <ImageView
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:padding="20dp"
-                android:src="@drawable/presentacionmap"
-                android:layout_gravity="center"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:padding="10dp"
-                android:textAlignment="center"
-                android:textSize="30dp"
-
-                android:textStyle="bold"
-                android:layout_gravity="center"
-                android:text="@string/presentacion_dispositivo"
-                />
-
-        </LinearLayout>
-
-
-
-
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center"
-
-            >
-
-            <ImageView
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:padding="20dp"
-                android:src="@drawable/presentacioncloud"
-                android:layout_gravity="center"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:padding="10dp"
-                android:textAlignment="center"
-                android:textSize="30dp"
-
-                android:textStyle="bold"
-                android:layout_gravity="center"
-                android:text="@string/presentacion_servidor"
-                />
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_gravity="center"
-
-            >
-
-            <ImageView
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:adjustViewBounds="true"
-                android:padding="20dp"
-                android:src="@drawable/presentacionsobre"
-                android:layout_gravity="center"
-                />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="casual"
-                android:padding="10dp"
-                android:textAlignment="center"
-                android:textSize="30dp"
-
-                android:textStyle="bold"
-                android:layout_gravity="center"
-                android:text="@string/presentacion_alerta"
-                />
-
-        </LinearLayout>
-
-
-
-
-
-
-    </ViewAnimator>
+    android:padding="0dp">
 
 
     <ImageView
         android:id="@+id/presentacion_boton_anterior"
         android:layout_width="50dp"
         android:layout_height="50dp"
-
 
 
         android:adjustViewBounds="true"
@@ -154,7 +27,6 @@
         android:layout_height="50dp"
 
 
-
         android:adjustViewBounds="true"
         android:onClick="ClickPresentacion"
         android:src="@drawable/presentacionforward"
@@ -162,6 +34,116 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <ViewAnimator
+        android:id="@+id/presentacion_contenido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inAnimation="@anim/izquierda_entrada"
+        android:outAnimation="@anim/izquierda_salida"
+        android:padding="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+
+            >
+
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:padding="20dp"
+                android:src="@drawable/presentacionmap" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="casual"
+                android:padding="10dp"
+                android:text="@string/presentacion_dispositivo"
+
+                android:textAlignment="center"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+
+            >
+
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:padding="20dp"
+                android:src="@drawable/presentacioncloud" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="casual"
+                android:padding="10dp"
+                android:text="@string/presentacion_servidor"
+
+                android:textAlignment="center"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
+
+            >
+
+            <ImageView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:adjustViewBounds="true"
+                android:padding="20dp"
+                android:src="@drawable/presentacionsobre" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:fontFamily="casual"
+                android:padding="10dp"
+                android:text="@string/presentacion_alerta"
+
+                android:textAlignment="center"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+
+    </ViewAnimator>
 
 
 </android.support.constraint.ConstraintLayout>

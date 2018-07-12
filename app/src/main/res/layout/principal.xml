@@ -51,38 +51,53 @@ tools:showIn="@layout/barra_principal"
 
 
 
-<android.support.constraint.ConstraintLayout
-    android:id="@+id/layout_boton"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
 
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    app:layout_constraintBottom_toBottomOf="parent"
-    >
-
-    <Button
-        android:id="@+id/princ_boton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-
-        android:padding="50dp"
-
-        android:text="@string/activar_aplicacion"
-        android:textSize="35dp"
-
-        android:textStyle="bold"
-        android:onClick="iniciar"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/layout_boton"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
 
 
-        ></Button>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="center"
+        >
+
+        <Button
+            android:id="@+id/princ_boton"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+
+            android:layout_centerVertical="true"
 
 
-</android.support.constraint.ConstraintLayout>
+            android:background="@drawable/botonprincipalredondoverde"
+            android:gravity="center"
+            android:onClick="iniciar"
+
+
+            android:padding="50dp"
+            android:text="@string/activar_aplicacion"
+            android:textSize="35dp"
+            android:textStyle="bold"
+
+
+
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+
+
+
 
 <android.support.constraint.ConstraintLayout
     android:id="@+id/layout_estado"

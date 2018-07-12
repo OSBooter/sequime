@@ -116,7 +116,7 @@ public class ActividadSesion extends AppCompatActivity {
 
     public void iniciar (View v) {
 
-        RadioButton radio = findViewById(R.id.sesion_radio_registro);
+        RadioButton radio = (RadioButton) findViewById(R.id.sesion_radio_registro);
         clave = Tclave.getText().toString();
         usuario = Tusuario.getText().toString().trim();
         servidor = Tservidor.getText().toString().trim();
@@ -176,7 +176,7 @@ public class ActividadSesion extends AppCompatActivity {
 
 
     public void cambiarRadio (View view) {
-        RadioButton radio = findViewById(R.id.sesion_radio_iniciar);
+        RadioButton radio = (RadioButton) findViewById(R.id.sesion_radio_iniciar);
         if (radio.isChecked()) {
             TclaveRepetidaTexto.setVisibility(View.INVISIBLE);
             TclaveRepetida.setVisibility(View.INVISIBLE);

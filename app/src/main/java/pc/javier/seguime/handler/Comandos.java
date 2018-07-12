@@ -453,7 +453,7 @@ public class Comandos implements Handler.Callback {
             }
             if (comando.equals("mensaje")) {
                 mensajeLog("saludo recibido");
-                textView = activityHandler.findViewById(R.id.princ_mensaje);
+                textView = (TextView) activityHandler.findViewById(R.id.princ_mensaje);
                 if (textView != null)
                     textView.setText(parametro);
                 editor.putString(comando, parametro);

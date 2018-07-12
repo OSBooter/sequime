@@ -90,12 +90,14 @@
             android:label="servicioTemporizador"
             ></service>
 
-        <receiver android:name=".control.InicioConSistema">
+        <receiver android:name=".control.ReceptorInicioConElSistema">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED">
                 </action>
             </intent-filter>
         </receiver>
+
+
     </application>
 
 </manifest>
