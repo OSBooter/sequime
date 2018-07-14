@@ -6,9 +6,9 @@
 
     <item
         android:title="@string/telegram_bot"
-        android:icon="@android:drawable/ic_menu_search"
+        android:icon="@drawable/telegrambotblanco"
         android:id="@+id/menu_bot"
-        app:showAsAction="always"
+        app:showAsAction="ifRoom"
         android:onClick="MenuClick"
         ></item>
 
@@ -17,7 +17,7 @@
         android:title="@string/ayuda"
         android:icon="@android:drawable/ic_menu_help"
         android:id="@+id/menu_ayuda"
-        app:showAsAction="always"
+        app:showAsAction="ifRoom"
         android:onClick="MenuClick"
         ></item>
 

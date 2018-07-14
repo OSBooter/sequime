@@ -47,6 +47,7 @@ public abstract class Efecto {
 
         imagen.setVisibility(visibilidad);
 
+
     }
 
 
@@ -57,6 +58,9 @@ public abstract class Efecto {
         boton.startAnimation(AnimationUtils.loadAnimation(boton.getContext(),R.anim.desvanecer_entrada));
 
     }
+
+
+
 
 
 }

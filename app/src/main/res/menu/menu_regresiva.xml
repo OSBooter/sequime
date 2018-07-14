@@ -9,7 +9,7 @@
         android:title="@string/ayuda"
         android:icon="@android:drawable/ic_menu_help"
         android:id="@+id/menu_ayuda"
-        app:showAsAction="always"
+        app:showAsAction="ifRoom"
         android:onClick="ayuda"
         ></item>
 

@@ -60,11 +60,12 @@ public class Aplicacion {
         servicio = new Intent(contexto,ServicioTemporizador.class);
         preferencias = contexto.getSharedPreferences("preferencias",contexto.MODE_PRIVATE);
         cargarConfiguracionInicial();
-     }
+    }
 
 
 
-     // genera una configuracion inicial (Predeterminada)
+
+    // genera una configuracion inicial (Predeterminada)
     private void cargarConfiguracionInicial() {
         mensajeLog ( "veriticando si se carga configuracion inicial....: "  );
         if (Preferencias().getBoolean("inicial", true) == false)
@@ -286,8 +287,18 @@ public class Aplicacion {
 
 
 
+
+
+
     private void mensajeLog (String texto) {
         Log.d("Aplicacion", texto);
     }
+
+
+
+
+
+
+
 
 }

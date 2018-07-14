@@ -74,7 +74,7 @@ tools:showIn="@layout/barra_principal"
             android:layout_centerVertical="true"
 
 
-            android:background="@drawable/botonprincipalredondoverde"
+            android:background="@drawable/anilloverde"
             android:gravity="center"
             android:onClick="iniciar"
 

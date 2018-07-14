@@ -1,102 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="10sp"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="5dp"
+    android:stretchColumns="1"
 
     >
 
     <TableRow>
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-
             android:text="@string/fechahora"
-            android:layout_marginRight="5sp"
-
+            android:layout_marginRight="5dp"
+            android:textAlignment="textEnd"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="00:00 01-01-2018"
+            android:text="00:00:00 01-01-2018"
             android:id="@+id/registros_fechahora"
             android:textStyle="bold"
+            android:layout_span="2"
             />
         </TableRow>
 
 
-    <TableRow>
-    <TextView
 
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/latitud"
-        />
+        <TableRow>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/latitud"
+                android:textAlignment="textEnd"
+                android:layout_marginRight="5dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/registros_latitud"
+                android:text="0.000000000000000"
+                android:layout_span="2"
+                />
+        </TableRow>
 
-        <TextView
 
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/registros_latitud"
-            android:text="0.0000000"
-            />
+        <TableRow>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/longitud"
+                android:layout_marginRight="5dp"
+                android:textAlignment="textEnd"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/registros_longitud"
+                android:text="0.000000000000000"
+                android:layout_span="2"
+                />
+            </TableRow>
 
-    </TableRow>
-    <TableRow>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        <TableRow>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/velocidad"
+                android:layout_marginRight="5dp"
+                android:textAlignment="textEnd"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/registros_velocidad"
+                android:text="0.0 km/h"
 
-        android:text="@string/longitud"
+                />
 
-        android:layout_marginRight="2sp"
-        />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/registros_longitud"
-            android:text="0.0000000"
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/registros_imagenestado"
+                android:src="@drawable/icononube"
 
-            android:layout_marginRight="2sp"
-            />
+                />
 
         </TableRow>
 
-    <TableRow>
+
+
+        <TableRow>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:text="@string/velocidad"
-
-            android:layout_marginRight="2sp"
-            />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/registros_velocidad"
-            android:text="0.0 km/h"
-
-            android:layout_marginRight="2sp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:text="@string/infoextra"
+            android:id="@+id/registros_extra"
+            android:layout_below="@+id/registros_latitud"
+            android:layout_span="3"
             />
 
-    </TableRow>
 
-    <TableRow>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="0px"
-        android:text="@string/infoextra"
-        android:id="@+id/registros_extra"
-        android:layout_below="@+id/registros_latitud"
-
-        android:layout_span="2"
-        android:layout_marginRight="2sp"
-        />
-
-
-    </TableRow>
+        </TableRow>
 
 
 

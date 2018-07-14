@@ -20,6 +20,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -286,10 +287,15 @@ public class ActividadRegistros extends AppCompatActivity {
                     FechaHora.fechaHora(String.valueOf(arregloRegistro[position].fecha))
             );
 
+            ImageView imagenEstado = (ImageView) findViewById(R.id.registros_imagenestado);
 
 
-            if ( arregloRegistro[position].recibido ==0 )
+            if ( arregloRegistro[position].recibido ==0 ) {
                 item.setBackgroundColor(Color.GRAY);
+                imagenEstado.setImageResource(R.drawable.iconoavion);
+            }
+
+
 
 
             mensajeLog ( position + " " + fecha.getText() + " -> " +  arregloRegistro[position].recibido );

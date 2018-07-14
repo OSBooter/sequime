@@ -157,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
             botonActivado = R.drawable.botonprincipalcuadradoverde;
             botonDesactivado =R.drawable.botonprincipalcuadradogris;
         } else {
-            botonActivado = R.drawable.botonprincipalredondoverde;
+            botonActivado = R.drawable.anilloverde;
             botonDesactivado =R.drawable.botonprincipalredondogris;
         }
 
