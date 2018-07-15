@@ -8,6 +8,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import pc.javier.seguime.interfaz.Aplicacion;
+import pc.javier.seguime.utilidades.Parametro;
 
 
 /**
@@ -19,13 +20,29 @@ public class ReceptorUsuarioActivo extends BroadcastReceiver {
     @Override
     public void onReceive(Context contexto, Intent intent) {
 
+        Log.d("USUARIO ACTIVO","se intentara reiiciar el servicio");
+        if (Parametro.aplicacion == null)
+            return;
 
-        boolean aplicacionActiva = Aplicacion.preferenciaBooleano("activa");
-        if (Aplicacion.preferenciaBooleano("pantalladesbloqueada"))
-            if (aplicacionActiva) {
+        Log.d("USUARIO ACTIVO","hay aplicacion");
+
+        if (!Parametro.aplicacion.servicioActivo())
+            return;
+
+        Log.d("USUARIO ACTIVO","hay servicio");
 
 
-            }
+
+        if (!Aplicacion.preferenciaBooleano("activa"))
+            return;
+
+        Log.d("USUARIO ACTIVO","preferencia activada");
+
+
+        if (Aplicacion.preferenciaBooleano("activarconpantalla"))
+            Parametro.aplicacion.ReiniciarServicio();
+
+
 
     }
 }

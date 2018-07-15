@@ -17,6 +17,7 @@
     <string name="rastreo">Rastreo (Envía Mensajes)</string>
     <string name="telegram_bot">Bot de Telegram</string>
 	<string name="iniciarConElSistema">Iniciar con el sistema</string>
+	<string name="activarconpantalla">Iniciar actividad al encender la pantalla</string>
 
 	<string name="errorValidacion">Hay un error con los datos ingresados</string>
 

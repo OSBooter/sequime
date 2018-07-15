@@ -13,6 +13,7 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Switch;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import pc.javier.seguime.interfaz.Aplicacion;
 import pc.javier.seguime.utilidades.Parametro;
@@ -25,8 +26,10 @@ public class ActividadOpciones extends AppCompatActivity {
     EditText Ttelegram ;
     EditText Tactividad ;
     EditText Tinactividad;
-    Switch Srastreo;
-    Switch Siniciar;
+    ToggleButton Brastreo;
+    ToggleButton Biniciar;
+    ToggleButton Bactivar;
+
 
 
 
@@ -39,8 +42,9 @@ public class ActividadOpciones extends AppCompatActivity {
         Ttelegram = (EditText) findViewById(R.id.opciones_telegram);
         Tactividad = (EditText) findViewById(R.id.opciones_actividad);
         Tinactividad = (EditText) findViewById(R.id.opciones_inactividad);
-        Srastreo = (Switch) findViewById(R.id.opciones_rastreo);
-        Siniciar = (Switch) findViewById(R.id.opciones_iniciarConElSistema);
+        Brastreo = (ToggleButton) findViewById(R.id.opciones_rastreo);
+        Biniciar = (ToggleButton) findViewById(R.id.opciones_iniciarConElSistema);
+        Bactivar= (ToggleButton) findViewById(R.id.opciones_activarconpantalla);
 
         preferencias = getSharedPreferences("preferencias", MODE_PRIVATE);
         cargarOpciones();
@@ -72,10 +76,10 @@ public class ActividadOpciones extends AppCompatActivity {
     public void guardar (View v) {
 
         if (!Aplicacion.Registrada())
-            if (Siniciar.isChecked()) {
+            if (Biniciar.isChecked()) {
                 Toast.makeText(this, R.string.requiereregistro, Toast.LENGTH_LONG).show();
-                Siniciar.setChecked(false);
-                Siniciar.setEnabled(false);
+                Biniciar.setChecked(false);
+                Biniciar.setEnabled(false);
                 return ;
             }
 
@@ -97,14 +101,16 @@ public class ActividadOpciones extends AppCompatActivity {
         int inactividad = preferencias.getInt("inactividad", 0);
         boolean rastreo = preferencias.getBoolean("rastreo", false);
         boolean iniciar = preferencias.getBoolean("iniciar", false);
+        boolean activar = preferencias.getBoolean("activarconpantalla", false);
 
 
         Tsms.setText(sms);
         Ttelegram.setText(telegram);
         Tactividad.setText(String.valueOf(actividad));
         Tinactividad.setText(String.valueOf(inactividad));
-        Srastreo.setChecked(rastreo);
-        Siniciar.setChecked(iniciar);
+        Brastreo.setChecked(rastreo);
+        Biniciar.setChecked(iniciar);
+        Bactivar.setChecked(activar);
 
     }
 
@@ -126,8 +132,9 @@ public class ActividadOpciones extends AppCompatActivity {
 
         String sms =  Tsms.getText().toString();
         String telegram = Ttelegram.getText().toString();
-        boolean rastreo = Srastreo.isChecked();
-        boolean iniciar = Siniciar.isChecked();
+        boolean rastreo = Brastreo.isChecked();
+        boolean iniciar = Biniciar.isChecked();
+        boolean activar = Bactivar.isChecked();
 
 
 
@@ -143,6 +150,7 @@ public class ActividadOpciones extends AppCompatActivity {
 
         editor.putBoolean("rastreo", rastreo);
         editor.putBoolean("iniciar", iniciar);
+        editor.putBoolean("activarconpantalla", activar);
         editor.commit();
         return true;
     }
@@ -203,7 +211,7 @@ public class ActividadOpciones extends AppCompatActivity {
         }
 
         if (!Aplicacion.Registrada())
-            Siniciar.setChecked(false);
+            Biniciar.setChecked(false);
 
     }
 

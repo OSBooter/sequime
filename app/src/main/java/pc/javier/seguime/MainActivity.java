@@ -95,14 +95,30 @@ public class MainActivity extends AppCompatActivity {
 
 
     @Override
+    public void openOptionsMenu() {
+        super.openOptionsMenu();
+
+    }
+
+    @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
-        ((TextView) findViewById(R.id.menu_usuario)).setText(Aplicacion.Usuario());
+
+
+
         return true;
     }
 
-    public boolean onCreateOptionsMenu (Menu menu) {
+
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_principal,menu);
-        return true;
+        TextView textViewUsuario = (TextView) findViewById(R.id.menu_usuario);
+        if (textViewUsuario != null)
+            textViewUsuario.setText(Aplicacion.Usuario());
+
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override
@@ -250,6 +266,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(findViewById(R.id.menu_usuario) != null)
             ((TextView) findViewById(R.id.menu_usuario)).setText(Aplicacion.Usuario());
+
 
 
 

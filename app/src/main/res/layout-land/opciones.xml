@@ -109,31 +109,100 @@
 
             </TableRow>
 
-            <LinearLayout
-                android:orientation="vertical"
+
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
                 >
-                <Switch
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/opciones_rastreo"
-                    android:text = "@string/rastreo"
-                    android:padding="10sp"
-                    android:layout_margin="5sp"
-
-                    />
-
-                <Switch
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/opciones_iniciarConElSistema"
-                    android:text = "@string/iniciarConElSistema"
-                    android:padding="10sp"
-                    android:layout_margin="5sp"
-
-                    />
 
 
-            </LinearLayout>
+
+                <TableRow>
+
+                    <ToggleButton
+                        android:id="@+id/opciones_rastreo"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/rastreo"
+                        />
+
+
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/rastreo"
+                        android:padding="5dp"
+
+
+                        />
+
+
+
+
+                </TableRow>
+
+                <TableRow>
+
+
+
+                    <ToggleButton
+                        android:id="@+id/opciones_iniciarConElSistema"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+
+                        android:onClick="IniciarConElSistema"
+
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/iniciarConElSistema"
+                        android:padding="5dp"
+                        />
+
+
+
+
+
+                </TableRow>
+
+                <TableRow>
+
+
+
+                    <ToggleButton
+                        android:id="@+id/opciones_activarconpantalla"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+
+                        />
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/activarconpantalla"
+                        android:padding="5dp"
+                        />
+
+
+                </TableRow>
+
+            </TableLayout>
+
+
+
+
         </TableLayout>
 
         <TableLayout

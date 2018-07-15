@@ -17,6 +17,7 @@
     <string name="telegram_bot">Telegram BOT</string>
 	<string name="iniciarConElSistema">Start on boot</string>
 	<string name="errorValidacion">There is an error</string>
+	<string name="activarconpantalla">Start activity when screen on</string>
 
 
     <string name="espere">Please wait... ️</string>

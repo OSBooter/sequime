@@ -38,7 +38,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text = "Seguime \n Versión 1.2"
+                android:text = "Seguime \n Versión 1.3"
                 android:id="@+id/version"
                 android:textAlignment="center"
                 android:padding="5dp"

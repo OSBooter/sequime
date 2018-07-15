@@ -97,6 +97,12 @@
             </intent-filter>
         </receiver>
 
+        <receiver android:name=".control.ReceptorUsuarioActivo">
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT">
+                </action>
+            </intent-filter>
+        </receiver>
 
     </application>
 

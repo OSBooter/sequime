@@ -95,7 +95,13 @@ public class Aplicacion {
 
     // Pone en marcha la aplicacion (Servicios)
     public void iniciarServicio() {
-        Toast.makeText(contexto, contexto.getString(R.string.principal_aplicacion) + " \uD83D\uDCE1", Toast.LENGTH_LONG).show();
+
+        if (!sesionIniciada()) {
+            mensajeLog ( "Se intento iniciar la aplicacion sin sesion :D");
+            return;
+        }
+
+        // Toast.makeText(contexto, contexto.getString(R.string.principal_aplicacion) + " \uD83D\uDCE1", Toast.LENGTH_LONG).show();
         preferenciaBooleano("activa", true);
         mensajeLog ( "Iniciando Servicio");
         if (servicioActivo())
@@ -126,6 +132,7 @@ public class Aplicacion {
         if (servicioActivo())
             contexto.stopService(servicio);
         iniciarServicio();
+        preferenciaBooleano("activa", true);
     }
 
 
