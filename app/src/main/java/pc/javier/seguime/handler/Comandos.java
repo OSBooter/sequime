@@ -405,7 +405,7 @@ public class Comandos implements Handler.Callback {
             if (comando.equals("bloqueo") || comando.equals("bloquea") || comando.equals("bloquear") || comando.equals("bloqueado")) {
 
                 if (parametro.equals( "0"))
-                    editor.remove("bloque");
+                    editor.remove("bloqueo");  // Thanks Johan
                 else
                     editor.putBoolean("bloqueo", true);
                 editor.commit();

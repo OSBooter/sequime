@@ -1,5 +1,8 @@
 # Seguime 
 
+### [1.5] - 17 de Julio de 2018
+Correcciones: error en desbloqueo (encontrado por Johan)
+
 ### [1.4] - 17 de Julio de 2018
 Agregado: Traducción al Francés por Johan
 

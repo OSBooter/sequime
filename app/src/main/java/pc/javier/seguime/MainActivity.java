@@ -437,6 +437,9 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
+
     private void CerrarSesion() {
         aplicacion.detenerServicio();
         if (aplicacion.estaBloqueado())

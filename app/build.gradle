@@ -6,8 +6,8 @@ android {
         applicationId "pc.javier.seguime"
         minSdkVersion 11
         targetSdkVersion 14
-        versionCode 14
-        versionName "1.4"
+        versionCode 15
+        versionName "1.5"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
