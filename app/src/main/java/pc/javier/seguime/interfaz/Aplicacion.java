@@ -76,8 +76,8 @@ public class Aplicacion {
         SharedPreferences.Editor editor = Preferencias().edit();
 
         editor.putString("servidor", "http://javierpc.esy.es/seguime/servicio.php");
-        editor.putString("usuario", "demo");
-        editor.putString("clave", "1234");
+        editor.putString("usuario", "");
+        editor.putString("clave", "");
 
         editor.putInt("actividad", 5);
         editor.putInt("inactividad", 30);
@@ -188,7 +188,9 @@ public class Aplicacion {
         if (estaBloqueado())
             return;
         SharedPreferences.Editor editor = Preferencias().edit();
+        editor.remove("servidor");
         editor.remove("sesion");
+        editor.remove("usuario");
         editor.remove("clave");
         editor.remove("telegram");
         editor.remove("sms");

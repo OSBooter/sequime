@@ -4,12 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-    android:orientation="horizontal"
     android:background="@drawable/caminoazul"
     android:id="@+id/princ_pantalla"
     tools:context="pc.javier.seguime.MainActivity"
-
+	app:layout_behavior="@string/appbar_scrolling_view_behavior"
+	tools:showIn="@layout/barra_principal"
     >
 
 

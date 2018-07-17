@@ -1,5 +1,8 @@
 # Seguime 
 
+### [1.4] - 17 de Julio de 2018
+Agregado: Traducción al Francés por Johan
+
 ### [1.3] - 15 de Julio de 2018
 Agregado: Opción para reiniciar los contadores internos (Servicio) al detectar usuario en el sistema (encender la pantalla).
 Modificado: Diseño botón principal.

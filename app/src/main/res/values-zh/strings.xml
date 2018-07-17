@@ -2,10 +2,10 @@
 <resources>
     <string name="app_name">Seguime</string>
 
-	<string name="Traducidopor"></string>
+	<string name="traducidopor"></string>
 
-	<string name="menu_abrir">Menú</string>
-	<string name="menu_cerrar">Close Menú</string>
+	<string name="menu_abrir">Menu</string>
+	<string name="menu_cerrar">Close Menu</string>
 
 	<string name="servidor">服务器</string>
 	<string name="usuario">用户</string>
@@ -35,7 +35,7 @@
 	<string name="fechahora">日期和时间</string>
 	<string name="fecha">日期</string>
 	<string name="hora">时间</string>
-	<string name="Infoextra">Extra Info</string>
+	<string name="infoextra">Extra Info</string>
 
 	<string name="contactos">Contacts</string>
 		
@@ -103,7 +103,7 @@
 
 	<string name="conectando">Connecting...</string>
 	<string name="errorconexion">Connection Error</string>
-	<string name="enviano">Sending data....</string>
+	<string name="enviando">Sending data....</string>
 	<string name="recibiendo">receiving data...</string>
 	<string name="conexionfinalizada">correct connection... but nothing happened.</string>
 

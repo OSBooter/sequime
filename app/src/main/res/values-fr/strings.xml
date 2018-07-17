@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">Seguime</string>
+
+	<string name="traducidopor">steup000@gmail.com</string>
+
+	<string name="menu_abrir">Menu</string>
+	<string name="menu_cerrar">Fermer Menu</string>
+
+	<string name="servidor">Serveur</string>
+	<string name="usuario">Login</string>
+	<string name="clave">Mot de passe</string>
+	<string name="intervalo_inactividad">Période d\'attente (en minutes)</string>
+	<string name="intervalo_actividad">Période d\'activité (en minutes)</string>
+	<string name="sms">SMS</string>
+	<string name="id_telegram">Chat_ID Telegram (NO @USER_ID)</string>
+	<string name="rastreo">Suivi (envoi de messages)</string>
+    <string name="telegram_bot">Telegram BOT</string>
+	<string name="iniciarConElSistema">Démarrer avec le système</string>
+	<string name="activarconpantalla">Initialiser le service à l\'affichage de l\'écran</string>
+	
+	<string name="errorValidacion">Erreur</string>
+
+
+    <string name="espere">Veuillez patienter... ️</string>
+
+	<string name="sesion_clavedesigual">Les mots de passe sont différents</string>
+	<string name="sesion_clavecorta">Mot de passe trop court</string>
+	<string name="sesion_usuariocorto">Login trop court</string>
+	<string name="sesion_sinservidor">Renseigner une URL de serveur</string>
+
+	<string name="cerrarsesion_mensajeadvertencia">Les données seront perdues. Etes-vous sûr?</string>
+
+	<string name="latitud">Latitude</string>
+	<string name="longitud">Longitude</string>
+	<string name="fechahora">Date et heure</string>
+	<string name="fecha">Date</string>
+	<string name="hora">Heure</string>
+	<string name="infoextra">Information supplémentaire</string>
+
+	<string name="contactos">Contacts</string>
+	
+	
+	<string name="configuracion">Paramètres</string>
+	<string name="opciones">Options</string>
+	<string name="guardar">Enregistrer</string>
+	<string name="cancelar">Annuler</string>
+	<string name="editar">Editer</string>
+	<string name="registros">Enregistrements</string>
+	<string name="cerrar_sesion">Fermer la session</string>
+	<string name="salir">Quitter</string>
+
+	<string name="velocidad">Vitesse</string>
+	
+		
+	<string name="txt_bloqueado_alarma">Le service ne peut pas être arrêté lorsqu\'une alarme est active</string>
+	<string name="alarma">Alarme (Message d\'alerte)</string>
+	<string name="alarmamensaje">J\'ai peut-être besoin d\'aide, contactez moi SVP!</string>
+	<string name="iniciar">Démarrer</string>
+	<string name="detener">Arrêter</string>
+	<string name="mensajealerta">Message d\'alerte</string>
+
+	<string name="minuto">Minute</string>
+	<string name="segundo">Seconde</string>
+
+	<string name="principal_alarma">alarme activée</string>
+	<string name="principal_rastreo">Suivi activé</string>
+	<string name="principal_aplicacion">L\'application est active</string>
+	<string name="principal_internet">La connexion internet est disponible</string>
+    <string name="principal_alarmaservidor">L\'alerte est activée depuis le serveur</string>
+
+	
+	
+	<string name="txt_servicio_activo">L\'application est active :-)</string>
+	<string name="txt_servicio_inactivo">L\'application est inactive, appuyez sur le bouton pour l\'activer</string>
+	<string name="txt_bloqueado">L\'application est actuellement vérouillée</string>
+
+	<string name="activar_aplicacion">Suivez moi!</string>
+	<string name="desactivar_aplicacion">Stopper le suivi</string>
+
+	
+	<string name="cuentaregresiva">Minuteur</string>
+	
+	<string name="ayuda">Aide</string>
+	<string name="cerrar">Fermer</string>
+
+	
+	
+		
+	
+	
+	<string name="iniciarsesion">Connexion</string>
+	<string name="registrarse">S\'enregistrer</string>
+	<string name="repetirclave">Ressaisir le mot de passe (N\'utilisez pas un vrai mot de passe)</string>
+	<string name="ssl">Connexion sécurisée SSL</string>
+
+
+	<string name="registrarAplicacion">Enregistrer cette version</string>
+	<string name="nombre">Nom</string>
+	<string name="versionRegistrada">Version enregistrée</string>
+    <string name="claveIncorrecta">Mot de passe incorrect</string>
+	<string name="requiereregistro">Nécessite une version enregistrée</string>
+	<string name="txt_registrodeversion">L\'enregistrement est gratuit. Récupérez une clé sur le site web. Aucune information personnelle n\'est demandée</string>
+
+
+	<string name="conectando">Connexion en cours...</string>
+	<string name="errorconexion">Erreur de connexion</string>
+	<string name="enviando">Envoi des données...</string>
+	<string name="recibiendo">Réception des données...</string>
+	<string name="conexionfinalizada">Connexion OK... mais pas de réponse du serveur.</string>
+
+
+
+    <string name="presentacion_dispositivo">Retrouvez votre appareil</string>
+    <string name="presentacion_servidor">Utilisez votre serveur privé</string>
+    <string name="presentacion_alerta">Envoyez des messages d\'alerte</string>
+    <string name="presentacion_remoto">Configurez l\'application à distance</string>
+
+
+
+
+    <string name="txt_ayuda_descripcion">
+		Seguime permet de localiser un appareil,
+		de collecter les informations GPS et de les envoyer sur un serveur.
+		Depuis le serveur on peut visualiser les enregistrements GPS sur une carte, 
+		et voir où est allé l\'appareil. 
+		Le serveur peut être celui d\'un ami, de la famille ou le votre, 
+		Vous pouvez utiliser votre propre serveur afin de conserver les données confidentielles.
+		Seguime inclut un minuteur qui permet de programmer la durée d\'enregistrement.
+		De plus ce minuteur permet de programmer l\'envoi d\'un message de secours.
+		Lorsque l\'application est en mode enregistrement, elle envoie des messages contenant la localisation
+		par SMS ou Telegram.
+	</string>
+	
+	<string name="txt_advertencia_proyecto">
+		seguime est un projet destiné à une utilisation expérimentale, il n\'est pas 
+		(et ne prétend pas être) une application de sécurité.
+		Les développeurs et collaborateurs ne peuvent être tenus responsables de l\'utilisation
+		qui en est faite.
+	</string>
+	
+	
+
+	<string name="txt_licencia">This program is free software: You can redistribute it and/or modify
+	It under the terms of the GNU General Public License as published by
+	The Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version. \n
+
+	This program is distributed in the hope that it will be useful,
+	But WITHOUT ANY warranty; Without even the implied warranty of
+	MERCHANTABILITY or FITNESS for A PARTICULAR PURPOSE. See the
+	GNU General Public License for more details. \n
+
+	You should have received a copy of the GNU General Public License
+	Along with this program. If not, see http://www.gnu.org/licenses/
+	</string>
+
+		
+	
+	
+	<string name="dona">Faire un don :)</string>
+	<string name="sitioweb">Aller sur le site</string>
+	<string name="txt_donacion">Si vous appréciez l\'application, vous pouvez faire un don. \n
+	Cette application ne contient aucune publicité, n\'a aucun sponsor ni tracker, elle dépend
+	uniquement de la collaboration de ses utilisateurs.
+	</string>
+
+	<string name="txt_ayuda_opciones">Les options suivantes sont disponibles: \n
+	\n
+
+	SMS : \n
+	Renseigner un numéro de téléphone qui recevra les coordonnées par SMS. \n
+	Les SMS ne seront envoyés que si l\'option de suivi est activée. \n
+	Afin d\'éviter des dépense je recommande de ne pas utiliser cette option si vous utilisez le serveur seguime,
+	Utilisez cette option uniquement si vous utilisez votre propre serveur, ou un serveur sécurisé.\n
+	\n
+	Telegram ID : \n
+	Renseigner un identifiant Telegram (pas l\'ID utilisateur Telegram). pour utiliser cette option visitez le  bot @seguimebot et saluez-le, il vous donnera un ID numérique. Ce nombre sera utilisé par le bot pour envoyer les coordonnées à ce compte Telegram. \n
+	\n
+	Période d\'activité : \n
+	L\'application fonctionnera pendant cette période, en collectant et envoyant au serveur les coordonnées GPS. Une valeur faible ne permettra pas de collecter les coordonnées si la couverture GPS est faible, une valeur importante entrainera une forte consommation batterie. \n
+	Afin que l\'application fonctionne constamment, définissez cette période à 0 \n
+	\n
+	Période d\'attente : \n
+	Pendant cette période, l'application sera au repos, n\'effectuera pas de connexion internet ou de collecte GPS, afin d\'économiser la batterie. Une valeur faible consommera beaucoup de batterie, une valeur importante sera préjudiciable à la précision. \n
+	Afin que l\'application soit constamment en fonctionnement, définissez la période à 0 \n
+	\n
+	Suivi (envoi de message): \n
+	Lorsque cette option est active, l\'application envoit des messages par Telegram et/ou SMS a chaque nouvelle coordonnée. Cette option peut être activée depuis le site web, aussi pour votre sécurité et pour éviter des dépenses ne l\'activez que si vous utilisez votre propre serveur web. \n
+	\n
+	\n
+	J\'espère que cette aide vous sera utile :-)
+	\n
+	\n
+	\n
+
+	</string>
+
+	
+	
+	<string name="txt_ayuda_regresiva">
+        Aide concernant le minuteur : \n
+		\n
+		Permet d\'activer un minuteur, qui active les actions suivantes : \n
+		1. Configurer un numéro de téléphone pour recevoir des SMS avec les coordonnées. \n
+		2. Force l\'application en mode actif. L\'application ne peut être désactivée que s\'il n\'y a pas de minuteur actif. \n
+		3. Envoi une copie du compte à rebours au serveur. \n
+		
+		 \n
+		A la fin du compte à rebours, les actions suivantes seront réalisées : \n
+		1. Activer l\'enregistrement \n
+		2. Envoi d\'un SMS avec le texte programmé \n
+		3. Le serveur envoie les messages par Telegram \n
+		 \n
+	</string>
+
+
+	
+	
+	<string name="txt_firma">
+        Développé en Argentine par Javier Martínez
+    </string>    
+	
+	
+	
+</resources>
