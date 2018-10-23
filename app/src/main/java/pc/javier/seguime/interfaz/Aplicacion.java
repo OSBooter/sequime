@@ -75,7 +75,7 @@ public class Aplicacion {
 
         SharedPreferences.Editor editor = Preferencias().edit();
 
-        editor.putString("servidor", "http://javierpc.esy.es/seguime/servicio.php");
+        editor.putString("servidor", "http://seguime.000webhostapp.com/servicio.php");
         editor.putString("usuario", "");
         editor.putString("clave", "");
 

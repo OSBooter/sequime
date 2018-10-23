@@ -1,5 +1,8 @@
 # Seguime 
 
+### [1.6] - 08 de Octubre de 2018
+Modificado: Nueva dirección https://seguime.000webhostapp.com/
+
 ### [1.5] - 17 de Julio de 2018
 Correcciones: error en desbloqueo (encontrado por Johan)
 

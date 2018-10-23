@@ -44,4 +44,4 @@ Al no tener publicidad este proyecto se mantiene únicamente con donaciones
 
 # Mas información
 
-Si querés mas información sobre este proyecto [Visita la Sección de Ayuda](http://javierpc.esy.es/seguime/ayuda.php) en el sitio web.
+Si querés mas información sobre este proyecto [Visita la Sección de Ayuda](https://seguime.000webhostapp.com/ayuda.php) en el sitio web.

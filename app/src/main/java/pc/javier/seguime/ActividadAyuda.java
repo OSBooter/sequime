@@ -35,7 +35,7 @@ public class ActividadAyuda extends AppCompatActivity {
     }
 
     public void sitio (View v) {
-        navegar("http://javierpc.esy.es/seguime");
+        navegar("http://seguime.000webhostapp.com/");
     }
 
 

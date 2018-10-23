@@ -26,7 +26,7 @@ public class InternetConexion implements Runnable {
     }
 
 
-    private String url = "http://javierpc.esy.es/seguime/servicio.php";
+    private String url = "http://seguime.000webhostapp.com/servicio.php";
     private String parametros = "latitud=0&longitud=0&fecha=2016/1/1 13:15";
     private Handler handler;
     private boolean ssl = false;

@@ -63,7 +63,7 @@ public class ActividadClave extends AppCompatActivity {
 
     public void ObtenerClave (View view) {
         Intent i = new Intent(Intent.ACTION_VIEW);
-        i.setData(Uri.parse("http://javierpc.esy.es/seguime/registroversion.php"));
+        i.setData(Uri.parse("http://seguime.000webhostapp.com/registroversion.php"));
         startActivity(i);
     }
 

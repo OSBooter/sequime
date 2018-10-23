@@ -25,12 +25,12 @@
 
 
 
-	<string name="sesion_clavedesigual">Las claves NO Coinciden</string>
+	<string name="sesion_clavedesigual">Las claves NO coinciden</string>
 	<string name="sesion_clavecorta">Las claves es muy corta</string>
 	<string name="sesion_usuariocorto">El nombre de usuario es muy corto</string>
 	<string name="sesion_sinservidor">Debe especificar un servidor</string>
 
-	<string name="cerrarsesion_mensajeadvertencia">Esto eliminara todos los datos. ¿Esta seguro?</string>
+	<string name="cerrarsesion_mensajeadvertencia">Esto eliminara todos los datos. ¿Está seguro?</string>
 
 	
     <string name="latitud">Latitud</string>
@@ -99,7 +99,7 @@
 
     <string name="registrarAplicacion">Registrar Versión</string>
     <string name="nombre">Nombre</string>
-    <string name="versionRegistrada">Version Registrada</string>
+    <string name="versionRegistrada">Versión Registrada</string>
     <string name="claveIncorrecta">Clave Incorrecta</string>
 	<string name="requiereregistro">Requiere registro</string>
     <string name="txt_registrodeversion">El registro es GRATUITO, visite el sitio web y consiga su clave, no requiere información personal</string>
@@ -124,12 +124,12 @@
     <string name="txt_ayuda_descripcion">
         Seguime te permite rastrear tu dispositivo, 
 		recolecta información del GPS y la almacena para luego poder enviarlas a tu servidor.
-		Desde el servidor se puede ver los registros en un mapa y ver donde esta (o estuvo) el dispositivo.
+		Desde el servidor se puede ver los registros en un mapa y ver donde está (o estuvo) el dispositivo.
 		El servidor puede ser el de un amigo, familiar o el tuyo, 
 		podes montar tu propio servidor para mayor privacidad de tus datos.
 		Además incluye un temporizador que te permite programar en que momento la aplicación activará su modo de rastreo 
 		y adicionalmente enviar un mensaje de ayuda.
-		Cuando la aplicación esta en modo de rastreo enviara por SMS o Telegram mensajes con la ubicación.
+		Cuando la aplicación está en modo de rastreo enviara por SMS o Telegram mensajes con la ubicación.
     </string>
 	
 	<string name="txt_advertencia_proyecto">
@@ -158,7 +158,7 @@
     </string>
 
 	
-	<string name="dona">Hace una Donación :)</string>
+	<string name="dona">Hacé una Donación :)</string>
 	<string name="sitioweb">Ir al Sitio Web</string>
     <string name="txt_donacion">
         Si te gusta la Aplicación podes colaborar con una donación.\n
@@ -172,8 +172,8 @@
 		
         SMS: \n
 		Es un numero de teléfono que podes elegir para que la aplicación envíe coordenadas por SMS. \n
-		Solo se enviara SMS si la opción de Rastreo esta habilitado. \n
-		Para evitar gastos te recomiendo NO USAR ESTA OPCIÓN si estas usando el servidor de Seguime, usa UNICAMENTE esta opción si estas usando tu propio servidor, o un servidor seguro \n
+		Solo se enviara SMS si la opción de Rastreo está habilitado. \n
+		Para evitar gastos te recomiendo NO USAR ESTA OPCIÓN si estás usando el servidor de Seguime, usa UNICAMENTE esta opción si estás usando tu propio servidor, o un servidor seguro \n
 		\n
 		Telegram ID: \n
 		Es un numero identificador de Telegram, NO ES LA @ID_USUARIO, para utilizar esta opción visita el bot @seguimebot y saludalo, te dará tu numero de ID, luego con ese numero el bot podrá enviar coordenadas a esa cuenta de Telegram. \n
@@ -187,7 +187,7 @@
 		 Para que la aplicación este constantemente encendida (y no por intervalos de tiempo) configura cualquier intervalo de tiempo a 0 (cero) \n
 		  \n
 		 Rastreo:\n
-		 Cuando esta opción esta habilitada la aplicación enviara mensajes por Telegram y SMS cada vez que encuentre una nueva coordenada. Esta opción se puede habilitar desde el sitio web por lo tanto por tu seguridad y para evitar gastos no configures SMS a menos que estés usando un servidor propio \n
+		 Cuando esta opción está habilitada la aplicación enviara mensajes por Telegram y SMS cada vez que encuentre una nueva coordenada. Esta opción se puede habilitar desde el sitio web por lo tanto por tu seguridad y para evitar gastos no configures SMS a menos que estés usando un servidor propio \n
 		 \n
 		\n
 		Espero te sea útil esta ayuda :)
