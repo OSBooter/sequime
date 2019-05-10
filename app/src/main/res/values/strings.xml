@@ -7,11 +7,14 @@
 	<string name="menu_abrir">Menú</string>
 	<string name="menu_cerrar">Cerrar Menú</string>
 
+	<string name="bloquear">Bloquear</string>
+	<string name="desbloquear">Desbloquear</string>
+
     <string name="servidor">Servidor</string>
     <string name="usuario">Usuario</string>
     <string name="clave">Clave</string>
-    <string name="intervalo_inactividad">Intervalo de Inactividad (en minutos)</string>
-    <string name="intervalo_actividad">Intervalo de Actividad (en minutos)</string>
+    <string name="intervalo_inactividad">Intervalo de Inactividad (en segundos)</string>
+    <string name="intervalo_actividad">Intervalo de Actividad (en segundos)</string>
     <string name="sms">SMS</string>
     <string name="id_telegram">Chat_ID Telegram (NO @USUARIO)</string>
     <string name="rastreo">Rastreo (Envía Mensajes)</string>
@@ -109,7 +112,7 @@
 	<string name="errorconexion">Error en la conexión</string>
 	<string name="enviando">Enviando datos....</string>
 	<string name="recibiendo">Recibiendo datos...</string>
-	<string name="conexionfinalizada">Conexión correcta… pero no paso nada.</string>
+	<string name="conexionfinalizada">Conexión finalizada.</string>
 
 	
 	
@@ -163,8 +166,13 @@
     <string name="txt_donacion">
         Si te gusta la Aplicación podes colaborar con una donación.\n
         Recordá que esta Aplicación no posee publicidad, ni patrocinador, ni rastreadores, por lo tanto depende únicamente de la colaboración de los usuarios.
-
     </string>
+
+	<string name="txt_colaboracion_desarrolladores">
+        ¿Te gusta las aplicaciones libres?. \n
+        Podés colaborar haciendo donaciones a los desarrolladores para que puedan seguir programando tus aplicaciones favoritas. \n
+    </string>
+
 	
 	<string name="txt_ayuda_opciones">
         Ya vas a ver que no es tan tan TAN complicado, tenés las siguientes opciones: \n

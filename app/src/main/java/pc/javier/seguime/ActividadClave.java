@@ -1,26 +1,23 @@
 package pc.javier.seguime;
 
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.net.Uri;
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.EditText;
 
+import pc.javier.seguime.adaptador.Constante;
+import pc.javier.seguime.adaptador.Preferencias;
+import pc.javier.seguime.control.Aplicacion;
+import pc.javier.seguime.vista.PantallaClave;
+import pc.javier.seguime.vista.PantallaPrincipal;
+import utilidades.EnlaceExterno;
 
-import pc.javier.seguime.interfaz.Aplicacion;
 
 /**
- * Created by Usuario NoTeBooK on 1 jul 2018.
+ * Javier 2018.
  */
 
 public class ActividadClave extends AppCompatActivity {
 
-
-    EditText tClave ;
-    EditText tNombre ;
 
 
 
@@ -28,43 +25,47 @@ public class ActividadClave extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.clave);
-
-        tClave = (EditText) findViewById(R.id.clave_clave);
-        tNombre= (EditText) findViewById(R.id.clave_nombre);
-
-
     }
 
+    @Override
+    protected void onResume () {
+        super.onResume();
+        preferencias = new Preferencias(this);
+        pantallaClave = new PantallaClave(this);
+    }
+
+    Preferencias preferencias;
+    PantallaClave pantallaClave;
 
 
-    public void RegistrarVersion (View view) {
-        String clave = Aplicacion.Usuario().toLowerCase();
-        clave = clave + clave.length();
+    public void clickRegistrarVersion (View v) {
 
-
-        if (tClave.getText().toString().equals(clave)) {
-            Aplicacion.Registrada(tNombre.getText().toString().trim());
+        if (registroCorrecto()) {
+            preferencias.setVersionRegistrada(true);
+            PantallaPrincipal pantallaPrincipal = new PantallaPrincipal(Aplicacion.actividadPrincipal);
+            pantallaPrincipal.snack(":)");
             this.finish();
         } else {
-            MostrarMensaje(getString(R.string.claveIncorrecta));
+            pantallaClave.snack(R.string.claveIncorrecta);
         }
     }
 
 
+    // algoritmo de registro (super secreto)
+    private boolean registroCorrecto () {
+        String clave = preferencias.getUsuario();
+        clave = clave + clave.length();
+        String claveIntroducida = pantallaClave.getClave();
 
-
-
-    private void MostrarMensaje (String texto) {
-        View view = getCurrentFocus();
-        Snackbar.make(view , texto, Snackbar.LENGTH_LONG).show();
-
+        if (claveIntroducida.equals(clave))
+            return true;
+        return false;
     }
 
 
-    public void ObtenerClave (View view) {
-        Intent i = new Intent(Intent.ACTION_VIEW);
-        i.setData(Uri.parse("http://seguime.000webhostapp.com/registroversion.php"));
-        startActivity(i);
+    public void clickIrAlSitio(View view) {
+        EnlaceExterno enlaceExterno = new EnlaceExterno(this);
+        enlaceExterno.abrirEnlace(Constante.urlRegistro);
     }
 
 

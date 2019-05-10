@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -16,7 +17,7 @@
 
         android:adjustViewBounds="true"
         android:onClick="ClickPresentacion"
-        android:src="@drawable/presentacionback"
+        app:srcCompat="@drawable/ios_arrow_left"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -29,7 +30,7 @@
 
         android:adjustViewBounds="true"
         android:onClick="ClickPresentacion"
-        android:src="@drawable/presentacionforward"
+        app:srcCompat="@drawable/ios_arrow_right"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -62,7 +63,7 @@
                 android:layout_gravity="center"
                 android:adjustViewBounds="true"
                 android:padding="20dp"
-                android:src="@drawable/presentacionmap" />
+                app:srcCompat="@drawable/map" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -94,7 +95,7 @@
                 android:layout_gravity="center"
                 android:adjustViewBounds="true"
                 android:padding="20dp"
-                android:src="@drawable/presentacioncloud" />
+                app:srcCompat="@drawable/android_cloud_outline" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -126,7 +127,7 @@
                 android:layout_gravity="center"
                 android:adjustViewBounds="true"
                 android:padding="20dp"
-                android:src="@drawable/presentacionsobre" />
+                app:srcCompat="@drawable/envelope_open" />
 
             <TextView
                 android:layout_width="wrap_content"

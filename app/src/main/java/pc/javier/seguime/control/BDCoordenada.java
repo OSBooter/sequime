@@ -6,14 +6,13 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.util.Log;
 
-import pc.javier.seguime.utilidades.FechaHora;
-
 
 /**
- * Created by javier on 18/11/2016.
+ * Javier 2016.
  *
- * // Manejador de Base de datos de coordenadas (adaptador)
+ * Manejador de Base de datos de coordenadas (adaptador)
  *
+ * editado 2019
  */
 public class BDCoordenada {
 
@@ -27,31 +26,37 @@ public class BDCoordenada {
             "fecha text," +
             "latitud text, " +
             "longitud text," +
+            "velocidad text," +
+            "proveedor text," +
             "envios int," +
             "recibido int," +
-            "velocidad text," +
-            "extra text" +
+            "fechaEnviado text,"+
+            "extra text," +
+            "codigo text" +
             ");"
             ;
+
+    public static String RENOMBRARTABLA = "ALTER TABLE " + nombre + " RENAME TO " + nombre + "copia ;";
+
 
 
     public BDCoordenada (SQLiteDatabase db) {
         this.sql = db;
     }
 
-    public void insertar (String latitud, String longitud, String velocidad) {
-        insertar(latitud, longitud, velocidad,"");
-    }
 
-    public boolean insertar(String latitud, String longitud, String velocidad, String extra) {
+
+    public boolean insertar(String latitud, String longitud, String velocidad, String fecha, String proveedor, String codigo, String extra) {
         ContentValues valor = new ContentValues();
         valor.put("latitud",latitud);
         valor.put("longitud", longitud);
-        valor.put ("envios", 0);
+        valor.put("envios", 0);
         valor.put("recibido", 0);
         valor.put("velocidad", velocidad);
         valor.put("extra", extra);
-        valor.put("fecha", FechaHora.complacto());
+        valor.put("fecha", fecha);
+        valor.put("proveedor", proveedor);
+        valor.put("codigo", codigo);
 
         int respuesta = (int) sql.insert(nombre,null, valor);
 
@@ -59,12 +64,24 @@ public class BDCoordenada {
         return  (respuesta > 0);
     }
 
-    public int marcar(int id) {
+    public void marcar(int id, String fecha) {
+
         ContentValues valor = new ContentValues();
         valor.put("recibido", "1");
+        valor.put("fechaEnviado", fecha);
         mensajeLog ("marcando como recibido id= " + id);
-        return sql.update(nombre,valor,"id = " + id, null);
+        sql.update(nombre,valor,"id = " + id, null);
     }
+
+    public void marcar(String codigo, String fecha) {
+        ContentValues valor = new ContentValues();
+        valor.put("recibido", "1");
+        valor.put("fechaEnviado", fecha);
+        //valor.put("fechaEnviado", fecha);
+        mensajeLog ("marcando como recibido codigo= " + codigo);
+        sql.update(nombre,valor,"codigo = " + codigo, null);
+    }
+
 
     public boolean eliminar (int id) {
         return (sql.delete(nombre,"id = " + id, null) > 0);
@@ -85,12 +102,11 @@ public class BDCoordenada {
 
 
     public Cursor obtenerNuevas () {
-        Cursor c= sql.query(nombre,new String[]{"*"},"recibido=0",null,null,null,"fecha desc","5");
-        return c;
+        return  obtenerNuevas(5);
     }
 
-    public Cursor obtenerNuevas (String cantidad) {
-        Cursor c= sql.query(nombre,new String[]{"*"},"recibido=0",null,null,null,"fecha desc",cantidad);
+    public Cursor obtenerNuevas (int cantidad) {
+        Cursor c= sql.query(nombre,new String[]{"*"},"recibido=0",null,null,null,"fecha desc",String.valueOf(cantidad));
         return c;
     }
 

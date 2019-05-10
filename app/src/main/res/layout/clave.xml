@@ -1,17 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+
     android:orientation="vertical"
     android:background="@drawable/caminoazul"
-    tools:context="pc.javier.seguime.ActividadClave"
+    android:padding="5sp"
+
+
     >
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="8dp">
+
 
 
 
@@ -64,7 +74,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/registrarAplicacion"
-                    android:onClick="RegistrarVersion"
+                    android:onClick="clickRegistrarVersion"
                     android:background="@drawable/botonredondeado"
                     android:textColor="#ffffff"
                     android:layout_margin="5dp"
@@ -73,7 +83,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/sitioweb"
-                    android:onClick="ObtenerClave"
+                    android:onClick="clickIrAlSitio"
                     android:background="@drawable/botonredondeado"
                     android:textColor="#ffffff"
                     android:layout_margin="5dp"
@@ -95,4 +105,5 @@
 
 
 
-</RelativeLayout>
+</ScrollView>
+</android.support.constraint.ConstraintLayout>

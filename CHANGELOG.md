@@ -1,5 +1,15 @@
 # Seguime 
 
+### [2.0] - Mayo 2019
+Nuevo código fuente
+Modificado: Mejora en el rendimiento de la batería (uso de temporizadores).
+Modificado: Modo bloqueado deshabilita opciones del menú.
+Modificado: La aplicación en modo activo deshabilita el acceso a opciones.
+Modificado: Pantalla de selección de contactos.
+Agregado: Posibilidad de usar la aplicación sin cuenta en el servidor.
+Agregado: Opción de bloqueo y desbloqueo desde la aplicación.
+
+
 ### [1.6] - 08 de Octubre de 2018
 Modificado: Nueva dirección https://seguime.000webhostapp.com/
 
@@ -41,34 +51,34 @@ Correcciones: Selección de contacto en el temporizador.
 Modificado: Diseño de opciones.
 
 ### [0.7] - 23 Junio 2018
-* Modificado: Funcionamiento interno del Temporizador (Optimización, ahorro de batería).
-* Modificado: Detalles mínimos en la interfaz.
-* Agregado: Acceso al bot de Telegram.
+Modificado: Funcionamiento interno del Temporizador (Optimización, ahorro de batería).
+Modificado: Detalles mínimos en la interfaz.
+Agregado: Acceso al bot de Telegram.
 
 ### [0.6] - 6 Mayo 2018
-* Agregado: Ayuda del temporizador.
-* Modificado: Idiomas.
-* Agregado: Muestra hora y velocidad en el mapa (globo).
+Agregado: Ayuda del temporizador.
+Modificado: Idiomas.
+Agregado: Muestra hora y velocidad en el mapa (globo).
 
 ### [0.5] - 27 Marzo 2018 (Esta versión estuvo disponible solo en el sitio web)
-* Cambio: Velocidad como parámetro independiente (ya no es mas información extra, implica nueva versión de la base de datos).
-* Agregado: Iconos en la pantalla principal para mostrar estados o información de la aplicación.
-* Agregado: Función de temporizador (SMS de auxilio y rastreo automático) (BETA).
-* Agregado: Nueva función para seleccionar contactos (BETA).
+Cambio: Velocidad como parámetro independiente (ya no es mas información extra, implica nueva versión de la base de datos).
+Agregado: Iconos en la pantalla principal para mostrar estados o información de la aplicación.
+Agregado: Función de temporizador (SMS de auxilio y rastreo automático) (BETA).
+Agregado: Nueva función para seleccionar contactos (BETA).
 
 ### [0.4] - 23 Marzo 2018
-* Diseño: botones y cajas de texto con mejoras en el aspecto.
-* Librerías: se quito los archivos .JAR y se actualizo la librería osmdroid.
+Diseño: botones y cajas de texto con mejoras en el aspecto.
+Librerías: se quito los archivos .JAR y se actualizo la librería osmdroid.
 
 ### [0.3] - 5 Marzo 2018
-* Correcciones en interfaz (mensajes mostrados).
-* Idiomas.
-* Correcciones mínimas en la interfaz (Registros de Coordenadas).
+Correcciones en interfaz (mensajes mostrados).
+Idiomas.
+Correcciones mínimas en la interfaz (Registros de Coordenadas).
 
 ### [0.2] - 21 Febrero 2018
-* Correcciones mínimas de interfaz.
-* Cambios menores en formularios.
-* Mejora en el visor de registros de coordenadas.
+Correcciones mínimas de interfaz.
+Cambios menores en formularios.
+Mejora en el visor de registros de coordenadas.
 
 ### [0.1] - 17 Febrero 2018
-* Versión Inicial.
+Versión Inicial.

@@ -1,14 +1,14 @@
 package pc.javier.seguime;
 
-import android.content.Intent;
-import android.net.Uri;
-import android.os.Handler;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
-import pc.javier.seguime.handler.Comandos;
-import pc.javier.seguime.interfaz.Aplicacion;
+import pc.javier.seguime.adaptador.Constante;
+import utilidades.EnlaceExterno;
+
 
 public class ActividadAyuda extends AppCompatActivity {
 
@@ -16,26 +16,19 @@ public class ActividadAyuda extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ayuda);
-
-        //Comandos comandos = new Comandos(actividad);
-
-
-
+        ((TextView) findViewById(R.id.version)).setText(Constante.version);
     }
 
 
-    private void navegar (String url){
-        Intent i = new Intent(Intent.ACTION_VIEW);
-        i.setData(Uri.parse(url));
-        startActivity(i);
-    }
 
     public void donar(View v) {
-        navegar("https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BDUHGWZKV2R8W");
+        EnlaceExterno enlaceExterno = new EnlaceExterno(this);
+        enlaceExterno.abrirEnlace(Constante.urlPaypal);
     }
 
     public void sitio (View v) {
-        navegar("http://seguime.000webhostapp.com/");
+        EnlaceExterno enlaceExterno = new EnlaceExterno(this);
+        enlaceExterno.abrirEnlace(Constante.urlSitio);
     }
 
 

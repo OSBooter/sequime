@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
@@ -10,7 +11,7 @@
 
     <TableRow>
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/fechahora"
             android:layout_marginRight="5dp"
@@ -30,7 +31,7 @@
 
         <TableRow>
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/latitud"
                 android:textAlignment="textEnd"
@@ -48,7 +49,7 @@
 
         <TableRow>
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/longitud"
                 android:layout_marginRight="5dp"
@@ -65,7 +66,7 @@
 
         <TableRow>
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/velocidad"
                 android:layout_marginRight="5dp"
@@ -83,7 +84,7 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:id="@+id/registros_imagenestado"
-                android:src="@drawable/icononube"
+                app:srcCompat="@drawable/android_cloud_outline"
 
                 />
 
@@ -93,8 +94,8 @@
 
         <TableRow>
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
             android:text="@string/infoextra"
             android:id="@+id/registros_extra"
             android:layout_below="@+id/registros_latitud"

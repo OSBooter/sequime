@@ -4,12 +4,9 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
-import android.widget.Button;
 import android.widget.ViewAnimator;
 
-import pc.javier.seguime.interfaz.Aplicacion;
+
 
 /**
  * Created by Usuario NoTeBooK on 7 jul 2018.
@@ -21,7 +18,7 @@ public class ActividadPresentacion extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.presentacion);
 
-        Aplicacion.preferenciaBooleano("presentacion", true);
+        //Aplicacion.preferenciaBooleano("presentacion", true);
     }
 
 

@@ -6,20 +6,25 @@
 
     <item
         android:title="@string/telegram_bot"
-        android:icon="@drawable/telegrambotblanco"
+        android:icon="@drawable/bot"
         android:id="@+id/menu_bot"
         app:showAsAction="ifRoom"
-        android:onClick="MenuClick"
-        ></item>
+        />
+
+    <item
+        android:title="@string/telegram_bot"
+        android:icon="@drawable/android_person_blanco"
+        android:id="@+id/menu_contactos"
+        app:showAsAction="ifRoom"
+        />
 
 
     <item
         android:title="@string/ayuda"
-        android:icon="@android:drawable/ic_menu_help"
+        android:icon="@drawable/help_buoy_blanco"
         android:id="@+id/menu_ayuda"
         app:showAsAction="ifRoom"
-        android:onClick="MenuClick"
-        ></item>
+        />
 
 
 

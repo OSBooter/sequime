@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="none">
+
+        <item
+            android:title="@string/iniciarsesion"
+            android:icon="@drawable/user"
+            android:id="@+id/menu_sesion"
+            android:onClick="menuClick"
+            />
+
+
+        <item
+            android:title="@string/registros"
+            android:icon="@drawable/android_map"
+            android:id="@+id/menu_registros"
+            android:onClick="menuClick"
+            />
+
+        <item
+            android:title="@string/cuentaregresiva"
+            android:icon="@drawable/android_stopwatch"
+            android:id="@+id/menu_cuentaregresiva"
+            android:onClick="menuClick"
+            />
+
+
+        <item
+            android:title="@string/opciones"
+            android:icon="@drawable/cog"
+            android:id="@+id/menu_opciones"
+            android:onClick="menuClick"
+            />
+
+        <item
+            android:title="@string/bloquear"
+            android:icon="@drawable/locked"
+            android:id="@+id/menu_bloquear"
+            android:onClick="menuClick"
+            android:enabled="false"
+            />
+
+
+        <item
+            android:title="@string/registrarAplicacion"
+            android:icon="@drawable/check_square"
+            android:id="@+id/menu_registraraplicacion"
+            android:onClick="menuClick"
+            />
+
+
+        <item
+            android:title="@string/ayuda"
+            android:icon="@drawable/help_buoy"
+            android:id="@+id/menu_ayuda"
+            android:onClick="menuClick"
+            />
+
+        <item
+            android:title="@string/dona"
+            android:icon="@drawable/heart1"
+            android:id="@+id/menu_donar"
+            android:onClick="menuClick"
+            />
+
+        <item
+            android:title="@string/cerrar_sesion"
+            android:icon="@drawable/trash_alt"
+            android:id="@+id/menu_cerrarsesion"
+            android:onClick="menuClick"
+            android:visible="false"
+            />
+
+
+    </group>
+
+
+</menu>

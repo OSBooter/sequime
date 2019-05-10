@@ -188,7 +188,7 @@
                     <TableRow>
 
                         <Button
-                            android:id="@+id/session_iniciar"
+                            android:id="@+id/sesion_boton_iniciar"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight=".5"
@@ -206,8 +206,8 @@
                             android:layout_weight=".5"
                             android:layout_margin="2sp"
                             android:background="@drawable/botonredondeadorojo"
-                            android:onClick="salir"
-                            android:text="@string/salir"
+                            android:onClick="cancelar"
+                            android:text="@string/cancelar"
                             android:textColor="@android:color/white"
 
                             />

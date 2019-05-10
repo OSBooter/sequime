@@ -1,4 +1,4 @@
-
+<?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -8,14 +8,12 @@
 
     android:orientation="vertical"
     android:background="@drawable/caminoazul"
-    android:id="@+id/sesion_pantalla"
-
-    android:padding="5sp"
+    android:padding="5dp"
 
     >
 
     <ScrollView
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -149,7 +147,7 @@
             <TableRow>
 
                 <Button
-                    android:id="@+id/session_iniciar"
+                    android:id="@+id/sesion_boton_iniciar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="2sp"
@@ -165,8 +163,8 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="2sp"
                     android:background="@drawable/botonredondeadorojo"
-                    android:onClick="salir"
-                    android:text="@string/salir"
+                    android:onClick="cancelar"
+                    android:text="@string/cancelar"
                     android:textColor="@android:color/white"
 
                     />

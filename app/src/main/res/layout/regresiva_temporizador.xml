@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.constraint.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:id="@+id/regresiva_layout_temporizador"
+
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/regresiva_layout_mensaje"
+
+    app:layout_constraintBottom_toTopOf="@+id/temporizador_boton"
+
+    android:padding="10dp"
+
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+        <LinearLayout
+            android:id="@+id/regresiva_layout_hora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@+id/regresiva_layout_minuto"
+            app:layout_constraintStart_toStartOf="parent"
+            >
+
+            <NumberPicker
+                android:id="@+id/temporizador_hora"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/hora"
+                android:textAlignment="center" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/regresiva_layout_minuto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:orientation="vertical"
+            app:layout_constraintEnd_toStartOf="@+id/regresiva_layout_segundo"
+            app:layout_constraintStart_toEndOf="@id/regresiva_layout_hora"
+            >
+
+
+            <NumberPicker
+                android:id="@+id/temporizador_minuto"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/minuto"
+                android:textAlignment="center" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/regresiva_layout_segundo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/regresiva_layout_minuto"
+            >
+
+            <NumberPicker
+                android:id="@+id/temporizador_segundo"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/segundo"
+                android:textAlignment="center" />
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+
+
+
+

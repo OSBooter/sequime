@@ -5,13 +5,10 @@
 
 
     <item
-        android:title="@string/telegram_bot"
-        android:icon="@drawable/menu"
-        android:id="@+id/menu_bot"
-        app:showAsAction="always"
-        android:onClick="PrincipalMenuClick"
-        ></item>
-
+        android:title="@string/menu_abrir"
+        android:icon="@drawable/navicon_round_blanco"
+        android:id="@+id/menu_principal"
+        app:showAsAction="always" />
 
 
 

@@ -5,16 +5,16 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 /**
- * Created by javier on 18/11/2016.
- * conexion a la base de datos
+ * Javier 18/11/2016.
+ * conexión a la base de datos
  */
 public class BDConexion extends SQLiteOpenHelper {
 
 
-    // conexion a la base de datos de la aplicacion
+    // conexión a la base de datos de la aplicación
 
     public BDConexion(Context context) {
-        super(context, "BaseDeDatos", null, 1);
+        super(context, "BaseDeDatos", null, 2);
     }
 
     @Override
@@ -29,6 +29,8 @@ public class BDConexion extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-
+        // la tabla no se borra, así se puede recuperar la información
+        sqLiteDatabase.execSQL(BDCoordenada.RENOMBRARTABLA);
+        sqLiteDatabase.execSQL(BDCoordenada.TABLA);
     }
 }

@@ -9,7 +9,7 @@
     tools:openDrawer="start">
 
     <include
-        layout="@layout/barra_principal"
+        layout="@layout/menulateral_barra"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
@@ -19,9 +19,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
-        app:headerLayout="@layout/menu_encabezado"
-        app:menu="@menu/menu_lateral"
-        android:background="@drawable/colormenu"
-        />
+        app:headerLayout="@layout/menulateral_encabezado"
+        app:menu="@menu/menulateral_menu" />
 
 </android.support.v4.widget.DrawerLayout>
