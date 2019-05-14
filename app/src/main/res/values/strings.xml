@@ -15,6 +15,7 @@
     <string name="clave">Clave</string>
     <string name="intervalo_inactividad">Intervalo de Inactividad (en segundos)</string>
     <string name="intervalo_actividad">Intervalo de Actividad (en segundos)</string>
+	<string name="intervalo_internet">Intervalo entre conexiones a internet</string>
     <string name="sms">SMS</string>
     <string name="id_telegram">Chat_ID Telegram (NO @USUARIO)</string>
     <string name="rastreo">Rastreo (Envía Mensajes)</string>
@@ -225,7 +226,9 @@
 
 	<string name="txt_firma">
         Hecho en Argentina por Javier Martínez
-    </string>    
+    </string>
+	
+	<string name="versionIncompleta_txt">Estás usando una versión incompleta, visita el sitio web para descargar la versión completa</string>
     
 
 </resources>

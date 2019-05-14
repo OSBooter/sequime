@@ -51,7 +51,7 @@
                     android:text="@string/id_telegram"
                     android:textAlignment="textEnd"
                     android:padding="10sp"
-                    />
+                    android:gravity="end" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -73,7 +73,7 @@
                     android:text="@string/intervalo_actividad"
                     android:textAlignment="textEnd"
                     android:padding="10sp"
-                    />
+                    android:gravity="end" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -97,12 +97,36 @@
                     android:text="@string/intervalo_inactividad"
                     android:textAlignment="textEnd"
                     android:padding="10sp"
-                    />
+                    android:gravity="end" />
 
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/opciones_inactividad"
+                    android:inputType="number"
+                    android:background="@drawable/borderedondeado"
+                    android:padding="10sp"
+                    android:layout_margin="2sp"
+                    />
+
+
+            </TableRow>
+
+            <TableRow>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/intervalo_internet"
+                    android:textAlignment="textEnd"
+                    android:padding="10sp"
+                    android:gravity="end" />
+
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/opciones_internet"
                     android:inputType="number"
                     android:background="@drawable/borderedondeado"
                     android:padding="10sp"

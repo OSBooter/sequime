@@ -57,6 +57,12 @@ public class ControlPantallaOpciones extends Control {
         pantalla.setIniciarConSistema(preferencias.getIniciarConSistema());
         pantalla.setActivarConPantalla(preferencias.getActivarConPantalla());
         pantalla.setSms(preferencias.getNumeroSms());
+        pantalla.setInternet(preferencias.getIntervaloInternet());
+
+        if (Constante.versionCompleta == false) {
+            pantalla.setHabilitado(R.id.opciones_sms, false);
+            pantalla.snack(R.string.versionIncompleta_txt);
+        }
     }
 
 
@@ -73,6 +79,19 @@ public class ControlPantallaOpciones extends Control {
         guardarPreferencia(Preferencias.TipoPreferencia.rastreo, pantalla.getRastreo());
         guardarPreferencia(Preferencias.TipoPreferencia.iniciarConSistema, pantalla.getIniciarConSistema());
         guardarPreferencia(Preferencias.TipoPreferencia.activarDesbloquear, pantalla.getActivarConPantalla());
+
+        preferencias.setIntervaloInternet(pantalla.getInternet());
+        preferencias.setNumeroSms (pantalla.getSms());
+        preferencias.setIdTelegram( pantalla.getTelegram());
+        preferencias.setIntervaloActividad( pantalla.getActividad());
+        preferencias.setIntervaloInactividad( pantalla.getInactividad());
+        preferencias.setRastreo( pantalla.getRastreo());
+        preferencias.setIniciarConSistema( pantalla.getIniciarConSistema());
+        preferencias.setActivarConPantalla( pantalla.getActivarConPantalla());
+
+
+
+
 
     }
 

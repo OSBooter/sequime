@@ -6,8 +6,8 @@ android {
         applicationId "pc.javier.seguime"
         minSdkVersion 11
         targetSdkVersion 14
-        versionCode 21
-        versionName "2.1"
+        versionCode 20
+        versionName "2.0 demo"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
     }

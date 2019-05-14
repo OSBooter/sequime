@@ -88,6 +88,10 @@ public class ControlPantallaPrincipal  extends Control {
             case R.id.menu_bloquear:
                 bloquear();
                 break;
+
+            case R.id.menu_eliminarcuenta:
+                eliminarCuenta();
+                break;
         }
     }
 
@@ -295,7 +299,9 @@ public class ControlPantallaPrincipal  extends Control {
         (new EnlaceExterno(activity)).abrirEnlace(Constante.urlPaypal);
     }
 
-
+    private void eliminarCuenta (){
+        (new EnlaceExterno(activity)).abrirEnlace(Constante.urlEliminarCuenta);
+    }
 
 
 

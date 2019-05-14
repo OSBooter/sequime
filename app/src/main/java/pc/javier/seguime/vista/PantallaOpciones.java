@@ -1,11 +1,9 @@
 package pc.javier.seguime.vista;
 
 import android.app.Activity;
-import android.support.v7.app.AppCompatActivity;
 
 import pc.javier.seguime.R;
 import pc.javier.seguime.adaptador.Pantalla;
-import utilidades.EditorVistas;
 
 /**
  * Javier 2019.
@@ -20,6 +18,9 @@ public class PantallaOpciones extends Pantalla {
 
 
     // gets
+    public int getInternet () {
+        return entero(getTexto(R.id.opciones_internet));
+    }
 
     public int getActividad () {
         return entero(getTexto(R.id.opciones_actividad));
@@ -55,6 +56,11 @@ public class PantallaOpciones extends Pantalla {
 
 
     // sets -
+
+    public void  setInternet (int valor) {
+        setTextView(R.id.opciones_internet, String.valueOf(valor));
+    }
+
     public void  setActividad (int valor) {
         setTextView(R.id.opciones_actividad, String.valueOf(valor));
     }

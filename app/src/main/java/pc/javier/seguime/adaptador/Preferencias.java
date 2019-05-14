@@ -121,7 +121,10 @@ public class Preferencias extends utilidades.Preferencias {
         alarmaServidor("alarmaServidor"),
         alarma("alarma"),
         alarmaMensaje("alarmaMensaje"),
-        alarmaUltima("alarmaUltima")
+        alarmaUltima("alarmaUltima"),
+
+        conexionInfo ("conexionInfo"),
+        conexionTipo("conexionTipo")
 
         ;
 
@@ -249,11 +252,14 @@ public class Preferencias extends utilidades.Preferencias {
     public void setIntervaloInternet (int intervalo) { guardar (TipoPreferencia.intervaloInternet, intervalo); }
 
 
+    public void setConexionInfo (String info) { guardar (TipoPreferencia.conexionInfo, info); }
+
+    public String getConexionInfo () { return obtenerString(TipoPreferencia.conexionInfo); }
 
 
+    public void setConexionTipo (String tipo) { guardar(TipoPreferencia.conexionTipo, tipo); }
 
-
-
+    public String getConexionTipo () { return obtenerString (TipoPreferencia.conexionTipo); }
 
 
 

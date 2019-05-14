@@ -7,7 +7,7 @@ import utilidades.FechaHora;
 
 /**
  * Javier 2019.
- * envia datos al urlServidor
+ * envia datos al Servidor
  * las respuesta las recibe el objeto Evento
  */
 
@@ -58,6 +58,9 @@ public class Servidor {
 
 
     private void agregarInformacionExtra () {
+
+        // agregarParametro (Servidor.Parametro.conexionTipo, preferencias.getConexionTipo());
+        // agregarParametro (Servidor.Parametro.conexionInfo, preferencias.getConexionInfo());
 
         // si no hay datos de telegram, sale
         if (preferencias.getIdTelegram().isEmpty())
@@ -155,6 +158,8 @@ public class Servidor {
 
         telegram,
         alarma, texto,
+
+        conexionInfo, conexionTipo,
     }
 
     public enum Comando {

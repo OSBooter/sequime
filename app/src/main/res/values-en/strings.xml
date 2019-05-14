@@ -220,8 +220,10 @@
 	
 	<string name="txt_firma">
         Made in Argentina by Javier Martínez
-    </string>    
-	
-	
-	
+    </string>
+    <string name="bloquear">Lock</string>
+	<string name="desbloquear">Unlock</string>
+	<string name="intervalo_internet">Internet connection interval</string>
+
+
 </resources>

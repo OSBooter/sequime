@@ -69,6 +69,14 @@
         <item
             android:title="@string/cerrar_sesion"
             android:icon="@drawable/trash_alt"
+            android:id="@+id/menu_eliminarcuenta"
+            android:onClick="menuClick"
+            android:visible="false"
+            />
+
+        <item
+            android:title="@string/cerrar_sesion"
+            android:icon="@drawable/trash_alt"
             android:id="@+id/menu_cerrarsesion"
             android:onClick="menuClick"
             android:visible="false"

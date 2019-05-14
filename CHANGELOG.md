@@ -1,5 +1,8 @@
 # Seguime 
 
+### [2.1] - Mayo 2019
+Agregado: Opción intervalo de conexiones a internet.
+
 ### [2.0] - Mayo 2019
 Nuevo código fuente
 Modificado: Mejora en el rendimiento de la batería (uso de temporizadores).

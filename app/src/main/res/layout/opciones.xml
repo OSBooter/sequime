@@ -104,6 +104,26 @@
 
 
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/intervalo_internet"
+                android:layout_margin="5dp"
+                />
+
+
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/opciones_internet"
+                android:inputType="number"
+                android:background="@drawable/borderedondeado"
+                android:padding="10dp"
+                android:layout_margin="2dp"
+                />
+
+
 
 
 

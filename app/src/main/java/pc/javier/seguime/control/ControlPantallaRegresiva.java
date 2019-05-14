@@ -6,6 +6,7 @@ import android.view.MenuItem;
 
 import pc.javier.seguime.ActividadAyudaRegresiva;
 import pc.javier.seguime.R;
+import pc.javier.seguime.adaptador.Constante;
 import pc.javier.seguime.adaptador.Preferencias;
 import pc.javier.seguime.control.receptor.ReceptorContadorRegresiva;
 import pc.javier.seguime.vista.PantallaRegresiva;
@@ -44,6 +45,11 @@ public class ControlPantallaRegresiva extends Control {
 
         pantalla.setEditText(R.id.temporizador_sms, sms);
         pantalla.setEditText(R.id.temporizador_telegram, telegram);
+
+        if (Constante.versionCompleta == false) {
+            pantalla.setHabilitado(R.id.temporizador_sms, false);
+            pantalla.snack(R.string.versionIncompleta_txt);
+        }
 
     }
 
