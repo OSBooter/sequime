@@ -13,7 +13,5 @@ public final class Aplicacion {
     public static AppCompatActivity actividadRegistros;
     public static AppCompatActivity actividadAyuda;
     public static AppCompatActivity actividadRegresiva;
-
     public static Context contexto;
-
 }

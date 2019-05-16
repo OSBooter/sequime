@@ -228,7 +228,7 @@
         Hecho en Argentina por Javier Martínez
     </string>
 	
-	<string name="versionIncompleta_txt">Estás usando una versión incompleta, visita el sitio web para descargar la versión completa</string>
+	<string name="versionIncompleta_txt">Algunas opciones no están disponibles porque estás usando una versión incompleta, visita el sitio web para descargar la versión completa</string>
     
 
 </resources>

@@ -18,6 +18,8 @@ public abstract class Efecto {
     }
 
     public static void AnimarIcono (ImageView imagen, boolean visible) {
+        if (imagen == null)
+            return;
         int visibilidad= 0;
         if (visible)
             visibilidad = View.VISIBLE;
@@ -52,6 +54,8 @@ public abstract class Efecto {
 
 
     public static void AnimarBoton (Button boton) {
+        if (boton == null)
+            return;
         boton.clearAnimation();
         boton.startAnimation(AnimationUtils.loadAnimation(boton.getContext(),R.anim.desvanecer_entrada));
 

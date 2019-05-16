@@ -188,9 +188,10 @@ public class ControlPantallaPrincipal  extends Control {
 
     private void mostrarIconos () {
         pantalla.iconoTemporizador(alarmaIniciada());
-        pantalla.iconoTemporizadorServidor(alarmaServidor());
+        pantalla.iconoTemporizadorServidor(preferencias.getAlarmaServidor());
         pantalla.iconoSeguime( aplicacionActiva());
-        pantalla.iconoRastreo(rastreoActivo());
+        pantalla.iconoRastreo(preferencias.getRastreo());
+        pantalla.iconoBloqueado(preferencias.getBloqueado());
     }
 
 
@@ -233,17 +234,6 @@ public class ControlPantallaPrincipal  extends Control {
         return servicioActivo(ServicioAplicacion.class);
     }
 
-
-    private boolean rastreoActivo () {
-        return preferencias.obtenerBoolean(Preferencias.TipoPreferencia.rastreo);
-    }
-
-
-
-
-    private boolean alarmaServidor() {
-        return preferencias.obtenerBoolean(Preferencias.TipoPreferencia.alarmaServidor);
-    }
 
 
     private boolean alarmaIniciada () {

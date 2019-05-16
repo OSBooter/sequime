@@ -1,6 +1,7 @@
 package pc.javier.seguime.control.receptor;
 
 import android.app.Activity;
+import android.content.Context;
 
 import pc.javier.seguime.adaptador.BD;
 import pc.javier.seguime.adaptador.Pantalla;
@@ -19,10 +20,10 @@ public class ReceptorComandosInternet extends ReceptorEventos{
     private Activity activity;
     private PantallaPrincipal pantallaPrincipal;
 
-    public ReceptorComandosInternet(Activity activity, String clave) {
+    public ReceptorComandosInternet(Activity activity, Context contexto, String clave) {
         super(clave);
         this.activity = activity;
-        preferencias = new Preferencias(activity);
+        preferencias = new Preferencias(contexto);
         pantallaPrincipal = new PantallaPrincipal(activity);
     }
 

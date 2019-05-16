@@ -8,8 +8,7 @@ import pc.javier.seguime.BuildConfig;
  */
 
 public final class Constante {
-    public final static String version = BuildConfig.VERSION_NAME;
-    public final static String fechaVersion = "05 abril 2019";
+    public final static String version = BuildConfig.VERSION_NAME + " | Desarrollo";
 
     public final static String userAgent = "seguime 2";
     public final static String urlPaypal = "https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=BDUHGWZKV2R8W";

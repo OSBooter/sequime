@@ -12,9 +12,11 @@ import pc.javier.seguime.adaptador.Preferencias;
 import pc.javier.seguime.control.Aplicacion;
 import pc.javier.seguime.control.ControlPantallaPrincipal;
 import pc.javier.seguime.vista.PantallaPrincipal;
+import utilidades.MensajeRegistro;
 
 
 public class MainActivity extends AppCompatActivity {
+
 
     private PantallaPrincipal pantalla;
     private Preferencias preferencias;
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Aplicacion.actividadPrincipal = this;
         setContentView(R.layout.activity_main);
         iniciarAplicacion();
     }
@@ -82,6 +85,12 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Aplicacion.actividadPrincipal = this;
+        MensajeRegistro.msj(this, "DESTRUYENDO MAIN ACTIVITY");
+    }
 
 
 
@@ -226,12 +235,16 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        menu.aplicacionActiva(control.servicioActivo());
+
 
 
 
 
         menu.aplicacionBloqueada(preferencias.getBloqueado());
+
+
+        if (!preferencias.getBloqueado())
+            menu.aplicacionActiva(control.servicioActivo());
 
     }
 

@@ -20,28 +20,7 @@
             android:layout_height="wrap_content"
             android:stretchColumns="1">
 
-            <TableRow>
 
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="@string/sms"
-                    android:textAlignment="textEnd"
-                    android:padding="10sp"
-                    />
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/opciones_sms"
-                    android:inputType="phone"
-                    android:background="@drawable/borderedondeado"
-                    android:padding="10sp"
-                    android:layout_margin="2sp"
-                    />
-
-
-            </TableRow>
             <TableRow>
 
 
@@ -57,6 +36,28 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/opciones_telegram"
+                    android:inputType="phone"
+                    android:background="@drawable/borderedondeado"
+                    android:padding="10sp"
+                    android:layout_margin="2sp"
+                    />
+
+
+            </TableRow>
+            <TableRow>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sms"
+                    android:textAlignment="textEnd"
+                    android:padding="10sp"
+                    />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/opciones_sms"
                     android:inputType="phone"
                     android:background="@drawable/borderedondeado"
                     android:padding="10sp"

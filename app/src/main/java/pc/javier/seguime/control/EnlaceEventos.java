@@ -25,15 +25,27 @@ public class EnlaceEventos {
     private Context contexto;
     private Evento evento;
 
+
+
+    public EnlaceEventos (Activity activity, Context contexto) {
+        this.contexto = contexto;
+        this.activity = activity;
+        if (activity == null)
+            activity = Aplicacion.actividadPrincipal;
+    }
+
+
     public EnlaceEventos (Context contexto) {
         this.contexto = contexto;
         activity = Aplicacion.actividadPrincipal;
     }
 
     public EnlaceEventos (Activity activity) {
-        this.contexto = activity.getApplicationContext();
         this.activity = activity;
+        this.contexto = activity;
     }
+
+
 
     //public EnlaceEventos () { activity = Aplicacion.actividadPrincipal; contexto = activity; }
 
@@ -70,7 +82,7 @@ public class EnlaceEventos {
 
 
     private void agregarReceptorComandos (String claveEventos) {
-        ReceptorComandosInternet receptorComandosInternet = new ReceptorComandosInternet(activity, claveEventos);
+        ReceptorComandosInternet receptorComandosInternet = new ReceptorComandosInternet(activity, contexto, claveEventos);
         evento.agregarReceptor(receptorComandosInternet);
     }
 
@@ -147,3 +159,5 @@ public class EnlaceEventos {
 
 
 }
+
+

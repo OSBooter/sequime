@@ -40,7 +40,7 @@ public class ComprobarVersion {
             if (dato.equals(Constante.version))
                 return;
 
-            Preferencias preferencias = new Preferencias(Aplicacion.contexto);
+            Preferencias preferencias = new Preferencias(Aplicacion.actividadPrincipal);
             preferencias.setNotificacion("¡Hay una nueva versión!");
         }
     }

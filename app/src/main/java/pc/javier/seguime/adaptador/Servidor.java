@@ -4,6 +4,7 @@ import android.content.Context;
 import utilidades.ConexionHTTP;
 import utilidades.Evento;
 import utilidades.FechaHora;
+import utilidades.MensajeRegistro;
 
 /**
  * Javier 2019.
@@ -46,6 +47,7 @@ public class Servidor {
         if (url.isEmpty())
             return;
 
+        MensajeRegistro.msj (this, "ENVIANDO " + parametros);
         ConexionHTTP conexion = new ConexionHTTP(url, parametros, evento);
         conexion.setUserAgent(Constante.userAgent);
         conexion.ejecutarHilo();
@@ -61,6 +63,7 @@ public class Servidor {
 
         // agregarParametro (Servidor.Parametro.conexionTipo, preferencias.getConexionTipo());
         // agregarParametro (Servidor.Parametro.conexionInfo, preferencias.getConexionInfo());
+
 
         // si no hay datos de telegram, sale
         if (preferencias.getIdTelegram().isEmpty())
@@ -160,6 +163,8 @@ public class Servidor {
         alarma, texto,
 
         conexionInfo, conexionTipo,
+
+        extra,
     }
 
     public enum Comando {

@@ -5,8 +5,8 @@ import android.content.SharedPreferences;
 
 
 /**
- * Javier 2019.
- *
+ * Javier
+ * 15 05 2019
  */
 
 public class Preferencias {
@@ -18,14 +18,12 @@ public class Preferencias {
     public Preferencias (Context contexto) {
         this.contexto = contexto;
         preferencias = preferencias();
-        renovarPreferencias();
     }
 
     public Preferencias (Context contexto, String nombrePreferencias) {
         this.contexto = contexto;
         preferencias = preferencias();
         this.nombrePreferencias = nombrePreferencias;
-        renovarPreferencias();
     }
 
 
@@ -85,14 +83,14 @@ public class Preferencias {
 
     public SharedPreferences preferencias() {
         if (preferencias == null)
-            renovarPreferencias();
+            return contexto.getSharedPreferences(nombrePreferencias,Context.MODE_PRIVATE);
         return  preferencias;
     }
 
 
-    private void renovarPreferencias () {
-        preferencias = contexto.getSharedPreferences(nombrePreferencias,contexto.MODE_PRIVATE);
-    }
+
+
+
 	
 	
     public void configuracionInicial() {
@@ -118,7 +116,7 @@ public class Preferencias {
 
     public void setNombrePreferencias(String nombrePreferencias) {
         this.nombrePreferencias = nombrePreferencias;
-        renovarPreferencias();
+        preferencias = preferencias();
     }
 
     public Context getContexto() {

@@ -124,7 +124,8 @@ public class Preferencias extends utilidades.Preferencias {
         alarmaUltima("alarmaUltima"),
 
         conexionInfo ("conexionInfo"),
-        conexionTipo("conexionTipo")
+        conexionTipo("conexionTipo"),
+        enviarDatosDeConexion ("enviarDatosDeConexion")
 
         ;
 
@@ -262,6 +263,9 @@ public class Preferencias extends utilidades.Preferencias {
     public String getConexionTipo () { return obtenerString (TipoPreferencia.conexionTipo); }
 
 
+    public boolean getEnviarDatosDeConexion () { return obtenerBoolean(TipoPreferencia.enviarDatosDeConexion); }
+
+    public void setEnviarDatosDeConexion (boolean estado) { guardar (TipoPreferencia.enviarDatosDeConexion, estado); }
 
 
 }

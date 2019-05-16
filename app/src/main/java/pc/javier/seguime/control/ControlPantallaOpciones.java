@@ -59,10 +59,12 @@ public class ControlPantallaOpciones extends Control {
         pantalla.setSms(preferencias.getNumeroSms());
         pantalla.setInternet(preferencias.getIntervaloInternet());
 
-        if (Constante.versionCompleta == false) {
+        if (!Constante.versionCompleta) {
             pantalla.setHabilitado(R.id.opciones_sms, false);
             pantalla.snack(R.string.versionIncompleta_txt);
+            pantalla.setFondo(R.id.opciones_sms, pantalla.cuadroGrisRedondeando());
         }
+
     }
 
 

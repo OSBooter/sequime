@@ -1,5 +1,8 @@
 # Seguime 
 
+### [2.2] - Mayo 2019
+Modificado: Corrección de error cuando se conecta a internet.
+
 ### [2.1] - Mayo 2019
 Agregado: Opción intervalo de conexiones a internet.
 

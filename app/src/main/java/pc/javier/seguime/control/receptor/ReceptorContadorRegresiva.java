@@ -1,7 +1,5 @@
 package pc.javier.seguime.control.receptor;
 
-import pc.javier.seguime.R;
-import pc.javier.seguime.vista.PantallaPrincipal;
 import pc.javier.seguime.vista.PantallaRegresiva;
 import utilidades.Alarma;
 import utilidades.MensajeRegistro;

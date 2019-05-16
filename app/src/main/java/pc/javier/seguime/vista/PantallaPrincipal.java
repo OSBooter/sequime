@@ -2,12 +2,10 @@ package pc.javier.seguime.vista;
 
 import android.app.Activity;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.view.animation.AnimationUtils;
 
 import pc.javier.seguime.R;
 import pc.javier.seguime.adaptador.Pantalla;
-import utilidades.EditorVistas;
 import utilidades.Efecto;
 
 /**
@@ -119,13 +117,13 @@ public class PantallaPrincipal extends Pantalla {
     }
 
     public void iconoBloqueado (boolean visible) {
-        //mostrarIcono(R.id.princ_iconobloqueado, visible);
+        mostrarIcono(R.id.princ_iconobloqueo, visible);
     }
 
     private void mostrarIcono (int idIcono, boolean activo) {
-        if (getImageView(idIcono).getVisibility() == visibilidad(activo))
-            return;
-        Efecto.AnimarIcono(getImageView(),  activo);
+        setVisibilidad(idIcono, activo);
+
+        Efecto.AnimarIcono(getImageView(idIcono),  activo);
     }
 
 

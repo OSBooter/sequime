@@ -173,7 +173,12 @@ public class EditorVistas {
 
 
     // visibilidad
-
+    public void setVisibilidad (int id, boolean visibilidad) {
+        if (visibilidad)
+            setVisibilidad(id, View.VISIBLE);
+        else
+            setVisibilidad(id, View.INVISIBLE);
+    }
     public void setVisibilidad (int id, int visibilidad) {
         View view = getView(id);
         if (view != null)
@@ -205,10 +210,10 @@ public class EditorVistas {
 
 
 
-    public void setHabilitado (int id, boolean visibilidad) {
+    public void setHabilitado (int id, boolean habilitado) {
         View view = getView(id);
         if (view != null)
-            view.setEnabled(visibilidad);
+            view.setEnabled(habilitado);
     }
 
 
