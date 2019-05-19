@@ -1,5 +1,8 @@
 # Seguime 
 
+### [2.3]
+Agregado: Opción de enviar información sobre la conexión a internet.
+
 ### [2.2] - Mayo 2019
 Modificado: Corrección de error cuando se conecta a internet.
 

@@ -4,6 +4,12 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 
+
+/*
+    Javier
+    18 05 2019
+ */
+
 public class InfoInternet {
 
 
@@ -12,7 +18,7 @@ public class InfoInternet {
 
     public InfoInternet(Context contexto) {
         final ConnectivityManager conexion = (ConnectivityManager) contexto.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo infoRedes = conexion.getActiveNetworkInfo();
+        infoRedes = conexion.getActiveNetworkInfo();
     }
 
 

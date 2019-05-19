@@ -58,6 +58,7 @@ public class ControlPantallaOpciones extends Control {
         pantalla.setActivarConPantalla(preferencias.getActivarConPantalla());
         pantalla.setSms(preferencias.getNumeroSms());
         pantalla.setInternet(preferencias.getIntervaloInternet());
+        pantalla.setEnviarInfoConexion(preferencias.getEnviarDatosDeConexion());
 
         if (!Constante.versionCompleta) {
             pantalla.setHabilitado(R.id.opciones_sms, false);
@@ -74,14 +75,6 @@ public class ControlPantallaOpciones extends Control {
     private void guardarOpciones () {
         verificarRegistro();
 
-        guardarPreferencia(Preferencias.TipoPreferencia.numeroSms, pantalla.getSms());
-        guardarPreferencia(Preferencias.TipoPreferencia.idTelegram, pantalla.getTelegram());
-        guardarPreferencia(Preferencias.TipoPreferencia.intervaloActividad, pantalla.getActividad());
-        guardarPreferencia(Preferencias.TipoPreferencia.intervaloInactividad, pantalla.getInactividad());
-        guardarPreferencia(Preferencias.TipoPreferencia.rastreo, pantalla.getRastreo());
-        guardarPreferencia(Preferencias.TipoPreferencia.iniciarConSistema, pantalla.getIniciarConSistema());
-        guardarPreferencia(Preferencias.TipoPreferencia.activarDesbloquear, pantalla.getActivarConPantalla());
-
         preferencias.setIntervaloInternet(pantalla.getInternet());
         preferencias.setNumeroSms (pantalla.getSms());
         preferencias.setIdTelegram( pantalla.getTelegram());
@@ -90,10 +83,7 @@ public class ControlPantallaOpciones extends Control {
         preferencias.setRastreo( pantalla.getRastreo());
         preferencias.setIniciarConSistema( pantalla.getIniciarConSistema());
         preferencias.setActivarConPantalla( pantalla.getActivarConPantalla());
-
-
-
-
+        preferencias.setEnviarDatosDeConexion(pantalla.getEnviarInfoConexion());
 
     }
 

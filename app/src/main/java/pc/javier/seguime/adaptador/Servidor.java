@@ -4,6 +4,7 @@ import android.content.Context;
 import utilidades.ConexionHTTP;
 import utilidades.Evento;
 import utilidades.FechaHora;
+import utilidades.InfoInternet;
 import utilidades.MensajeRegistro;
 
 /**
@@ -35,7 +36,7 @@ public class Servidor {
         this.usuario = preferencias.getUsuario();
         this.clave = preferencias.getClave();
         nuevoParametro();
-        agregarInformacionExtra();
+        agregarInformacionExtra(contexto);
     }
 
 
@@ -59,11 +60,13 @@ public class Servidor {
 
 
 
-    private void agregarInformacionExtra () {
+    private void agregarInformacionExtra (Context contexto) {
 
-        // agregarParametro (Servidor.Parametro.conexionTipo, preferencias.getConexionTipo());
-        // agregarParametro (Servidor.Parametro.conexionInfo, preferencias.getConexionInfo());
-
+        if (preferencias.getEnviarDatosDeConexion()) {
+            InfoInternet infoInternet = new InfoInternet(contexto);
+            String extra = infoInternet.getTipo() + ": " + infoInternet.getInfo();
+            agregarParametro(Parametro.extra, extra);
+        }
 
         // si no hay datos de telegram, sale
         if (preferencias.getIdTelegram().isEmpty())
@@ -164,10 +167,51 @@ public class Servidor {
 
         conexionInfo, conexionTipo,
 
+        posicionHistorial,
+
         extra,
     }
 
     public enum Comando {
         registro, sesion
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // coordenada
+
+
+    public void agregarCoordenada (Coordenada coordenada) {
+        if (coordenada == null)
+            return;
+        agregarParametro (Servidor.Parametro.latitud, String.valueOf(coordenada.getLatitud()));
+        agregarParametro (Servidor.Parametro.longitud, String.valueOf(coordenada.getLongitud()));
+        agregarParametro (Servidor.Parametro.velocidad, String.valueOf(coordenada.getVelocidad()));
+        agregarParametro (Servidor.Parametro.id, String.valueOf(coordenada.getId()));
+        agregarParametro (Servidor.Parametro.proveedor, coordenada.getProveedor());
+        agregarParametro (Servidor.Parametro.codigo, coordenada.getCodigo());
+        FechaHora fechaHora = new FechaHora(coordenada.getFechaHora());
+        agregarParametro (Servidor.Parametro.fecha, fechaHora.zonaEspecifica(Constante.zonaHorariaServidor).obtenerFechaHoraFormatoBD());
+    }
+
+
 }

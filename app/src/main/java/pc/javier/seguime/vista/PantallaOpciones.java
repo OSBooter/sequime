@@ -18,6 +18,10 @@ public class PantallaOpciones extends Pantalla {
 
 
     // gets
+    public boolean getEnviarInfoConexion () {
+        return getToggle (R.id.opciones_enviarInfoConexion).isChecked();
+    }
+
     public int getInternet () {
         return entero(getTexto(R.id.opciones_internet));
     }
@@ -56,6 +60,10 @@ public class PantallaOpciones extends Pantalla {
 
 
     // sets -
+
+    public void  setEnviarInfoConexion (boolean valor) {
+        setToggle(R.id.opciones_enviarInfoConexion, valor);
+    }
 
     public void  setInternet (int valor) {
         setTextView(R.id.opciones_internet, String.valueOf(valor));

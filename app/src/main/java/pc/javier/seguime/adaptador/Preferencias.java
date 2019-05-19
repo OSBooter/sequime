@@ -253,7 +253,7 @@ public class Preferencias extends utilidades.Preferencias {
     public void setIntervaloInternet (int intervalo) { guardar (TipoPreferencia.intervaloInternet, intervalo); }
 
 
-    public void setConexionInfo (String info) { guardar (TipoPreferencia.conexionInfo, info); }
+    /*public void setConexionInfo (boolean estado) { guardar (TipoPreferencia.conexionInfo, estado); }
 
     public String getConexionInfo () { return obtenerString(TipoPreferencia.conexionInfo); }
 
@@ -261,6 +261,7 @@ public class Preferencias extends utilidades.Preferencias {
     public void setConexionTipo (String tipo) { guardar(TipoPreferencia.conexionTipo, tipo); }
 
     public String getConexionTipo () { return obtenerString (TipoPreferencia.conexionTipo); }
+    */
 
 
     public boolean getEnviarDatosDeConexion () { return obtenerBoolean(TipoPreferencia.enviarDatosDeConexion); }

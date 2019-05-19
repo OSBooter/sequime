@@ -111,10 +111,13 @@ public class BDCoordenada {
     }
 
 
-    public Cursor obtenerUltima () {
-
+    public Cursor obtenerUltimaNoEnviada () {
         Cursor c= sql.query(nombre,new String[]{"*"},"recibido=0",null,null,null,"fecha desc","1");
+        return c;
+    }
 
+    public Cursor obtenerUltima () {
+        Cursor c= sql.query(nombre,new String[]{"*"},null,null,null,null,"fecha desc","1");
         return c;
     }
 

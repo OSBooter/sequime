@@ -164,10 +164,7 @@
 					</TableRow>
 					
 					<TableRow>
-
-                
-
-                <ToggleButton
+                        <ToggleButton
                     android:id="@+id/opciones_iniciarConElSistema"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -190,8 +187,6 @@
 					
 					<TableRow>
 					
-					
-					
                 <ToggleButton
                     android:id="@+id/opciones_activarconpantalla"
                     android:layout_width="wrap_content"
@@ -210,14 +205,42 @@
                     android:padding="5dp"
                     />
 
-					
+
 					</TableRow>
+
+
+
+
+                <TableRow>
+
+                    <ToggleButton
+                        android:id="@+id/opciones_enviarInfoConexion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="verificarRegistro"
+                        />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/enviarInfo"
+                        android:padding="5dp"
+                        />
+
+
+                </TableRow>
+
+
 
             </TableLayout>
 
 
 
-        </LinearLayout>
+
+
+
+    </LinearLayout>
 
 
 

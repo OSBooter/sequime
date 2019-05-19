@@ -226,6 +226,33 @@
 
                 </TableRow>
 
+
+
+                <TableRow>
+
+                    <ToggleButton
+                        android:id="@+id/opciones_enviarInfoConexion"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="verificarRegistro"
+
+                        />
+
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:text="@string/enviarInfo"
+                        android:padding="5dp"
+                        />
+
+
+                </TableRow>
+
+
+
             </TableLayout>
 
 

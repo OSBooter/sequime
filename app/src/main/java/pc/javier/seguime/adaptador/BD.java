@@ -123,6 +123,17 @@ public class BD  {
         return Listar(bdCoordenada.obtener());
     }
 
+
+    public Coordenada coordenadaObtenerUltimaNoEnviada () {
+        Cursor cursor = bdCoordenada.obtenerUltimaNoEnviada();
+
+        if ( cursor.getCount()>0) {
+            cursor.moveToFirst();
+            return crearCoordenada(cursor);
+
+        } else
+            return null;
+    }
     public Coordenada coordenadaObtenerUltima () {
         Cursor cursor = bdCoordenada.obtenerUltima();
 
