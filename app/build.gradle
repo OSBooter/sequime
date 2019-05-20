@@ -33,13 +33,15 @@ dependencies {
 
 android {
     defaultConfig {
-        versionCode 23
-        versionName "2.3"
+        versionCode 25
+        versionName "2.5"
     }
 }
 
 
 // --------------------------- Configuración de versión
+
+
 
 
 
@@ -55,7 +57,8 @@ dependencies {
 android {
     compileSdkVersion 25
     defaultConfig {
-        minSdkVersion 18
-        targetSdkVersion 18
+        minSdkVersion 11
+        targetSdkVersion 14
     }
 }
+

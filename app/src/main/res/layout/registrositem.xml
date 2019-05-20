@@ -92,18 +92,6 @@
 
 
 
-        <TableRow>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="20dp"
-            android:text="@string/infoextra"
-            android:id="@+id/registros_extra"
-            android:layout_below="@+id/registros_latitud"
-            android:layout_span="3"
-            />
-
-
-        </TableRow>
 
 
 

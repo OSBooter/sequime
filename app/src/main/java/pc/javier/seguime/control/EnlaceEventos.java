@@ -30,8 +30,10 @@ public class EnlaceEventos {
     public EnlaceEventos (Activity activity, Context contexto) {
         this.contexto = contexto;
         this.activity = activity;
+		
+		// CAMBIO - REVISAR ESTO
         if (activity == null)
-            activity = Aplicacion.actividadPrincipal;
+            this.activity = Aplicacion.actividadPrincipal;
     }
 
 

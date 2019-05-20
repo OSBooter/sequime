@@ -140,7 +140,7 @@ public class ControlPantallaRegistros extends Control {
 
             e.setTextView(R.id.registros_latitud, string(coordenada.getLatitud()));
             e.setTextView(R.id.registros_longitud, string(coordenada.getLongitud()));
-            e.setTextView(R.id.registros_extra, coordenada.getCodigo() + " " + coordenada.getRecibido());
+            // e.setTextView(R.id.registros_extra, coordenada.getCodigo() + " " + coordenada.getRecibido());
 
             FechaHora fechaHora = new FechaHora(coordenada.getFechaHora());
             e.setTextView(R.id.registros_fechahora, fechaHora.obtenerFechaHoraNormal());

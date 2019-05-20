@@ -4,6 +4,8 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 
+import pc.javier.seguime.adaptador.BD;
+import pc.javier.seguime.adaptador.Coordenada;
 import pc.javier.seguime.adaptador.Preferencias;
 import pc.javier.seguime.adaptador.Servidor;
 import utilidades.Alarma;
@@ -296,6 +298,21 @@ public class ServicioAplicacion extends Service {
             return;
         Servidor servidor = new Servidor(this);
         servidor.setEvento(eventoInternet);
+
+        // obtiene la ultima coordenada no enviada
+        BD bd = new BD(this);
+        Coordenada coordenadaUltima = bd.coordenadaObtenerUltima();
+        Coordenada coordenadaNoEnviada = bd.coordenadaObtenerUltimaNoEnviada();
+        bd.cerrar();
+
+        servidor.agregarCoordenada(coordenadaNoEnviada);
+
+        // verifica si la coordenada no enviada es la misma que la ultima coordenada
+        // para saber si es una posición actual
+        if (coordenadaNoEnviada != null)
+            if (coordenadaUltima != null)
+                if (coordenadaUltima.getId() != coordenadaNoEnviada.getId())
+                    servidor.agregarParametro(Servidor.Parametro.posicionHistorial, "true");
         servidor.enviar();
     }
 

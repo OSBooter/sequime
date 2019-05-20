@@ -7,7 +7,7 @@ import android.net.NetworkInfo;
 
 /*
     Javier
-    18 05 2019
+    20 05 2019
  */
 
 public class InfoInternet {
@@ -39,7 +39,7 @@ public class InfoInternet {
     public String getInfo () {
         if (infoRedes == null)
             return "";
-        return infoRedes.getExtraInfo();
+        return infoRedes.getExtraInfo().replace("\"", "");
     }
 
 

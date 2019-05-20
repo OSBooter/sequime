@@ -1,5 +1,8 @@
 # Seguime 
 
+### [2.4 / 2.5]
+Modificado: Envío de coordenadas almacenadas sin notificar al bot de telegram (requiere nueva versión del servidor)
+
 ### [2.3]
 Agregado: Opción de enviar información sobre la conexión a internet.
 
