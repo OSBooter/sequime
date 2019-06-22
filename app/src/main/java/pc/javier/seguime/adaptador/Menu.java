@@ -5,12 +5,13 @@ import android.support.design.widget.NavigationView;
 import android.view.MenuItem;
 import android.widget.TextView;
 import pc.javier.seguime.R;
+import utilidades.vista.PanelLateral;
 
 /**
  * Javier 2019.
  */
 
-public class Menu extends utilidades.PanelLateral {
+public class Menu extends PanelLateral {
     public Menu(Activity activity) {
         super(activity, R.id.drawer_layout);
     }

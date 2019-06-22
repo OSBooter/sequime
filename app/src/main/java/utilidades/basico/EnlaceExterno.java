@@ -1,4 +1,4 @@
-package utilidades;
+package utilidades.basico;
 
 import android.app.Activity;
 import android.content.Intent;

@@ -9,9 +9,9 @@ import pc.javier.seguime.adaptador.Coordenada;
 import pc.javier.seguime.adaptador.Preferencias;
 import pc.javier.seguime.adaptador.Servidor;
 import utilidades.Alarma;
-import utilidades.Evento;
-import utilidades.MensajeRegistro;
-import utilidades.Temporizador;
+import utilidades.basico.Evento;
+import utilidades.basico.MensajeRegistro;
+import utilidades.basico.Temporizador;
 
 
 /*

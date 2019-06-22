@@ -9,8 +9,8 @@ import pc.javier.seguime.adaptador.Constante;
 import pc.javier.seguime.adaptador.Preferencias;
 import pc.javier.seguime.vista.PantallaOpciones;
 import utilidades.Contacto;
-import utilidades.EnlaceExterno;
-import utilidades.MensajeRegistro;
+import utilidades.basico.EnlaceExterno;
+import utilidades.basico.MensajeRegistro;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -59,6 +59,8 @@ public class ControlPantallaOpciones extends Control {
         pantalla.setSms(preferencias.getNumeroSms());
         pantalla.setInternet(preferencias.getIntervaloInternet());
         pantalla.setEnviarInfoConexion(preferencias.getEnviarDatosDeConexion());
+        pantalla.setPermitirConfigurarSMS(preferencias.getPermitirConfigurarSMS());
+        pantalla.setConectarseRedesAbiertas(preferencias.getConectarRedesAbiertas());
 
         if (!Constante.versionCompleta) {
             pantalla.setHabilitado(R.id.opciones_sms, false);
@@ -84,6 +86,8 @@ public class ControlPantallaOpciones extends Control {
         preferencias.setIniciarConSistema( pantalla.getIniciarConSistema());
         preferencias.setActivarConPantalla( pantalla.getActivarConPantalla());
         preferencias.setEnviarDatosDeConexion(pantalla.getEnviarInfoConexion());
+        preferencias.setPermitirConfigurarSMS(pantalla.getPermitirConfigurarSMS());
+        preferencias.setConectarRedesAbiertas(pantalla.getConectarRedesAbiertas());
 
     }
 

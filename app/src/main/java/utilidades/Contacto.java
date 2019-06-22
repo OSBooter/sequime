@@ -6,6 +6,8 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.provider.ContactsContract;
 
+import utilidades.basico.MensajeRegistro;
+
 /**
  * Javier 2018.
  */

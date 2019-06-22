@@ -13,7 +13,7 @@ import android.util.Log;
 
 import java.util.ArrayList;
 
-import utilidades.Evento;
+import utilidades.basico.Evento;
 
 
 /**

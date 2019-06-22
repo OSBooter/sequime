@@ -12,9 +12,9 @@ import pc.javier.seguime.control.receptor.ReceptorContadorRegresiva;
 import pc.javier.seguime.vista.PantallaRegresiva;
 import utilidades.Alarma;
 import utilidades.Contacto;
-import utilidades.Evento;
-import utilidades.MensajeRegistro;
-import utilidades.Temporizador;
+import utilidades.basico.Evento;
+import utilidades.basico.MensajeRegistro;
+import utilidades.basico.Temporizador;
 
 import static android.app.Activity.RESULT_OK;
 

@@ -2,12 +2,11 @@ package pc.javier.seguime.control.receptor;
 
 import android.app.Activity;
 
-import pc.javier.seguime.R;
 import pc.javier.seguime.control.Alerta;
 import pc.javier.seguime.control.Aplicacion;
 import pc.javier.seguime.vista.PantallaPrincipal;
-import utilidades.MensajeRegistro;
-import utilidades.ReceptorEventos;
+import utilidades.basico.MensajeRegistro;
+import utilidades.basico.ReceptorEventos;
 
 /**
  * Javier 2019.

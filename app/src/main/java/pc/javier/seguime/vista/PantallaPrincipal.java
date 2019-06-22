@@ -6,7 +6,7 @@ import android.view.animation.AnimationUtils;
 
 import pc.javier.seguime.R;
 import pc.javier.seguime.adaptador.Pantalla;
-import utilidades.Efecto;
+import utilidades.vista.Efecto;
 
 /**
  * Javier 2019.

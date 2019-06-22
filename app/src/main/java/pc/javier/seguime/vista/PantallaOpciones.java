@@ -55,6 +55,13 @@ public class PantallaOpciones extends Pantalla {
     }
 
 
+    public boolean getPermitirConfigurarSMS () {
+        return getToggle(R.id.opciones_permitirConfigurarSMS).isChecked();
+    }
+
+    public boolean getConectarRedesAbiertas () {
+        return getToggle(R.id.opciones_conectarseRedesAbiertas).isChecked();
+    }
 
 
 
@@ -98,7 +105,13 @@ public class PantallaOpciones extends Pantalla {
     }
 
 
+    public void setPermitirConfigurarSMS (boolean valor) {
+        setToggle(R.id.opciones_permitirConfigurarSMS, valor);
+    }
 
+    public void setConectarseRedesAbiertas (boolean valor) {
+        setToggle(R.id.opciones_conectarseRedesAbiertas, valor);
+    }
 
 
 }

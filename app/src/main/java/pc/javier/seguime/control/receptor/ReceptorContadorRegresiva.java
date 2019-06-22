@@ -2,8 +2,8 @@ package pc.javier.seguime.control.receptor;
 
 import pc.javier.seguime.vista.PantallaRegresiva;
 import utilidades.Alarma;
-import utilidades.MensajeRegistro;
-import utilidades.ReceptorEventos;
+import utilidades.basico.MensajeRegistro;
+import utilidades.basico.ReceptorEventos;
 
 /**
  * Javier 2019.

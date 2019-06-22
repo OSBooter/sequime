@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 
 import pc.javier.seguime.adaptador.Coordenada;
-import utilidades.ReceptorEventos;
+import utilidades.basico.ReceptorEventos;
 
 /**
  * Javier 2019.

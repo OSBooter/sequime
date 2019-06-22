@@ -5,9 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 
 import pc.javier.seguime.adaptador.Preferencias;
-import pc.javier.seguime.control.Control;
 import pc.javier.seguime.control.ServicioAplicacion;
-import utilidades.Servicios;
+import utilidades.basico.Servicios;
 
 /**
  * Javier 2019.

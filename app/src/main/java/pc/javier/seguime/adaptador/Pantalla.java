@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.view.View;
 
 import pc.javier.seguime.R;
-import utilidades.EditorVistas;
+import utilidades.vista.EditorVistas;
 
 /**
  * Javier 2019.

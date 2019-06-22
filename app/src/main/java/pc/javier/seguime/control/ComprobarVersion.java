@@ -3,9 +3,9 @@ package pc.javier.seguime.control;
 import pc.javier.seguime.adaptador.Constante;
 
 import pc.javier.seguime.adaptador.Preferencias;
-import utilidades.ConexionHTTP;
-import utilidades.Evento;
-import utilidades.ReceptorEventos;
+import utilidades.conexion.ConexionHTTP;
+import utilidades.basico.Evento;
+import utilidades.basico.ReceptorEventos;
 
 /**
  * Javier 2019.

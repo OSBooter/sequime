@@ -12,7 +12,7 @@ import pc.javier.seguime.adaptador.Preferencias;
 import pc.javier.seguime.control.Aplicacion;
 import pc.javier.seguime.control.ControlPantallaPrincipal;
 import pc.javier.seguime.vista.PantallaPrincipal;
-import utilidades.MensajeRegistro;
+import utilidades.basico.MensajeRegistro;
 
 
 public class MainActivity extends AppCompatActivity {

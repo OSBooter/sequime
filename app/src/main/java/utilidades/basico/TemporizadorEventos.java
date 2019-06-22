@@ -1,8 +1,5 @@
-package utilidades;
+package utilidades.basico;
 
-
-import utilidades.Evento;
-import utilidades.Temporizador;
 
 /**
  * Javier 2019.

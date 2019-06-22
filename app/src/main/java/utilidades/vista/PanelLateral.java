@@ -1,4 +1,4 @@
-package utilidades;
+package utilidades.vista;
 
 import android.app.Activity;
 import android.support.v4.view.GravityCompat;

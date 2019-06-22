@@ -23,6 +23,9 @@
 	<string name="iniciarConElSistema">Iniciar con el sistema</string>
 	<string name="activarconpantalla">Iniciar actividad al encender la pantalla</string>
 	<string name="enviarInfo">Enviar información de conexión</string>
+	<string name="conectarseRedesAbiertas">Conectarse a redes abiertas (Próximamente)</string>
+    <string name="permitirConfigurarSMS">Permitir configurar SMS desde el servidor</string>
+    <string name="permitirActivar">Permitir activar la aplicación desde el servidor (Requiere intervalo de conexión a internet)</string>
 
 	<string name="errorValidacion">Hay un error con los datos ingresados</string>
 

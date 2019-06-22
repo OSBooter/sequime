@@ -1,5 +1,9 @@
 # Seguime 
 
+### [2.6]
+Agregado: Opción para permitir configurar SMS desde el servidor
+Agregado: Muestra mensajes cuando recibe configuraciones de SMS y Telegram.
+
 ### [2.4 / 2.5]
 Modificado: Envío de coordenadas almacenadas sin notificar al bot de telegram (requiere nueva versión del servidor)
 

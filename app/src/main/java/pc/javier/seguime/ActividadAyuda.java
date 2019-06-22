@@ -7,7 +7,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import pc.javier.seguime.adaptador.Constante;
-import utilidades.EnlaceExterno;
+import utilidades.basico.EnlaceExterno;
 
 
 public class ActividadAyuda extends AppCompatActivity {

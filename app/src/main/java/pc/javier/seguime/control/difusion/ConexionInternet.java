@@ -4,8 +4,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 
-import utilidades.InfoInternet;
-import utilidades.MensajeRegistro;
+import utilidades.conexion.InfoInternet;
+import utilidades.basico.MensajeRegistro;
 
 /**
  * Javier 2019.

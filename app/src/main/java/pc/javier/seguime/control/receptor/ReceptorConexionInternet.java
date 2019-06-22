@@ -2,13 +2,13 @@ package pc.javier.seguime.control.receptor;
 
 
 import android.app.Activity;
-import android.support.v7.app.AppCompatActivity;
 
 import pc.javier.seguime.R;
 import pc.javier.seguime.control.Aplicacion;
 import pc.javier.seguime.vista.PantallaPrincipal;
 import pc.javier.seguime.vista.PantallaSesion;
-import utilidades.ConexionHTTP;
+import utilidades.conexion.ConexionHTTP;
+import utilidades.basico.ReceptorEventos;
 
 
 /**
@@ -16,7 +16,7 @@ import utilidades.ConexionHTTP;
  *  recibe estados de la conexion a internet
  */
 
-public class ReceptorConexionInternet extends utilidades.ReceptorEventos {
+public class ReceptorConexionInternet extends ReceptorEventos {
 
     private PantallaSesion pantallaSesion;
     private PantallaPrincipal pantallaPrincipal;

@@ -9,7 +9,7 @@ import pc.javier.seguime.adaptador.Preferencias;
 import pc.javier.seguime.control.Aplicacion;
 import pc.javier.seguime.vista.PantallaClave;
 import pc.javier.seguime.vista.PantallaPrincipal;
-import utilidades.EnlaceExterno;
+import utilidades.basico.EnlaceExterno;
 
 
 /**

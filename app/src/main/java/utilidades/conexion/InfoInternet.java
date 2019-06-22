@@ -1,4 +1,4 @@
-package utilidades;
+package utilidades.conexion;
 
 import android.content.Context;
 import android.net.ConnectivityManager;

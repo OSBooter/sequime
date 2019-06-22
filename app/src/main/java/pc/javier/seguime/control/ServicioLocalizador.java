@@ -3,7 +3,7 @@ package pc.javier.seguime.control;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
-import utilidades.Evento;
+import utilidades.basico.Evento;
 import utilidades.localizacion.Localizador;
 
 

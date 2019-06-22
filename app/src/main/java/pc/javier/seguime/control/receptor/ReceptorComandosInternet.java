@@ -7,8 +7,8 @@ import pc.javier.seguime.adaptador.BD;
 import pc.javier.seguime.adaptador.Pantalla;
 import pc.javier.seguime.adaptador.Preferencias;
 import pc.javier.seguime.vista.PantallaPrincipal;
-import utilidades.MensajeRegistro;
-import utilidades.ReceptorEventos;
+import utilidades.basico.MensajeRegistro;
+import utilidades.basico.ReceptorEventos;
 
 /**
  * Javier 2019.
@@ -94,6 +94,13 @@ public class ReceptorComandosInternet extends ReceptorEventos{
                 alarmaServidor (parametro);
                 break;
 
+            case "sms":
+                sms (parametro);
+                break;
+
+            case "telegram":
+                sms (parametro);
+                break;
 
         }
     }
@@ -160,6 +167,19 @@ public class ReceptorComandosInternet extends ReceptorEventos{
     }
 
 
+    private void sms (String numero) {
+        if (preferencias.getPermitirConfigurarSMS() == false) {
+            pantallaPrincipal.mostrarMensajePrincipal("Se intentó modificar el SMS");
+            return;
+        }
+        preferencias.setNumeroSms(numero);
+        pantallaPrincipal.mostrarMensajePrincipal("SMS Modificado");
+    }
+
+    private void telegram (String numero) {
+        preferencias.setIdTelegram(numero);
+        pantallaPrincipal.mostrarMensajePrincipal("ID Telegram Modificado");
+    }
 
 
     // -----------------------------------------------------

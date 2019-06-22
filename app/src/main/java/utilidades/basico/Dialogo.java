@@ -1,4 +1,4 @@
-package utilidades;
+package utilidades.basico;
 
 import android.content.Context;
 import android.content.DialogInterface;

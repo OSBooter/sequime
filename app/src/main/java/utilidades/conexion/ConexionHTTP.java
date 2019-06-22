@@ -1,4 +1,4 @@
-package utilidades;
+package utilidades.conexion;
 
 
 import android.util.Base64;
@@ -7,11 +7,12 @@ import android.util.Log;
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.InputStreamReader;
-import java.net.Authenticator;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
 import javax.net.ssl.HttpsURLConnection;
+
+import utilidades.basico.Evento;
 
 /**
  * Javier 2019.

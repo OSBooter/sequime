@@ -1,4 +1,4 @@
-package utilidades;
+package utilidades.vista;
 
 import android.view.View;
 import android.view.animation.AnimationUtils;

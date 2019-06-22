@@ -2,8 +2,7 @@ package pc.javier.seguime.vista;
 
 import android.support.v7.app.AppCompatActivity;
 
-import pc.javier.seguime.R;
-import utilidades.EditorVistas;
+import utilidades.vista.EditorVistas;
 
 /**
  * Javier 2019.

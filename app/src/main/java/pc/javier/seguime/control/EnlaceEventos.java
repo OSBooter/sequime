@@ -10,8 +10,8 @@ import pc.javier.seguime.control.receptor.ReceptorConexionInternet;
 import pc.javier.seguime.control.receptor.ReceptorCoordenadasBD;
 import pc.javier.seguime.control.receptor.ReceptorCoordenadasInternet;
 import pc.javier.seguime.control.receptor.ReceptorCoordenadasSMS;
-import utilidades.ConexionHTTP;
-import utilidades.Evento;
+import utilidades.conexion.ConexionHTTP;
+import utilidades.basico.Evento;
 
 
 /**

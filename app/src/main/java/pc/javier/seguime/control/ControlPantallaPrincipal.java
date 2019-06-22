@@ -15,9 +15,9 @@ import pc.javier.seguime.adaptador.BD;
 import pc.javier.seguime.adaptador.Constante;
 import pc.javier.seguime.adaptador.Preferencias;
 import pc.javier.seguime.vista.PantallaPrincipal;
-import utilidades.Dialogo;
-import utilidades.EnlaceExterno;
-import utilidades.MensajeRegistro;
+import utilidades.basico.Dialogo;
+import utilidades.basico.EnlaceExterno;
+import utilidades.basico.MensajeRegistro;
 
 /**
  * Javier 2019.

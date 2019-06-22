@@ -233,6 +233,53 @@
 
 
 
+
+
+                <TableRow>
+
+                    <ToggleButton
+                        android:id="@+id/opciones_conectarseRedesAbiertas"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="verificarRegistro"
+                        android:enabled="false"
+                        />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/conectarseRedesAbiertas"
+                        android:padding="5dp"
+                        />
+
+
+                </TableRow>
+
+
+
+
+                <TableRow android:visibility="visible">
+
+                    <ToggleButton
+                        android:id="@+id/opciones_permitirConfigurarSMS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:onClick="verificarRegistro"
+                        />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/permitirConfigurarSMS"
+                        android:padding="5dp"
+                        />
+
+
+                </TableRow>
+
+
             </TableLayout>
 
 

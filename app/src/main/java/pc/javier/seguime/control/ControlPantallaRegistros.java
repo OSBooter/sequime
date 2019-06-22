@@ -15,9 +15,9 @@ import pc.javier.seguime.adaptador.Pantalla;
 import pc.javier.seguime.adaptador.Preferencias;
 import pc.javier.seguime.vista.PantallaRegistros;
 
-import utilidades.FechaHora;
+import utilidades.basico.FechaHora;
 import utilidades.localizacion.Mapa;
-import utilidades.MensajeRegistro;
+import utilidades.basico.MensajeRegistro;
 import utilidades.Velocidad;
 
 /**

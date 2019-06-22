@@ -4,7 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import pc.javier.seguime.adaptador.Pantalla;
 import pc.javier.seguime.adaptador.Preferencias;
-import utilidades.Servicios;
+import utilidades.basico.Servicios;
 
 
 /**

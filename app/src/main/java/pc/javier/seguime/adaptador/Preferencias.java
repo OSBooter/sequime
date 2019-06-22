@@ -10,7 +10,7 @@ import android.content.SharedPreferences;
  * almacena y recupera preferencias de la aplicación
  */
 
-public class Preferencias extends utilidades.Preferencias {
+public class Preferencias extends utilidades.basico.Preferencias {
 
 
     public Preferencias(Context contexto) {
@@ -122,6 +122,9 @@ public class Preferencias extends utilidades.Preferencias {
         alarma("alarma"),
         alarmaMensaje("alarmaMensaje"),
         alarmaUltima("alarmaUltima"),
+
+        permitirConfiguracionSMS("permitirConfiguracionSMS"),
+        conectarRedesAbiertas("conectarRedesAbiertas"),
 
         conexionInfo ("conexionInfo"),
         conexionTipo("conexionTipo"),
@@ -265,8 +268,13 @@ public class Preferencias extends utilidades.Preferencias {
 
 
     public boolean getEnviarDatosDeConexion () { return obtenerBoolean(TipoPreferencia.enviarDatosDeConexion); }
-
     public void setEnviarDatosDeConexion (boolean estado) { guardar (TipoPreferencia.enviarDatosDeConexion, estado); }
 
+
+    public boolean getPermitirConfigurarSMS () { return obtenerBoolean(TipoPreferencia.permitirConfiguracionSMS); }
+    public void setPermitirConfigurarSMS (boolean estado) { guardar (TipoPreferencia.permitirConfiguracionSMS, estado); }
+
+    public boolean getConectarRedesAbiertas () { return obtenerBoolean(TipoPreferencia.conectarRedesAbiertas); }
+    public void setConectarRedesAbiertas (boolean estado) { guardar (TipoPreferencia.conectarRedesAbiertas, estado); }
 
 }

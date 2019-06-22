@@ -1,11 +1,11 @@
 package pc.javier.seguime.adaptador;
 
 import android.content.Context;
-import utilidades.ConexionHTTP;
-import utilidades.Evento;
-import utilidades.FechaHora;
-import utilidades.InfoInternet;
-import utilidades.MensajeRegistro;
+import utilidades.conexion.ConexionHTTP;
+import utilidades.basico.Evento;
+import utilidades.basico.FechaHora;
+import utilidades.conexion.InfoInternet;
+import utilidades.basico.MensajeRegistro;
 
 /**
  * Javier 2019.
