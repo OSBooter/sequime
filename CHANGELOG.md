@@ -1,6 +1,7 @@
 # Seguime 
 
 ### [2.6]
+Modificado: url de donaciones
 Agregado: Opción para permitir configurar SMS desde el servidor
 Agregado: Muestra mensajes cuando recibe configuraciones de SMS y Telegram.
 

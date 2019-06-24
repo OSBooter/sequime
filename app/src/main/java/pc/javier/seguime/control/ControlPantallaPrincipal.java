@@ -286,7 +286,7 @@ public class ControlPantallaPrincipal  extends Control {
 
 
     private void donar (){
-        (new EnlaceExterno(activity)).abrirEnlace(Constante.urlPaypal);
+        (new EnlaceExterno(activity)).abrirEnlace(Constante.urlDonacion);
     }
 
     private void eliminarCuenta (){

@@ -23,7 +23,7 @@ public class ActividadAyuda extends AppCompatActivity {
 
     public void donar(View v) {
         EnlaceExterno enlaceExterno = new EnlaceExterno(this);
-        enlaceExterno.abrirEnlace(Constante.urlPaypal);
+        enlaceExterno.abrirEnlace(Constante.urlDonacion);
     }
 
     public void sitio (View v) {
