@@ -42,23 +42,27 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/nombre"
+            android:textSize="@dimen/texto"
             />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/clave_nombre"
+            android:textSize="@dimen/texto"
             />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/clave"
+            android:textSize="@dimen/texto"
             />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/clave_clave"
             android:inputType="textPassword"
+            android:textSize="@dimen/texto"
             />
 
 
@@ -98,6 +102,7 @@
             android:layout_height="wrap_content"
             android:text="@string/txt_registrodeversion"
             android:layout_margin="5dp"
+            android:textSize="@dimen/texto"
             />
 
     </LinearLayout>

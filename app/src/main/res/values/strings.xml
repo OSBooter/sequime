@@ -23,7 +23,7 @@
 	<string name="iniciarConElSistema">Iniciar con el sistema</string>
 	<string name="activarconpantalla">Iniciar actividad al encender la pantalla</string>
 	<string name="enviarInfo">Enviar información de conexión</string>
-	<string name="conectarseRedesAbiertas">Conectarse a redes abiertas (Próximamente)</string>
+	<string name="conectarseRedesAbiertas">Conectarse a redes abiertas (Requiere WiFI Automagico)</string>
     <string name="permitirConfigurarSMS">Permitir configurar SMS desde el servidor</string>
     <string name="permitirActivar">Permitir activar la aplicación desde el servidor (Requiere intervalo de conexión a internet)</string>
 
@@ -109,8 +109,10 @@
     <string name="nombre">Nombre</string>
     <string name="versionRegistrada">Versión Registrada</string>
     <string name="claveIncorrecta">Clave Incorrecta</string>
-	<string name="requiereregistro">Requiere registro</string>
+	<string name="requiereregistro">Requiere registro GRATUITO, visite el sitio web</string>
     <string name="txt_registrodeversion">El registro es GRATUITO, visite el sitio web y consiga su clave, no requiere información personal</string>
+
+	<string name="requieredonacion">Requiere versión donación, visite el sitio web</string>
 	
 	
 	<string name="conectando">Conectando...</string>

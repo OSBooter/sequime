@@ -25,6 +25,7 @@
                 android:id="@+id/contactos_nombre"
                 android:textStyle="bold"
                 android:layout_margin="5sp"
+                android:textSize="@dimen/texto"
                 />
 
             <TextView

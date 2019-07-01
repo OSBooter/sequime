@@ -17,10 +17,12 @@ public class PantallaContactos extends Pantalla {
 
 
 
+    /*
     public ListView getLista () {
         return  getListView( R.id.contactos_lista);
     }
 
+*/
 
 
 }

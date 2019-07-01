@@ -1,4 +1,7 @@
 # Seguime 
+### [2.9 / 3.0]
+Modificado: Tamaño de letra.
+Agregado: Integración con la aplicación WiFi Automagico.
 
 ### [2.6]
 Modificado: url de donaciones

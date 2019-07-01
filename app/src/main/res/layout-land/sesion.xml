@@ -62,7 +62,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5sp"
-                    android:text="@string/servidor" />
+                    android:text="@string/servidor"
+                    android:textSize="@dimen/texto"
+                    />
 
                 <EditText
                     android:id="@+id/sesion_servidor"
@@ -80,7 +82,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5sp"
-                    android:text="@string/usuario" />
+                    android:text="@string/usuario"
+                    android:textSize="@dimen/texto"
+                    />
 
                 <EditText
                     android:id="@+id/sesion_usuario"
@@ -97,7 +101,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5sp"
-                    android:text="@string/clave" />
+                    android:text="@string/clave"
+                    android:textSize="@dimen/texto"
+                    />
 
                 <EditText
                     android:id="@+id/sesion_clave"
@@ -116,7 +122,9 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5sp"
                     android:text="@string/repetirclave"
-                    android:visibility="invisible" />
+                    android:visibility="gone"
+                    android:textSize="@dimen/texto"
+                    />
 
                 <EditText
                     android:id="@+id/sesion_claverepetida"
@@ -127,7 +135,7 @@
                     android:inputType="textPassword"
                     android:maxLength="12"
                     android:padding="10sp"
-                    android:visibility="invisible" />
+                    android:visibility="gone" />
 
 
             </LinearLayout>
@@ -158,14 +166,20 @@
                         android:layout_height="wrap_content"
                         android:checked="true"
                         android:onClick="cambiarRadio"
-                        android:text="@string/iniciarsesion" />
+                        android:text="@string/iniciarsesion"
+                        android:textSize="@dimen/texto"
+                        android:layout_margin="10dp"
+                        />
 
                     <RadioButton
                         android:id="@+id/sesion_radio_registro"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:onClick="cambiarRadio"
-                        android:text="@string/registrarse" />
+                        android:text="@string/registrarse"
+                        android:textSize="@dimen/texto"
+                        android:layout_margin="10dp"
+                        />
 
                 </RadioGroup>
 

@@ -44,12 +44,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/clave"
+            android:textSize="@dimen/texto"
             />
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/desbloqueo_clave"
             android:inputType="textPassword"
+            android:textSize="@dimen/texto"
             />
 
 

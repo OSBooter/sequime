@@ -46,7 +46,7 @@ public class ControlPantallaRegresiva extends Control {
         pantalla.setEditText(R.id.temporizador_sms, sms);
         pantalla.setEditText(R.id.temporizador_telegram, telegram);
 
-        if (Constante.versionCompleta == false) {
+        if (Constante.versionConSMS == false) {
             pantalla.setHabilitado(R.id.temporizador_sms, false);
             pantalla.snack(R.string.versionIncompleta_txt);
         }

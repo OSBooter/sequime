@@ -8,6 +8,7 @@ import pc.javier.seguime.control.receptor.ReceptorAlarma;
 import pc.javier.seguime.control.receptor.ReceptorComandosInternet;
 import pc.javier.seguime.control.receptor.ReceptorConexionInternet;
 import pc.javier.seguime.control.receptor.ReceptorCoordenadasBD;
+import pc.javier.seguime.control.receptor.ReceptorCoordenadasDifusion;
 import pc.javier.seguime.control.receptor.ReceptorCoordenadasInternet;
 import pc.javier.seguime.control.receptor.ReceptorCoordenadasSMS;
 import utilidades.conexion.ConexionHTTP;
@@ -22,8 +23,8 @@ import utilidades.basico.Evento;
 public class EnlaceEventos {
 
     private Activity activity;
-    private Context contexto;
-    private Evento evento;
+    private Context  contexto;
+    private Evento   evento;
 
 
 
@@ -61,6 +62,7 @@ public class EnlaceEventos {
         agregarReceptorBaseDeDatos(claveEventos);
         agregarReceptorServidor (claveEventos);
         agregarReceptorSMS(claveEventos);
+        
         return evento;
     }
 

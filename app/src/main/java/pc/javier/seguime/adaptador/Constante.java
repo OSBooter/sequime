@@ -10,7 +10,7 @@ import pc.javier.seguime.BuildConfig;
 public final class Constante {
     public final static String version = BuildConfig.VERSION_NAME ;
 
-    public final static String userAgent = "seguime 2";
+    public final static String userAgent = "seguime 2";   // esto es usado para la versión del servidor (no identifica la versión del sistema)
     public final static String urlDonacion = "http://javim.000webhostapp.com/donacion/";
     public final static String urlBot = "http://t.me/seguimebot";
 
@@ -21,6 +21,8 @@ public final class Constante {
 
     public final static int zonaHorariaServidor = -3; // Argentina
 
-    public final static boolean versionCompleta = true;
+
+    public final static boolean versionConSMS = true;
+    public final static boolean versionCompleta = false;
 
 }

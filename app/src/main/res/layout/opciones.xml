@@ -26,6 +26,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/id_telegram"
                     android:layout_margin="5dp"
+                    android:textSize="@dimen/texto"
                     />
 
                 <EditText
@@ -36,6 +37,7 @@
                     android:background="@drawable/borderedondeado"
                     android:padding="10dp"
                     android:layout_margin="2dp"
+
                     />
 
 
@@ -45,6 +47,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/sms"
                 android:layout_margin="5dp"
+                android:textSize="@dimen/texto"
                 />
             <EditText
                 android:layout_width="match_parent"
@@ -66,6 +69,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/intervalo_actividad"
                     android:layout_margin="5dp"
+                android:textSize="@dimen/texto"
                     />
 
                 <EditText
@@ -86,6 +90,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/intervalo_inactividad"
                     android:layout_margin="5dp"
+                    android:textSize="@dimen/texto"
                     />
 
 
@@ -109,6 +114,7 @@
                 android:layout_height="wrap_content"
                 android:text="@string/intervalo_internet"
                 android:layout_margin="5dp"
+                android:textSize="@dimen/texto"
                 />
 
 
@@ -156,6 +162,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/rastreo"
                          android:padding="5dp"
+                         android:textSize="@dimen/texto"
                     />
 					
 					
@@ -177,6 +184,7 @@
                     android:layout_height="wrap_content"
 
                     android:text="@string/iniciarConElSistema" android:padding="5dp"
+                        android:textSize="@dimen/texto"
                      />
 					
 					
@@ -203,6 +211,7 @@
 
                     android:text="@string/activarconpantalla"
                     android:padding="5dp"
+                    android:textSize="@dimen/texto"
                     />
 
 
@@ -217,7 +226,7 @@
                         android:id="@+id/opciones_enviarInfoConexion"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:onClick="verificarRegistro"
+
                         />
 
 
@@ -226,6 +235,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/enviarInfo"
                         android:padding="5dp"
+                        android:textSize="@dimen/texto"
                         />
 
 
@@ -242,7 +252,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:onClick="verificarRegistro"
-                        android:enabled="false"
+                        android:enabled="true"
                         />
 
 
@@ -251,6 +261,8 @@
                         android:layout_height="wrap_content"
                         android:text="@string/conectarseRedesAbiertas"
                         android:padding="5dp"
+
+                        android:textSize="@dimen/texto"
                         />
 
 
@@ -265,7 +277,7 @@
                         android:id="@+id/opciones_permitirConfigurarSMS"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:onClick="verificarRegistro"
+
                         />
 
 
@@ -274,6 +286,7 @@
                         android:layout_height="wrap_content"
                         android:text="@string/permitirConfigurarSMS"
                         android:padding="5dp"
+                        android:textSize="@dimen/texto"
                         />
 
 

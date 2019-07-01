@@ -19,7 +19,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/sms"
                     android:padding="5dp"
-
+                    android:textSize="@dimen/texto"
                     />
 
                 <EditText
@@ -38,7 +38,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/id_telegram"
                     android:padding="5dp"
-
+                    android:textSize="@dimen/texto"
                     />
 
                 <EditText
@@ -58,6 +58,7 @@
                     android:layout_height="wrap_content"
                     android:text="@string/mensajealerta"
                     android:padding="5dp"
+                    android:textSize="@dimen/texto"
                     />
 
                 <EditText

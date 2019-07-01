@@ -62,7 +62,7 @@ public class ControlPantallaOpciones extends Control {
         pantalla.setPermitirConfigurarSMS(preferencias.getPermitirConfigurarSMS());
         pantalla.setConectarseRedesAbiertas(preferencias.getConectarRedesAbiertas());
 
-        if (!Constante.versionCompleta) {
+        if (!Constante.versionConSMS) {
             pantalla.setHabilitado(R.id.opciones_sms, false);
             pantalla.snack(R.string.versionIncompleta_txt);
             pantalla.setFondo(R.id.opciones_sms, pantalla.cuadroGrisRedondeando());
@@ -93,7 +93,17 @@ public class ControlPantallaOpciones extends Control {
 
 
     public void verificarRegistro () {
+
+        if (Constante.versionCompleta)
+            return;
+
+        if (pantalla.getConectarRedesAbiertas())
+            requiereVersionDonacion();
+
         if (getPreferencias().obtenerBoolean(Preferencias.TipoPreferencia.versionRegistrada))
+            return;
+
+        if (Constante.versionCompleta)
             return;
 
         if (pantalla.getIniciarConSistema())
@@ -108,6 +118,11 @@ public class ControlPantallaOpciones extends Control {
         pantalla.setIniciarConSistema(false);
         pantalla.setActivarConPantalla(false);
         pantalla.snack(R.string.requiereregistro);
+    }
+
+    private void requiereVersionDonacion () {
+        pantalla.setConectarseRedesAbiertas(false);
+        pantalla.snack(R.string.requieredonacion);
     }
 
     public void mostrarContactos () {
