@@ -49,7 +49,7 @@ Seguime es un proyecto para localizar un dispositivo con sistema operativo Andro
 
 Al no tener publicidad este proyecto se mantiene únicamente con donaciones.
 
-[![Donaciones](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](http://javim.000webhostapp.com/donacion)
+Realiza una [Donación](https://javim.000webhostapp.com/donacion) 
 
 ## Más información
 
