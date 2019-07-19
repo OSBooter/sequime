@@ -61,6 +61,7 @@ public class ControlPantallaOpciones extends Control {
         pantalla.setEnviarInfoConexion(preferencias.getEnviarDatosDeConexion());
         pantalla.setPermitirConfigurarSMS(preferencias.getPermitirConfigurarSMS());
         pantalla.setConectarseRedesAbiertas(preferencias.getConectarRedesAbiertas());
+        pantalla.setEnviarFotografias(preferencias.getEnviarFotografias());
 
         if (!Constante.versionConSMS) {
             pantalla.setHabilitado(R.id.opciones_sms, false);
@@ -88,6 +89,7 @@ public class ControlPantallaOpciones extends Control {
         preferencias.setEnviarDatosDeConexion(pantalla.getEnviarInfoConexion());
         preferencias.setPermitirConfigurarSMS(pantalla.getPermitirConfigurarSMS());
         preferencias.setConectarRedesAbiertas(pantalla.getConectarRedesAbiertas());
+        preferencias.setEnviarFotografias(pantalla.getEnviarFotografias());
 
     }
 
@@ -100,11 +102,12 @@ public class ControlPantallaOpciones extends Control {
         if (pantalla.getConectarRedesAbiertas())
             requiereVersionDonacion();
 
-        if (getPreferencias().obtenerBoolean(Preferencias.TipoPreferencia.versionRegistrada))
+        if (pantalla.getEnviarFotografias())
+            requiereVersionDonacion();
+
+        if (preferencias.getVersionRegistrada())
             return;
 
-        if (Constante.versionCompleta)
-            return;
 
         if (pantalla.getIniciarConSistema())
             versionNoRegistrada ();

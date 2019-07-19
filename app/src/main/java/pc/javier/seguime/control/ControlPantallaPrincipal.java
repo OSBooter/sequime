@@ -5,6 +5,7 @@ import android.view.MenuItem;
 import pc.javier.seguime.ActividadAyuda;
 import pc.javier.seguime.ActividadClave;
 import pc.javier.seguime.ActividadDesbloqueo;
+import pc.javier.seguime.ActividadImagenes;
 import pc.javier.seguime.ActividadOpciones;
 import pc.javier.seguime.ActividadPresentacion;
 import pc.javier.seguime.ActividadRegistros;
@@ -49,6 +50,8 @@ public class ControlPantallaPrincipal  extends Control {
         switch (opcion.getItemId()) {
 
             case R.id.menu_sesion:
+                if (consultarAplicacionBloqueada() == true)
+                    break;
                 if (preferencias.getSesionIniciada())
                     cerrarSesion();
                 else
@@ -60,17 +63,23 @@ public class ControlPantallaPrincipal  extends Control {
                 break;
 
             case R.id.menu_opciones:
-                iniciarActividad(ActividadOpciones.class);
+                if (consultarAplicacionBloqueada() == false)
+                    iniciarActividad(ActividadOpciones.class);
                 break;
 
             case R.id.menu_registros:
-                //if (consultarAplicacionBloqueada() == false)
-                iniciarActividad(ActividadRegistros.class);
+                if (consultarAplicacionBloqueada() == false)
+                    iniciarActividad(ActividadRegistros.class);
+                break;
+
+            case R.id.menu_imagenes:
+                if (consultarAplicacionBloqueada() == false)
+                    iniciarActividad(ActividadImagenes.class);
                 break;
 
             case R.id.menu_cuentaregresiva:
-                //if (consultarAplicacionBloqueada() == false)
-                iniciarActividad(ActividadRegresiva.class);
+                if (consultarAplicacionBloqueada() == false)
+                    iniciarActividad(ActividadRegresiva.class);
                 break;
 
             case R.id.menu_registraraplicacion:

@@ -102,6 +102,7 @@ public class ConexionHTTP implements Runnable {
 
 
 
+            // conexion.setRequestProperty("Content-Type", "\"multipart/form-data; boundary=&");
             // conexion.setRequestProperty("USER-AGENT", "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:49.0) Gecko/20100101 Firefox/49.0.2 Waterfox/49.0.2");
 
             //conexion.addRequestProperty("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");

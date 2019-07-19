@@ -14,11 +14,19 @@
 
 
         <item
-            android:title="@string/registros"
+            android:title= "@string/registros_coordenadas"
             android:icon="@drawable/android_map"
             android:id="@+id/menu_registros"
             android:onClick="menuClick"
             />
+
+        <item
+            android:title= "@string/registros_imagenes"
+            android:icon="@drawable/camera_retro"
+            android:id="@+id/menu_imagenes"
+            android:onClick="menuClick"
+            />
+
 
         <item
             android:title="@string/cuentaregresiva"

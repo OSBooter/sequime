@@ -1,7 +1,13 @@
 # Seguime 
-### [2.9 / 3.0]
+
+### [3.1] Julio 2019
+Modificado: Bloqueo - Cuando el bloqueo está activo impide el acceso a opciones y registros.
+Agregado: Integración con Cámara espía, envía fotografías al servidor (Requiere nueva versión del servidor).
+Agregado: Visor de fotografías.
+
+### [2.9 / 3.0] 
 Modificado: Tamaño de letra.
-Agregado: Integración con la aplicación WiFi Automagico.
+Agregado: Integración con la aplicación WiFi Automágico.
 
 ### [2.6]
 Modificado: url de donaciones

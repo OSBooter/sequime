@@ -1,6 +1,7 @@
 package pc.javier.seguime.vista;
 
 import android.app.Activity;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import org.osmdroid.views.MapView;
@@ -27,5 +28,8 @@ public class PantallaRegistros extends Pantalla {
     public ListView lista () {
         return (ListView) getView(R.id.registros_lista);
     }
+
+
+    public ImageView  imagen () { return (ImageView) getView(R.id.registros_imagen); }
 
 }

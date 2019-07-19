@@ -63,6 +63,9 @@ public class PantallaOpciones extends Pantalla {
         return getToggle(R.id.opciones_conectarseRedesAbiertas).isChecked();
     }
 
+    public boolean getEnviarFotografias () {
+        return getToggle(R.id.opciones_enviarFotografias).isChecked();
+    }
 
 
 
@@ -111,6 +114,10 @@ public class PantallaOpciones extends Pantalla {
 
     public void setConectarseRedesAbiertas (boolean valor) {
         setToggle(R.id.opciones_conectarseRedesAbiertas, valor);
+    }
+
+    public void setEnviarFotografias (boolean valor) {
+        setToggle(R.id.opciones_enviarFotografias, valor);
     }
 
 

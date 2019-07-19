@@ -1,11 +1,13 @@
 package pc.javier.seguime.adaptador;
 
 import android.content.Context;
-import utilidades.conexion.ConexionHTTP;
+
+import pc.javier.seguime.control.Imagen;
 import utilidades.basico.Evento;
 import utilidades.basico.FechaHora;
-import utilidades.conexion.InfoInternet;
 import utilidades.basico.MensajeRegistro;
+import utilidades.conexion.ConexionHTTP;
+import utilidades.conexion.InfoInternet;
 
 /**
  * Javier 2019.
@@ -170,6 +172,9 @@ public class Servidor {
         posicionHistorial,
 
         extra,
+
+        imagen,
+        verificacion,
     }
 
     public enum Comando {
@@ -216,4 +221,17 @@ public class Servidor {
     }
 
 
+
+    // imagen
+
+
+    public void agregarImagen (String imagen, String fecha, String codigo, String extra) {
+        
+
+    }
+
+    public void agregarImagen (Imagen imagen) {
+        
+
+    }
 }

@@ -10,10 +10,11 @@ public class EmisorDifusion extends utilidades.basico.EmisorDifusion {
 
     public EmisorDifusion(Context contexto) {
         super(contexto);
+        setPrefijo("seguime");
     }
 
 
-    public void emitirTodo () {
 
-    }
+    public void emitirCamara () { emitir( "CAMARA_ESPIA"); }
+    public void emitirWifi   () { emitir( "WIFI_AUTOMAGICO"); }
 }

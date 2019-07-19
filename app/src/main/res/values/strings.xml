@@ -23,9 +23,12 @@
 	<string name="iniciarConElSistema">Iniciar con el sistema</string>
 	<string name="activarconpantalla">Iniciar actividad al encender la pantalla</string>
 	<string name="enviarInfo">Enviar información de conexión</string>
-	<string name="conectarseRedesAbiertas">Conectarse a redes abiertas (Requiere WiFI Automagico)</string>
+	<string name="conectarseRedesAbiertas">Conectarse a redes abiertas (Requiere aplicación WiFI Automágico)</string>
     <string name="permitirConfigurarSMS">Permitir configurar SMS desde el servidor</string>
     <string name="permitirActivar">Permitir activar la aplicación desde el servidor (Requiere intervalo de conexión a internet)</string>
+
+	<string name="opcionesDeRastreo">Las siguientes opciones se activarán cuando el modo de rastreo esté activo</string>
+	<string name="enviarFotografias">Enviar fotografías (Requiere aplicación Cámara Espía)</string>
 
 	<string name="errorValidacion">Hay un error con los datos ingresados</string>
 
@@ -61,6 +64,9 @@
     <string name="salir">Salir</string>
 
 	<string name="velocidad">Velocidad</string>
+
+	<string name="registros_coordenadas">Registros de Coordenadas</string>
+	<string name="registros_imagenes">Registros de Imágenes</string>
 	
 
 	<string name="txt_bloqueado_alarma">No se puede detener el servicio cuando hay una alarma activada</string>

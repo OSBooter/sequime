@@ -27,13 +27,10 @@ public class ReceptorCoordenadasInternet extends ReceptorCoordenadas {
     protected void procesarCoordenada(Coordenada coordenada) {
         Servidor servidor = new Servidor( contexto);
 
-
-        // ver- / ésto debería estar en EnlaceEventos, y obtener el servidor por parametro
+        // ver- / ésto debería estar en EnlaceEventos, y obtener el servidor por parámetro
         EnlaceEventos enlaceEventos = new EnlaceEventos(contexto);
         servidor.setEvento(enlaceEventos.obtenerEventoConexionServidor());
-
         servidor.agregarCoordenada(coordenada);
-
         servidor.enviar();
     }
 

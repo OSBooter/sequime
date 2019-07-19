@@ -3,6 +3,8 @@ package pc.javier.seguime.adaptador;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import pc.javier.seguime.R;
+
 
 /**
  * Javier 2019.
@@ -128,7 +130,8 @@ public class Preferencias extends utilidades.basico.Preferencias {
 
         conexionInfo ("conexionInfo"),
         conexionTipo("conexionTipo"),
-        enviarDatosDeConexion ("enviarDatosDeConexion")
+        enviarDatosDeConexion ("enviarDatosDeConexion"),
+        enviarFotografias ("enviarFotografias")
 
         ;
 
@@ -276,5 +279,8 @@ public class Preferencias extends utilidades.basico.Preferencias {
 
     public boolean getConectarRedesAbiertas () { return obtenerBoolean(TipoPreferencia.conectarRedesAbiertas); }
     public void setConectarRedesAbiertas (boolean estado) { guardar (TipoPreferencia.conectarRedesAbiertas, estado); }
+
+    public boolean getEnviarFotografias () { return obtenerBoolean(TipoPreferencia.enviarFotografias); }
+    public void setEnviarFotografias (boolean estado) { guardar (TipoPreferencia.enviarFotografias, estado); }
 
 }

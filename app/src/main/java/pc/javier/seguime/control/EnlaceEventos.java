@@ -62,7 +62,7 @@ public class EnlaceEventos {
         agregarReceptorBaseDeDatos(claveEventos);
         agregarReceptorServidor (claveEventos);
         agregarReceptorSMS(claveEventos);
-        
+        agregarReceptorDifusion(claveEventos);
         return evento;
     }
 
@@ -125,6 +125,14 @@ public class EnlaceEventos {
     }
 
 
+
+    private void agregarReceptorDifusion (String claveEventos) {
+        Preferencias preferencias = new Preferencias(contexto);
+        if (preferencias.getConectarRedesAbiertas() == false)
+            return;
+        ReceptorCoordenadasDifusion receptorCoordenadasDifusion = new ReceptorCoordenadasDifusion(claveEventos, contexto);
+        evento.agregarReceptor(receptorCoordenadasDifusion);
+    }
 
 
 

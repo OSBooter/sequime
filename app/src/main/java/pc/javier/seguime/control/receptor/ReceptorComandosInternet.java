@@ -80,6 +80,9 @@ public class ReceptorComandosInternet extends ReceptorEventos{
             case "marcar":
                 marcar(parametro);
                 break;
+            case "marcarimagen":
+                marcarimagen(parametro);
+                break;
             case "bloqueo":
                 bloqueo(parametro);
                 break;
@@ -140,6 +143,12 @@ public class ReceptorComandosInternet extends ReceptorEventos{
     private void marcar (String codigo) {
         BD bd = new BD (activity);
         bd.coordenadaMarcar(codigo);
+        bd.cerrar();
+    }
+
+    private void marcarimagen (String codigo) {
+        BD bd = new BD (activity);
+        bd.fotoMarcar(codigo);
         bd.cerrar();
     }
 

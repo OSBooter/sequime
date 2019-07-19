@@ -50,6 +50,10 @@
             android:label="@string/registros"
             android:parentActivityName=".MainActivity" />
         <activity
+            android:name=".ActividadImagenes"
+            android:label="@string/registros"
+            android:parentActivityName=".MainActivity" />
+        <activity
             android:name=".ActividadRegresiva"
             android:label="@string/alarma"
             android:parentActivityName=".MainActivity" />
@@ -93,6 +97,13 @@
         <receiver android:name=".control.difusion.UsuarioActivo">
             <intent-filter>
                 <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+
+
+        <receiver android:name=".control.difusion.CamaraEspia">
+            <intent-filter>
+                <action android:name="pc.javier.camara_espia.CAMARA_ESPIA" />
             </intent-filter>
         </receiver>
 

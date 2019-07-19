@@ -14,7 +14,7 @@ public class BDConexion extends SQLiteOpenHelper {
     // conexión a la base de datos de la aplicación
 
     public BDConexion(Context context) {
-        super(context, "BaseDeDatos", null, 2);
+        super(context, "BaseDeDatos", null, 3);
     }
 
     @Override
@@ -22,6 +22,7 @@ public class BDConexion extends SQLiteOpenHelper {
         // crea las tablas usada para almacenar los datos recolectados,
         // para luego hacer uso de ellas (enviarla a servidores)
         sqLiteDatabase.execSQL(BDCoordenada.TABLA);
+        sqLiteDatabase.execSQL(BDFoto.TABLA);
         //agregar Wifi y fotos
 
 
@@ -30,7 +31,10 @@ public class BDConexion extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         // la tabla no se borra, así se puede recuperar la información
-        sqLiteDatabase.execSQL(BDCoordenada.RENOMBRARTABLA);
+        //sqLiteDatabase.execSQL(BDCoordenada.RENOMBRARTABLA);
         sqLiteDatabase.execSQL(BDCoordenada.TABLA);
+
+
+        sqLiteDatabase.execSQL(BDFoto.TABLA);
     }
 }
