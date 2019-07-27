@@ -44,6 +44,13 @@
             />
 
         <item
+            android:title="@string/boton_de_panico"
+            android:icon="@drawable/help_buoy"
+            android:id="@+id/menu_panico"
+            android:onClick="menuClick"
+            />
+
+        <item
             android:title="@string/bloquear"
             android:icon="@drawable/locked"
             android:id="@+id/menu_bloquear"
@@ -62,7 +69,7 @@
 
         <item
             android:title="@string/ayuda"
-            android:icon="@drawable/help_buoy"
+            android:icon="@drawable/help"
             android:id="@+id/menu_ayuda"
             android:onClick="menuClick"
             />

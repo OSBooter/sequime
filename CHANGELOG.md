@@ -1,5 +1,8 @@
 # Seguime 
 
+### [3.2] Julio 2019
+Agregado: Compatibilidad con Ripple (https://guardianproject.info/apps/info.guardianproject.ripple/)
+
 ### [3.1] Julio 2019
 Modificado: Bloqueo - Cuando el bloqueo está activo impide el acceso a opciones y registros.
 Agregado: Integración con Cámara espía, envía fotografías al servidor (Requiere nueva versión del servidor).

@@ -226,12 +226,21 @@ public class Servidor {
 
 
     public void agregarImagen (String imagen, String fecha, String codigo, String extra) {
-        
+        if (imagen.isEmpty())
+            return;
+        FechaHora fechaHora = new FechaHora(fecha);
+        agregarParametro (Servidor.Parametro.fecha, fechaHora.zonaEspecifica(Constante.zonaHorariaServidor).obtenerFechaHoraFormatoBD());
+        agregarParametro (Servidor.Parametro.codigo, codigo);
+        agregarParametro (Servidor.Parametro.extra, extra);
+        agregarParametro (Servidor.Parametro.verificacion, String.valueOf(imagen.length()));
+        agregarParametro (Servidor.Parametro.imagen, imagen);
 
     }
 
     public void agregarImagen (Imagen imagen) {
-        
+        if (imagen == null)
+            return;
+        agregarImagen(imagen.getImagen(), String.valueOf(imagen.getFechaHora()), imagen.getCodigo(), "");
 
     }
 }

@@ -3,8 +3,6 @@ package pc.javier.seguime.adaptador;
 import android.content.Context;
 import android.content.SharedPreferences;
 
-import pc.javier.seguime.R;
-
 
 /**
  * Javier 2019.
@@ -131,7 +129,11 @@ public class Preferencias extends utilidades.basico.Preferencias {
         conexionInfo ("conexionInfo"),
         conexionTipo("conexionTipo"),
         enviarDatosDeConexion ("enviarDatosDeConexion"),
-        enviarFotografias ("enviarFotografias")
+        enviarFotografias ("enviarFotografias"),
+
+
+        panicoPermitir ("panicoPermitir"),
+        panicoBlouear ("panicoBloquear"),
 
         ;
 
@@ -282,5 +284,14 @@ public class Preferencias extends utilidades.basico.Preferencias {
 
     public boolean getEnviarFotografias () { return obtenerBoolean(TipoPreferencia.enviarFotografias); }
     public void setEnviarFotografias (boolean estado) { guardar (TipoPreferencia.enviarFotografias, estado); }
+
+
+
+    public boolean getPanicoPermitir () { return obtenerBoolean(TipoPreferencia.panicoPermitir); }
+    public void setPanicoPermitir (boolean estado) { guardar (TipoPreferencia.panicoPermitir, estado); }
+
+    public boolean getPanicoBloquear () { return obtenerBoolean(TipoPreferencia.panicoBlouear); }
+    public void setPanicoBloquear (boolean estado) { guardar (TipoPreferencia.panicoBlouear, estado); }
+
 
 }

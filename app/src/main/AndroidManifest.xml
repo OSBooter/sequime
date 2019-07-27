@@ -77,6 +77,39 @@
 
 
 
+
+
+
+
+
+        <activity
+            android:name=".control.panico.PanicoActivador"
+            android:theme="@android:style/Theme.NoDisplay"
+            android:noHistory="true"
+            >
+            <intent-filter>
+                <action android:name="info.guardianproject.panic.action.TRIGGER" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+
+        <activity
+            android:name=".control.panico.ActividadPanicoOpciones"
+            android:label="@string/boton_de_panico"
+            >
+
+            <intent-filter>
+                <action android:name="info.guardianproject.panic.action.CONNECT" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+
+
+
+
+
         <service
             android:name=".control.ServicioAplicacion"
             android:enabled="true"

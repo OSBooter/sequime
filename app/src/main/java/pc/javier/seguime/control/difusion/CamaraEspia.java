@@ -23,7 +23,7 @@ public class CamaraEspia extends BroadcastReceiver {
 
         Preferencias preferencias = new Preferencias(contexto);
 
-        preferencias.setMensaje("Fotografía recibida - Requiere versión donación");
-
+		preferencias.setMensaje("Fotografía recibida - Requiere versión donación");
+ 
     }
 }

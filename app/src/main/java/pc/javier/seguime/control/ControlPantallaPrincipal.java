@@ -15,6 +15,7 @@ import pc.javier.seguime.R;
 import pc.javier.seguime.adaptador.BD;
 import pc.javier.seguime.adaptador.Constante;
 import pc.javier.seguime.adaptador.Preferencias;
+import pc.javier.seguime.control.panico.ActividadPanicoOpciones;
 import pc.javier.seguime.vista.PantallaPrincipal;
 import utilidades.basico.Dialogo;
 import utilidades.basico.EnlaceExterno;
@@ -84,6 +85,11 @@ public class ControlPantallaPrincipal  extends Control {
 
             case R.id.menu_registraraplicacion:
                 iniciarActividad(ActividadClave.class);
+                break;
+
+            case R.id.menu_panico:
+                if (consultarAplicacionBloqueada() == false)
+                    iniciarActividad(ActividadPanicoOpciones.class);
                 break;
 
             case R.id.menu_donar:

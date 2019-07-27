@@ -35,7 +35,8 @@ public class ControlPantallaImagenes extends Control {
         this.pantalla = pantalla;
         this.contexto = pantalla.getActivity();
 
-        
+        cargarVista();
+        cargarListener();
     }
 
 

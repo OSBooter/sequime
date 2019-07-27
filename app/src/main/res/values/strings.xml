@@ -34,6 +34,10 @@
 
     <string name="espere">Por favor espere...</string>
 
+	<string name="permitir_activar_boton_panico">Permitir activación </string>
+
+    <string name="boton_de_panico">Botón de pánico</string>
+
 
 
 	<string name="sesion_clavedesigual">Las claves NO coinciden</string>

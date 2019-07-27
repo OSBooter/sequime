@@ -6,7 +6,7 @@ import pc.javier.seguime.R;
 import pc.javier.seguime.adaptador.Pantalla;
 
 /**
- * Created by kebukai on 21/04/2019.
+ * Created by Javier on 21/04/2019.
  */
 
 public class PantallaClave extends Pantalla {
