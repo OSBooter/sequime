@@ -33,7 +33,7 @@ public class UsuarioActivo extends BroadcastReceiver {
         if (servicios.activo(servicio))
             contexto.stopService(intentS);
 
-        contexto.startActivity(intentS);
+        contexto.startService(intentS);
 
     }
 }
