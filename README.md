@@ -13,7 +13,10 @@ está tu dispositivo.
 * Opción para bloquear la aplicación.
 * Envío de información sobre la red a la que está conectado el dispositivo.
 * Cuentas fáciles de crear sin solicitar datos personales.
-* Conecta a redes abiertas (Requiere versión completa y la aplicación WiFi Automagico).
+* Conecta a redes abiertas (Requiere versión donación y la aplicación WiFi Automágico disponible en el sitio).
+* Envía fotografías al servidor (Requiere versión donación y la aplicación Cámara Espía disponible en el sitio).
+* Opción para activar con el botón de pánico Ripple de Guardian Proejct, más información en https://guardianproject.info/apps/info.guardianproject.ripple/
+
 
 
 Es solo un proyecto, por lo tanto solo podrá usarse con fines experimentales y
@@ -25,15 +28,11 @@ no con fines de seguridad.
 
 ## Capturas
 
-<img src="metadata/es-AR/images/phoneScreenshots/principal.jpg" alt="Captura de Pantalla" height="400">
+<img src="metadata/es-AR/images/phoneScreenshots/opciones.jpg" alt="Captura de Pantalla" height="400">
 <img src="metadata/es-AR/images/phoneScreenshots/menu.jpg" alt="Captura de Pantalla" height="400">
 <img src="metadata/es-AR/images/phoneScreenshots/registros.jpg" alt="Captura de Pantalla" height="400">
 <img src="metadata/es-AR/images/phoneScreenshots/temporizador.jpg" alt="Captura de Pantalla" height="400">
-
-<img src="metadata/en-US/images/phoneScreenshots/principal2.jpg" alt="Captura de Pantalla" height="200">
-<img src="metadata/en-US/images/phoneScreenshots/menu2.jpg" alt="Captura de Pantalla" height="200">
-<img src="metadata/en-US/images/phoneScreenshots/registros2.jpg" alt="Captura de Pantalla" height="200">
-<img src="metadata/en-US/images/phoneScreenshots/temporizador2.jpg" alt="Captura de Pantalla" height="200">
+<img src="metadata/es-AR/images/phoneScreenshots/ripple.jpg" alt="Captura de Pantalla" height="400">
 
 
 
