@@ -1,5 +1,8 @@
 # Seguime 
 
+### [3.4] Julio 2019
+Modificado: Idioma
+
 ### [3.2] Julio 2019
 Agregado: Compatibilidad con Ripple (https://guardianproject.info/apps/info.guardianproject.ripple/)
 

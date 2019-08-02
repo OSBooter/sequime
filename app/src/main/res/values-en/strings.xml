@@ -1,229 +1,254 @@
 <resources>
-	<string name="app_name">Seguime</string>
+	<string name = "app_name">Seguime</string>
 
-	<string name="traducidopor">Javier</string>
-
-	<string name="menu_abrir">Menú</string>
-	<string name="menu_cerrar">Close Menú</string>
-
-	<string name="servidor">Server</string>
-	<string name="usuario">User</string>
-	<string name="clave">Password</string>
-	<string name="intervalo_inactividad">Idle interval (in minutes)</string>
-	<string name="intervalo_actividad">Activity interval (in minutes)</string>
-	<string name="sms">SMS</string>
-	<string name="id_telegram">Chat_ID Telegram (NO @USER_ID)</string>
-	<string name="rastreo">Tracking (send messages)</string>
-    <string name="telegram_bot">Telegram BOT</string>
-	<string name="iniciarConElSistema">Start on boot</string>
-	<string name="errorValidacion">There is an error</string>
-	<string name="activarconpantalla">Start activity when screen on</string>
+	<string name = "traducidopor">Javier Martínez (usando traductor)</string>
 
 
-    <string name="espere">Please wait... ️</string>
+	<string name = "menu_abrir">Menu</string>
+	<string name = "menu_cerrar">Close Menu</string>
 
-	<string name="sesion_clavedesigual">Repeat password</string>
-	<string name="sesion_clavecorta">Password is too short</string>
-	<string name="sesion_usuariocorto">User name is too short</string>
-	<string name="sesion_sinservidor">Need a url server</string>
+	<string name = "bloquear">Block</string>
+	<string name = "unlock">Unlock</string>
 
-	<string name="cerrarsesion_mensajeadvertencia">All data will be erased. Are you sure?</string>
+	<string name = "servidor">Server</string>
+	<string name = "usuario">User</string>
+	<string name = "clave">Key</string>
+	<string name = "intervalo_inactividad">Idle interval (in seconds)</string>
+	<string name = "intervalo_actividad">Activity Interval (in seconds)</string>
+	<string name = "intervalo_internet">Interval between internet connections</string>
+	<string name = "sms">SMS</string>
+	<string name = "id_telegram">Chat_ID Telegram (NOT @USER)</string>
+	<string name = "rastreo">Tracking (Sends Messages)</string>
+	<string name = "telegram_bot">Telegram Bot</string>
+	<string name = "iniciarConElSistema">Start with system</string>
+	<string name = "activarconpantalla">Start activity when turning on the screen(User log in)</string>
+	<string name = "enviarInfo">Send connection information</string>
+	<string name = "conectarseRedesAbiertas">Connect to open networks (Requires Wifi Automágico app)</string>
+	<string name = "permitirConfigurarSMS">Allow SMS to be configured from server</string>
+	<string name = "permitirActivar">Allow to activate the application from the server (Requires internet connection interval)</string>
 
-	<string name="latitud">Latitude</string>
-	<string name="longitud">Longitude</string>
-	<string name="fechahora">Date and Time</string>
-	<string name="fecha">Date</string>
-	<string name="hora">Time</string>
-	<string name="infoextra">Extra Info</string>
+	<string name = "opcionesDeRastreo">The following options will be enabled when trace mode is active</string>
+	<string name = "enviarFotografias">Send Photos (Requires Cámara Espía App)</string>
 
-	<string name="contactos">Contacts</string>
-	
-	
-	<string name="configuracion">Settings</string>
-	<string name="opciones">Options</string>
-	<string name="guardar">Save</string>
-	<string name="cancelar">Cancel</string>
-	<string name="editar">Edit</string>
-	<string name="registros">Records</string>
-	<string name="cerrar_sesion">Logoff</string>
-	<string name="salir">Exit</string>
+	<string name = "errorValidacion">There is an error with the data entered</string>
 
-	<string name="velocidad">Speed</string>
-	
-		
-	<string name="txt_bloqueado_alarma">Service can not be stoped when there is an countdown alarm activated</string>
-	<string name="alarma">Alarm (Alert Message)</string>
-	<string name="alarmamensaje">May be I need help, try contact to me now!</string>
-	<string name="iniciar">Start</string>
-	<string name="detener">Stop</string>
-	<string name="mensajealerta">Alert Message</string>
+	<string name = "espere">Please wait... </string>
 
-	<string name="minuto">Minute</string>
-	<string name="segundo">Second</string>
+	<string name = "permitir_activar_boton_panico">Allow activation </string>
 
-	<string name="principal_alarma">alarm activated</string>
-	<string name="principal_rastreo">Tracking activated</string>
-	<string name="principal_aplicacion">This application is activated</string>
-	<string name="principal_internet">There is an internet connection</string>
-    <string name="principal_alarmaservidor">There is a alarm copy on server</string>
-
-	
-	
-	<string name="txt_servicio_activo">Nice! The application is enabled:-)</string>
-	<string name="txt_servicio_inactivo">The application is disabled, press the button to activate it</string>
-	<string name="txt_bloqueado">At this time the application is locked</string>
-
-	<string name="activar_aplicacion">¡Seguime!</string>
-	<string name="desactivar_aplicacion">Seguime</string>
-
-	
-	<string name="cuentaregresiva">Countdown</string>
-	
-	<string name="ayuda">Help</string>
-	<string name="cerrar">close</string>
-
-	
-	
-		
-	
-	
-	<string name="iniciarsesion">login</string>
-	<string name="registrarse">join in</string>
-	<string name="repetirclave">Repeat password (do not use real passwords)</string>
-	<string name="ssl">Secure Connection SSL</string>
-
-
-	<string name="registrarAplicacion">Register Version</string>
-	<string name="nombre">Name</string>
-	<string name="versionRegistrada">Registered Version</string>
-    <string name="claveIncorrecta">Wrong Password</string>
-	<string name="requiereregistro">Registered version is required</string>
-	<string name="txt_registrodeversion">Register is free, get you key on website, personal information is not required</string>
-
-
-	<string name="conectando">Connecting...</string>
-	<string name="errorconexion">Connection Error</string>
-	<string name="enviando">Sending data....</string>
-	<string name="recibiendo">Receiving data...</string>
-	<string name="conexionfinalizada">Correct connection... but nothing happened.</string>
+	<string name = "boton_de_panico">Panic button</string>
 
 
 
-    <string name="presentacion_dispositivo">Encontrá tu dispositivo</string>
-    <string name="presentacion_servidor">Usá tu propio Serviddor</string>
-    <string name="presentacion_alerta">Enviá mensajes de alerta</string>
-    <string name="presentacion_remoto">Configurá la aplicación de forma remota</string>
+	<string name = "sesion_clavedesigual">Keys DO NOT match</string>
+	<string name = "sesion_clavecorta">The keys are very short</string>
+	<string name = "sesion_usuariocorto">The username is very short</string>
+	<string name = "sesion_sinservidor">You must specify a server</string>
+
+	<string name = "cerrarsesion_mensajeadvertencia">This will delete all data. Are you sure? </string>
+
+
+	<string name = "latitud">Latitude</string>
+	<string name = "longitud">Longitude</string>
+	<string name = "fechahora">Date and Time</string>
+	<string name = "fecha">Date</string>
+	<string name = "hora">Time</string>
+	<string name = "infoextra">Extra information</string>
+
+	<string name = "contactos">Contacts</string>
+
+	<string name = "configuracion">Configuration</string>
+	<string name = "opciones">Options</string>
+	<string name = "guardar">Save</string>
+	<string name = "cancelar">Cancel</string>
+	<string name = "editar">Edit</string>
+	<string name = "registros">Logs</string>
+	<string name = "cerrar_sesion">Logout</string>
+	<string name = "salir">Exit</string>
+
+	<string name = "velocidad">Speed</string>
+
+	<string name = "registros_coordenadas">Coordinate Records</string>
+	<string name = "registros_imagenes">Image Logs</string>
+
+
+
+	<string name = "txt_bloqueado_alarma">Service cannot be stopped when an alarm is activated</string>
+	<string name = "alarma">Alarm (Alert Message)</string>
+	<string name = "alarmamensaje">At this time you may need help, contact me urgently</string>
+	<string name = "iniciar">Start</string>
+	<string name = "detener">Stop</string>
+	<string name = "mensajealerta">Alert Message</string>
+
+	<string name = "minuto">Minute</string>
+	<string name = "segundo">Second</string>
+
+	<string name = "principal_alarma">The alarm activated</string>
+	<string name = "principal_rastreo">Tracker is On</string>
+	<string name = "principal_aplicacion">The application is enabled</string>
+	<string name = "principal_internet">There is an internet connection</string>
+	<string name = "principal_alarmaservidor">There is a copy of the alarm on the server</string>
 
 
 
 
-    <string name="txt_ayuda_descripcion">
-		Seguime te permite rastrear tu dispositivo, 
-		recolecta información del GPS y la almacena para luego poder enviarlas a tu servidor.
-		Desde el servidor se puede ver los registros en un mapa y ver donde esta (o estuvo) el dispositivo.
-		El servidor puede ser el de un amigo, familiar o el tuyo, 
-		podes montar tu propio servidor para mayor privacidad de tus datos.
-		Además incluye un temporizador que te permite programar en que momento la aplicación activará su modo de rastreo 
-		y adicionalmente enviar un mensaje de ayuda.
-		Cuando la aplicación esta en modo de rastreo enviara por SMS o Telegram mensajes con la ubicación.
+	<string name = "txt_servicio_activo">Okay! The application is Enabled :-)</string>
+	<string name = "txt_servicio_inactivo">The application is disabled, press the button to activate it</string>
+	<string name = "txt_bloqueado">At this point the application is blocked</string>
+
+	<string name = "activar_aplicacion">¡Seguime!</string>
+	<string name = "desactivar_aplicacion">Seguime</string>
+
+	<string name = "cuentaregresiva">Countdown</string>
+
+	<string name = "ayuda">Help</string>
+	<string name = "cerrar">Close</string>
+
+
+
+
+
+
+	<string name = "iniciarsesion">Login</string>
+	<string name = "registrarse">Register</string>
+	<string name = "repetirclave">Repeat key (DO NOT USE real keys)</string>
+	<string name = "ssl">SSL secure connection</string>
+
+	<string name = "registrarAplicacion">Register Version</string>
+	<string name = "nombre">Name</string>
+	<string name = "versionRegistrada">Registered Version</string>
+	<string name = "claveIncorrecta">Incorrect key</string>
+	<string name = "requiereregistro">Requires FREE registration, visit the website</string>
+	<string name = "txt_registrodeversion">Registration is FREE, visit the website and get your key, does not require personal information</string>
+
+	<string name = "requiresforgivenacion">Requires donation version, visit website</string>
+
+
+
+	<string name = "conectando">Connecting... </string>
+	<string name = "errorconexion">Connection error</string>
+	<string name = "enviando">Sending data.... </string>
+	<string name = "recibiendo">Receiving data... </string>
+	<string name = "conexionfinalizada">Connection complete. </string>
+
+
+
+
+	<string name = "presentacion_dispositivo">Find your device</string>
+	<string name = "presentacion_servidor">Use your own Server</string>
+	<string name = "presentacion_alerta">Send alert messages</string>
+	<string name = "presentacion_remoto">Set up the application remotely</string>
+
+
+
+	<string name = "txt_ayuda_descripcion">
+	Seguime allows you to track your device,
+	collects GPS information and stores it for later sending to your server.
+	From the server you can view the logs on a map and see where the device is (or was).
+	The server can be that of a friend, family member or yours,
+	you can mount your own server for greater privacy of your data.
+	It also includes a timer that allows you to program when the app will activate its tracking mode
+	and additionally send a message of help.
+	When the app is in tracking mode it will send sms or Telegram messages with the location.
 	</string>
-	
-	<string name="txt_advertencia_proyecto">
-		This is a project, it is not (and not pretends to be) a security application,
-		it is only for experimental use.
-		The developer (or developers and collaborators) 
-		are not and will not be responsible for the use or misure of these programs
-		(applications, website, source codes, etc.).
-	
-		Esto es un proyecto, no es (ni prende ser) una aplicación de seguridad, 
-		es solo para uso experimental.
-		El desarrollador (o desarrolladores y colaboradores) 
-		no son ni serán responsables por el uso o mal uso de estos programas 
-		(aplicaciones, sitio web, códigos fuentes, etc.).
-	</string>
-	
-	
 
-	<string name="txt_licencia">This program is free software: You can redistribute it and/or modify
-	It under the terms of the GNU General Public License as published by
-	The Free Software Foundation, either version 3 of the License, or
+	<string name = "txt_advertencia_proyecto">
+	This is a project, it is not (or is not intended to be) a security application,
+	it is for experimental use only.
+	The developer (or developers and contributors)
+	are not and will not be liable for the use or misuse of these programs
+	(applications, website, source codes, etc.).
+	</string>
+
+
+
+	<string name = "txt_licencia">
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
 	(at your option) any later version. \n
 
 	This program is distributed in the hope that it will be useful,
-	But WITHOUT ANY warranty; Without even the implied warranty of
-	MERCHANTABILITY or FITNESS for A PARTICULAR PURPOSE. See the
+	but WITHOUT ANY WARRANTY; without even the warranty implied
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 	GNU General Public License for more details. \n
 
 	You should have received a copy of the GNU General Public License
-	Along with this program. If not, see http://www.gnu.org/licenses/
+	along with this program. If not, see http://www.gnu.org/licenses/
 	</string>
 
-		
-	
-	
-	<string name="dona">Make a donation:)</string>
-	<string name="sitioweb">Go to Web site</string>
-	<string name="txt_donacion">If you like the application you can collaborate with a donation. \n
-	Remember that this application has no publicity, no sponsor, no trackers, so it depends solely on the collaboration of users.
 
+
+
+
+
+	<string name = "dona">Make a Donation :)</string>
+	<string name = "sitioweb">Go to website</string>
+	<string name = "txt_donacion">
+	If you like the App you can collaborate with a donation.
+	Please note that this Application has no advertising, sponsor, or trackers, therefore it depends solely on the collaboration of users.
 	</string>
 
-	<string name="txt_ayuda_opciones">You will see that it is not so complicated, you have the following options: \n
+	<string name = "txt_colaboracion_desarrolladores">
+	Do you like free apps?. \n
+	You can collaborate by making donations to developers so they can continue programming your favorite apps. \n
+	</string>
+
+	<string name = "txt_ayuda_opciones">
+	You will see that it is not that complicated, you have the following options:
 	\n
 
-	SMS: \n
+	SMS:
 	It is a phone number that you can choose for the application to send coordinates by SMS. \n
-	SMS will only be sent if the tracking option is enabled. \n
-	To avoid expenses I recommend not using this option if you are using the Seguime server, use this option only if you are using your own server, or a secure server \n
+	SMS will only be sent if tracking is enabled. \n
+	To avoid expenses I recommend you DO NOT USE THIS OPTION if you are using the Tracking server, use this option ONLY if you are using your own server, or a secure server
 	\n
-	Telegram ID: \n
-	is a number identifier of Telegram, is not the @ID_USUARIO, to use this option visit the bot @seguimebot and greet it, will give you your ID number, then with that number the bot can send coordinates to that account Telegram. \n
+	Telegram ID:
+	It is a Telegram identifier number, NOT THE @ID_USUARIO, to use this option visit the bot @seguimebot and say hello, it will give you your ID number, then with that number the bot will be able to send coordinates to that Telegram account. \n
 	\n
-	Activity range: \n
-	During this period the application will be working completely, locating coordinates and making connections to Internet, a very small value may not achieve coordinates if you have little GPS coverage, a very high value can consume a lot of battery \n
-	For the application to be constantly on (and not for time intervals) set any time interval to 0 (zero) \n
+	Activity Interval:
+	During this period the Application will be fully functioning, locating coordinates and making internet connections, a very small value may not be able to obtain coordinates if you have little GPS coverage, a very high value can consume a lot of battery
+	In order for the application to be constantly on (and not by time intervals) set any time interval to 0 (zero)
 	\n
-	Idle interval: \n
-	During this period the application will be resting, do not make Internet connections or locate coordinates, a rest is used to save battery, a very small value may consume a lot of battery, a very high value will hinder the purpose of the Application \n
-	For the application to be constantly on (and not for time intervals) set any time interval to 0 (zero) \n
+	Idle Interval:
+	During this period the Application will be resting, will not make internet connections or locate coordinates, a rest serves to save battery, a very small value may consume a lot of battery, a very high value will hinder the purpose of the app
+	In order for the application to be constantly on (and not by time intervals) set any time interval to 0 (zero)
 	\n
-	Tracking: \n
-	When this option is enabled the application will send messages by Telegram and SMS each time you find a new coordinate. This option can be enabled from the Web site therefore for your security and to avoid expenses do not configure SMS unless you are using your own server \n
-	\n
-	\n
-	I hope you can use this help
+	Tracking:
+	When this option is enabled the application will send messages by Telegram and SMS each time it finds a new coordinate. This option can be enabled from the website therefore for your security and to avoid expenses do not configure SMS unless you are using your own server
 	\n
 	\n
+	I hope you find this help useful :)
 	\n
-
-	</string>
-
-	
-	
-	<string name="txt_ayuda_regresiva">
-        Ayuda del temporizador: \n
-		\n
-		Te permite programar una cuenta regresiva, una vez activada hará lo siguiente: \n
-		1. Configurara el numero de teléfono para enviar mensajes de texto. \n
-		2. Dejara la aplicación en modo activado, solo se podrá desactivar la aplicación si no hay temporizadores programados. \n
-		3. Enviara una copia de la cuenta regresiva al servidor. \n
-		 \n
-		Al finalizar la cuenta regresiva activara una alarma que hará lo siguiente: \n
-		1. Pondrá la aplicación en modo de rastreo. \n
-		2. Enviara un SMS programado con el texto elegido. \n
-		3. El servidor enviara mensajes por Telegram.  \n
-		 \n
+	\n
+	\n
 	</string>
 
 
-	
-	
-	<string name="txt_firma">
-        Made in Argentina by Javier Martínez
-    </string>
-    <string name="bloquear">Lock</string>
-	<string name="desbloquear">Unlock</string>
-	<string name="intervalo_internet">Internet connection interval</string>
+
+
+	<string name = "txt_ayuda_regresiva">
+	Timer Help:
+	\n
+	It allows you to schedule a countdown, once activated it will do the following:
+	1. Set the phone number to send text messages. \n
+	2. Leave the app in activated mode, the application can only be disabled if no timers are programmed. \n
+	3. Send a copy of the countdown to the server. \n
+	\n
+	At the end of the countdown, you will trigger an alarm that will do the following:
+	1. It will put the application into tracking mode. \n
+	2. Send a programmed SMS with the chosen text. \n
+	3. The server will send messages via Telegram.  \n
+	\n
+	</string>
+
+
+
+	<string name = "txt_firma">
+	Made in Argentina by Javier Martínez
+	</string>
+
+	<string name = "versionIncompleta_txt">Some options are not available because you are using an incomplete version, visit the website to download the full version</string>
 
 
 </resources>
