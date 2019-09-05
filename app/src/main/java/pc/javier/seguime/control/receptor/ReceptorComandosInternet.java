@@ -68,6 +68,10 @@ public class ReceptorComandosInternet extends ReceptorEventos{
             case "mensajeestado":
                 mensajeEstado (parametro);
                 break;
+
+            case "zonahoraria":
+                zonaHoraria (parametro);
+                break;
         }
 
 
@@ -188,6 +192,11 @@ public class ReceptorComandosInternet extends ReceptorEventos{
     private void telegram (String numero) {
         preferencias.setIdTelegram(numero);
         pantallaPrincipal.mostrarMensajePrincipal("ID Telegram Modificado");
+    }
+
+
+    private void zonaHoraria (String numero) {
+        // preferencias.setZonaHoraria(entero(numero));
     }
 
 

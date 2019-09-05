@@ -1,4 +1,8 @@
-# Seguime 
+# Seguime
+
+### [4.0] Agosto 2019
+Agregado: Activación remota del modo Rastreo por SMS.
+Modificado: Zonas horarias. (Requiere actualización del servidor).
 
 ### [3.4] Julio 2019
 Modificado: Idioma
@@ -11,7 +15,7 @@ Modificado: Bloqueo - Cuando el bloqueo está activo impide el acceso a opciones
 Agregado: Integración con Cámara espía, envía fotografías al servidor (Requiere nueva versión del servidor).
 Agregado: Visor de fotografías.
 
-### [2.9 / 3.0] 
+### [2.9 / 3.0]
 Modificado: Tamaño de letra.
 Agregado: Integración con la aplicación WiFi Automágico.
 
@@ -63,7 +67,7 @@ Agregado: Botón para acceder al menú lateral.
 ### [1.1] - 10 de Julio de 2018
 Agregado: Elimina datos al cerrar sesión.
 Agregado: Pregunta antes de cerrar sesión.
-Modificado: Envía SMS con enlaces OpenStreetMap y coordenadas 
+Modificado: Envía SMS con enlaces OpenStreetMap y coordenadas
 
 ### [1.0] - 8 de Julio de 2018
 Modificado: compatible con Android 4.0.
@@ -75,7 +79,7 @@ Modificado: Diseño del Menú Principal y mensajes recibidos.
 Agregado: Iniciar con el sistema.
 Agregado: Diseño pantalla principal en modo apaisado.
 Correcciones: Recepción de datos por parte del servidor.
-Correcciones: Zona horaria compatibles entre el dispositivo y el servidor. 
+Correcciones: Zona horaria compatibles entre el dispositivo y el servidor.
 
 ### [0.8] - 30 Junio 2018
 Correcciones: Mejora en la estabilidad.

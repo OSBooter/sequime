@@ -67,6 +67,12 @@ public class PantallaOpciones extends Pantalla {
         return getToggle(R.id.opciones_enviarFotografias).isChecked();
     }
 
+    public boolean getActivarSMS () {
+        return getToggle(R.id.opciones_permitirActivarSMS).isChecked();
+    }
+
+    // public int getZonaHoraria () { return entero(getTexto(R.id.opciones_zonahoraria)); }
+
 
 
     // sets -
@@ -119,6 +125,12 @@ public class PantallaOpciones extends Pantalla {
     public void setEnviarFotografias (boolean valor) {
         setToggle(R.id.opciones_enviarFotografias, valor);
     }
+
+    public void setActivarSMS (boolean valor) {
+        setToggle(R.id.opciones_permitirActivarSMS, valor);
+    }
+
+    // public void setZonaHoraria (String valor) { setTextView(R.id.opciones_zonahoraria, valor); }
 
 
 }

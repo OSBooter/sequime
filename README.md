@@ -16,6 +16,7 @@ está tu dispositivo.
 * Conecta a redes abiertas (Requiere versión donación y la aplicación WiFi Automágico disponible en el sitio).
 * Envía fotografías al servidor (Requiere versión donación y la aplicación Cámara Espía disponible en el sitio).
 * Opción para activar con el botón de pánico Ripple de Guardian Proejct, más información en https://guardianproject.info/apps/info.guardianproject.ripple/
+* Opción para activar de forma remota por SMS.
 
 
 
@@ -33,6 +34,7 @@ no con fines de seguridad.
 <img src="metadata/es-AR/images/phoneScreenshots/registros.jpg" alt="Captura de Pantalla" height="400">
 <img src="metadata/es-AR/images/phoneScreenshots/temporizador.jpg" alt="Captura de Pantalla" height="400">
 <img src="metadata/es-AR/images/phoneScreenshots/ripple.jpg" alt="Captura de Pantalla" height="400">
+<img src="metadata/es-AR/images/phoneScreenshots/panel.png" alt="Captura de Pantalla" height="400">
 
 
 

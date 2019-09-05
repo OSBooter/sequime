@@ -135,6 +135,12 @@ public class Preferencias extends utilidades.basico.Preferencias {
         panicoPermitir ("panicoPermitir"),
         panicoBlouear ("panicoBloquear"),
 
+        permitirActivacionSMS ("permitirActivacionSMS"),
+
+        zonaHoraria ("zonaHoraria"),
+
+
+
         ;
 
 
@@ -293,5 +299,12 @@ public class Preferencias extends utilidades.basico.Preferencias {
     public boolean getPanicoBloquear () { return obtenerBoolean(TipoPreferencia.panicoBlouear); }
     public void setPanicoBloquear (boolean estado) { guardar (TipoPreferencia.panicoBlouear, estado); }
 
+
+    public boolean getPermitirActivarSMS () { return obtenerBoolean(TipoPreferencia.permitirActivacionSMS); }
+    public void setPermitirActivarSMS (boolean estado) { guardar (TipoPreferencia.permitirActivacionSMS, estado); }
+
+
+    // public int getZonaHoraria () { return obtenerInt (TipoPreferencia.zonaHoraria); }
+     // public void setZonaHoraria (int valor) { guardar (TipoPreferencia.zonaHoraria, valor);}
 
 }

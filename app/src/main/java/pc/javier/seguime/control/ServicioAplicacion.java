@@ -320,7 +320,6 @@ public class ServicioAplicacion extends Service {
 
 
         bd.cerrar();
-        
 
 
 

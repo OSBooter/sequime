@@ -26,9 +26,12 @@
 	<string name = "conectarseRedesAbiertas">Connect to open networks (Requires Wifi Automágico app)</string>
 	<string name = "permitirConfigurarSMS">Allow SMS to be configured from server</string>
 	<string name = "permitirActivar">Allow to activate the application from the server (Requires internet connection interval)</string>
+	<string name="permitirActivarSMS">Activate tracking mode when receive SMS: Seguime</string>
 
 	<string name = "opcionesDeRastreo">The following options will be enabled when trace mode is active</string>
 	<string name = "enviarFotografias">Send Photos (Requires Cámara Espía App)</string>
+
+	<string name="zona_horaria_servidor">Server time zone</string>
 
 	<string name = "errorValidacion">There is an error with the data entered</string>
 

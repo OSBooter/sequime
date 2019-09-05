@@ -62,6 +62,8 @@ public class ControlPantallaOpciones extends Control {
         pantalla.setPermitirConfigurarSMS(preferencias.getPermitirConfigurarSMS());
         pantalla.setConectarseRedesAbiertas(preferencias.getConectarRedesAbiertas());
         pantalla.setEnviarFotografias(preferencias.getEnviarFotografias());
+        pantalla.setActivarSMS(preferencias.getPermitirActivarSMS());
+        //pantalla.setZonaHoraria(String.valueOf(preferencias.getZonaHoraria()));
 
         if (!Constante.versionConSMS) {
             pantalla.setHabilitado(R.id.opciones_sms, false);
@@ -90,6 +92,8 @@ public class ControlPantallaOpciones extends Control {
         preferencias.setPermitirConfigurarSMS(pantalla.getPermitirConfigurarSMS());
         preferencias.setConectarRedesAbiertas(pantalla.getConectarRedesAbiertas());
         preferencias.setEnviarFotografias(pantalla.getEnviarFotografias());
+        preferencias.setPermitirActivarSMS(pantalla.getActivarSMS());
+        // preferencias.setZonaHoraria(pantalla.getZonaHoraria());
 
     }
 

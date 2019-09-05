@@ -82,7 +82,7 @@ public class Servidor {
         // envia datos de la alarma al servidor
         if (alarma != 0) {
             FechaHora fechaHoraAlarma = new FechaHora(alarma);
-            agregarParametro(Servidor.Parametro.alarma, fechaHoraAlarma.zonaEspecifica(Constante.zonaHorariaServidor).obtenerFechaHoraFormatoBD());
+            agregarParametro(Servidor.Parametro.alarma, obtenerFechaHora(fechaHoraAlarma.zonaUTC()));
             agregarParametro(Servidor.Parametro.texto, preferencias.getAlarmaMensaje());
 
             agregarParametro(Servidor.Parametro.telegram, preferencias.getIdTelegram());
@@ -209,7 +209,7 @@ public class Servidor {
         if (coordenada == null)
             return;
         FechaHora fechaHora = new FechaHora(coordenada.getFechaHora());
-        agregarParametro (Servidor.Parametro.fecha, fechaHora.zonaEspecifica(Constante.zonaHorariaServidor).obtenerFechaHoraFormatoBD());
+        agregarParametro (Servidor.Parametro.fecha, obtenerFechaHora(fechaHora));
 
         agregarParametro (Servidor.Parametro.latitud, String.valueOf(coordenada.getLatitud()));
         agregarParametro (Servidor.Parametro.longitud, String.valueOf(coordenada.getLongitud()));
@@ -229,7 +229,7 @@ public class Servidor {
         if (imagen.isEmpty())
             return;
         FechaHora fechaHora = new FechaHora(fecha);
-        agregarParametro (Servidor.Parametro.fecha, fechaHora.zonaEspecifica(Constante.zonaHorariaServidor).obtenerFechaHoraFormatoBD());
+        agregarParametro (Servidor.Parametro.fecha, obtenerFechaHora(fechaHora));
         agregarParametro (Servidor.Parametro.codigo, codigo);
         agregarParametro (Servidor.Parametro.extra, extra);
         agregarParametro (Servidor.Parametro.verificacion, String.valueOf(imagen.length()));
@@ -242,5 +242,11 @@ public class Servidor {
             return;
         agregarImagen(imagen.getImagen(), String.valueOf(imagen.getFechaHora()), imagen.getCodigo(), "");
 
+    }
+
+
+    private String obtenerFechaHora (FechaHora fh) {
+        //return fh.zonaEspecifica(preferencias.getZonaHoraria()).obtenerFechaHoraFormatoBD();
+        return fh.obtenerFechaHoraFormatoBD();
     }
 }

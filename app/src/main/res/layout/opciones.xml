@@ -116,6 +116,7 @@
 
 
 
+
             <TableLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -200,10 +201,28 @@
 
 
 
+                <TableRow android:gravity="center_vertical">
+
+                    <ToggleButton
+                        android:id="@+id/opciones_permitirActivarSMS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/permitirActivarSMS"
+                        android:padding="5dp"
+                        android:textSize="@dimen/texto"
+                        />
+
+
+                </TableRow>
 
 
 
-                <TableRow android:visibility="visible">
+
+                <TableRow android:gravity="center_vertical">
 
                     <ToggleButton
                         android:id="@+id/opciones_permitirConfigurarSMS"

@@ -26,9 +26,12 @@
 	<string name="conectarseRedesAbiertas">Conectarse a redes abiertas (Requiere aplicación WiFI Automágico)</string>
     <string name="permitirConfigurarSMS">Permitir configurar SMS desde el servidor</string>
     <string name="permitirActivar">Permitir activar la aplicación desde el servidor (Requiere intervalo de conexión a internet)</string>
+	<string name="permitirActivarSMS">Activar modo rastreo al recibir SMS con la palabra: Seguime</string>
 
 	<string name="opcionesDeRastreo">Las siguientes opciones se activarán cuando el modo de rastreo esté activo</string>
 	<string name="enviarFotografias">Enviar fotografías (Requiere aplicación Cámara Espía)</string>
+
+	<string name="zona_horaria_servidor">Zona horaria del servidor</string>
 
 	<string name="errorValidacion">Hay un error con los datos ingresados</string>
 
@@ -45,7 +48,7 @@
 	<string name="sesion_usuariocorto">El nombre de usuario es muy corto</string>
 	<string name="sesion_sinservidor">Debe especificar un servidor</string>
 
-	<string name="cerrarsesion_mensajeadvertencia">Esto eliminara todos los datos. ¿Está seguro?</string>
+	<string name="cerrarsesion_mensajeadvertencia">Eliminará todos los datos. ¿Está seguro?</string>
 
 	
     <string name="latitud">Latitud</string>
@@ -199,26 +202,48 @@
         Ya vas a ver que no es tan tan TAN complicado, tenés las siguientes opciones: \n
 		\n
 		
-        SMS: \n
-		Es un numero de teléfono que podes elegir para que la aplicación envíe coordenadas por SMS. \n
+	        SMS: \n
+		Es un número de teléfono que podes elegir para que la aplicación envíe coordenadas por SMS. \n
 		Solo se enviara SMS si la opción de Rastreo está habilitado. \n
-		Para evitar gastos te recomiendo NO USAR ESTA OPCIÓN si estás usando el servidor de Seguime, usa UNICAMENTE esta opción si estás usando tu propio servidor, o un servidor seguro \n
+		Para evitar gastos te recomiendo NO USAR ESTA OPCIÓN si estás usando el servidor de Seguime, 
+		usa ÚNICAMENTE esta opción si estás usando tu propio servidor, o un servidor seguro 
 		\n
+		\n
+		
 		Telegram ID: \n
-		Es un numero identificador de Telegram, NO ES LA @ID_USUARIO, para utilizar esta opción visita el bot @seguimebot y saludalo, te dará tu numero de ID, luego con ese numero el bot podrá enviar coordenadas a esa cuenta de Telegram. \n
+		Es un numero identificador de Telegram, NO ES LA @ID_USUARIO, 
+		para utilizar esta opción visita el bot @seguimebot y saludalo, 
+		te dará tu numero de ID, luego con ese número el bot podrá enviar coordenadas a esa cuenta de Telegram. 
 		\n
+		\n
+		
 		Intervalo de Actividad: \n
-		Durante este periodo la Aplicación estará funcionando completamente, localizando coordenadas y realizando conexiones a internet, un valor muy pequeño puede que no logre obtener coordenadas si tenés poca cobertura GPS, un valor muy alto puede consumir mucha batería   \n
-		Para que la aplicación este constantemente encendida (y no por intervalos de tiempo) configura cualquier intervalo de tiempo a 0 (cero) \n
+		Durante este periodo la Aplicación estará funcionando completamente, 
+		localizando coordenadas y realizando conexiones a internet, 
+		un valor muy pequeño puede que no logre obtener coordenadas si tenés poca cobertura GPS,
+		 un valor muy alto puede consumir mucha batería   \n
+		 
+		Para que la aplicación este constantemente encendida (y no por intervalos de tiempo) configura cualquier intervalo de tiempo a 0 (cero) 
+		\n
 		 \n
+		 
 		 Intervalo de Inactividad: \n
-		 Durante este periodo la Aplicación estará descansando, no realizara conexiones a Internet ni localizara coordenadas, un descanso sirve para ahorrar batería, un valor muy pequeño puede que consuma mucha batería, un valor muy alto entorpecerá la finalidad de la aplicación \n
-		 Para que la aplicación este constantemente encendida (y no por intervalos de tiempo) configura cualquier intervalo de tiempo a 0 (cero) \n
+		 Durante este periodo la Aplicación estará descansando, 
+		 no realizará conexiones a Internet ni localizará coordenadas, 
+		 un descanso sirve para ahorrar batería, un valor muy pequeño puede que consuma mucha batería, 
+		 un valor muy alto entorpecerá la finalidad de la aplicación \n
+		 Para que la aplicación esté constantemente encendida (y no por intervalos de tiempo) configura cualquier intervalo de tiempo a 0 (cero) 
+		 \n
 		  \n
+		  
 		 Rastreo:\n
-		 Cuando esta opción está habilitada la aplicación enviara mensajes por Telegram y SMS cada vez que encuentre una nueva coordenada. Esta opción se puede habilitar desde el sitio web por lo tanto por tu seguridad y para evitar gastos no configures SMS a menos que estés usando un servidor propio \n
+		 Cuando esta opción está habilitada la aplicación enviará mensajes por Telegram y SMS cada vez que encuentre una nueva coordenada.
+		  Esta opción se puede habilitar desde el sitio web por lo tanto por tu seguridad y para evitar gastos no configures SMS a menos que estés usando un servidor propio \n
 		 \n
 		\n
+		
+		
+		
 		Espero te sea útil esta ayuda :)
 		\n
 		\n
