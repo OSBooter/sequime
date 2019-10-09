@@ -1,16 +1,33 @@
 package pc.javier.seguime.control;
 
 import pc.javier.seguime.adaptador.Constante;
-
-import pc.javier.seguime.adaptador.Preferencias;
 import utilidades.conexion.ConexionHTTP;
-import utilidades.basico.Evento;
-import utilidades.basico.ReceptorEventos;
+import utilidades.eventos.ReceptorDeEventos;
+
 
 /**
  * Javier 2019.
  */
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /*
+
+        NO FUNCIONAL
+         ES CONCEPTO
+
+  */
 public class ComprobarVersion {
 
 
@@ -21,27 +38,32 @@ public class ComprobarVersion {
 
         String parametro = "version="+Constante.version;
 
-        Evento evento = new Evento("version");
-        ReceptorVersion receptorVersion = new ReceptorVersion("version");
-        evento.agregarReceptor(receptorVersion);
 
-        conexionHTTP = new ConexionHTTP(Constante.urlSitio, parametro, evento);
+        ReceptorVersion receptorVersion = new ReceptorVersion();
+        receptorVersion.suscribir();
+
+        conexionHTTP = new ConexionHTTP(Constante.urlSitio, parametro);
+
     }
 
 
 
-    private class ReceptorVersion extends ReceptorEventos {
+    private class ReceptorVersion extends ReceptorDeEventos {
 
-        public ReceptorVersion (String clave) {
-            super(clave);
+        public ReceptorVersion () {
+            objetivo = 101010;
         }
+
+
         @Override
         public void procesar(String dato) {
+            desuscribir();
+
             if (dato.equals(Constante.version))
                 return;
 
-            Preferencias preferencias = new Preferencias(Aplicacion.actividadPrincipal);
-            preferencias.setNotificacion("¡Hay una nueva versión!");
+            //Preferencias preferencias = new Preferencias(Aplicacion.actividadPrincipal);
+            //preferencias.setNotificacion("¡Hay una nueva versión!");
         }
     }
 }

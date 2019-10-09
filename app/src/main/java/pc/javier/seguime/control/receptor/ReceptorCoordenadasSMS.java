@@ -15,8 +15,8 @@ public class ReceptorCoordenadasSMS extends ReceptorCoordenadas {
     private Context contexto;
     private Preferencias preferencias;
 
-    public ReceptorCoordenadasSMS(String clave, Context contexto) {
-        super(clave);
+    public ReceptorCoordenadasSMS(Context contexto) {
+        super();
         this.contexto = contexto;
         preferencias = new Preferencias(contexto);
     }

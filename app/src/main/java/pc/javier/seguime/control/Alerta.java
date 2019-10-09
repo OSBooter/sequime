@@ -1,6 +1,6 @@
 package pc.javier.seguime.control;
 
-import android.app.Activity;
+import android.content.Context;
 
 import pc.javier.seguime.adaptador.BD;
 import pc.javier.seguime.adaptador.Coordenada;
@@ -16,16 +16,16 @@ import utilidades.SMS;
 public class Alerta {
     private BD baseDeDatos;
     private Preferencias preferencias;
-    private Activity activity;
     private SMS sms;
     private Coordenada coordenada;
     private String mensaje;
+    private Context contexto;
 
 
-    public Alerta (Activity activity) {
-        this.activity = activity;
-        baseDeDatos = new BD(activity);
-        preferencias = new Preferencias(activity);
+    public Alerta (Context contexto) {
+        this.contexto = contexto;
+        baseDeDatos = new BD(contexto);
+        preferencias = new Preferencias(contexto);
     }
 
 
@@ -61,10 +61,8 @@ public class Alerta {
 
 
     private void enviarServidor() {
-        EnlaceEventos enlaceEventos = new EnlaceEventos(activity);
-        Servidor servidor = new Servidor(activity);
+        Servidor servidor = new Servidor(contexto);
         servidor.agregarParametro(Servidor.Parametro.texto, mensaje);
-        servidor.setEvento(enlaceEventos.obtenerEventoConexionServidor());
         servidor.enviar();
     }
 

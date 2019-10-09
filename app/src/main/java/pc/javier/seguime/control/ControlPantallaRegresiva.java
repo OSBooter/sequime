@@ -6,15 +6,16 @@ import android.view.MenuItem;
 
 import pc.javier.seguime.ActividadAyudaRegresiva;
 import pc.javier.seguime.R;
+import pc.javier.seguime.adaptador.Aplicacion;
 import pc.javier.seguime.adaptador.Constante;
 import pc.javier.seguime.adaptador.Preferencias;
-import pc.javier.seguime.control.receptor.ReceptorContadorRegresiva;
+import pc.javier.seguime.control.receptor.ReceptorPantallaRegresiva;
 import pc.javier.seguime.vista.PantallaRegresiva;
 import utilidades.Alarma;
 import utilidades.Contacto;
-import utilidades.basico.Evento;
 import utilidades.basico.MensajeRegistro;
 import utilidades.basico.Temporizador;
+import utilidades.eventos.BolaDeEventos;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -27,8 +28,11 @@ public class ControlPantallaRegresiva extends Control {
     private Alarma alarma = new Alarma();
     private Temporizador temporizador;
     private PantallaRegresiva pantalla;
-    private Evento evento;
     private Contacto contacto;
+
+    private final int ID_EVENTO = Aplicacion.EV_REGRESIVA;
+    private final String CLAVE_EVENTO = ReceptorPantallaRegresiva.CLAVE_EVENTO;
+    private ReceptorPantallaRegresiva receptorContadorRegresiva;
 
 
 
@@ -36,9 +40,6 @@ public class ControlPantallaRegresiva extends Control {
         super(activity);
         this.pantalla  = new PantallaRegresiva(activity);
 
-        String clave = "regresiva";
-        ReceptorContadorRegresiva receptorContadorRegresiva = new ReceptorContadorRegresiva(clave, pantalla);
-        evento = new Evento(receptorContadorRegresiva, clave);
 
         String sms = preferencias.getNumeroSms();
         String telegram = preferencias.getIdTelegram();
@@ -58,6 +59,10 @@ public class ControlPantallaRegresiva extends Control {
     // on resume
     public void actualizarPantalla () {
 
+        receptorContadorRegresiva = new ReceptorPantallaRegresiva(pantalla);
+        receptorContadorRegresiva.setObjetivo(ID_EVENTO);
+        receptorContadorRegresiva.setClave(CLAVE_EVENTO);
+        receptorContadorRegresiva.suscribir();
 
         boolean alarmaExiste = alarmaExiste();
         pantalla.dibujarBoton(alarmaExiste);
@@ -83,6 +88,7 @@ public class ControlPantallaRegresiva extends Control {
         if (temporizador != null)
             temporizador.detener();
         MensajeRegistro.msj ("control finalizado");
+        receptorContadorRegresiva.desuscribir();
     }
 
 
@@ -170,7 +176,10 @@ public class ControlPantallaRegresiva extends Control {
         temporizador = new Temporizador() {
             @Override
             public void ejecutarTarea () {
-                evento.emitir(String.valueOf(alarma.getFin().getTime()));
+                BolaDeEventos bola = new BolaDeEventos();
+                bola.setIdentificador(ID_EVENTO);
+                bola.agregarDato(CLAVE_EVENTO, String.valueOf(alarma.getFin().getTime()));
+                bola.lanzar();
                 if (alarma.activada())
                     detener();
             }

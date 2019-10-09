@@ -9,7 +9,6 @@ import android.view.View;
 
 import pc.javier.seguime.adaptador.Menu;
 import pc.javier.seguime.adaptador.Preferencias;
-import pc.javier.seguime.control.Aplicacion;
 import pc.javier.seguime.control.ControlPantallaPrincipal;
 import pc.javier.seguime.vista.PantallaPrincipal;
 import utilidades.basico.MensajeRegistro;
@@ -28,14 +27,12 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Aplicacion.actividadPrincipal = this;
         setContentView(R.layout.activity_main);
         iniciarAplicacion();
     }
 
     @Override
     protected void onResume () {
-        Aplicacion.actividadPrincipal = this;
         super.onResume();
         control.regresar ();
         personalizarMenu();
@@ -87,9 +84,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onDestroy() {
-        super.onDestroy();
-        Aplicacion.actividadPrincipal = this;
         MensajeRegistro.msj(this, "DESTRUYENDO MAIN ACTIVITY");
+        control.destruir();
+        super.onDestroy();
     }
 
 

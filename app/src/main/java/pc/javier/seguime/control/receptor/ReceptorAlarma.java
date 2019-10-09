@@ -1,26 +1,29 @@
 package pc.javier.seguime.control.receptor;
 
-import android.app.Activity;
+import android.content.Context;
 
-import pc.javier.seguime.control.Alerta;
-import pc.javier.seguime.control.Aplicacion;
+import pc.javier.seguime.R;
+import pc.javier.seguime.adaptador.Aplicacion;
 import pc.javier.seguime.vista.PantallaPrincipal;
-import utilidades.basico.MensajeRegistro;
-import utilidades.basico.ReceptorEventos;
+import utilidades.eventos.ReceptorDeEventos;
 
 /**
  * Javier 2019.
  *  Recibe la señal de un evento cuando se activa una alarma
- *  delega el proceso de envios (coordenadas y mensajes) a la clase Alarma
+ *  Solo actualiza la pantalla
  */
 
-public class ReceptorAlarma extends ReceptorEventos {
+public class ReceptorAlarma extends ReceptorDeEventos {
 
-    public ReceptorAlarma(String clave) {
-        super(clave);
+    private Context contexto;
+    private PantallaPrincipal pantallaPrincipal;
+    public final static String CLAVE_EVENTO = "ALARMA";
+
+    public ReceptorAlarma (Context contexto) {
+        this.contexto = contexto;
+        objetivo = Aplicacion.EV_ALARMA;
+        clave = CLAVE_EVENTO;
     }
-
-    private Activity activity = Aplicacion.actividadPrincipal;
 
     @Override
     public void procesar (String dato) {
@@ -29,20 +32,17 @@ public class ReceptorAlarma extends ReceptorEventos {
 
 
     private void activarALARMA () {
-        MensajeRegistro.msj("alarma: controla iconos en pantalla");
-        PantallaPrincipal pantallaPrincipal = new PantallaPrincipal(activity);
+
+
+        if (pantallaPrincipal == null)
+            return;
+
         pantallaPrincipal.iconoRastreo(true);
         pantallaPrincipal.iconoTemporizador(false);
 
-        // pantallaPrincipal.snack(R.string.alarma_activada);
-
-        enviarMensajes();
+        pantallaPrincipal.snack(R.string.principal_alarma);
     }
 
 
 
-    private void enviarMensajes () {
-        Alerta alerta = new Alerta(activity);
-        alerta.enviarMensajeAlerta();
-    }
 }

@@ -9,7 +9,6 @@ import java.util.Date;
 import pc.javier.seguime.adaptador.BD;
 import pc.javier.seguime.adaptador.Preferencias;
 import pc.javier.seguime.adaptador.Servidor;
-import pc.javier.seguime.control.EnlaceEventos;
 import utilidades.basico.MensajeRegistro;
 
 /**
@@ -19,12 +18,8 @@ import utilidades.basico.MensajeRegistro;
 public class CamaraEspia extends BroadcastReceiver {
 
     @Override
-    public void onReceive(Context contexto, Intent intent) {
-
-        Preferencias preferencias = new Preferencias(contexto);
-
-        preferencias.setMensaje("Fotografía recibida - Requiere versión donación");
-
-
+    public void onReceive(Context contexto, Intent intent) {		
+		Preferencias preferencias = new Preferencias(contexto);		
+        preferencias.setMensaje("Fotografía recibida - Requiere versión donación");		
     }
 }

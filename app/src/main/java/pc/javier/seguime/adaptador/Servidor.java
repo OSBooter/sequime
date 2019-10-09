@@ -3,7 +3,6 @@ package pc.javier.seguime.adaptador;
 import android.content.Context;
 
 import pc.javier.seguime.control.Imagen;
-import utilidades.basico.Evento;
 import utilidades.basico.FechaHora;
 import utilidades.basico.MensajeRegistro;
 import utilidades.conexion.ConexionHTTP;
@@ -20,7 +19,6 @@ public class Servidor {
     private String usuario;
     private String clave;
     private String parametros = "";
-    private Evento evento;
     private Preferencias preferencias;
 
 
@@ -51,7 +49,7 @@ public class Servidor {
             return;
 
         MensajeRegistro.msj (this, "ENVIANDO " + parametros);
-        ConexionHTTP conexion = new ConexionHTTP(url, parametros, evento);
+        ConexionHTTP conexion = new ConexionHTTP(url, parametros);
         conexion.setUserAgent(Constante.userAgent);
         conexion.ejecutarHilo();
     }
@@ -123,14 +121,6 @@ public class Servidor {
         agregarParametro(Parametro.telegram, id);
     }
 
-
-    public Evento getEvento() {
-        return evento;
-    }
-
-    public void setEvento(Evento evento) {
-        this.evento = evento;
-    }
 
     public String getUrl() {
         return url;

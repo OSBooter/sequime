@@ -13,13 +13,13 @@ public class ReceptorCoordenadasBD extends ReceptorCoordenadas {
 
 
     Context contexto;
-    public ReceptorCoordenadasBD(String clave, Context contexto) {
-        super(clave);
+    public ReceptorCoordenadasBD(Context contexto) {
+        super();
         this.contexto = contexto;
     }
 
 
-
+    @Override
     protected void procesarCoordenada(Coordenada coordenada) {
         BD baseDeDatos = new BD(contexto);
         baseDeDatos.coordenadaInsertar(coordenada);

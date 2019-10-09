@@ -3,7 +3,12 @@ package pc.javier.seguime.control;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
-import utilidades.basico.Evento;
+
+import pc.javier.seguime.adaptador.Preferencias;
+import pc.javier.seguime.control.receptor.ReceptorCoordenadasBD;
+import pc.javier.seguime.control.receptor.ReceptorCoordenadasDifusion;
+import pc.javier.seguime.control.receptor.ReceptorCoordenadasInternet;
+import pc.javier.seguime.control.receptor.ReceptorCoordenadasSMS;
 import utilidades.localizacion.Localizador;
 
 
@@ -11,8 +16,7 @@ import utilidades.localizacion.Localizador;
 
 
 public class ServicioLocalizador extends Service {
-    public ServicioLocalizador() {
-    }
+
 
     @Override
     public IBinder onBind(Intent intent) {
@@ -43,21 +47,16 @@ public class ServicioLocalizador extends Service {
     // ------------------------------------------------------------------------------
 
     private Localizador localizador;
-    private Evento evento;
 
 
 
     private void iniciarServicio () {
-        // prepara los receptores
-        EnlaceEventos enlaceEventos = new EnlaceEventos(this);
 
-        // herramienta emisora de eventos
-        evento = enlaceEventos.obtenerEventoLocalizacion();
+        evSuscribir();
 
         // localizador gps
-        localizador = new Localizador(this);
-        // agrega al evento del localizador el receptor de coordenadas
-        localizador.setEvento(evento);
+        if (localizador == null)
+            localizador = new Localizador(this);
         localizador.activar();
     }
 
@@ -65,13 +64,54 @@ public class ServicioLocalizador extends Service {
     private void detenerServicio () {
         if (localizador != null)
             localizador.desactivar();
-        if (evento != null)
-            evento.quitarHandlers();
+
+        evDesuscribir();
     }
 
 
 
 
+
+
+
+    // --- Eventos ----------
+
+    Preferencias preferencias;
+
+    ReceptorCoordenadasBD receptorCoordenadasBD;
+    ReceptorCoordenadasInternet receptorCoordenadasInternet ;
+    ReceptorCoordenadasSMS receptorCoordenadasSMS ;
+    ReceptorCoordenadasDifusion receptorCoordenadasDifusion ;
+
+    private void evSuscribir () {
+        preferencias = new Preferencias(this);
+
+        receptorCoordenadasBD = new ReceptorCoordenadasBD(this);
+        receptorCoordenadasBD.suscribir();
+
+        receptorCoordenadasInternet = new ReceptorCoordenadasInternet(this);
+        if (preferencias.getSesionIniciada())
+            receptorCoordenadasInternet.suscribir();
+
+
+        receptorCoordenadasSMS = new ReceptorCoordenadasSMS(this);
+        if (preferencias.getRastreo() == true)
+            if (preferencias.getNumeroSms().isEmpty() == false)
+                receptorCoordenadasSMS.suscribir();
+
+
+        receptorCoordenadasDifusion = new ReceptorCoordenadasDifusion(this);
+        if (preferencias.getConectarRedesAbiertas() == true)
+            receptorCoordenadasDifusion.suscribir();
+
+    }
+
+    private void evDesuscribir () {
+        receptorCoordenadasBD.desuscribir();
+        receptorCoordenadasInternet.desuscribir();
+        receptorCoordenadasSMS.desuscribir();
+        receptorCoordenadasDifusion.desuscribir();
+    }
 
 
 

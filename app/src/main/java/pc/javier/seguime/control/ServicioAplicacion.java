@@ -4,14 +4,16 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 
+import pc.javier.seguime.adaptador.Aplicacion;
 import pc.javier.seguime.adaptador.BD;
 import pc.javier.seguime.adaptador.Coordenada;
 import pc.javier.seguime.adaptador.Preferencias;
 import pc.javier.seguime.adaptador.Servidor;
+import pc.javier.seguime.control.receptor.ReceptorAlarma;
 import utilidades.Alarma;
-import utilidades.basico.Evento;
 import utilidades.basico.MensajeRegistro;
 import utilidades.basico.Temporizador;
+import utilidades.eventos.BolaDeEventos;
 
 
 /*
@@ -69,10 +71,6 @@ public class ServicioAplicacion extends Service {
         preferencias = new Preferencias(this);
 
 
-        // conexión a internet
-        if (eventoInternet  == null)
-            eventoInternet = (new EnlaceEventos(this)).obtenerEventoConexionServidor();
-
         iniciarTemporizadorLocalización();
         iniciarTemporizadorAlarma();
         iniciarTemporizadorInternet();
@@ -84,6 +82,7 @@ public class ServicioAplicacion extends Service {
         detenerTemporizadorLocalizacion();
         detenetTemporizadorInternet ();
         detenerTemporizadorAlarma();
+
     }
 
 
@@ -188,14 +187,13 @@ public class ServicioAplicacion extends Service {
     // ----------------- alarma ----------------------------------
 
 
-    Evento eventoAlarma;
+
     private void iniciarTemporizadorAlarma () {
 
         long activacion = preferencias.getAlarma();
 
         if (activacion == 0) return;
 
-        eventoAlarma = (new EnlaceEventos(this)).obtenerEventoAlarma ();
 
         Alarma alarma = new Alarma();
         alarma.setFin(activacion);
@@ -246,7 +244,14 @@ public class ServicioAplicacion extends Service {
         detenerLocalizacion();
         iniciarLocalizacion();
 
-        eventoAlarma.emitir("activar");
+        Alerta alerta = new Alerta(this);
+        alerta.enviarMensajeAlerta();
+
+        // actualiza la pantalla
+        BolaDeEventos bola = new BolaDeEventos();
+        bola.setIdentificador(Aplicacion.EV_ALARMA);
+        bola.agregarDato(ReceptorAlarma.CLAVE_EVENTO, "activar");
+        bola.lanzar();
     }
 
 
@@ -255,8 +260,6 @@ public class ServicioAplicacion extends Service {
     private void detenerTemporizadorAlarma () {
         if (temporizadorAlarma != null)
             temporizadorAlarma.detener();
-        if (eventoAlarma != null)
-            eventoAlarma.quitarHandlers();
     }
 
 
@@ -271,7 +274,7 @@ public class ServicioAplicacion extends Service {
 
     // internet
 
-    Evento eventoInternet;
+
     private void iniciarTemporizadorInternet () {
 
         int intervalo = preferencias.getIntervaloInternet();
@@ -279,8 +282,6 @@ public class ServicioAplicacion extends Service {
         if (intervalo <= 0)
             return;
 
-        if (eventoInternet  == null)
-            eventoInternet = (new EnlaceEventos(this)).obtenerEventoConexionServidor();
 
         temporizadorInternet = new Temporizador() {
             @Override
@@ -297,7 +298,6 @@ public class ServicioAplicacion extends Service {
         if (!preferencias.getSesionIniciada())
             return;
         Servidor servidor = new Servidor(this);
-        servidor.setEvento(eventoInternet);
 
         // obtiene la ultima coordenada no enviada
         BD bd = new BD(this);
@@ -319,7 +319,10 @@ public class ServicioAplicacion extends Service {
 
 
 
+        // obtiene la última fotografía no enviada
+        Imagen imagen = bd.fotoObtenerUltimaNoEnviada();
         bd.cerrar();
+        
 
 
 
@@ -329,6 +332,15 @@ public class ServicioAplicacion extends Service {
         if (temporizadorInternet != null)
             temporizadorInternet.detener();
     }
+
+
+
+
+
+
+
+
+
 
 
     private void mensajeLog (String texto) {

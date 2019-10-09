@@ -5,6 +5,7 @@ import android.util.Log;
 import pc.javier.seguime.R;
 import pc.javier.seguime.adaptador.Preferencias;
 import pc.javier.seguime.adaptador.Servidor;
+import pc.javier.seguime.control.receptor.ReceptorPantallaSesion;
 import pc.javier.seguime.vista.PantallaSesion;
 
 /**
@@ -14,7 +15,7 @@ import pc.javier.seguime.vista.PantallaSesion;
 public class ControlPantallaSesion extends Control {
 
     private PantallaSesion pantalla;
-
+    private ReceptorPantallaSesion receptorPantallaSesion;
 
 
     public ControlPantallaSesion(Activity activity) {
@@ -128,8 +129,6 @@ public class ControlPantallaSesion extends Control {
         // receptor de estados de la conexion (conectado, finalizado, etc) para mostrar en pantalla
 
         Servidor servidor = new Servidor(url,usuario, clave);
-        EnlaceEventos enlaceEventos = new EnlaceEventos(activity);
-        servidor.setEvento(enlaceEventos.obtenerEventoConexionServidor());
 
         if (modoRegistro)
             servidor.agregarComando(Servidor.Comando.registro);
@@ -146,6 +145,16 @@ public class ControlPantallaSesion extends Control {
 
     public void actualizarBotones () {
         pantalla.habiltarBotonIniciar(!pantalla.conexionActiva);
+    }
+
+
+    public void resumir () {
+        receptorPantallaSesion = new ReceptorPantallaSesion(activity);
+        receptorPantallaSesion.suscribir();
+    }
+
+    public void destruir () {
+        receptorPantallaSesion.desuscribir();
     }
 
     private void mensajeLog (String texto) {

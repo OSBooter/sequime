@@ -6,9 +6,7 @@ import android.view.View;
 
 import pc.javier.seguime.adaptador.Constante;
 import pc.javier.seguime.adaptador.Preferencias;
-import pc.javier.seguime.control.Aplicacion;
 import pc.javier.seguime.vista.PantallaClave;
-import pc.javier.seguime.vista.PantallaPrincipal;
 import utilidades.basico.EnlaceExterno;
 
 
@@ -42,8 +40,6 @@ public class ActividadClave extends AppCompatActivity {
 
         if (registroCorrecto()) {
             preferencias.setVersionRegistrada(true);
-            PantallaPrincipal pantallaPrincipal = new PantallaPrincipal(Aplicacion.actividadPrincipal);
-            pantallaPrincipal.snack(":)");
             this.finish();
         } else {
             pantallaClave.snack(R.string.claveIncorrecta);

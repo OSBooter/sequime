@@ -1,38 +1,38 @@
 package pc.javier.seguime.control.receptor;
 
-import java.util.ArrayList;
-
+import android.os.Bundle;
 
 import pc.javier.seguime.adaptador.Coordenada;
-import utilidades.basico.ReceptorEventos;
+import utilidades.eventos.ReceptorDeEventos;
+import utilidades.localizacion.Localizador;
 
 /**
  * Javier 2019.
  * Recibe coordenadas por parte de eventos del localizador
  */
 
-public abstract class ReceptorCoordenadas extends ReceptorEventos {
+public abstract class ReceptorCoordenadas extends ReceptorDeEventos {
 
-    public ReceptorCoordenadas(String clave) {
-        super(clave);
+
+    public ReceptorCoordenadas () {
+        objetivo = Localizador.EVENTO_ID;
     }
 
-    @Override
-    public void procesar (ArrayList lista) {
 
-        // recorre la lista
-        for (Object coordenada: lista) {
-            // convierte una coordenada de utilidades en una coordenada de adaptardor
-            utilidades.localizacion.Coordenada coordenadaBasica = (utilidades.localizacion.Coordenada ) coordenada;
+
+    @Override
+    public void procesar (Bundle bundle) {
+
             Coordenada nuevaCoordenada = new Coordenada();
-            nuevaCoordenada.setLatitud(coordenadaBasica.getLatitud());
-            nuevaCoordenada.setLongitud(coordenadaBasica.getLongitud());
-            nuevaCoordenada.setProveedor(coordenadaBasica.getProveedor());
-            nuevaCoordenada.setFechaHora(coordenadaBasica.getFechaHora());
-            nuevaCoordenada.setVelocidad(coordenadaBasica.getVelocidad());
-            nuevaCoordenada.setCodigo(coordenadaBasica.getCodigo());
+
+            nuevaCoordenada.setLatitud(bundle.getDouble("latitud"));
+            nuevaCoordenada.setLongitud(bundle.getDouble("longitud"));
+            nuevaCoordenada.setProveedor(bundle.getString("proveedor"));
+            nuevaCoordenada.setVelocidad(bundle.getFloat("velocidad"));
+            nuevaCoordenada.setCodigo(bundle.getString("codigo"));
+
             procesarCoordenada(nuevaCoordenada);
-        }
+
 
     }
 

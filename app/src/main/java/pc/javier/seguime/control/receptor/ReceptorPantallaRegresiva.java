@@ -1,24 +1,29 @@
 package pc.javier.seguime.control.receptor;
 
+import pc.javier.seguime.adaptador.Aplicacion;
 import pc.javier.seguime.vista.PantallaRegresiva;
 import utilidades.Alarma;
 import utilidades.basico.MensajeRegistro;
-import utilidades.basico.ReceptorEventos;
+import utilidades.eventos.ReceptorDeEventos;
+
 
 /**
  * Javier 2019.
  *  actualiza la pantalla de la cuenta regresiva, muestra tiempo restante
  */
 
-public class ReceptorContadorRegresiva extends ReceptorEventos {
+public class ReceptorPantallaRegresiva extends ReceptorDeEventos {
+
+    public final static String CLAVE_EVENTO = "REGRESIVA";
+
     PantallaRegresiva pantalla;
     Alarma alarma;
 
-    public ReceptorContadorRegresiva(String clave, PantallaRegresiva pantalla) {
-        super(clave);
+    public ReceptorPantallaRegresiva(PantallaRegresiva pantalla) {
         this.pantalla = pantalla;
         alarma= new Alarma();
-
+        clave = CLAVE_EVENTO;
+        objetivo = Aplicacion.EV_REGRESIVA;
     }
 
 

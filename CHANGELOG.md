@@ -1,5 +1,11 @@
 # Seguime
 
+### [4.2] Octubre 2019
+Modificado: Localizador (Mejora en la batería).
+
+### [4.1] Septiembre 2019
+Modificado: Controlador de eventos.
+
 ### [4.0] Agosto 2019
 Agregado: Activación remota del modo Rastreo por SMS.
 Modificado: Zonas horarias. (Requiere actualización del servidor).

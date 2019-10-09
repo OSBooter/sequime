@@ -67,6 +67,7 @@ public class ControlPantallaOpciones extends Control {
 
         if (!Constante.versionConSMS) {
             pantalla.setHabilitado(R.id.opciones_sms, false);
+            pantalla.setHabilitado(R.id.opciones_permitirActivarSMS, false);
             pantalla.snack(R.string.versionIncompleta_txt);
             pantalla.setFondo(R.id.opciones_sms, pantalla.cuadroGrisRedondeando());
         }

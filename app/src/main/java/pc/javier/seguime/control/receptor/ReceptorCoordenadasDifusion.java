@@ -15,8 +15,8 @@ import utilidades.conexion.InfoInternet;
 public class ReceptorCoordenadasDifusion extends ReceptorCoordenadas {
 
     private Context contexto;
-    public ReceptorCoordenadasDifusion(String clave, Context contexto) {
-        super(clave);
+    public ReceptorCoordenadasDifusion( Context contexto) {
+        super();
         this.contexto = contexto;
     }
 

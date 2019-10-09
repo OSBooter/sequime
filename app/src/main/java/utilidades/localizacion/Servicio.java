@@ -3,19 +3,17 @@ package utilidades.localizacion;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
-import android.support.annotation.Nullable;
 
 /**
  * Javier 2019.
  */
 
 public class Servicio extends Service {
-    @Nullable
+
     @Override
     public IBinder onBind(Intent intent) {
         return null;
     }
-
 
 
 
@@ -38,7 +36,8 @@ public class Servicio extends Service {
 
     Localizador localizador;
     private void iniciarServicio () {
-        localizador = new Localizador(this);
+        if (localizador == null)
+            localizador = new Localizador(this);
         localizador.activar();
     }
 

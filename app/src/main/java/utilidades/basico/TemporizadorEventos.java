@@ -1,6 +1,8 @@
 package utilidades.basico;
 
 
+import utilidades.eventos.BolaDeEventos;
+
 /**
  * Javier 2019.
  */
@@ -8,22 +10,15 @@ package utilidades.basico;
 public class TemporizadorEventos extends Temporizador {
 
 
-    private Evento evento = null;
+
     private String parametroEmitir  = "temporizador";
 
     public void ejecutarTarea() {
-        if (evento != null)
-            evento.emitir(parametroEmitir);
+        BolaDeEventos bola = new BolaDeEventos();
+        bola.agregarDato("TEMPORIZADOR", parametroEmitir);
+        bola.lanzar();
     }
 
-
-    public Evento getEvento() {
-        return evento;
-    }
-
-    public void setEvento(Evento evento) {
-        this.evento = evento;
-    }
 
     public String getParametroEmitir() {
         return parametroEmitir;

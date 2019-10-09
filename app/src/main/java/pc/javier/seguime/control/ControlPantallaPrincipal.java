@@ -16,6 +16,9 @@ import pc.javier.seguime.adaptador.BD;
 import pc.javier.seguime.adaptador.Constante;
 import pc.javier.seguime.adaptador.Preferencias;
 import pc.javier.seguime.control.panico.ActividadPanicoOpciones;
+import pc.javier.seguime.control.receptor.ReceptorAlarma;
+import pc.javier.seguime.control.receptor.ReceptorComandosInternet;
+import pc.javier.seguime.control.receptor.ReceptorPantallaPrincipal;
 import pc.javier.seguime.vista.PantallaPrincipal;
 import utilidades.basico.Dialogo;
 import utilidades.basico.EnlaceExterno;
@@ -28,6 +31,8 @@ import utilidades.basico.MensajeRegistro;
 public class ControlPantallaPrincipal  extends Control {
 
     private PantallaPrincipal pantalla;
+    private ReceptorPantallaPrincipal receptorPantallaPrincipal;
+    private ReceptorAlarma receptorAlarma;
 
     public ControlPantallaPrincipal(PantallaPrincipal pantalla, Preferencias preferencias) {
         super(pantalla, preferencias);
@@ -156,6 +161,12 @@ public class ControlPantallaPrincipal  extends Control {
     public void regresar () {
         pantalla = new PantallaPrincipal(activity);
 
+        receptorPantallaPrincipal = new ReceptorPantallaPrincipal(activity);
+        receptorPantallaPrincipal.suscribir();
+
+        receptorAlarma = new ReceptorAlarma(activity);
+        receptorAlarma.suscribir();
+
         if (preferencias.getPresentacionInicial() == false) {
             preferencias.setPresentacionInicial(true);
             iniciarActividad(ActividadPresentacion.class);
@@ -179,6 +190,11 @@ public class ControlPantallaPrincipal  extends Control {
 
         if (preferencias.getVersionRegistrada() == true)
             pantalla.versionRegistrada();
+
+
+        // receptor internet
+        ReceptorComandosInternet receptorComandosInternet = new ReceptorComandosInternet(activity);
+        receptorComandosInternet.suscribir();
 
 
         // ver-
@@ -336,4 +352,10 @@ public class ControlPantallaPrincipal  extends Control {
     }
 
 
+
+
+    public void destruir () {
+        receptorPantallaPrincipal.desuscribir();
+        receptorAlarma.desuscribir();
+    }
 }

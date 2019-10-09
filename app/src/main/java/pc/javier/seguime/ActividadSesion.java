@@ -33,9 +33,15 @@ public class ActividadSesion extends AppCompatActivity {
     protected  void onResume () {
         super.onResume();
         control.actualizarBotones ();
+        control.resumir();
     }
 
 
+    @Override
+    protected void onDestroy () {
+        super.onDestroy();
+        control.destruir();
+    }
 
 
 

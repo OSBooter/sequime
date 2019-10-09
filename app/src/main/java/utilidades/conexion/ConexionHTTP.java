@@ -12,7 +12,7 @@ import java.net.URL;
 
 import javax.net.ssl.HttpsURLConnection;
 
-import utilidades.basico.Evento;
+import utilidades.eventos.TunelDeEventos;
 
 /**
  * Javier 2019.
@@ -25,6 +25,8 @@ public class ConexionHTTP implements Runnable {
     public void run() {
         conectar();
     }
+
+    public static final int ID_EVENTO = -1010;
 
     private String method = "POST";
     private String userAgent = "Aplicacion Javier";
@@ -40,24 +42,12 @@ public class ConexionHTTP implements Runnable {
     private String autorizacion = "";
 
 
-    private Evento evento = null;
 
     public static final String claveRespuesta = "respuesta";
     public static final String claveEstado = "conexion";
 
 
 
-
-    public ConexionHTTP (String url, String parametros, Evento evento) {
-        this.parametros = parametros;
-        this.url = url;
-        this.evento = evento;
-    }
-
-    public ConexionHTTP (String url, Evento evento) {
-        this.url = url;
-        this.evento = evento;
-    }
 
     public ConexionHTTP (String url, String parametros) {
         this.parametros = parametros;
@@ -67,6 +57,8 @@ public class ConexionHTTP implements Runnable {
     public ConexionHTTP (String url) {
         this.url = url;
     }
+
+
 
     public ConexionHTTP () { }
 
@@ -127,14 +119,12 @@ public class ConexionHTTP implements Runnable {
             salida.flush();
             salida.close();
 
-
             mensajeLog ( "recibiendo datos");
             emitirEstado(Estado.Recibiendo);
             // recibir datos
             BufferedReader br = new BufferedReader( new InputStreamReader(conexion.getInputStream()));
 
             String respuesta = "";
-
 
 
             while ((respuesta = br.readLine()) != null)
@@ -152,7 +142,6 @@ public class ConexionHTTP implements Runnable {
 
 
 
-
         } catch (Exception e) {
             emitirEstado(Estado.Error);
             mensajeLog ( "Error " + e.toString());
@@ -165,7 +154,7 @@ public class ConexionHTTP implements Runnable {
     }
 
     private void emitirEstado (Estado estado) {
-           emitirEvento(claveEstado, estado.toString());
+           emitirEvento(claveEstado, estado.ordinal());
     }
 
     private void emitirRespuesta (String respuesta) {
@@ -173,8 +162,11 @@ public class ConexionHTTP implements Runnable {
     }
 
     private void emitirEvento (String clave, String dato) {
-        if (evento != null)
-            evento.emitir(clave, dato);
+        TunelDeEventos.lanzar(ID_EVENTO,clave, dato);
+    }
+
+    private void emitirEvento (String clave, int dato) {
+        TunelDeEventos.lanzar(ID_EVENTO,clave, dato);
     }
 
 
@@ -254,13 +246,6 @@ public class ConexionHTTP implements Runnable {
     }
 
 
-    public Evento getEvento() {
-        return evento;
-    }
-
-    public void setEvento(Evento evento) {
-        this.evento = evento;
-    }
 
 
 
