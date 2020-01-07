@@ -18,8 +18,9 @@ import utilidades.basico.MensajeRegistro;
 public class CamaraEspia extends BroadcastReceiver {
 
     @Override
-    public void onReceive(Context contexto, Intent intent) {		
-		Preferencias preferencias = new Preferencias(contexto);		
-        preferencias.setMensaje("Fotografía recibida - Requiere versión donación");		
+    public void onReceive(Context contexto, Intent intent) {
+	Preferencias preferencias = new Preferencias(contexto);		
+        preferencias.setMensaje("Fotografía recibida - Requiere versión donación");	
+
     }
 }

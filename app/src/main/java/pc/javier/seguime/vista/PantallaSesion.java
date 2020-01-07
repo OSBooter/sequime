@@ -51,7 +51,7 @@ public class PantallaSesion extends Pantalla {
     }
 
 
-
+    public boolean getSsl () { return getToggle(R.id.opciones_ssl).isChecked(); }
 
 
     public void cambiarRadio () {

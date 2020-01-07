@@ -433,35 +433,7 @@
 
 
 
-
-    <TableLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:stretchColumns="0,1"
-
-        >
-        <TableRow android:gravity="center_vertical">
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/guardar"
-                android:onClick="guardar"
-                android:background="@drawable/botonredondeado"
-                android:textColor="@android:color/white"
-                android:layout_margin="2dp"
-                />
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:onClick="cancelar"
-                android:text="@string/cancelar"
-                android:background="@drawable/botonredondeadorojo"
-                android:textColor="@android:color/white"
-                android:layout_margin="2dp"
-                />
-
-        </TableRow>
-    </TableLayout>
+<include layout="@layout/componente_decision" />
 
     </LinearLayout>
 </ScrollView>

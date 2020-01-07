@@ -29,7 +29,7 @@ public class ActividadPanicoOpciones extends AppCompatActivity {
     }
 
 
-    public void guardar (View v) {
+    public void aceptar (View v) {
         control.guardar();
     }
 

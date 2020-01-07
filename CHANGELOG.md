@@ -1,5 +1,9 @@
 # Seguime
 
+### [4.3]
+Modificado: Diseño de botones.
+Agregado: SSL
+
 ### [4.2] Octubre 2019
 Modificado: Localizador (Mejora en la batería).
 

@@ -100,6 +100,7 @@ public class Preferencias extends utilidades.basico.Preferencias {
         servidor("urlServidor"),
         idTelegram("telegram"),
         sesionIniciada("sesionIniciada"),
+        ssl ("ssl"),
 
         numeroSms("sms"),
 
@@ -306,5 +307,8 @@ public class Preferencias extends utilidades.basico.Preferencias {
 
     // public int getZonaHoraria () { return obtenerInt (TipoPreferencia.zonaHoraria); }
      // public void setZonaHoraria (int valor) { guardar (TipoPreferencia.zonaHoraria, valor);}
+
+    public boolean getSsl () { return  obtenerBoolean(TipoPreferencia.ssl); }
+    public void setSsl (boolean valor) { guardar(TipoPreferencia.ssl, valor);}
 
 }

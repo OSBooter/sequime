@@ -19,6 +19,7 @@ public class Servidor {
     private String usuario;
     private String clave;
     private String parametros = "";
+    private boolean ssl = false;
     private Preferencias preferencias;
 
 
@@ -35,11 +36,14 @@ public class Servidor {
         this.url = preferencias.getServidor();
         this.usuario = preferencias.getUsuario();
         this.clave = preferencias.getClave();
+        this.ssl = preferencias.getSsl();
         nuevoParametro();
         agregarInformacionExtra(contexto);
     }
 
-
+    public void setSsl (boolean value) {
+        ssl = value;
+    }
 
 
 
@@ -51,6 +55,7 @@ public class Servidor {
         MensajeRegistro.msj (this, "ENVIANDO " + parametros);
         ConexionHTTP conexion = new ConexionHTTP(url, parametros);
         conexion.setUserAgent(Constante.userAgent);
+        conexion.setSsl(ssl);
         conexion.ejecutarHilo();
     }
 

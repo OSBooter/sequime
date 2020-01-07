@@ -35,8 +35,8 @@ public class ControlPantallaSesion extends Control {
         pantalla.setServidor(servidor);
         pantalla.setUsuario(usuario);
 
-        //Boolean ssl = preferencias.obtenerBoolean(Preferencias.TipoPreferencia.ssl);
-        //Cssl.setChecked(ssl);
+
+
 
     }
 
@@ -52,8 +52,7 @@ public class ControlPantallaSesion extends Control {
         preferencias.guardar(Preferencias.TipoPreferencia.usuario, usuario);
         preferencias.guardar(Preferencias.TipoPreferencia.clave, clave);
 
-        //editor.putBoolean("ssl", ssl);
-        //editor.putBoolean("sesion", true);
+        preferencias.setSsl (pantalla.getSsl());
 
     }
 
@@ -134,6 +133,8 @@ public class ControlPantallaSesion extends Control {
             servidor.agregarComando(Servidor.Comando.registro);
         else
             servidor.agregarComando(Servidor.Comando.sesion);
+
+        servidor.setSsl(pantalla.getSsl());
         servidor.enviar();
     }
 

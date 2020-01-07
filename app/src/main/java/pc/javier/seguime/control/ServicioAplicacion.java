@@ -319,10 +319,9 @@ public class ServicioAplicacion extends Service {
 
 
 
-        // obtiene la última fotografía no enviada
-        Imagen imagen = bd.fotoObtenerUltimaNoEnviada();
+
         bd.cerrar();
-        
+
 
 
 
